@@ -12,7 +12,7 @@
 
 &lt;p&gt;This is the home for a lot of the attached content in the feralhosting.com FAQs. This is basically a hosting platform for the images,scripts,snippets and more. It is centralised and easy to manage.&lt;/p&gt;
 
-&lt;p&gt;The current FAQs are formatted in form of bbcode. One goal of this repo was, and is, to port the existing FAQs to markdown. Markdown is a more portable format that lets you format large bodies of text reasonably quickly. For this purpose two tools have been created, a bbcode to markdown and markdown to bbcode. IF correct formatting is used when creating one or the other the tool should be able to convert the critical tags.&lt;/p&gt;
+&lt;p&gt;The current FAQs are formatted in form of bbcode. One goal of this repo was, and is, to port the existing FAQs to markdown. Markdown is a more portable that lets you format large bodies of text reasonably quickly. For this purpose two tools have been created convert a specific format of:  bbcode &gt; markdown and markdown &gt; bbcode . If correct formatting is used when creating one or the other the tool should be able to convert the critical tags.&lt;/p&gt;
 </description>
         <pubDate>Wed, 29 May 2013 00:00:00 +0100</pubDate>
         <link>feralhosting.github.io/front%20page/2013/05/29/Front-page/</link>
