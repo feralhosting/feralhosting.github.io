@@ -1,0 +1,217 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta name="description" content="A simple tool to convert BBCode to Markdown (Feral) code.">
+		<META http-equiv="Content-Type" CONTENT="text/html; charset=utf-8">
+		<title>
+			BBCode Feral -> Markdown Github converter
+		</title>
+		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/reset/reset-min.css">
+		<style type="text/css" media="screen">
+
+			html, body {
+				margin: 0;
+				padding: 0;
+				height: 100%;
+				background: #e0e0e0;
+				font-family: Georgia;
+				overflow:hidden;
+			}
+
+			.container
+			{
+				width:100%;
+				height: 100%;
+			}
+
+			table
+			{
+				width: 100%;
+				height: 100%;
+			}
+		
+			tr, td
+			{
+				height: 100%;
+			}
+		
+			.middle_td
+			{
+				width: 1px;
+				min-width:1px;
+				padding: 0px;
+			}
+		
+			.ta_container
+			{
+				width: 97%;
+				height: 95%;
+				box-sizing: border-box;
+				-webkit-box-sizing:border-box;
+				-moz-box-sizing: border-box;
+				-ms-box-sizing: border-box;
+			
+			}
+			.left
+			{
+			display:block;
+			min-width: 300px;
+			padding: 60px 0px 20px 10px;
+			}
+			.right
+			{
+			display:block;
+			min-width: 300px;
+			padding: 60px 10px 20px 0px;
+			}
+			#left_ta
+			{
+			display:block;
+			width: 100%;
+			}
+			right_ta
+			{
+			display:block;
+			width: 100%;
+			}
+
+			textarea {
+			
+
+				transition: all 0.5s ease-in-out;
+				-webkit-transition: all 0.5s ease-in-out;
+				-moz-transition: all 0.5s ease-in-out;
+			
+			
+				width: 100%;
+				height: 100%;
+
+				
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				-moz-border-radius: 4px;
+				-webkit-border-radius: 4px;
+				padding: 8px;
+				-webkit-box-shadow: 0 1px #fff;
+				-moz-box-shadow: 0 1px #fff;
+				box-shadow: 0 1px #fff;
+			
+				color: #222;
+				outline: none;
+				_width: 100%;
+				overflow-x: hidden;
+				overflow-y: auto;
+				white-space: pre-wrap;
+				
+				resize: none;
+			
+			}
+
+			textarea:focus
+			{
+				-moz-box-shadow: 0 0 8px rgba(82,168,236,0.5);
+				-webkit-box-shadow: 0 0 8px rgba(82,168,236,0.5);
+				border-color: rgba(82,168,236,0.75)!important;
+			}
+			
+			.instructions {
+				position: absolute;
+				padding-left: 25px;
+				font-family: Arial;
+				width: 2000px;
+				top: 15px;
+			}
+			
+			h1
+			{
+				font-size: 2em;
+				color: #454545;
+				text-shadow: 0 1px #fff;
+				display:inline;
+			}
+			
+			
+			span
+			{
+				margin-left: 50px;
+			}
+			
+			@-moz-document url-prefix() {
+					.ta_container
+					{						
+					}
+					.left
+					{
+					padding: 105px 0px 20px 10px;
+					}
+					.right
+					{
+					padding: 105px 10px 20px 0px;
+					}
+			}
+			
+		</style>
+	
+		<script type="text/javascript" charset="utf-8">
+						
+			function convert()
+			{
+				var left = document.getElementById("left_ta");
+				var right = document.getElementById("right_ta");
+		 
+				var left_value = left.value;
+		
+				//general BBcode conversion
+				left_value = left_value
+					.replace(/\[h2\]((?:.|\n)+?)\[\/h2\]/gmi, "## $1\n") //h2; replace [h2] $1 [/h2] with ## $1 adds a new line. Feral specific.
+					.replace(/\[h3\]((?:.|\n)+?)\[\/h3\]/gmi, "### $1\n") //h3; replace [h3] $1 [/h3] with ### $1 adds a new line. Feral specific.
+					.replace(/\[h4\]((?:.|\n)+?)\[\/h4\]/gmi, "#### $1\n") //h4; replace [h4] $1 [/h4] with #### $1 adds a new line. Feral specific.
+					.replace(/\[b\]((?:.|\n)+?)\[\/b\]/gmi, "**$1**") //bold; replace [b] $1 [/b] with ** $1 **
+					.replace(/\[strong\]((?:.|\n)+?)\[\/strong\]/gmi, "**$1**") //bold; replace [b] $1 [/b] with ** $1 **
+					.replace(/\[i\]((?:.|\n)+?)\[\/i\]/gmi, "`$1`")	 //italic; replace [i] $1 [/i] with ` $1 `
+					.replace(/\[em\]((?:.|\n)+?)\[\/em\]/gmi, "`$1`")  //italic; replace [em] $1 [/em] with ` $1 `
+					.replace(/\[code\]((?:.|\n)+?)\[\/code\]/gmi, "```\n$1\n```\n")  //code; replace [code] $1 [/code] with $1 also adds a new line. Feral specific.
+					.replace(/\[img\]((?:.|\n)+?)\[\/img\]/gmi,'![]($1)')
+					.replace(/\[url=(.+?)\]((?:.|\n)+?)\[\/url\]/gmi,'[$2]($1)');					
+//					.replace(/\[s\]((?:.|\n)+?)\[\/s\]/gmi, "~~	$1 ~~") //strikethrough; replace [s] $1 [/s] with ~~ $1 ~~
+//					.replace(/\[color\=.+?\]((?:.|\n)+?)\[\/color\]/gmi, "$1") //remove [color] tags
+//					.replace(/(\n)\[\*\]/gmi, "$1* ") //lists; replace lists with + unordered lists.
+//					.replace(/\[\/*list\]/gmi, '')
+//					.replace(/\[u\]((?:.|\n)+?)\[\/u\]/gmi, "*$1*")	 //underline; replace [u] $1 [/u] with * $1 *
+			
+				right.value = left_value;	
+				
+				console.log('converted');
+		
+			}
+			
+		</script>
+	</head>
+	<body>
+		<div class="instructions">
+			<h1>BBCode to Markdown (Feral) Converter.</h1><br/>
+			<div style="font-size:0.8em;">
+			Paste your BBCode into the left, Markdown appears on the right. Here is a link to the <a href="http://konichiwa.celadon.feralhosting.com/converter/markdowntobbcode/">markdown to bbcode</a> converter<br/>
+			<a href="https://github.com/feralhosting/BBCode-To-Markdown-Converter">Fork/Contribute to this version</a>&nbsp;&nbsp;&nbsp;<a href="http://github.com/JonDum/BBCode-To-Markdown-Converter">Credits</a>
+			</div> 
+		</div>
+		<div class="container">
+			<table border="0">
+				<tr>
+					<td>
+						<div class="ta_container left">
+							<textarea id="left_ta" value="" onChange="convert()" onKeyUp="convert()"></textarea>
+						</div>
+					</td>
+					<td class="middle_td">
+					</td>
+					<td>
+						<div class="ta_container right">
+							<textarea id="right_ta"></textarea>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>
