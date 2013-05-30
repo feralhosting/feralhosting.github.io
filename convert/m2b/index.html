@@ -1,159 +1,25 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<meta name="description" content="A simple tool to convert Markdown to BBCode (Feral) code.">
-		<META http-equiv="Content-Type" CONTENT="text/html; charset=utf-8">
-		<title>
-			Markdown Github -> BBCode Feral converter
-		</title>
-		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/reset/reset-min.css">
-		<style type="text/css" media="screen">
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 
-			html, body {
-				margin: 0;
-				padding: 0;
-				height: 100%;
-				background: #e0e0e0;
-				font-family: Georgia;
-				overflow:hidden;
-			}
-
-			.container
-			{
-				width:100%;
-				height: 100%;
-			}
-
-			table
-			{
-				width: 100%;
-				height: 100%;
-			}
-		
-			tr, td
-			{
-				height: 100%;
-			}
-		
-			.middle_td
-			{
-				width: 1px;
-				min-width:1px;
-				padding: 0px;
-			}
-		
-			.ta_container
-			{
-				width: 97%;
-				height: 95%;
-				box-sizing: border-box;
-				-webkit-box-sizing:border-box;
-				-moz-box-sizing: border-box;
-				-ms-box-sizing: border-box;
-			
-			}
-			.left
-			{
-			display:block;
-			min-width: 300px;
-			padding: 60px 0px 20px 10px;
-			}
-			.right
-			{
-			display:block;
-			min-width: 300px;
-			padding: 60px 10px 20px 0px;
-			}
-			#left_ta
-			{
-			display:block;
-			width: 100%;
-			}
-			right_ta
-			{
-			display:block;
-			width: 100%;
-			}
-
-			textarea {
-			
-
-				transition: all 0.5s ease-in-out;
-				-webkit-transition: all 0.5s ease-in-out;
-				-moz-transition: all 0.5s ease-in-out;
-			
-			
-				width: 100%;
-				height: 100%;
-
-				
-				border: 1px solid #ccc;
-				border-radius: 4px;
-				-moz-border-radius: 4px;
-				-webkit-border-radius: 4px;
-				padding: 8px;
-				-webkit-box-shadow: 0 1px #fff;
-				-moz-box-shadow: 0 1px #fff;
-				box-shadow: 0 1px #fff;
-			
-				color: #222;
-				outline: none;
-				_width: 100%;
-				overflow-x: hidden;
-				overflow-y: auto;
-				white-space: pre-wrap;
-				
-				resize: none;
-			
-			}
-
-			textarea:focus
-			{
-				-moz-box-shadow: 0 0 8px rgba(82,168,236,0.5);
-				-webkit-box-shadow: 0 0 8px rgba(82,168,236,0.5);
-				border-color: rgba(82,168,236,0.75)!important;
-			}
-			
-			.instructions {
-				position: absolute;
-				padding-left: 25px;
-				font-family: Arial;
-				width: 2000px;
-				top: 15px;
-			}
-			
-			h1
-			{
-				font-size: 2em;
-				color: #454545;
-				text-shadow: 0 1px #fff;
-				display:inline;
-			}
-			
-			
-			span
-			{
-				margin-left: 50px;
-			}
-			
-			@-moz-document url-prefix() {
-					.ta_container
-					{						
-					}
-					.left
-					{
-					padding: 105px 0px 20px 10px;
-					}
-					.right
-					{
-					padding: 105px 10px 20px 0px;
-					}
-			}
-			
-		</style>
-	
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<title>Markdown Github to BBCode Feral converter</title>
+<link rel="stylesheet" href="css/foundation.css" />
+<script src="js/vendor/custom.modernizr.js"></script>
+<style type="text/css" media="screen">
+.mycustom1 { 
+}
+.mycustom2 {  
+height: 400px;
+padding: 0px; 
+}
+.mycustom3 {
+height: 100%;
+}
+</style>
 <script type="text/javascript" charset="utf-8">
-
 function convert()
 {
     var left = document.getElementById("left_ta");
@@ -175,6 +41,7 @@ function convert()
         .replace(/\`([^\`].*?)\`/gmi, "[i]$1[/i]")  // back ticks
         //
         .replace(/^!\[.*?\]\((.*?)\)$/gmi,'[img]$1[/img]') //image
+		.replace(/^\[!\[.*?\]\((.*?)\)\]\((.*?)\)$/gmi,'[img]$1[/img]\nClickable image was pointing to [url=$2]here[/url]') //image
         //
         .replace(/\[([^\]]+)\]\(([^)]+)\)/gmi,'[url=$2]$1[/url]') // url
         //
@@ -185,33 +52,90 @@ function convert()
         console.log('converted');
 }
 </script>
-    </head>
-    <body>
-        <div class="instructions">
-            <h1>Markdown to BBCode (Feral) Converter</h1>
-            <div style="font-size:0.8em;">
-                Paste your Markdown into the left, Feral FAQ formatted BBCode appears on the right. Here is a link to the <a href="http://konichiwa.celadon.feralhosting.com/converter/bbcodetomarkdown/">bbcode to markdown</a> converter<br/>
-                <a href="https://github.com/feralhosting/BBCode-To-Markdown-Converter">Fork/Contribute to this version</a>&nbsp;&nbsp;<a href="http://github.com/JonDum/BBCode-To-Markdown-Converter">Credits</a>
-                <br/>Indented code will have the space/tabs stripped. You have to manually apply [code] tags to these. Github style  ``` code will be replaced correctly.
-            </div> 
-        </div>
-        <div class="container">
-            <table border="0">
-                <tr>
-                    <td>
-                        <div class="ta_container left">
-                            <textarea id="left_ta" value="" onChange="convert()" onKeyUp="convert()"></textarea>
-                        </div>
-                    </td>
-                    <td class="middle_td">
-                    </td>
-                    <td>
-                        <div class="ta_container right">
-                            <textarea id="right_ta"></textarea>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </body>
+</head>
+<body>
+
+	<div class="row">
+		<div class="large-12 columns">
+			<h2>Markdown to BBcode</h2>
+			<p>This is the markdown to bbcode converter  <a href="https://github.com/feralhosting/BBCode-To-Markdown-Converter">Fork/Contribute to this version</a>&nbsp;&nbsp;<a href="http://github.com/JonDum/BBCode-To-Markdown-Converter">Credits</a></p>
+			<hr />
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="large-12 columns">
+			<h3>How to use this converter</h3>
+
+			<!-- Grid Example -->
+			<div class="row">
+				<div class="large-12 columns">
+					<div class="panel">
+						<p>
+						Paste your Markdown into the top box, Feral FAQ formatted BBCode appears on the botom. Here is a link to the <a href="http://konichiwa.celadon.feralhosting.com/converter/bbcodetomarkdown/">bbcode to markdown</a>converter
+						</p>
+						<p>
+						Indented code will have the space/tabs stripped. You have to manually apply [code] tags to these. Github style  ``` code will be replaced correctly.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="large-12 columns mycustom1">
+					<div class="panel mycustom2">
+						<textarea id="left_ta" class="mycustom3" value="" onChange="convert()" onKeyUp="convert()"></textarea>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="large-12 columns mycustom1">
+					<div class="panel mycustom2">
+						<textarea id="right_ta" class="mycustom3"></textarea>
+					</div>
+				</div>
+			</div>
+
+  <script>
+  document.write('<script src=' +
+  ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
+  '.js><\/script>')
+  </script>
+  
+  <script src="js/foundation.min.js"></script>
+  <!--
+  
+  <script src="js/foundation/foundation.js"></script>
+  
+  <script src="js/foundation/foundation.dropdown.js"></script>
+  
+  <script src="js/foundation/foundation.placeholder.js"></script>
+  
+  <script src="js/foundation/foundation.forms.js"></script>
+  
+  <script src="js/foundation/foundation.alerts.js"></script>
+  
+  <script src="js/foundation/foundation.magellan.js"></script>
+  
+  <script src="js/foundation/foundation.reveal.js"></script>
+  
+  <script src="js/foundation/foundation.tooltips.js"></script>
+  
+  <script src="js/foundation/foundation.clearing.js"></script>
+  
+  <script src="js/foundation/foundation.cookie.js"></script>
+  
+  <script src="js/foundation/foundation.joyride.js"></script>
+  
+  <script src="js/foundation/foundation.orbit.js"></script>
+  
+  <script src="js/foundation/foundation.section.js"></script>
+  
+  <script src="js/foundation/foundation.topbar.js"></script>
+  
+  -->
+  
+  <script>
+    $(document).foundation();
+  </script>
+</body>
 </html>
