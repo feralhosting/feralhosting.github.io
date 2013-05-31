@@ -149,14 +149,21 @@ var left_value = left.value;
     $(document).foundation();
   </script>
 	<script type="text/javascript">
-		var textBox = document.getElementById("right_ta");
-		textBox.onfocus = function() {
-			textBox.select();
+		var textBoxl = document.getElementById("left_ta");
+		var textBoxr = document.getElementById("right_ta");
+		textBoxl.onfocus = function() {
+			textBoxl.select();
 
-			// Work around Chrome's little problem
-			textBox.onmouseup = function() {
-				// Prevent further mouseup intervention
-				textBox.onmouseup = null;
+			textBoxl.onmouseup = function() {
+				textBoxl.onmouseup = null;
+				return false;
+			};
+		};
+			textBoxr.onfocus = function() {
+			textBoxr.select();
+
+			textBoxr.onmouseup = function() {
+				textBoxr.onmouseup = null;
 				return false;
 			};
 		};
