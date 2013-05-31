@@ -38,9 +38,12 @@ var left_value = left.value;
 
 //general BBcode conversion
 left_value = left_value
+	.replace(/^\[h1\](.*)\[\/h1\]\s*$/gmi, "# $1\n") //h4; replace [h1] $1 [/h1] with # $1 adds a new line. Feral specific.
 	.replace(/^\[h2\](.*)\[\/h2\]\s*$/gmi, "## $1\n") //h2; replace [h2] $1 [/h2] with ## $1 adds a new line. Feral specific.
 	.replace(/^\[h3\](.*)\[\/h3\]\s*$/gmi, "### $1\n") //h3; replace [h3] $1 [/h3] with ### $1 adds a new line. Feral specific.
 	.replace(/^\[h4\](.*)\[\/h4\]\s*$/gmi, "#### $1\n") //h4; replace [h4] $1 [/h4] with #### $1 adds a new line. Feral specific.
+	.replace(/^\[h5\](.*)\[\/h5\]\s*$/gmi, "##### $1\n") //h2; replace [h5] $1 [/h5] with ##### $1 adds a new line. Feral specific.
+	.replace(/^\[h6\](.*)\[\/h6\]\s*$/gmi, "###### $1\n") //h3; replace [h6] $1 [/h6] with ###### $1 adds a new line. Feral specific.
 	.replace(/\[b\]((?:.|\n)+?)\[\/b\]/gmi, "**$1**") //bold; replace [b] $1 [/b] with ** $1 **
 	.replace(/\[strong\]((?:.|\n)+?)\[\/strong\]/gmi, "**$1**") //bold; replace [b] $1 [/b] with ** $1 **
 	.replace(/\[i\]((?:.|\n)+?)\[\/i\]/gmi, "`$1`")	 //italic; replace [i] $1 [/i] with ` $1 `

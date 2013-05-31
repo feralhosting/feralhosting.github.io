@@ -35,6 +35,12 @@ var right = document.getElementById("right_ta");
 var left_value = left.value;
 	//general Markdown conversion
 	left_value = left_value
+	.replace(/^[#]{6,6}\s*(.*[^\s])\s*######\n?$/gmi, "[h6]$1[/h6]") // h4
+	.replace(/^[#]{6,6}\s*(.*)\n?$/gmi, "[h6]$1[/h6]") // h4
+	//
+	.replace(/^[#]{5,5}\s*(.*[^\s])\s*#####\n?$/gmi, "[h5]$1[/h5]") // h4
+	.replace(/^[#]{5,5}\s*(.*)\n?$/gmi, "[h5]$1[/h5]") // h4
+	//
 	.replace(/^[#]{4,4}\s*(.*[^\s])\s*####\n?$/gmi, "[h4]$1[/h4]") // h4
 	.replace(/^[#]{4,4}\s*(.*)\n?$/gmi, "[h4]$1[/h4]") // h4
 	//
@@ -43,6 +49,9 @@ var left_value = left.value;
 	//
 	.replace(/^[#]{2,2}\s*(.*[^\s])\s*##\n?$/gmi, "[h2]$1[/h2]") // h2
 	.replace(/^[#]{2,2}\s*(.*)\n?$/gmi, "[h2]$1[/h2]") // h2
+	//
+	.replace(/^[#]{1,1}\s*(.*[^\s])\s*#\n?$/gmi, "[h1]$1[/h1]") // h2
+	.replace(/^[#]{1,1}\s*(.*)\n?$/gmi, "[h1]$1[/h1]") // h2
 	//
 	.replace(/^\t|[ ]{4,4}(.*)/gmi, "$1")  //code; strips tabs
 	.replace(/^\`{3,3}(.*)\n((?:.|\n)+?)\n\`{3,3}\n?$/gmi, "[code]$2[/code]")	// back ticks
