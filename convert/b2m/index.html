@@ -12,14 +12,23 @@
 .mycustom1 { 
 }
 .mycustom2 {  
-height: 400px;
+height: 300px;
 padding: 0px; 
 }
 .mycustom3 {
 height: 100%;
 }
+.floatr {
+float:right;
+}
+.linkcol1 {
+color:orange;
+}
+.linkcol2 {
+color:green;
+}
 </style>
-<script type="text/javascript" charset="utf-8">		
+<script type="text/javascript" charset="utf-8">
 function convert()
 {
 var left = document.getElementById("left_ta");
@@ -55,7 +64,7 @@ console.log('converted');
 		<div class="large-12 columns">
 			<h2>BBcode to Markdown</h2>
 			<p>
-			This is the BBCode to Markdown converter.  <a href="https://github.com/feralhosting/BBCode-To-Markdown-Converter">Fork/Contribute to this version</a>&nbsp;&nbsp;<a href="http://github.com/JonDum/BBCode-To-Markdown-Converter">Credits</a>
+			This is the BBCode to Markdown converter.  <a class="linkcol1" href="https://github.com/feralhosting/BBCode-To-Markdown-Converter">Fork/Contribute to this version</a>&nbsp;&nbsp;<a class="linkcol2" href="http://github.com/JonDum/BBCode-To-Markdown-Converter">Credits</a><a class="floatr" href="http://feralhosting.github.io/">Return to feralhosting.github.io</a>
 			</p>
 			<hr />
 		</div>
@@ -88,7 +97,7 @@ console.log('converted');
 			<div class="row">
 				<div class="large-12 columns mycustom1">
 					<div class="panel mycustom2">
-						<textarea id="right_ta" class="mycustom3"></textarea>
+						<textarea id="right_ta" class="mycustom3" onfocus="this.select()"></textarea>
 					</div>
 				</div>
 			</div>

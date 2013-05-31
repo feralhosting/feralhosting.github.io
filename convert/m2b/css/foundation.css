@@ -10,7 +10,9 @@ body {
   font-size: 100%; }
 
 body {
-  background: white;
+  background-image:url(../img/light_noise_diagonal.png);
+  background-repeat:repeat;
+/*  background: white; */
   color: #222222;
   padding: 0;
   margin: 0;
