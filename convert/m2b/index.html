@@ -93,14 +93,14 @@ var left_value = left.value;
 			<div class="row">
 				<div class="large-12 columns mycustom1">
 					<div class="panel mycustom2">
-						<textarea id="left_ta" class="mycustom3" value="" onChange="convert()" onKeyUp="convert()"></textarea>
+						<textarea id="left_ta" class="mycustom3" onChange="convert()" onKeyUp="convert()"></textarea>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="large-12 columns mycustom1">
 					<div class="panel mycustom2">
-						<textarea id="right_ta" class="mycustom3" onfocus="this.select()" onMouseUp="return false"></textarea>
+						<textarea id="right_ta" class="mycustom3"></textarea>
 					</div>
 				</div>
 			</div>
@@ -148,5 +148,19 @@ var left_value = left.value;
   <script>
     $(document).foundation();
   </script>
+	<script type="text/javascript">
+		var textBox = document.getElementById("right_ta");
+		textBox.onfocus = function() {
+			textBox.select();
+
+			// Work around Chrome's little problem
+			textBox.onmouseup = function() {
+				// Prevent further mouseup intervention
+				textBox.onmouseup = null;
+				return false;
+			};
+		};
+		// http://stackoverflow.com/questions/5797539/jquery-select-all-text-from-a-textarea
+	</script>
 </body>
 </html>
