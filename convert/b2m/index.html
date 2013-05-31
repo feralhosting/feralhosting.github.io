@@ -28,7 +28,7 @@ color:orange;
 color:green;
 }
 </style>
-<script type="text/javascript" charset="utf-8">
+<script type="text/javascript">
 function convert()
 {
 var left = document.getElementById("left_ta");
@@ -97,11 +97,12 @@ console.log('converted');
 			<div class="row">
 				<div class="large-12 columns mycustom1">
 					<div class="panel mycustom2">
-						<textarea id="right_ta" class="mycustom3" onfocus="this.select()"></textarea>
+						<textarea id="right_ta" class="mycustom3" onfocus="this.select()" onMouseUp="return false"></textarea>
 					</div>
 				</div>
 			</div>
-
+		</div>
+	</div>
   <script>
   document.write('<script src=' +
   ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +

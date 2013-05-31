@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width" />
@@ -28,37 +27,37 @@ color:orange;
 color:green;
 }
 </style>
-<script type="text/javascript" charset="utf-8">
+<script type="text/javascript">
 function convert()
 {
-    var left = document.getElementById("left_ta");
-    var right = document.getElementById("right_ta");
-    var left_value = left.value;
-        //general Markdown conversion
-        left_value = left_value
-        .replace(/^[#]{4,4}\s*(.*[^\s])\s*####\n?$/gmi, "[h4]$1[/h4]") // h4
-        .replace(/^[#]{4,4}\s*(.*)\n?$/gmi, "[h4]$1[/h4]") // h4
-        //
-        .replace(/^[#]{3,3}\s*(.*[^\s])\s*###\n?$/gmi, "[h3]$1[/h3]") // h3
-        .replace(/^[#]{3,3}\s?(.*)\n?$/gmi, "[h3]$1[/h3]") // h3
-        //
-        .replace(/^[#]{2,2}\s*(.*[^\s])\s*##\n?$/gmi, "[h2]$1[/h2]") // h2
-        .replace(/^[#]{2,2}\s*(.*)\n?$/gmi, "[h2]$1[/h2]") // h2
-        //
-        .replace(/^\t|[ ]{4,4}(.*)/gmi, "$1")  //code; strips tabs
-        .replace(/^\`{3,3}(.*)\n((?:.|\n)+?)\n\`{3,3}\n?$/gmi, "[code]$2[/code]")	// back ticks
-        .replace(/\`([^\`].*?)\`/gmi, "[i]$1[/i]")  // back ticks
-        //
-        .replace(/^!\[.*?\]\((.*?)\)$/gmi,'[img]$1[/img]') //image
-		.replace(/^\[!\[.*?\]\((.*?)\)\]\((.*?)\)$/gmi,'[img]$1[/img]\nClickable image was pointing to [url=$2]here[/url]') //image
-        //
-        .replace(/\[([^\]]+)\]\(([^)]+)\)/gmi,'[url=$2]$1[/url]') // url
-        //
-        .replace(/\*\*([^\*].*?)\*\*/gmi, "[b]$1[/b]") // bold
-        .replace(/\*([^\*].*?)\*/gmi, "[i]$1[/i]")	// italic
-        //
-        right.value = left_value;
-        console.log('converted');
+var left = document.getElementById("left_ta");
+var right = document.getElementById("right_ta");
+var left_value = left.value;
+	//general Markdown conversion
+	left_value = left_value
+	.replace(/^[#]{4,4}\s*(.*[^\s])\s*####\n?$/gmi, "[h4]$1[/h4]") // h4
+	.replace(/^[#]{4,4}\s*(.*)\n?$/gmi, "[h4]$1[/h4]") // h4
+	//
+	.replace(/^[#]{3,3}\s*(.*[^\s])\s*###\n?$/gmi, "[h3]$1[/h3]") // h3
+	.replace(/^[#]{3,3}\s?(.*)\n?$/gmi, "[h3]$1[/h3]") // h3
+	//
+	.replace(/^[#]{2,2}\s*(.*[^\s])\s*##\n?$/gmi, "[h2]$1[/h2]") // h2
+	.replace(/^[#]{2,2}\s*(.*)\n?$/gmi, "[h2]$1[/h2]") // h2
+	//
+	.replace(/^\t|[ ]{4,4}(.*)/gmi, "$1")  //code; strips tabs
+	.replace(/^\`{3,3}(.*)\n((?:.|\n)+?)\n\`{3,3}\n?$/gmi, "[code]$2[/code]")	// back ticks
+	.replace(/\`([^\`].*?)\`/gmi, "[i]$1[/i]")  // back ticks
+	//
+	.replace(/^!\[.*?\]\((.*?)\)$/gmi,'[img]$1[/img]') //image
+	.replace(/^\[!\[.*?\]\((.*?)\)\]\((.*?)\)$/gmi,'[img]$1[/img]\nClickable image was pointing to [url=$2]here[/url]') //image
+	//
+	.replace(/\[([^\]]+)\]\(([^)]+)\)/gmi,'[url=$2]$1[/url]') // url
+	//
+	.replace(/\*\*([^\*].*?)\*\*/gmi, "[b]$1[/b]") // bold
+	.replace(/\*([^\*].*?)\*/gmi, "[i]$1[/i]")	// italic
+	//
+	right.value = left_value;
+	console.log('converted');
 }
 </script>
 </head>
@@ -101,11 +100,12 @@ function convert()
 			<div class="row">
 				<div class="large-12 columns mycustom1">
 					<div class="panel mycustom2">
-						<textarea id="right_ta" class="mycustom3" onfocus="this.select()"></textarea>
+						<textarea id="right_ta" class="mycustom3" onfocus="this.select()" onMouseUp="return false"></textarea>
 					</div>
 				</div>
 			</div>
-
+		</div>
+	</div>
   <script>
   document.write('<script src=' +
   ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
