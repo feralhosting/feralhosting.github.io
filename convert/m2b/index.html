@@ -93,14 +93,14 @@ var left_value = left.value;
 			<div class="row">
 				<div class="large-12 columns mycustom1">
 					<div class="panel mycustom2">
-						<textarea id="left_ta" class="mycustom3" onChange="convert()" onKeyUp="convert()"></textarea>
+						<textarea id="left_ta" class="mycustom3" onChange="convert()" onKeyUp="convert()" placeholder="Enter your Markdown formatted text here" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your Markdown formatted text here'"></textarea>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="large-12 columns mycustom1">
 					<div class="panel mycustom2">
-						<textarea id="right_ta" class="mycustom3"></textarea>
+						<textarea id="right_ta" class="mycustom3" placeholder="Your BBCOde formatted text will be automatically shown in this box" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your BBCode formatted text will be automatically shown in this box'"></textarea>
 					</div>
 				</div>
 			</div>

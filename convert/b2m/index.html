@@ -47,6 +47,7 @@ left_value = left_value
 	.replace(/\[em\]((?:.|\n)+?)\[\/em\]/gmi, "`$1`")  //italic; replace [em] $1 [/em] with ` $1 `
 	.replace(/\[code\]((?:.|\n)+?)\[\/code\]/gmi, "```\n$1\n```\n")  //code; replace [code] $1 [/code] with $1 also adds a new line. Feral specific.
 	.replace(/\[img\]((?:.|\n)+?)\[\/img\]/gmi,'![]($1)')
+	.replace(/\[url\]((?:.|\n)+?)\[\/url\]/gmi,'[$1]($1)')
 	.replace(/\[url=(.+?)\]((?:.|\n)+?)\[\/url\]/gmi,'[$2]($1)');					
 	//.replace(/\[s\]((?:.|\n)+?)\[\/s\]/gmi, "~~	$1 ~~") //strikethrough; replace [s] $1 [/s] with ~~ $1 ~~
 	//.replace(/\[color\=.+?\]((?:.|\n)+?)\[\/color\]/gmi, "$1") //remove [color] tags
@@ -90,14 +91,14 @@ console.log('converted');
 			<div class="row">
 				<div class="large-12 columns mycustom1">
 					<div class="panel mycustom2">
-						<textarea id="left_ta" class="mycustom3" onChange="convert()" onKeyUp="convert()"></textarea>
+						<textarea id="left_ta" class="mycustom3" onChange="convert()" onKeyUp="convert()" placeholder="Enter your BBCode formatted text here" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your BBCode formatted text here'"></textarea>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="large-12 columns mycustom1">
 					<div class="panel mycustom2">
-						<textarea id="right_ta" class="mycustom3"></textarea>
+						<textarea id="right_ta" class="mycustom3" placeholder="Your Markdown formatted text will be automatically shown in this box" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Markdown formatted text will be automatically shown in this box'"></textarea>
 					</div>
 				</div>
 			</div>
