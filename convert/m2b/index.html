@@ -35,6 +35,10 @@ var right = document.getElementById("right_ta");
 var left_value = left.value;
 	//general Markdown conversion
 	left_value = left_value
+	//
+	.replace(/^(.*)\n(\x3D+\n?)$/gmi, "[h1]$1[/h1]") // h1
+	.replace(/^(.*)\n(\x2D+\n?)$/gmi, "[h2]$1[/h2]") // h2
+	//
 	.replace(/^[#]{6,6}\s*(.*[^\s])\s*######\n?$/gmi, "[h6]$1[/h6]") // h4
 	.replace(/^[#]{6,6}\s*(.*)\n?$/gmi, "[h6]$1[/h6]") // h4
 	//
