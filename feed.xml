@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>feralhosting.github.io</title>
-    <description>Thing FAQ and wiki related.</description>
+    <description>feralhosting.com FAQ and wiki related stuff.</description>
     <link>feralhosting.github.io</link>
     <atom:link href="feralhosting.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
