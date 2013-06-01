@@ -60,7 +60,7 @@ var left_value = left.value;
 	.replace(/^!\[.*?\]\((.*?)\)$/gmi,'[img]$1[/img]') //image
 	.replace(/^\[!\[.*?\]\((.*?)\)\]\((.*?)\)$/gmi,'[img]$1[/img]\nClickable image was pointing to [url=$2]here[/url]') //image
 	//
-	.replace(/\[([^\]]+)\]\(([^)]+)\)/gmi,'[url=$2]$1[/url]') // url
+	.replace(/\[([^\]]+)\]\(([^)]+)(\s".*")\)/gmi,'[url=$2]$1[/url]') // url
 	//
 	.replace(/\*\*([^\*].*?)\*\*/gmi, "[b]$1[/b]") // bold
 	.replace(/\*([^\*].*?)\*/gmi, "[i]$1[/i]")	// italic
