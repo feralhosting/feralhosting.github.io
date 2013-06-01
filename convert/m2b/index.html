@@ -62,6 +62,7 @@ var left_value = left.value;
 	//
 	.replace(/\[([^\]]+)\]\(([^)]+)(\s".*")\)/gmi,'[url=$2]$1[/url]') // url
 	//
+	.replace(/\*\*\*([^\*].*?)\*\*\*/gmi, "[b][i]$1[/i][/b]") // bold + itlaic
 	.replace(/\*\*([^\*].*?)\*\*/gmi, "[b]$1[/b]") // bold
 	.replace(/\*([^\*].*?)\*/gmi, "[i]$1[/i]")	// italic
 	//
