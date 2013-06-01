@@ -44,20 +44,12 @@ left_value = left_value
 	.replace(/^\[h4\](.*)\[\/h4\]\s*$/gmi, "#### $1\n") //h4; replace [h4] $1 [/h4] with #### $1 adds a new line. Feral specific.
 	.replace(/^\[h5\](.*)\[\/h5\]\s*$/gmi, "##### $1\n") //h2; replace [h5] $1 [/h5] with ##### $1 adds a new line. Feral specific.
 	.replace(/^\[h6\](.*)\[\/h6\]\s*$/gmi, "###### $1\n") //h3; replace [h6] $1 [/h6] with ###### $1 adds a new line. Feral specific.
-	//
-	.replace(/\[b\]\[i\]((?:.|\n)+?)\[\/i\]\[\/b\]/gmi, "***$1***") //bold + italic; replace [b][i] $1 [/i][/b] with ***$1***
-	.replace(/\[i\]\[b\]((?:.|\n)+?)\[\/b\]\[\/i\]/gmi, "***$1***") //bold + italic; replace [b][i] $1 [/i][/b] with ***$1***
-	//
 	.replace(/\[b\]((?:.|\n)+?)\[\/b\]/gmi, "**$1**") //bold; replace [b] $1 [/b] with ** $1 **
 	.replace(/\[strong\]((?:.|\n)+?)\[\/strong\]/gmi, "**$1**") //bold; replace [b] $1 [/b] with ** $1 **
-	//
 	.replace(/\[i\]((?:.|\n)+?)\[\/i\]/gmi, "`$1`")	 //italic; replace [i] $1 [/i] with ` $1 `
 	.replace(/\[em\]((?:.|\n)+?)\[\/em\]/gmi, "`$1`")  //italic; replace [em] $1 [/em] with ` $1 `
-	//
 	.replace(/\[code\]((?:.|\n)+?)\[\/code\]/gmi, "```\n$1\n```\n")  //code; replace [code] $1 [/code] with $1 also adds a new line. Feral specific.
-	//
 	.replace(/\[img\]((?:.|\n)+?)\[\/img\]/gmi,'![]($1)')
-	//
 	.replace(/\[url\]((?:.|\n)+?)\[\/url\]/gmi,'[$1]($1)')
 	.replace(/\[url=(.+?)\]((?:.|\n)+?)\[\/url\]/gmi,'[$2]($1)');					
 	//.replace(/\[s\]((?:.|\n)+?)\[\/s\]/gmi, "~~	$1 ~~") //strikethrough; replace [s] $1 [/s] with ~~ $1 ~~
