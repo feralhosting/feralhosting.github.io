@@ -10,21 +10,12 @@
 <style type="text/css" media="screen">
 .mycustom1 { 
 }
-.mycustom2 {  
+.textdivsize {  
 height: 300px;
 padding: 0px; 
 }
-.mycustom3 {
+.textareasize {
 height: 100%;
-}
-.floatr {
-float:right;
-}
-.linkcol1 {
-color:orange;
-}
-.linkcol2 {
-color:green;
 }
 </style>
 <script type="text/javascript">
@@ -81,9 +72,10 @@ var left_value = left.value;
 	<div class="row">
 		<div class="large-12 columns">
 			<h2>Markdown to BBcode</h2>
-			<p>
-            This is the Markdown to BBCode converter  <a class="linkcol1" href="https://github.com/feralhosting/markdown-to-bbcode">Fork/Contribute to this version</a>&nbsp;&nbsp;<a class="linkcol2" href="http://github.com/JonDum/BBCode-To-Markdown-Converter">Credits</a><a class="floatr" href="http://feralhosting.github.io/">Return to feralhosting.github.io</a>
-            </p>
+            <a class="small button" href="https://github.com/feralhosting/markdown-to-bbcode">Fork/Contribute to this version</a>
+            <a class="small button" href="http://feralhosting.github.io/">Return to feralhosting.github.io</a>
+            <a class="small button" href="http://feralhosting.github.io/convert/b2m/index.html">BBCode to Markdown</a>
+            <a class="small button" href="http://github.com/JonDum/BBCode-To-Markdown-Converter">Credits</a>            
 			<hr />
 		</div>
 	</div>
@@ -100,22 +92,22 @@ var left_value = left.value;
 						Paste your Markdown formatted text into the top box and Feral FAQ formatted BBCode appears in the bottom. Here is a link to the <a href="http://feralhosting.github.io/convert/b2m/">bbcode to markdown</a> converter
 						</p>
 						<p>
-						Indented code will have the space/tabs stripped. You have to manually apply [code] tags to these. Github style <code>```</code> code will be replaced with <code>[code]...[/code]</code> tags.
+						Indented code will have the space/tabs stripped. You have to manually apply [code] tags to these. Github style <kbd>```</kbd> code will be replaced with <kbd>[code]some code[/code]</kbd> tags.
 						</p>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="large-12 columns mycustom1">
-					<div class="panel mycustom2">
-						<textarea id="left_ta" class="mycustom3" onChange="convert()" onKeyUp="convert()" placeholder="Enter your Markdown formatted text here" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your Markdown formatted text here'"></textarea>
+					<div class="panel textdivsize">
+						<textarea id="left_ta" class="textareasize" onChange="convert()" onKeyUp="convert()" placeholder="Enter your Markdown formatted text here" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your Markdown formatted text here'"></textarea>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="large-12 columns mycustom1">
-					<div class="panel mycustom2">
-						<textarea id="right_ta" class="mycustom3" placeholder="Your BBCode formatted text will be automatically shown in this box" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your BBCode formatted text will be automatically shown in this box'"></textarea>
+					<div class="panel textdivsize">
+						<textarea id="right_ta" class="textareasize" placeholder="Your BBCode formatted text will be automatically shown in this box" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your BBCode formatted text will be automatically shown in this box'"></textarea>
 					</div>
 				</div>
 			</div>

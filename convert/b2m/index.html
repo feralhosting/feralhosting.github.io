@@ -11,21 +11,12 @@
 <style type="text/css" media="screen">
 .mycustom1 { 
 }
-.mycustom2 {  
+.textdivsize {  
 height: 300px;
 padding: 0px; 
 }
-.mycustom3 {
+.textareasize {
 height: 100%;
-}
-.floatr {
-float:right;
-}
-.linkcol1 {
-color:orange;
-}
-.linkcol2 {
-color:green;
 }
 </style>
 <script type="text/javascript">
@@ -74,10 +65,11 @@ console.log('converted');
 
 	<div class="row">
 		<div class="large-12 columns">
-			<h2>BBcode to Markdown</h2>
-			<p>
-			This is the BBCode to Markdown converter.  <a class="linkcol1" href="https://github.com/feralhosting/BBCode-To-Markdown-Converter">Fork/Contribute to this version</a>&nbsp;&nbsp;<a class="linkcol2" href="http://github.com/JonDum/BBCode-To-Markdown-Converter">Credits</a><a class="floatr" href="http://feralhosting.github.io/">Return to feralhosting.github.io</a>
-			</p>
+			<h2>BBCode to Markdown</h2>
+            <a class="small button" href="https://github.com/feralhosting/BBCode-To-Markdown-Converter">Fork/Contribute to this version</a>
+            <a class="small button" href="http://feralhosting.github.io/">Return to feralhosting.github.io</a>
+            <a class="small button" href="http://feralhosting.github.io/convert/m2b/index.html">Markdown to BBCode</a>
+            <a class="small button" href="http://github.com/JonDum/BBCode-To-Markdown-Converter">Credits</a>            
 			<hr />
 		</div>
 	</div>
@@ -94,22 +86,22 @@ console.log('converted');
 						Paste your Feral BBcode into the top box, and a Markdown formatted version appears on the bottom. Here is a link to the <a href="http://feralhosting.github.io/convert/m2b/">Markdown to BBcode</a> converter
 						</p>
 						<p>
-						BBCode <code>[code]...[/code]</code> tags will be replaced wtih <code>```</code> and not tabs/spaces. This converter only replaces tags Feral uses.
+						BBCode <kbd>[code]some code[/code]</kbd> tags will be replaced with <kbd>```</kbd> and not tabs/spaces. This converter only replaces tags Feral uses.
 						</p>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="large-12 columns mycustom1">
-					<div class="panel mycustom2">
-						<textarea id="left_ta" class="mycustom3" onChange="convert()" onKeyUp="convert()" placeholder="Enter your BBCode formatted text here" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your BBCode formatted text here'"></textarea>
+					<div class="panel textdivsize">
+						<textarea id="left_ta" class="textareasize" onChange="convert()" onKeyUp="convert()" placeholder="Enter your BBCode formatted text here" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your BBCode formatted text here'"></textarea>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="large-12 columns mycustom1">
-					<div class="panel mycustom2">
-						<textarea id="right_ta" class="mycustom3" placeholder="Your Markdown formatted text will be automatically shown in this box" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Markdown formatted text will be automatically shown in this box'"></textarea>
+					<div class="panel textdivsize">
+						<textarea id="right_ta" class="textareasize" placeholder="Your Markdown formatted text will be automatically shown in this box" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Markdown formatted text will be automatically shown in this box'"></textarea>
 					</div>
 				</div>
 			</div>
