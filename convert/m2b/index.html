@@ -52,7 +52,7 @@ var left_value = left.value;
 	.replace(/^\`{3,3}(.*)\n((?:.|\n)+?)\n\`{3,3}\n?$/gmi, "[code]$2[/code]")	// back ticks
 	.replace(/\`([^\`].*?)\`/gmi, "[i]$1[/i]")  // back ticks
 	//
-	.replace(/!\[.*?\]\((.*?)\)/gmi,'[img]$1[/img]') //image
+	.replace(/!\[(.*)\]\((.*)\)/gmi,'[img]$2[/img]') //image
 	.replace(/\[!\[.*?\]\((.*?)\)\]\((.*?)\)/gmi,'[img]$1[/img]\nClickable image was pointing to [url=$2]here[/url]') //image
 	//
 	.replace(/\x5B(.*)\x5D\x28(.+)(\s".*")\x29/gmi,'[url=$2]$1[/url]') // url
