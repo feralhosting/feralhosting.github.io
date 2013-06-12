@@ -7,6 +7,558 @@
     <atom:link href="feralhosting.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>proftpd - Installing an FTP daemon for extra accounts</title>
+        <description>&lt;h2&gt;To set up your own SFTP or FTPS server with your own virtual users on your slot, follow this guide:&lt;/h2&gt;
+
+&lt;p&gt;This bash script will perform the &lt;strong&gt;basic setup&lt;/strong&gt; outlined in Steps 1 through 3 only.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+wget -qNO ~/proftpd.sh http://git.io/nMVKJA
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Then you run the script:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+bash ~/proftpd.sh
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3&gt;Step 1: Get the package, extract it:&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;
+mkdir -p ~/proftpd/etc/sftp/authorized_keys &amp;amp;&amp;amp; mkdir -p ~/proftpd/etc/keys &amp;amp;&amp;amp; mkdir -p ~/proftpd/ssl
+wget -qNO proftpd.tar.gz ftp://ftp.proftpd.org/distrib/source/proftpd-1.3.4c.tar.gz
+tar -xzf ~/proftpd.tar.gz -C ~/ &amp;amp;&amp;amp; rm -f ~/proftpd.tar.gz
+cd ~/proftpd-1.3.4c
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3&gt;Step 2: Configure and install it:&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;
+install_user=$(whoami) install_group=$(whoami) ./configure --prefix=$HOME/proftpd --enable-openssl --enable-dso --enable-nls --enable-ctrls --with-shared=mod_ratio:mod_readme:mod_sftp:mod_tls:mod_ban
+make &amp;amp;&amp;amp; make install
+cd &amp;amp;&amp;amp; rm -rf ~/proftpd-1.3.4c
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3&gt;Step 3.1: Download and create some required configuration files we need:&lt;/h3&gt;
+
+&lt;p&gt;Do these commands to download the preconfigured configuration files.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+wget -qN http://git.io/CbaIJQ -O ~/proftpd/etc/proftpd.conf
+wget -qN http://git.io/SFHs5g -O ~/proftpd/etc/sftp.conf
+wget -qN http://git.io/ee86Hw -O ~/proftpd/etc/ftps.conf
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3&gt;Step 3.2: Optional Configuration:&lt;/h3&gt;
+
+&lt;p&gt;Use these commands if you would like the conf files configured using SSH commands. Skip this section if you wish to do it manually.&lt;/p&gt;
+
+&lt;p&gt;Do these next commands to configure the &lt;code&gt;proftpd.conf&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+sed -i &#39;s|/media/DiskID/home/my_username|&#39;$HOME&#39;|g&#39; ~/proftpd/etc/proftpd.conf
+sed -i &#39;s|User my_username|User &#39;$(whoami)&#39;|g&#39; ~/proftpd/etc/proftpd.conf
+sed -i &#39;s|Group my_username|Group &#39;$(whoami)&#39;|g&#39; ~/proftpd/etc/proftpd.conf
+sed -i &#39;s|AllowUser my_username|AllowUser &#39;$(whoami)&#39;|g&#39; ~/proftpd/etc/proftpd.conf
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Do these next commands to configure the &lt;code&gt;sftp.conf&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+sed -i &#39;s|/media/DiskID/home/my_username|&#39;$HOME&#39;|g&#39; ~/proftpd/etc/sftp.conf
+sed -i &#39;s|Port 23001|Port &#39;$(shuf -i 6000-50000 -n 1)&#39;|g&#39; ~/proftpd/etc/sftp.conf
+sed -n -e &#39;s/^Port\(.*\)/\1/p&#39; ~/proftpd/etc/sftp.conf
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Make a note of this port, This is your SFTP port.&lt;/p&gt;
+
+&lt;p&gt;Do these next commands to configure the &lt;code&gt;ftps.conf&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+sed -i &#39;s|/media/DiskID/home/my_username|&#39;$HOME&#39;|g&#39; ~/proftpd/etc/ftps.conf
+sed -i &#39;s|Port 23002|Port &#39;$(shuf -i 6000-50000 -n 1)&#39;|g&#39; ~/proftpd/etc/ftps.conf
+sed -n -e &#39;s/^Port\(.*\)/\1/p&#39; ~/proftpd/etc/ftps.conf
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Make a note of this port, This is your FTPS port.&lt;/p&gt;
+
+&lt;p&gt;Once these commands have been completed the conf files have all been configured ready for use.&lt;/p&gt;
+
+&lt;p&gt;Continue with FAQ.&lt;/p&gt;
+
+&lt;h3&gt;Step 4: Generate some keys and certs:&lt;/h3&gt;
+
+&lt;p&gt;Here you need to generate the SFTP keys and/or the SSL certs for FTPS&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;For SFTP:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Pass-phrases are optional. Proftpd asks for the pass-phrases when you start it if there are any.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Copy and paste this command below.&lt;/strong&gt; It is required to create our SSH keys.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+ssh-keygen -t rsa -f ~/proftpd/etc/keys/sftp_rsa &amp;amp;&amp;amp; ssh-keygen -t dsa -f ~/proftpd/etc/keys/sftp_dsa
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Press enter 4 times (no need to use pass-phrases)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;For FTPS:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Copy and paste this command below.&lt;/strong&gt; It is required to generate the SSL certificates we need for FTPS.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+openssl req -new -x509 -nodes -days 365 -subj &#39;/C=GB/ST=none/L=none/CN=none&#39; -newkey rsa:2048 -keyout ~/proftpd/ssl/proftpd.key.pem -out ~/proftpd/ssl/proftpd.cert.pem
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3&gt;Step 5: The Configuration files:&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Important note:&lt;/strong&gt; These configuration files just work. They do not need to changed to get the functionality described in this guide, apart from where you are directed to do so.&lt;/p&gt;
+
+&lt;p&gt;They have been configured with 3 default &lt;strong&gt;READ ONLY&lt;/strong&gt; jails:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+rtorrent/data
+deluge/data
+transmission/data
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;There read only by default and accessible to all non main users.&lt;/p&gt;
+
+&lt;p&gt;All you need to do is create some standard users. To use non default folders or restrict user access , please see the Jail section of this FAQ for further information&lt;/p&gt;
+
+&lt;p&gt;These configuration files have been set-up to work in a specific way. The &lt;code&gt;proftpd.conf&lt;/code&gt; is home to the global settings that are loaded/included in both the &lt;code&gt;sftp.conf&lt;/code&gt; and the &lt;code&gt;ftps.conf&lt;/code&gt; when they are called. The &lt;code&gt;sftp.conf&lt;/code&gt; and &lt;code&gt;ftps.conf&lt;/code&gt; contain only protocol specific settings.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Important Note:&lt;/strong&gt; These files have already been downloaded, if you used the bash script or followed the commands in &lt;code&gt;Step 1&lt;/code&gt;, and configured, if you used the bash script or followed the steps in &lt;code&gt;Step 3.2&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;For manual set-up or altering, they can be found in the &lt;code&gt;~/proftpd/etc/&lt;/code&gt; of the installation directory, for example:&lt;code&gt;~/proftpd/etc/proftpd.conf&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Manual Configuration&lt;/strong&gt; (if you did not use the bash script or skipped step 3.2)&lt;/p&gt;
+
+&lt;p&gt;In the Global Section of the &lt;code&gt;proftpd.conf&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+User my_username
+Group my_username
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;In the &lt;Limit ALL&gt; section of the &lt;code&gt;proftpd.conf&lt;/code&gt; change &lt;code&gt;my_username&lt;/code&gt; to your Feral username to give yourself a full access account.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+AllowUser my_username
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;These are the partial line changes you want to change with your own path in the &lt;code&gt;proftpd.conf&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+/media/DiskID/home/my_username
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4&gt;sftp.conf&lt;/h4&gt;
+
+&lt;p&gt;Change the port to a different number (between 6000 and 50000)&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+Port 23001
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;These are the partial line changes you want to change with your own path in the &lt;code&gt;sftp.conf&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+/media/DiskID/home/my_username
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4&gt;ftps.conf&lt;/h4&gt;
+
+&lt;p&gt;Change the port to a different number (between 6000 and 50000)&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+Port 23002
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;These are the partial line changes you want to change with your own path in the &lt;code&gt;ftps.conf&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+/media/DiskID/home/my_username
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3&gt;Step 6: Create our main user with full access&lt;/h3&gt;
+
+&lt;p&gt;This command will automatically create a user using &lt;strong&gt;1:&lt;/strong&gt; You slot userrname &lt;strong&gt;2:&lt;/strong&gt; Your UID and GID. This user is already configured in the proftpd.conf for full access if you used the bash script or Step 3.2.&lt;/p&gt;
+
+&lt;p&gt;Use this command to create the main user and enter a password when prompted.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+~/proftpd/bin/ftpasswd --passwd --name $(whoami) --file ~/proftpd/etc/ftpd.passwd --uid $(id -u $(whoami)) --gid $(id -g $(whoami)) --home $HOME --shell /bin/false
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Important note:&lt;/strong&gt; This user (with your username) will not be jailed. This is a full access account. This is for your use and not public sharing.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Explanation: using UID and GID:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Do these commands in SSH, where &lt;code&gt;my_username&lt;/code&gt; is your Feral username&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+id -u my_username
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+id -g my_username
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;For example:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+id -u superguy
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Returns:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+1032
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;And then:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+id -g superguy
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Returns:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+1032
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;This will give you &lt;strong&gt;your&lt;/strong&gt; UID and GID, which in this example are both &lt;strong&gt;1032&lt;/strong&gt;. When creating a user if you provide the UID and GID listed from those commands you will have your full permissions when accessing the slot. The username does not matter as long as the UID and GID match. This is important for using some apps like WinSCP or when creating an account for yourself.&lt;/p&gt;
+
+&lt;h3&gt;Step 7: Creating users and groups using ftpasswd:&lt;/h3&gt;
+
+&lt;p&gt;These users are all jailed by default.&lt;/p&gt;
+
+&lt;p&gt;There is an Add user script linked near the end of this section.&lt;/p&gt;
+
+&lt;p&gt;Replace &lt;code&gt;my_username&lt;/code&gt; with the username of the user you want to add. Add you Jail path after &lt;code&gt;$HOME&lt;/code&gt;, for example &lt;code&gt;$HOME/private/jail&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+~/proftpd/bin/ftpasswd --passwd --name my_username --file ~/proftpd/etc/ftpd.passwd --uid 5001 --gid 5001 --home $HOME --shell /bin/false
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Now we add that user to a group:&lt;/p&gt;
+
+&lt;p&gt;Replace &lt;code&gt;my_username&lt;/code&gt; with the username of the user you want to add to the group &lt;code&gt;proftpdgroup&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+~/proftpd/bin/ftpasswd --group --name proftpdgroup --file ~/proftpd/etc/ftpd.group --gid 5001 --member my_username
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Please see then end of the FAQ for an easy way to add users.&lt;/p&gt;
+
+&lt;p&gt;To change an existing users password use this command:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+~/proftpd/bin/ftpasswd --passwd --name=my_username --change-password --file ~/proftpd/etc/ftpd.passwd
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Here&amp;rsquo;s a script that can make adding users much easier&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Grab it at pastebin here &lt;a href=&quot;http://pastebin.com/fYh1Nw8i&quot;&gt;Create user script&lt;/a&gt; and save it where ever you want:&lt;/p&gt;
+
+&lt;p&gt;For example:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+~/bin/pftpdadduser
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Edit it to match your settings, defaults are set for the guide.&lt;/p&gt;
+
+&lt;p&gt;Mark it as executable with:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+chmod 700 ~/bin/pftpdadduser
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Invoke it:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+pftpdadduser &amp;lt;name&amp;gt;(optional)
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;It will find the next available ID and then ask you for a name, or you can invoke it with a name.&lt;/p&gt;
+
+&lt;h3&gt;Step 8: Jail your users:&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Important note:&lt;/strong&gt; Don&amp;rsquo;t forget changes made to the proftpd.conf, sftp.conf and ftps.conf will require proftpd to restarted for the changes to take effect. See Step 9 for restart commands.&lt;/p&gt;
+
+&lt;p&gt;Inside the:&lt;/p&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;h6&gt;Permissions&lt;/h6&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;p&gt;Section of the proftpd.conf you will find that a jail has already been set up. The proftpd.conf uses a read only jail for all users who are not specifically named with &amp;ldquo;AllowUser&amp;rdquo; inside the &lt;Limit ALL&gt; section. Any users you create will be jailed by default.&lt;/p&gt;
+
+&lt;p&gt;The existing jail example is for rtorrent/data so all you need to do is create a user whose &amp;mdash;home is:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+/media/DiskID/home/my_username/private/rtorrent/data
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;This way when they log in they will be put into this folder. If you don&amp;rsquo;t give them a &amp;mdash;home that corresponds to the configured jails they will get a blank listing and may not be able to navigate to the jail.&lt;/p&gt;
+
+&lt;p&gt;To add more jails use the example described next.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1:&lt;/strong&gt; Choose or create a folder to lock them in. Then use the relative path to that folder in the commands below for &amp;mdash;home.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+~/proftpd/bin/ftpasswd --passwd --name my_username --file ~/proftpd/etc/ftpd.passwd --uid 5001 --gid 5001 --home $HOME/path/to/jail --shell /bin/false
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;For example:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+~/proftpd/bin/ftpasswd --passwd --name finesse --file ~/proftpd/etc/ftpd.passwd --uid 5001 --gid 5001 --home $HOME/private/rtorrent/data --shell /bin/false
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2:&lt;/strong&gt; Edit your:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+~/proftpd/etc/proftpd.conf
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Then add the following. The example code below makes a &lt;strong&gt;read only jail&lt;/strong&gt; some with SFTP specific commands.&lt;/p&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;h1&gt;Note: You need to specify a users root/home directory when using ftpasswd&lt;/h1&gt;
+
+&lt;p&gt;&lt;Directory  /media/DiskID/home/my_username/path/to/jail&gt;&lt;/p&gt;
+
+&lt;h1&gt;STAT LSTAT are specific to SFTP only. See below&lt;/h1&gt;
+
+&lt;p&gt;&lt;Limit STAT LSTAT DIRS READ&gt;
+AllowAll
+&lt;/Limit&gt;
+&lt;/Directory&gt;
+```&lt;/p&gt;
+
+&lt;p&gt;If you want to be able to follow symlinks outside the allowed directory you will need to add a new &lt;Directory&gt; section for each folder, for example:&lt;/p&gt;
+
+&lt;p&gt;If you created this symlink to deluge completed inside you proftpd_pub directory like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+ln -s ~/private/deluge/completed ~/proftpd_pub/downloads
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;You would need to add the following to proftpd.conf to give them read only access.&lt;/p&gt;
+
+&lt;p&gt;```
+&lt;Directory  /media/sda1/home/finesse/private/deluge/completed/&gt;&lt;/p&gt;
+
+&lt;h1&gt;STAT LSTAT are specific to SFTP only. See below&lt;/h1&gt;
+
+&lt;p&gt;&lt;Limit STAT LSTAT DIRS READ&gt;
+AllowAll
+&lt;/Limit&gt;
+&lt;/Directory&gt;
+```&lt;/p&gt;
+
+&lt;p&gt;So on and so forth.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;AllowAll&lt;/strong&gt; or &lt;strong&gt;AllowUser&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The use of &lt;code&gt;AllowAll&lt;/code&gt; means that any non main user has read only access to the default jails in the default &lt;code&gt;proftpd.conf&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can remove this and use &lt;code&gt;AllowUser&lt;/code&gt; insted in this way:&lt;/p&gt;
+
+&lt;p&gt;```
+&lt;Directory  /media/sda1/home/finesse/private/deluge/completed/&gt;&lt;/p&gt;
+
+&lt;h1&gt;STAT LSTAT are specific to SFTP only. See below&lt;/h1&gt;
+
+&lt;p&gt;&lt;Limit STAT LSTAT DIRS READ&gt;
+AllowUser my_username
+&lt;/Limit&gt;
+&lt;/Directory&gt;
+```&lt;/p&gt;
+
+&lt;p&gt;In this example only &lt;code&gt;my_username&lt;/code&gt; has read only access to this jail. You can add more than one user.&lt;/p&gt;
+
+&lt;p&gt;This will let you fine tune access to the jails.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Make a jail writeable so a user can upload.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;To make a directory writeable so users can upload to it you would add WRITE permissions.&lt;/p&gt;
+
+&lt;p&gt;The default setup is read only by default on all example jails using this setup.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+&amp;lt;Limit STAT LSTAT DIRS READ&amp;gt;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;To make it so we can upload we simply need to add WRITE to the allowed permissions for this jail. So it becomes.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+&amp;lt;Limit WRITE STAT LSTAT DIRS READ&amp;gt;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;That is it, this jail is now writable and users can upload.&lt;/p&gt;
+
+&lt;p&gt;If you wanted to fine tune their upload permissions you would break down the WRITE permission into it component parts. What this means is that WRITE is a group of commands covering:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+APPE, DELE, MKD, RMD, RNTO, STOR, STOU, XMKD, XRMD
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;So instead of WRITE you could allow the specific permissions only.&lt;/p&gt;
+
+&lt;p&gt;Please see the Useful links section at the end of the FAQ for info on directives you can use in the proftpd.conf and the use of Limits.&lt;/p&gt;
+
+&lt;h3&gt;Step 9: Let&amp;rsquo;s start ProFTPD:&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Important note:&lt;/strong&gt; If you make changes to the proftpd.conf you will need to restart it for these changes to take effect.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Before you start proftpd make sure you have configured your jails. Conf file changes require you restart proftpd to take effect.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This is how you would have both sftp and ftps at the same time. You will need to run two instances of proftpd using different configurations using these commands.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+~/proftpd/sbin/proftpd -c ~/proftpd/etc/sftp.conf
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;And/Or&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+~/proftpd/sbin/proftpd -c ~/proftpd/etc/ftps.conf
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;You will see some errors here about PRIVS, but that is completely normal, you should be able to now FTP to the port defined in your config files.&lt;/p&gt;
+
+&lt;p&gt;If you see an error about truncated data on certain lines this is due to there being no new,blank line at the end of the relevant config files. Pastebin removes them but proftpd looks for this /n or blank line at the end of a config file. You can ignore this error or simply edit the files and add a blank new line at the end then save.&lt;/p&gt;
+
+&lt;p&gt;Do this command to see if it/they are running:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+ps x | grep proftpd | grep -v grep
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;You will see one or more results like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+4880 ?    Ss     0:00 proftpd: (accepting connections)
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;We are only interested in the results that end with:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+proftpd: (accepting connections)
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;These are the actual SFTP and/or FTPS proftpd processes.&lt;/p&gt;
+
+&lt;p&gt;To kill the process so you can restart them use this:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+kill -9 PID
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Where PID is the number listed in the &lt;code&gt;ps x | grep proftpd | grep -v grep&lt;/code&gt; command we used.&lt;/p&gt;
+
+&lt;p&gt;or&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+killall -9 proftpd
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;To kill all processes. You can safely ignore any permission denied errors.&lt;/p&gt;
+
+&lt;h3&gt;Step 10: Connecting to my Server&lt;/h3&gt;
+
+&lt;p&gt;The process is the same as normal:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.feralhosting.com/faq/view?question=187&quot;&gt;FTP and SFTP basics &amp;ndash; Filezilla&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Host&lt;/strong&gt;: server.feralhosting.com
+&lt;strong&gt;username&lt;/strong&gt;: whatever user names you created
+&lt;strong&gt;port&lt;/strong&gt;: as you defined in the config files.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;SFTP Public/Private Keys (optional)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The sftp.conf has been configured to accept and use key pairs. There is just one things you must do to make it work. You must convert it to &lt;code&gt;SSH RFC 4716&lt;/code&gt; format. This is not as complicated as it sounds.&lt;/p&gt;
+
+&lt;p&gt;The sftp.conf has been configured to look for keyfiles already, all you need to do is:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1:&lt;/strong&gt; Convert the public key to  &lt;code&gt;SSH RFC 4716&lt;/code&gt; format.
+&lt;strong&gt;2:&lt;/strong&gt; Upload it to the &lt;code&gt;~/proftpd/etc/sftp/authorized_keys/&lt;/code&gt; directory
+&lt;strong&gt;3:&lt;/strong&gt; Rename the file to match the username of the user it is authenticating. You can have multiple copies of the same files with different usernames.&lt;/p&gt;
+
+&lt;p&gt;It will then work the next time a user tries to authenticate using a matching private key-file.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;On Windows:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;If you are on Windows and you used &lt;a href=&quot;https://www.feralhosting.com/faq/view?question=13&quot;&gt;Puttygen&lt;/a&gt; to create your keyfile, just open it up in Puttygen and save the public key as shown, with no file extension.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/Software/proftpd%20-%20Installing%20an%20FTP%20daemon%20for%20extra%20accounts/puttygen1.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/Software/proftpd%20-%20Installing%20an%20FTP%20daemon%20for%20extra%20accounts/puttygen2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now upload this file named after your proftpd user to:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+~/proftpd/etc/sftp/authorized_keys/
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Then use this command in SSH to give all files in that directory 600 permissions.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+find ~/proftpd/etc/sftp/authorized_keys/ -type f -exec chmod 600 {} \;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;On Unix:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+ssh-keygen -e -f /path/to/file
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;For example:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+ssh-keygen -e -f ~/.ssh/authorized_keys
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Note: I could only make it return the first line of multiple lines in this. If anyone has a solutions to this please update the FAQ. I suggest using the command directly on the openSSH format private or public keys.&lt;/p&gt;
+
+&lt;h3&gt;Quick FAQs:&lt;/h3&gt;
+
+&lt;p&gt;Q: I get permission errors uploading files or trying to change permissions.&lt;/p&gt;
+
+&lt;p&gt;A: This is disabled in the proftp.conf in the SITE CHMOD section. Use the &lt;code&gt;AllowUser Username&lt;/code&gt; directive inside the Limit tags to overcome this on a per user basis&lt;/p&gt;
+
+&lt;p&gt;Q: &amp;ldquo;Failed to retrieve directory listing&amp;rdquo; and &amp;ldquo;Failed to parse returned path.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;A: Your users Jail home must correspond to an existing Jail path. IF you have made changes to any of the conf files don&amp;rsquo;t forget to restart proftpd as shown in Step 9&lt;/p&gt;
+
+&lt;h3&gt;Useful Links:&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.proftpd.org/docs/faq/linked/faq.html&quot;&gt;Proftpd FAQ&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.proftpd.org/docs/howto/index.html&quot;&gt;Howto index&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.proftpd.org/docs/howto/Limit.html&quot;&gt;Limits&lt;/a&gt;
+&lt;a href=&quot;http://www.proftpd.org/docs/howto/Controls.html&quot;&gt;Controls via mod_ctrls&lt;/a&gt;
+&lt;a href=&quot;http://www.proftpd.org/docs/directives/linked/configuration.html&quot;&gt;directives list&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.proftpd.org/docs/modules/index.html&quot;&gt;Core Modules&lt;/a&gt;
+&lt;a href=&quot;http://www.proftpd.org/docs/contrib/index.html&quot;&gt;Contrib Modules&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.proftpd.org/docs/example-conf.html&quot;&gt;example-conf&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 12 Jun 2013 13:30:00 +0100</pubDate>
+        <link>feralhosting.github.io/software/2013/06/12/proftpd-Installing-an-FTP-daemon-for-extra-accounts/</link>
+        <guid isPermaLink="true">feralhosting.github.io/software/2013/06/12/proftpd-Installing-an-FTP-daemon-for-extra-accounts/</guid>
+      </item>
+    
+      <item>
         <title>Front page</title>
         <description>&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/OBCzjyQ.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
