@@ -56,7 +56,7 @@ var left_value = left.value;
 	.replace(/!\[(.*)\]\((.*)\)/gmi,'[img]$2[/img]') //image
 	//
 	.replace(/\x5B(.*)\x5D\x28(.+)(\s".*")\x29/gmi,'[url=$2]$1[/url]') // url
-	.replace(/\x5B(.*)\x5D\x28(.+)\x29/gmi,'[url=$2]$1[/url]') // url
+	.replace(/\[(.+?)\]\((.+?)\)/gmi,'[url=$2]$1[/url]') // url
 	//
 	.replace(/\*\*\*([^\*].*?)\*\*\*/gmi, "[b][i]$1[/i][/b]") // bold + itlaic
 	.replace(/\*\*([^\*].*?)\*\*/gmi, "[b]$1[/b]") // bold
