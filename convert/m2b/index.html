@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if IE 8]>               <html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
 <meta charset="utf-8" />
@@ -24,90 +24,90 @@ function convert()
 var left = document.getElementById("left_ta");
 var right = document.getElementById("right_ta");
 var left_value = left.value;
-	//general Markdown conversion
-	left_value = left_value
-	//
-	.replace(/^(.+)(\n|\r\n)(\x3D+\s*(\n|\r\n)?)$/gmi, "[h1]$1[/h1]") // h1
-	.replace(/^(.+)(\n|\r\n)(\x2D+\s*(\n|\r\n)?)$/gmi, "[h2]$1[/h2]") // h2
-	//
-	.replace(/^[#]{6,6}\s*(.*[^\s])\s*[#]{6,6}\n?$/gmi, "[h6]$1[/h6]") // h4
-	.replace(/^[#]{6,6}\s*(.*)\n?$/gmi, "[h6]$1[/h6]") // h4
-	//
-	.replace(/^[#]{5,5}\s*(.*[^\s])\s*[#]{5,5}\n?$/gmi, "[h5]$1[/h5]") // h4
-	.replace(/^[#]{5,5}\s*(.*)\n?$/gmi, "[h5]$1[/h5]") // h4
-	//
-	.replace(/^[#]{4,4}\s*(.*[^\s])\s*[#]{4,4}\n?$/gmi, "[h4]$1[/h4]") // h4
-	.replace(/^[#]{4,4}\s*(.*)\n?$/gmi, "[h4]$1[/h4]") // h4
-	//
-	.replace(/^[#]{3,3}\s*(.*[^\s])\s*[#]{3,3}\n?$/gmi, "[h3]$1[/h3]") // h3
-	.replace(/^[#]{3,3}\s?(.*)\n?$/gmi, "[h3]$1[/h3]") // h3
-	//
-	.replace(/^[#]{2,2}\s*(.*[^\s])\s*[#]{2,2}\n?$/gmi, "[h2]$1[/h2]") // h2
-	.replace(/^[#]{2,2}\s*(.*)\n?$/gmi, "[h2]$1[/h2]") // h2
-	//
-	.replace(/^[#]{1,1}\s*(.*[^\s])\s*[#]{1,1}\n?$/gmi, "[h1]$1[/h1]") // h1
-	.replace(/^[#]{1,1}\s*(.*)\n?$/gmi, "[h1]$1[/h1]") // h1
-	//
+    //general Markdown conversion
+    left_value = left_value
+    //
     .replace(/\[(.+?)\]\((.+?)(\s".*")?\)/gmi,'[url=$2]$1[/url]') // url
-    ///
-	.replace(/^\t|[ ]{4,4}(.*)/gmi, "$1")  //code; strips tabs
-	.replace(/^\`{3,3}(.*)\n((?:.|\n)+?)\n\`{3,3}\n?$/gmi, "[code]$2[/code]")	// back ticks
-	.replace(/\`([^\`].*?)\`/gmi, "[i]$1[/i]")  // back ticks
-	//
+    //
+    .replace(/^(.+)(\n|\r\n)(\x3D+\s*(\n|\r\n)?)$/gmi, "[h1]$1[/h1]") // h1
+    .replace(/^(.+)(\n|\r\n)(\x2D+\s*(\n|\r\n)?)$/gmi, "[h2]$1[/h2]") // h2
+    //
+    .replace(/^[#]{6,6}\s*(.*[^\s])\s*[#]{6,6}\n?$/gmi, "[h6]$1[/h6]") // h4
+    .replace(/^[#]{6,6}\s*(.*)\n?$/gmi, "[h6]$1[/h6]") // h4
+    //
+    .replace(/^[#]{5,5}\s*(.*[^\s])\s*[#]{5,5}\n?$/gmi, "[h5]$1[/h5]") // h4
+    .replace(/^[#]{5,5}\s*(.*)\n?$/gmi, "[h5]$1[/h5]") // h4
+    //
+    .replace(/^[#]{4,4}\s*(.*[^\s])\s*[#]{4,4}\n?$/gmi, "[h4]$1[/h4]") // h4
+    .replace(/^[#]{4,4}\s*(.*)\n?$/gmi, "[h4]$1[/h4]") // h4
+    //
+    .replace(/^[#]{3,3}\s*(.*[^\s])\s*[#]{3,3}\n?$/gmi, "[h3]$1[/h3]") // h3
+    .replace(/^[#]{3,3}\s?(.*)\n?$/gmi, "[h3]$1[/h3]") // h3
+    //
+    .replace(/^[#]{2,2}\s*(.*[^\s])\s*[#]{2,2}\n?$/gmi, "[h2]$1[/h2]") // h2
+    .replace(/^[#]{2,2}\s*(.*)\n?$/gmi, "[h2]$1[/h2]") // h2
+    //
+    .replace(/^[#]{1,1}\s*(.*[^\s])\s*[#]{1,1}\n?$/gmi, "[h1]$1[/h1]") // h1
+    .replace(/^[#]{1,1}\s*(.*)\n?$/gmi, "[h1]$1[/h1]") // h1
+    //
+    .replace(/^\t|[ ]{4,4}(.*)/gmi, "$1")  //code; strips tabs
+    .replace(/^\`{3,3}(.*)\n((?:.|\n)+?)\n\`{3,3}\n?$/gmi, "[code]$2[/code]")   // back ticks
+    .replace(/\`([^\`].*?)\`/gmi, "[i]$1[/i]")  // back ticks
+    //
     .replace(/\[!\[.*?\]\((.*?)\)\]\((.*?)\)/gmi,'[img]$1[/img]\nClickable image was pointing to [url=$2]here[/url]') //image
-	.replace(/!\[(.*)\]\((.*)\)/gmi,'[img]$2[/img]') //image
-	//
-	.replace(/\*\*\*([^\*].*?)\*\*\*/gmi, "[b][i]$1[/i][/b]") // bold + itlaic
-	.replace(/\*\*([^\*].*?)\*\*/gmi, "[b]$1[/b]") // bold
-	.replace(/\*([^\*].*?)\*/gmi, "[i]$1[/i]")	// italic
-	//
-	right.value = left_value;
-	console.log('converted');
+    .replace(/!\[(.*)\]\((.*)\)/gmi,'[img]$2[/img]') //image
+    //
+    .replace(/\*\*\*([^\*].*?)\*\*\*/gmi, "[b][i]$1[/i][/b]") // bold + itlaic
+    .replace(/\*\*([^\*].*?)\*\*/gmi, "[b]$1[/b]") // bold
+    .replace(/\*([^\*].*?)\*/gmi, "[i]$1[/i]")  // italic
+    //
+    right.value = left_value;
+    console.log('converted');
 }
 </script>
 </head>
 <body>
 
-	<div class="row">
-		<div class="large-12 columns">
-			<h2>Markdown to BBcode</h2>
+    <div class="row">
+        <div class="large-12 columns">
+            <h2>Markdown to BBcode</h2>
             <a class="small button" href="https://github.com/feralhosting/markdown-to-bbcode">Fork/Contribute to this version</a>
             <a class="small button" href="http://feralhosting.github.io/">Return to feralhosting.github.io</a>
             <a class="small button" href="http://feralhosting.github.io/convert/b2m/index.html">BBCode to Markdown</a>
             <a class="small button" href="https://www.feralhosting.com/faq/">Return to Feral FAQs</a>
             <a class="small button" href="http://github.com/JonDum/BBCode-To-Markdown-Converter">Credits</a>            
-			<hr />
-		</div>
-	</div>
+            <hr />
+        </div>
+    </div>
 
-	<div class="row">
-		<div class="large-12 columns">
-			<!-- Grid Example -->
-			<div class="row">
-				<div class="large-12 columns">
-					<div class="panel">
-						<p>
-						Paste your Markdown formatted text into the top box and Feral FAQ formatted BBCode appears in the bottom. Indented code will have the space/tabs stripped. You have to manually apply <kbd>[code][/code]</kbd> tags to these. Github style <kbd>```</kbd> code will be replaced with <kbd>[code]some code[/code]</kbd> tags.
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="large-12 columns mycustom1">
-					<div class="panel textdivsize">
-						<textarea id="left_ta" class="textareasize" onChange="convert()" onKeyUp="convert()" placeholder="Enter your Markdown formatted text here" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your Markdown formatted text here'"></textarea>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="large-12 columns mycustom1">
-					<div class="panel textdivsize">
-						<textarea id="right_ta" class="textareasize" placeholder="Your BBCode formatted text will be automatically shown in this box" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your BBCode formatted text will be automatically shown in this box'"></textarea>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="row">
+        <div class="large-12 columns">
+            <!-- Grid Example -->
+            <div class="row">
+                <div class="large-12 columns">
+                    <div class="panel">
+                        <p>
+                        Paste your Markdown formatted text into the top box and Feral FAQ formatted BBCode appears in the bottom. Indented code will have the space/tabs stripped. You have to manually apply <kbd>[code][/code]</kbd> tags to these. Github style <kbd>```</kbd> code will be replaced with <kbd>[code]some code[/code]</kbd> tags.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns mycustom1">
+                    <div class="panel textdivsize">
+                        <textarea id="left_ta" class="textareasize" onChange="convert()" onKeyUp="convert()" placeholder="Enter your Markdown formatted text here" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your Markdown formatted text here'"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns mycustom1">
+                    <div class="panel textdivsize">
+                        <textarea id="right_ta" class="textareasize" placeholder="Your BBCode formatted text will be automatically shown in this box" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your BBCode formatted text will be automatically shown in this box'"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
   <script>
   document.write('<script src=' +
   ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
@@ -150,26 +150,26 @@ var left_value = left.value;
   <script>
     $(document).foundation();
   </script>
-	<script type="text/javascript">
-		var textBoxl = document.getElementById("left_ta");
-		var textBoxr = document.getElementById("right_ta");
-		textBoxl.onfocus = function() {
-			textBoxl.select();
+    <script type="text/javascript">
+        var textBoxl = document.getElementById("left_ta");
+        var textBoxr = document.getElementById("right_ta");
+        textBoxl.onfocus = function() {
+            textBoxl.select();
 
-			textBoxl.onmouseup = function() {
-				textBoxl.onmouseup = null;
-				return false;
-			};
-		};
-			textBoxr.onfocus = function() {
-			textBoxr.select();
+            textBoxl.onmouseup = function() {
+                textBoxl.onmouseup = null;
+                return false;
+            };
+        };
+            textBoxr.onfocus = function() {
+            textBoxr.select();
 
-			textBoxr.onmouseup = function() {
-				textBoxr.onmouseup = null;
-				return false;
-			};
-		};
-		// http://stackoverflow.com/questions/5797539/jquery-select-all-text-from-a-textarea
-	</script>
+            textBoxr.onmouseup = function() {
+                textBoxr.onmouseup = null;
+                return false;
+            };
+        };
+        // http://stackoverflow.com/questions/5797539/jquery-select-all-text-from-a-textarea
+    </script>
 </body>
 </html>
