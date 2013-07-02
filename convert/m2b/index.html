@@ -52,6 +52,7 @@ var left_value = left.value;
     //
     .replace(/^\t|[ ]{4,4}(.*)/gmi, "$1")  //code; strips tabs
     .replace(/^\`{3,3}(.*)\n((?:.|\n)+?)\n\`{3,3}\n?$/gmi, "[code]$2[/code]")   // back ticks
+    .replace(/^\~{3,3}(.*)\n((?:.|\n)+?)\n\~{3,3}\n?$/gmi, "[code]$2[/code]")   // tilde
     .replace(/\`([^\`].*?)\`/gmi, "[i]$1[/i]")  // back ticks
     //
     .replace(/\[!\[.*?\]\((.*?)\)\]\((.*?)\)/gmi,'[img]$1[/img]\nClickable image was pointing to [url=$2]here[/url]') //image
@@ -87,7 +88,7 @@ var left_value = left.value;
                 <div class="large-12 columns">
                     <div class="panel">
                         <p>
-                        Paste your Markdown formatted text into the top box and Feral FAQ formatted BBCode appears in the bottom. Indented code will have the space/tabs stripped. You have to manually apply <kbd>[code][/code]</kbd> tags to these. Github style <kbd>```</kbd> code will be replaced with <kbd>[code]some code[/code]</kbd> tags.
+                        Paste your Markdown formatted text into the top box and Feral FAQ formatted BBCode appears in the bottom. Indented code will have the space/tabs stripped. You have to manually apply <kbd>[code][/code]</kbd> tags to these. Github style <kbd>```</kbd> code tags or <kbd>~~~</kbd> will be replaced with <kbd>[code]some code[/code]</kbd> tags.
                         </p>
                         <p>
                         For <kbd>H1</kbd> and <kbd>H2</kbd> tags do not use <kbd>#</kbd> and <kbd>##</kbd>. Instead use <kbd>===</kbd> underneath for <kbd>H1</kbd> and <kbd>---</kbd> underneath for <kbd>H2</kbd> or they will not be converted. So for example:
