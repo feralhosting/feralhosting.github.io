@@ -45,7 +45,7 @@ left_value = left_value
 	.replace(/\[i\]((?:.|\n)+?)\[\/i\]/gmi, "`$1`")	 //italic; replace [i] $1 [/i] with ` $1 `
 	.replace(/\[em\]((?:.|\n)+?)\[\/em\]/gmi, "`$1`")  //italic; replace [em] $1 [/em] with ` $1 `
 	//
-	.replace(/\[code\]((?:.|\n)+?)\[\/code\]/gmi, "```\n$1\n```\n")  //code; replace [code] $1 [/code] with $1 also adds a new line. Feral specific.
+	.replace(/\[code\]((?:.|\n)+?)\[\/code\]/gmi, "~~~\n$1\n~~~\n")  //code; replace [code] $1 [/code] with $1 also adds a new line. Feral specific.
 	//
 	.replace(/\[img\]((?:.|\n)+?)\[\/img\]/gmi,'![]($1)')
 	//
