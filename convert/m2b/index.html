@@ -53,7 +53,7 @@ var left_value = left.value;
     .replace(/^\t|[ ]{4,4}(.*)/gmi, "$1")  //code; strips tabs
     .replace(/^\`{3,3}(.*)\n((?:.|\n)+?)\n\`{3,3}\n?$/gmi, "[code]$2[/code]")   // back ticks
     .replace(/^\~{3,3}(.*)\n((?:.|\n)+?)\n\~{3,3}\n?$/gmi, "[code]$2[/code]")   // tilde
-    .replace(/\`([^\`].*?)\`/gmi, "[i]$1[/i]")  // back ticks
+    .replace(/\`([^\`].*?)\`/gmi, "[code single]$1[/code]")  // inline code
     //
     .replace(/\[!\[.*?\]\((.*?)\)\]\((.*?)\)/gmi,'[img]$1[/img]\nClickable image was pointing to [url=$2]here[/url]') //image
     .replace(/!\[(.*)\]\((.*)\)/gmi,'[img]$2[/img]') //image
