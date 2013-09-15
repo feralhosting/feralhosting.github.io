@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if IE 8]>               <html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 
 <head>
@@ -29,80 +29,81 @@ var left_value = left.value;
 
 //general BBcode conversion
 left_value = left_value
-	.replace(/^\[h1\](.*)\[\/h1\]\s*$/gmi, "$1\n===\n") //h4; replace [h1] $1 [/h1] with # $1 adds a new line. Feral specific.
-	.replace(/^\[h2\](.*)\[\/h2\]\s*$/gmi, "$1\n---\n") //h2; replace [h2] $1 [/h2] with ## $1 adds a new line. Feral specific.
-	.replace(/^\[h3\](.*)\[\/h3\]\s*$/gmi, "### $1\n") //h3; replace [h3] $1 [/h3] with ### $1 adds a new line. Feral specific.
-	.replace(/^\[h4\](.*)\[\/h4\]\s*$/gmi, "#### $1\n") //h4; replace [h4] $1 [/h4] with #### $1 adds a new line. Feral specific.
-	.replace(/^\[h5\](.*)\[\/h5\]\s*$/gmi, "##### $1\n") //h2; replace [h5] $1 [/h5] with ##### $1 adds a new line. Feral specific.
-	.replace(/^\[h6\](.*)\[\/h6\]\s*$/gmi, "###### $1\n") //h3; replace [h6] $1 [/h6] with ###### $1 adds a new line. Feral specific.
-	//
-	.replace(/\[b\]\[i\]((?:.|\n)+?)\[\/i\]\[\/b\]/gmi, "***$1***") //bold + italic; replace [b][i] $1 [/i][/b] with ***$1***
-	.replace(/\[i\]\[b\]((?:.|\n)+?)\[\/b\]\[\/i\]/gmi, "***$1***") //bold + italic; replace [b][i] $1 [/i][/b] with ***$1***
-	//
-	.replace(/\[b\]((?:.|\n)+?)\[\/b\]/gmi, "**$1**") //bold; replace [b] $1 [/b] with ** $1 **
-	.replace(/\[strong\]((?:.|\n)+?)\[\/strong\]/gmi, "**$1**") //bold; replace [b] $1 [/b] with ** $1 **
-	//
-	.replace(/\[i\]((?:.|\n)+?)\[\/i\]/gmi, "`$1`")	 //italic; replace [i] $1 [/i] with ` $1 `
-	.replace(/\[em\]((?:.|\n)+?)\[\/em\]/gmi, "`$1`")  //italic; replace [em] $1 [/em] with ` $1 `
-	//
-	.replace(/\[code\]((?:.|\n)+?)\[\/code\]/gmi, "~~~\n$1\n~~~\n")  //code; replace [code] $1 [/code] with $1 also adds a new line. Feral specific.
-	//
-	.replace(/\[img\]((?:.|\n)+?)\[\/img\]/gmi,'![]($1)')
-	//
-	.replace(/\[url\]((?:.|\n)+?)\[\/url\]/gmi,'[$1]($1)')
-	.replace(/\[url=(.+?)\]((?:.|\n)+?)\[\/url\]/gmi,'[$2]($1)');					
-	//.replace(/\[s\]((?:.|\n)+?)\[\/s\]/gmi, "~~	$1 ~~") //strikethrough; replace [s] $1 [/s] with ~~ $1 ~~
-	//.replace(/\[color\=.+?\]((?:.|\n)+?)\[\/color\]/gmi, "$1") //remove [color] tags
-	//.replace(/(\n)\[\*\]/gmi, "$1* ") //lists; replace lists with + unordered lists.
-	//.replace(/\[\/*list\]/gmi, '')
-	//.replace(/\[u\]((?:.|\n)+?)\[\/u\]/gmi, "*$1*")	 //underline; replace [u] $1 [/u] with * $1 *
-right.value = left_value;	
+    .replace(/^\[h1\](.*)\[\/h1\]\s*$/gmi, "$1\n===\n") //h4; replace [h1] $1 [/h1] with # $1 adds a new line. Feral specific.
+    .replace(/^\[h2\](.*)\[\/h2\]\s*$/gmi, "$1\n---\n") //h2; replace [h2] $1 [/h2] with ## $1 adds a new line. Feral specific.
+    .replace(/^\[h3\](.*)\[\/h3\]\s*$/gmi, "### $1\n") //h3; replace [h3] $1 [/h3] with ### $1 adds a new line. Feral specific.
+    .replace(/^\[h4\](.*)\[\/h4\]\s*$/gmi, "#### $1\n") //h4; replace [h4] $1 [/h4] with #### $1 adds a new line. Feral specific.
+    .replace(/^\[h5\](.*)\[\/h5\]\s*$/gmi, "##### $1\n") //h2; replace [h5] $1 [/h5] with ##### $1 adds a new line. Feral specific.
+    .replace(/^\[h6\](.*)\[\/h6\]\s*$/gmi, "###### $1\n") //h3; replace [h6] $1 [/h6] with ###### $1 adds a new line. Feral specific.
+    //
+    .replace(/\[b\]\[i\]((?:.|\n)+?)\[\/i\]\[\/b\]/gmi, "***$1***") //bold + italic; replace [b][i] $1 [/i][/b] with ***$1***
+    .replace(/\[i\]\[b\]((?:.|\n)+?)\[\/b\]\[\/i\]/gmi, "***$1***") //bold + italic; replace [b][i] $1 [/i][/b] with ***$1***
+    //
+    .replace(/\[b\]((?:.|\n)+?)\[\/b\]/gmi, "**$1**") //bold; replace [b] $1 [/b] with ** $1 **
+    .replace(/\[strong\]((?:.|\n)+?)\[\/strong\]/gmi, "**$1**") //bold; replace [b] $1 [/b] with ** $1 **
+    //
+    .replace(/\[i\]((?:.|\n)+?)\[\/i\]/gmi, "`$1`")  //italic; replace [i] $1 [/i] with ` $1 `
+    .replace(/\[em\]((?:.|\n)+?)\[\/em\]/gmi, "`$1`")  //italic; replace [em] $1 [/em] with ` $1 `
+    //
+    .replace(/\[code\]((?:.|\n)+?)\[\/code\]/gmi, "~~~\n$1\n~~~\n")  //code; replace [code] $1 [/code] with $1 also adds a new line. Feral specific.
+    .replace(/\[code single\]((?:.|\n)+?)\[\/code\]/gmi, "`$1\`")  //code; replace [code single] $1 [/code] with $1. Feral specific.
+    //
+    .replace(/\[img\]((?:.|\n)+?)\[\/img\]/gmi,'![]($1)')
+    //
+    .replace(/\[url\]((?:.|\n)+?)\[\/url\]/gmi,'[$1]($1)')
+    .replace(/\[url=(.+?)\]((?:.|\n)+?)\[\/url\]/gmi,'[$2]($1)');                   
+    //.replace(/\[s\]((?:.|\n)+?)\[\/s\]/gmi, "~~   $1 ~~") //strikethrough; replace [s] $1 [/s] with ~~ $1 ~~
+    //.replace(/\[color\=.+?\]((?:.|\n)+?)\[\/color\]/gmi, "$1") //remove [color] tags
+    //.replace(/(\n)\[\*\]/gmi, "$1* ") //lists; replace lists with + unordered lists.
+    //.replace(/\[\/*list\]/gmi, '')
+    //.replace(/\[u\]((?:.|\n)+?)\[\/u\]/gmi, "*$1*")    //underline; replace [u] $1 [/u] with * $1 *
+right.value = left_value;   
 console.log('converted');
 }
 </script>
 </head>
 <body>
 
-	<div class="row">
-		<div class="large-12 columns">
-			<h2>BBCode to Markdown</h2>
+    <div class="row">
+        <div class="large-12 columns">
+            <h2>BBCode to Markdown</h2>
             <a class="small button" href="https://github.com/feralhosting/BBCode-To-Markdown-Converter">Fork/Contribute to this version</a>
             <a class="small button" href="http://feralhosting.github.io/">Return to feralhosting.github.io</a>
             <a class="small button" href="http://feralhosting.github.io/convert/m2b/index.html">Markdown to BBCode</a>
             <a class="small button" href="https://www.feralhosting.com/faq/">Return to Feral FAQs</a>
             <a class="small button" href="http://github.com/JonDum/BBCode-To-Markdown-Converter">Credits</a>            
-			<hr />
-		</div>
-	</div>
+            <hr />
+        </div>
+    </div>
 
-	<div class="row">
-		<div class="large-12 columns">
-			<!-- Grid Example -->
-			<div class="row">
-				<div class="large-12 columns">
-					<div class="panel">
-						<p>
-						Paste your Feral BBcode into the top box, and a Markdown formatted version appears on the bottom. BBCode <kbd>[code]some code[/code]</kbd> tags will be replaced with <kbd>```</kbd> and not tabs/spaces. This converter only replaces tags Feral uses.
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="large-12 columns mycustom1">
-					<div class="panel textdivsize">
-						<textarea id="left_ta" class="textareasize" onChange="convert()" onKeyUp="convert()" placeholder="Enter your BBCode formatted text here" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your BBCode formatted text here'"></textarea>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="large-12 columns mycustom1">
-					<div class="panel textdivsize">
-						<textarea id="right_ta" class="textareasize" placeholder="Your Markdown formatted text will be automatically shown in this box" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Markdown formatted text will be automatically shown in this box'"></textarea>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="row">
+        <div class="large-12 columns">
+            <!-- Grid Example -->
+            <div class="row">
+                <div class="large-12 columns">
+                    <div class="panel">
+                        <p>
+                        Paste your Feral BBcode into the top box, and a Markdown formatted version appears on the bottom. BBCode <kbd>[code]some code[/code]</kbd> tags will be replaced with <kbd>```</kbd> and not tabs/spaces. This converter only replaces tags Feral uses.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns mycustom1">
+                    <div class="panel textdivsize">
+                        <textarea id="left_ta" class="textareasize" onChange="convert()" onKeyUp="convert()" placeholder="Enter your BBCode formatted text here" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your BBCode formatted text here'"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns mycustom1">
+                    <div class="panel textdivsize">
+                        <textarea id="right_ta" class="textareasize" placeholder="Your Markdown formatted text will be automatically shown in this box" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Markdown formatted text will be automatically shown in this box'"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
   <script>
   document.write('<script src=' +
   ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
@@ -145,26 +146,26 @@ console.log('converted');
   <script>
     $(document).foundation();
   </script>
-	<script type="text/javascript">
-		var textBoxl = document.getElementById("left_ta");
-		var textBoxr = document.getElementById("right_ta");
-		textBoxl.onfocus = function() {
-			textBoxl.select();
+    <script type="text/javascript">
+        var textBoxl = document.getElementById("left_ta");
+        var textBoxr = document.getElementById("right_ta");
+        textBoxl.onfocus = function() {
+            textBoxl.select();
 
-			textBoxl.onmouseup = function() {
-				textBoxl.onmouseup = null;
-				return false;
-			};
-		};
-			textBoxr.onfocus = function() {
-			textBoxr.select();
+            textBoxl.onmouseup = function() {
+                textBoxl.onmouseup = null;
+                return false;
+            };
+        };
+            textBoxr.onfocus = function() {
+            textBoxr.select();
 
-			textBoxr.onmouseup = function() {
-				textBoxr.onmouseup = null;
-				return false;
-			};
-		};
-		// http://stackoverflow.com/questions/5797539/jquery-select-all-text-from-a-textarea
-	</script>
+            textBoxr.onmouseup = function() {
+                textBoxr.onmouseup = null;
+                return false;
+            };
+        };
+        // http://stackoverflow.com/questions/5797539/jquery-select-all-text-from-a-textarea
+    </script>
 </body>
 </html>
