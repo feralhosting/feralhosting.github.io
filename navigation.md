@@ -26,7 +26,7 @@
 
 [Installable software]()
 
-  * [Installing new software]()
+  * [Installing new software](Installable%20software/Installing%20new%20software/readme.md)
   * [Selecting an rtorrent version](Installable%20software/Installing%20new%20software/readme.md)
   * [Uninstalling software](Installable%20software/Selecting%20an%20rtorrent%20version/readme.md)
   * [Restarting - rtorrent - Deluge - Transmission - MySQL](Installable%20software/Restarting%20-%20rtorrent%20-%20Deluge%20-%20Transmission%20-%20MySQL/readme.md)
