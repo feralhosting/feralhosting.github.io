@@ -1,94 +1,111 @@
 
-[h3]How do I create a FAQ?[/h3]
-Click on this link: [url=https://www.feralhosting.com/faq/add]Add a Question[/url] and paste in your formatted text as the answer. Your question is the Title of the FAQ or guide. Open a ticket as outlined below to inform staff of the new FAQ.
+### How do I create a FAQ?
+
+Click on this link: [Add a Question](https://www.feralhosting.com/faq/add) and paste in your formatted text as the answer. Your question is the Title of the FAQ or guide. Open a ticket as outlined below to inform staff of the new FAQ.
 
 See below for formatting guidelines
 
-[h3]How do I edit a FAQ?[/h3]
-Simply [b]click on edit at the bottom of the FAQ[/b] and submit your edited version along with reason for the change.
+### How do I edit a FAQ?
+
+Simply **click on edit at the bottom of the FAQ** and submit your edited version along with reason for the change.
 
 You can use Markdown to edit or create a FAQ if you wish. You will have to convert it to Feral BBCode using this tool:
 
-[url=http://feralhosting.github.io/convert/m2b/index.html]Markdown to BBCode[/url]
+[Markdown to BBCode](http://feralhosting.github.io/convert/m2b/index.html)
 
-[b]Important note:[/b] Please use fenced code blocks and in-line URLs (not the type linked at the bottom of the page). See formatting guidelines below for more info
+**Important note:** Please use fenced code blocks and in-line URLs (not the type linked at the bottom of the page). See formatting guidelines below for more info
 
 Here are some good on-line Markdown editors.
 
-[url=http://benweet.github.io/stackedit/]http://benweet.github.io/stackedit/[/url]
+[http://benweet.github.io/stackedit/](http://benweet.github.io/stackedit/)
 
-[url=http://markable.in/editor/]http://markable.in/[/url] 
+[http://markable.in/](http://markable.in/editor/) 
 
-[url=http://dillinger.io/]http://dillinger.io[/url]
+[http://dillinger.io](http://dillinger.io/)
 
 There is also a BBCode to Markdown tool for porting an existing FAQ so it can be edited or updated in Markdown and then converted back.
 
-[url=http://feralhosting.github.io/convert/b2m/index.html]BBCode to Markdown[/url]
+[BBCode to Markdown](http://feralhosting.github.io/convert/b2m/index.html)
 
 Copy and paste the returned text into a new FAQ or an edit. The layout and formatting will be correct, there is no need to change it.
 
 Please don't get too creative with the tags. These tools are very specific to the tags used here at Feral, which are documented below.
 
-These are some Tags that work for formatting. They all need to be properly closed using [code single][[][/[]/tag][/code].
-For example you would close code like this: [code single][[][/[]/code][/code]
+These are some Tags that work for formatting. They all need to be properly closed using `[/tag]`.
+For example you would close code like this: `[/code]`
 
 [code single][[][/[]h1][/code] Title h1 [code single][/h1][/code]
 
 Here is the markdown equivalent:
 
 Markdown Title h1
-[code single]===[/code]
+`===`
 
-[code single][[][/[]h2][/code] Title h2 [code single][/h2][/code]
+`[h2]` Title h2 `[/h2]`
 
 Here is the markdown equivalent:
 
 Markdown Title h2
-[code single]---[/code]
+`---`
 
-[code single][[][/[]h3][/code] Title h3 [code single][/h3][/code]
-
-Here is the markdown equivalent:
-
-[code single]###[/code] Markdown Title h3
-
-[code single][[][/[]h4][/code] Title h4 [code single][/h4][/code]
+`[h3]` Title h3 `[/h3]`
 
 Here is the markdown equivalent:
 
-[code single]####[/code] Markdown Title h4
+`###` Markdown Title h3
 
-[code single][[][/[]h5][/code] Title h5 [code single][/h5][/code]
-
-Here is the markdown equivalent:
-
-[code single]#####[/code] Markdown Title h5
-
-[code single][[][/[]h6][/code] Title h6 [code single][/h6][/code]
+`[h4]` Title h4 `[/h4]`
 
 Here is the markdown equivalent:
 
-[code single]######[/code] Markdown Title h6
+`####` Markdown Title h4
 
-[code single][[][/[]b][/code] bold [code single][/b][/code]
-
-Here is the markdown equivalent:
-
-[code single]**[/code] bold [code single]**[/code]
-
-[code single][[][/[]code][/code] Standard code blocks [code single][[][/[]/code][/code]
+`[h5]` Title h5 `[/h5]`
 
 Here is the markdown equivalent:
 
-[code single]~~~[/code]
-Standard code blocks
-[code single]~~~[/code]
+`#####` Markdown Title h5
 
-[code single][[][/[]code single][/code] in-line code [code single][[][/[]/code][/code]
+`[h6]` Title h6 `[/h6]`
 
 Here is the markdown equivalent:
 
-[code single]`[/code] in-line code [code single]`[/code]
+`######` Markdown Title h6
+
+`[b]` bold `[/b]`
+
+Here is the markdown equivalent:
+
+`**` bold `**`
+
+~~~
+[code]Standard code blocks with a single line[/code]
+~~~
+
+~~~
+[code]Standard
+code 
+blocks
+with
+multiple
+lines[/code]
+~~~
+
+Here is the markdown equivalent:
+
+
+    ~~~
+    Standard code blocks
+    ~~~
+
+
+`[code single]in-line code[/code]`
+
+Here is the markdown equivalent:
+
+~~~
+`in-line code`
+~~~
 
 [code single][[][/[]strong][/code] strong (can/will be manually replaced by italic) [code single][/strong][/code]
 
