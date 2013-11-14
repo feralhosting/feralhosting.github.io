@@ -12,7 +12,7 @@
 
 [General]()
 
-  * [How long until my slot is activated](#https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/General/How%20long%20until%20my%20slot%20is%20activated/readme.md)
+  * [How long until my slot is activated](#https://rawgithub.com/feralhosting/feralfilehosting/master/Feral%20Wiki/General/How%20long%20until%20my%20slot%20is%20activated/readme.md)
   * [Your Feral slot is active - Part 1 - The Account Manager]()
   * [Your Feral slot is active - Part 2 - Using your slot]()
   * [Using your account - common questions]()
