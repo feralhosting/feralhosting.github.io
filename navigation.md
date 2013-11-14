@@ -79,7 +79,7 @@
   * []()
   * []()
 
-[SFTP and FTP]()
+[More Categories]()
 
   * # HTTP
 
@@ -187,6 +187,6 @@
   * []()
   * []()
 
-[Dedicated servers](https://raw.github.com/feralhosting/feralhosting.github.io/master/Dedicated%20servers/Pending%20OVH%20upgrades/readme.md)
+  * # Dedicated servers
 
   * [Pending OVH upgrades](Dedicated%20servers/Pending%20OVH%20upgrades/readme.md)
