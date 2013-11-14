@@ -1,7 +1,6 @@
-# feralhosting.com WIKI
-
 [feralhosting]()
 
+  * [Index Page](http://feralhosting.github.io/#!index.md)
   * # Feralhosting.com
   * [feralhosting.com](https://www.feralhosting.com/pricing)
   * [FAQ/Wiki](https://www.feralhosting.com/faq/)
@@ -80,25 +79,9 @@
   * []()
   * []()
 
+[SFTP and FTP]()
 
-[HTTP]()
-
-  * []()
-  * []()
-  * []()
-  * []()
-  * []()
-  * []()
-  * []()
-  * []()
-  * []()
-  * []()
-  * []()
-  * []()
-  * []()
-  * []()
-
-[Other software]()
+  * # HTTP
 
   * []()
   * []()
@@ -115,7 +98,7 @@
   * []()
   * []()
 
-[Slot Plans]()
+  * # Other software
 
   * []()
   * []()
@@ -132,7 +115,24 @@
   * []()
   * []()
 
-[Software]()
+  * # Slot Plans
+
+  * []()
+  * []()
+  * []()
+  * []()
+  * []()
+  * []()
+  * []()
+  * []()
+  * []()
+  * []()
+  * []()
+  * []()
+  * []()
+  * []()
+
+  * # Software
 
   * []()
   * []()
@@ -177,7 +177,7 @@
   * []()
   * []()
 
-[Linux Command-Line (Advanced)]()
+  * # Linux Command-Line (Advanced)
 
   * []()
   * []()
@@ -187,6 +187,6 @@
   * []()
   * []()
 
-[Dedicated servers]()
+[Dedicated servers](https://raw.github.com/feralhosting/feralhosting.github.io/master/Dedicated%20servers/Pending%20OVH%20upgrades/readme.md)
 
-  * [Pending OVH upgrades]()
+  * [Pending OVH upgrades](Dedicated%20servers/Pending%20OVH%20upgrades/readme.md)
