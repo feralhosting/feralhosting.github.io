@@ -98,8 +98,9 @@ Here is the markdown equivalent:
     Standard code blocks
     ~~~
 
-
-`[code single]in-line code[/code]`
+~~~
+[code single]in-line code[/code]
+~~~
 
 Here is the markdown equivalent:
 
@@ -220,7 +221,6 @@ So in this case, use this command to add the `PATH` to the `~/.bashrc`. This wil
 [[ ! "$(grep '~/.local/bin' ~/.bashrc)" ]] && echo 'PATH=~/.local/bin:$PATH' >> ~/.bashrc ; source ~/.bashrc
 ~~~
 
-
 ### File Hosting
 
 **IMAGES**
@@ -296,7 +296,7 @@ You will see most FAQs use this format:
 wget -qO ~/thisfile.sh www.somelink.com/script.sh
 ~~~
 
-This basically just puts the file in the slot root with the use of `~/`
+This basically just puts the file in the slot root with the use of `~/` using the filename specified.
 
 [tar](http://linux.die.net/man/1/tar)
 
@@ -308,12 +308,14 @@ This basically just puts the file in the slot root with the use of `~/`
 `-v` verbose
 `-C` to directory
 
+**Important note:** `tar` can detect the compression used so it is not actually required to specify it. This means the use of `z` and `j` are optional.
+
 ~~~
-tar xzf archive.tar.gz
+tar xf archive.tar.gz
 ~~~
 
 ~~~
-tar xzf archive.tar.gz -C some/directory/
+tar xf archive.tar.gz -C some/directory/
 ~~~
 
 [unzip](http://linux.die.net/man/1/unzip)
@@ -330,7 +332,7 @@ unzip -qo archive.zip
 unzip -qo archive.zip -d some/directory/
 ~~~
 
-**screen**
+### screen
 
 Send a command to a running screen and window of choice.
 
@@ -374,7 +376,9 @@ kill -9 PID
 killall -9 -u $(whoami) processname
 ~~~
 
-Use **TAB** to autocomplete parts of your SSH commands.
+### `TAB` autocomplete
+
+Use `TAB` to autocomplete parts of your SSH commands.
 
 For example: if I am in my home folder and I wish to go to my 
 
@@ -410,7 +414,7 @@ cd ~/private/rtorrent/
 
 So now I press enter. I have now used TAB to auto-complete parts of my **cd** command.
 
-**github url shortening**
+### github url shortening
 
 [http://git.io/](http://git.io/)
 
