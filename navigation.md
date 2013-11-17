@@ -73,10 +73,9 @@
   * [How to move data between two servers in windows]()
   * [Setting up a remote watch directory using CuteFTP and uTorrent]()
   * [What to do if FTP speeds are slow]()
+  * [SFTP Mounted Drives in Windows]()
 
-[More Categories]()
-
-  * # HTTP
+[HTTP]()
 
   * [Putting your WWW folder to use]()
   * [Redirecting HTTP to HTTPS]()
@@ -94,7 +93,7 @@
   * [How do I connect to MySQL in PHP]()
   * [Owncloud - Basic setup]()
 
-  * # Other software
+[Other software]()
 
   * [Rutorrent - Installing the fileshare plugin]()
   * [Rutorrent - Colored Ratio Column Plugin]()
@@ -112,11 +111,11 @@
   * [Remote Torrent Adder - Adding torrents to your slot from Chrome]()
   * [OSX - Homebrew]()
 
-  * # Slot Plans
+[Slot Plans]()
 
   * [Testing the Speed of Your Server]()
 
-  * # Software
+[Software]()
 
   * [Generic software install guide - ZNC as an example]()
   * [Subsonic 4.8 or Madsonic 5.0]()
@@ -151,7 +150,7 @@
   * [Python - How to install]()
   * [WhatFreeGrab - Basic usage]()
 
-  * # Linux Command-Line (Advanced)
+[Linux Command-Line (Advanced)]()
 
   * [Get help for any command in the Shell]()
   * [Making a torrent in the Shell]()
@@ -181,6 +180,6 @@
   * [Split a Large File Into Multiple Smaller Sized Ones]()
   * [Raspberry Pi - Sync with rysnc]()
 
-  * # Dedicated servers
+[Dedicated servers]()
 
   * [Pending OVH upgrades](Dedicated%20servers/Pending%20OVH%20upgrades/readme.md)
