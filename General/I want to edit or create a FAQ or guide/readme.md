@@ -34,7 +34,9 @@ Please don't get too creative with the tags. These tools are very specific to th
 These are some Tags that work for formatting. They all need to be properly closed using `[/tag]`.
 For example you would close code like this: `[/code]`
 
-[code single][[][/[]h1][/code] Title h1 [code single][/h1][/code]
+### Title tags:
+
+`[h1]` Title h1 `[/h1][/code]
 
 Here is the markdown equivalent:
 
@@ -72,11 +74,7 @@ Here is the markdown equivalent:
 
 `######` Markdown Title h6
 
-`[b]` bold `[/b]`
-
-Here is the markdown equivalent:
-
-`**` bold `**`
+### Code blocks:
 
 ~~~
 [code]Standard code blocks with a single line[/code]
@@ -93,10 +91,11 @@ lines[/code]
 
 Here is the markdown equivalent:
 
-
     ~~~
     Standard code blocks
     ~~~
+
+In-line code blocks:
 
 ~~~
 [code single]in-line code[/code]
@@ -108,7 +107,32 @@ Here is the markdown equivalent:
 `in-line code`
 ~~~
 
-`[strong]` strong (can/will be manually replaced by italic) `[/strong]`
+### CODE blocks specifics:
+
+For formatted code blocks follow this rule below:
+
+When using the code tag use this rule for formatting regarding new lines please.
+
+~~~
+Blank line above
+
+[code]Some code wrapped in code tags[/code]
+No new/blank line below.
+~~~
+
+This rule also applies for tags that also apply formatting above and below the line like the `H2` and `H3` tag do, but not the Bold tag for example. You can leave a blank line below the `b`,`i`,`img`,`url` tags.
+
+This rule does not apply when using markdown and the converter to format the document.
+
+### Bold and Italic tags
+
+`[b]` bold `[/b]`
+
+Here is the markdown equivalent:
+
+`**` bold `**`
+
+`[strong]` strong (will be manually replaced by bold) `[/strong]`
 
 Here is the markdown equivalent:
 
@@ -143,7 +167,7 @@ This result:
 Here is the markdown equivalent:
 
 ~~~
-![http://i.imgur.com/pRfcyAi.jpg](http://i.imgur.com/pRfcyAi.jpg)
+![](http://i.imgur.com/pRfcyAi.jpg)
 ~~~
 
 ### URL and URL tags
@@ -158,15 +182,13 @@ This URL will be automatically detected and give you a click-able link, for exam
 
 http://i.imgur.com/pRfcyAi.jpg
 
-**URLs with a description** - should be used in a specific way using the URL tag.
+URLs with a description - should be used in a specific way using the URL tag.
 
 ~~~
 [url=http://i.imgur.com/pRfcyAi.jpg]Link description[/url]
 ~~~
 
 Will give us this result:
-
-[url=http://i.imgur.com/pRfcyAi.jpg]Link description[/url]
 
 [Link description](http://i.imgur.com/pRfcyAi.jpg)
 
@@ -175,23 +197,6 @@ Here is the markdown equivalent:
 ~~~
 [Link description](http://i.imgur.com/pRfcyAi.jpg)
 ~~~
-
-### CODE blocks specifics
-
-For `pre` formatted code blocks follow this rule below:
-
-When using the code tag use this rule for formatting regarding new lines please.
-
-~~~
-Blank line above
-
-[code]Some code wrapped in code tags[/code]
-No new/blank line below.
-~~~
-
-This rule also applies for tags that also apply formatting above and below the line like the `H2` and `H3` tag do, but not the Bold tag for example. You can leave a blank line below the `b`,`i`,`img`,`url` tags.
-
-This rule does not apply when using markdown and the converter to format the document.
 
 ### Custom Software
 
@@ -235,7 +240,7 @@ Important files will be re-hosted on a more permanent platform when needed. If t
 
 [http://www.mediafire.com/](http://www.mediafire.com/) is a good choice.
 
-**Closing: At the end of the FAQ**
+### Closing: At the end of the FAQ
 
 Please leave 4 blank lines at the end of any question you edit or submit. This is a visual thing.
 
