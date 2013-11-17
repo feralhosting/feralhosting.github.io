@@ -17,11 +17,11 @@ You can use Markdown to edit or create a FAQ if you wish. You will have to conve
 
 Here are some good on-line Markdown editors.
 
-[https://stackedit.io/](https://stackedit.io/)
+[stackedit.io](https://stackedit.io/)
 
-[http://markable.in/](http://markable.in/editor/) 
+[markable.in](http://markable.in/editor/) 
 
-[http://dillinger.io](http://dillinger.io/)
+[dillinger.io](http://dillinger.io/)
 
 There is also a BBCode to Markdown tool for porting an existing FAQ so it can be edited or updated in Markdown and then converted back.
 
