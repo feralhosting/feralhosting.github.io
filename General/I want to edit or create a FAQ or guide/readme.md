@@ -107,249 +107,373 @@ Here is the markdown equivalent:
 `in-line code`
 ~~~
 
-[code single][[][/[]strong][/code] strong (can/will be manually replaced by italic) [code single][/strong][/code]
+`[strong]` strong (can/will be manually replaced by italic) `[/strong]`
 
 Here is the markdown equivalent:
 
-[code single]**[/code] strong [code single]**[/code]
+`**` strong `**`
 
-[code single][[][/[]i][/code] italic [code single][/i][/code]
-
-Here is the markdown equivalent:
-
-[code single]*[/code] italic [code single]*[/code]
-
-[code single][[][/[]em][/code] italic (can/will be manually replaced by italic) [code single][/em][/code]
+`[i]` italic `[/i]`
 
 Here is the markdown equivalent:
 
-[code single]*[/code] italic [code single]*[/code]
+`*` italic `*`
 
-[h3]Image tags[/h3]
+`[em]` italic (can/will be manually replaced by italic) `[/em]`
+
+Here is the markdown equivalent:
+
+`*` italic `*`
+
+### Image tags
+
 Use this opening and closing tag for direct links to images.
 
 This example tag usages will give us:
 
-[code][[][/[]img]http://i.imgur.com/pRfcyAi.jpg[/img][/code]
+~~~
+[img]http://i.imgur.com/pRfcyAi.jpg[/img]
+~~~
+
 This result:
 
-[img]http://i.imgur.com/pRfcyAi.jpg[/img]
+![](http://i.imgur.com/pRfcyAi.jpg)
 
 Here is the markdown equivalent:
 
-[code]![http://i.imgur.com/pRfcyAi.jpg](http://i.imgur.com/pRfcyAi.jpg)[/code]
-[h3]URL and URL tags[/h3]
+~~~
+![http://i.imgur.com/pRfcyAi.jpg](http://i.imgur.com/pRfcyAi.jpg)
+~~~
+
+### URL and URL tags
+
 URLs are automatically detected and do not need a tag, so this:
 
-[code]http://i.imgur.com/pRfcyAi.jpg[/code]
+~~~
+http://i.imgur.com/pRfcyAi.jpg
+~~~
+
 This URL will be automatically detected and give you a click-able link, for example:
 
 http://i.imgur.com/pRfcyAi.jpg
 
-[b]URLs with a description[/b] - should be used in a specific way using the URL tag.
+**URLs with a description** - should be used in a specific way using the URL tag.
 
-[code][[][/[]url=http://i.imgur.com/pRfcyAi.jpg]Link description[/url][/code]
+~~~
+[url=http://i.imgur.com/pRfcyAi.jpg]Link description[/url]
+~~~
+
 Will give us this result:
 
 [url=http://i.imgur.com/pRfcyAi.jpg]Link description[/url]
 
+[Link description](http://i.imgur.com/pRfcyAi.jpg)
+
 Here is the markdown equivalent:
 
-[code][Link description](http://i.imgur.com/pRfcyAi.jpg)[/code]
-[h3]CODE blocks specifics[/h3]
-For [code single]pre[/code] formatted code blocks follow this rule below:
+~~~
+[Link description](http://i.imgur.com/pRfcyAi.jpg)
+~~~
+
+### CODE blocks specifics
+
+For `pre` formatted code blocks follow this rule below:
 
 When using the code tag use this rule for formatting regarding new lines please.
 
-[code]Blank line above
+~~~
+Blank line above
 
-[[][/[]code]Some code wrapped in code tags[[][/[]/code]
-No new/blank line below.[/code]
-This rule also applies for tags that also apply formatting above and below the line like 
-the [code single]H2[/code] and [code single]H3[/code] tag do, but not the Bold tag for example. You can leave a blank line below
-the [code single]b[/code],[code single]i[/code],[code single]img[/code],[code single]url[/code] tags.
+[code]Some code wrapped in code tags[/code]
+No new/blank line below.
+~~~
 
-[h3]Custom Software[/h3]
-Custom software installations that have a typical structures, such as [code single]~/something/bin[/code] should be installed to [code single]~/programs[/code]. The use this command to add it to the [code single]PATH[/code] if needed. This will fall in line with other software installation FAQs.
+This rule also applies for tags that also apply formatting above and below the line like the `H2` and `H3` tag do, but not the Bold tag for example. You can leave a blank line below the `b`,`i`,`img`,`url` tags.
 
-[code][[][/[][ ! "$(grep '~/programs/bin' ~/.bashrc)" ]] && echo 'PATH=~/programs/bin:$PATH' >> ~/.bashrc ; source ~/.bashrc[/code]
+This rule does not apply when using markdown and the converter to format the document.
+
+### Custom Software
+
+Custom software installations that have a typical structures, such as `~/something/bin` should be installed to `~/programs`. The use this command to add it to the [code single]PATH[/code] if needed. This will fall in line with other software installation FAQs.
+
+~~~
+[[ ! "$(grep '~/programs/bin' ~/.bashrc)" ]] && echo 'PATH=~/programs/bin:$PATH' >> ~/.bashrc ; source ~/.bashrc
+~~~
+
 Exceptions to the rule?
 
 1: Programs like AeroFS and Spideroak that do not have a directory structure that would work for the [code single]~/programs[/code] location or other self contained applications.
 
 2: Programs that might conflict with slot operations such as Python. Then use a custom location for this software. Try not to use a very complex or needlessly deep directory structure.
 
-[h3]Python and user mods.[/h3]
-When a [code single]--user[/code] mod is installed using the slot's included Python, it will always go to the location:
+### Python and user mods.
 
-[code]~/.local/bin[/code]
-So in this case, use this command to add the [code single]PATH[/code] to the [code single]~/.bashrc[/code]. This will fall in line with other Python FAQs.
+When a `--user` mod is installed using the slot's included Python, it will always go to the location:
 
-[code][[][/[][ ! "$(grep '~/.local/bin' ~/.bashrc)" ]] && echo 'PATH=~/.local/bin:$PATH' >> ~/.bashrc ; source ~/.bashrc[/code]
+~~~
+~/.local/bin
+~~~
 
-[h3]File Hosting[/h3]
-[b]IMAGES[/b]
+So in this case, use this command to add the `PATH` to the `~/.bashrc`. This will fall in line with other Python FAQs.
+
+~~~
+[[ ! "$(grep '~/.local/bin' ~/.bashrc)" ]] && echo 'PATH=~/.local/bin:$PATH' >> ~/.bashrc ; source ~/.bashrc
+~~~
+
+
+### File Hosting
+
+**IMAGES**
 
 When needed some images will be re-hosted, so use whatever you need/can when editing the faq.
 
-[url=http://imgur.com/]http://imgur.com/[/url] is a popular choice.
+[http://imgur.com/](http://imgur.com/) is a popular choice.
 
-[b]FILES[/b]
+**FILES**
 
 Important files will be re-hosted on a more permanent platform when needed. If this is important include this info in the ticket.
 
-[url=http://www.mediafire.com/]http://www.mediafire.com/[/url] is a good choice.
+[http://www.mediafire.com/](http://www.mediafire.com/) is a good choice.
 
-[b]Closing: At the end of the FAQ[/b]
+**Closing: At the end of the FAQ**
 
 Please leave 4 blank lines at the end of any question you edit or submit. This is a visual thing.
 
 Credit will be attributed to the original author(s) where needed manually. So do not worry about this.
 
-[b]After you have edited the guide please submit a ticket called:[/b]
+**After you have edited the guide please submit a ticket called:**
 
-[b]FAQ Edit - FAQ name - Category[/b]
+`FAQ Edit - FAQ name - Category`
 
 In the body submit a link to the FAQ you edited. So for example:
 
-[b]Title:[/b] FAQ Edit - I want to edit a FAQ or guide - General
+**Title:** FAQ Edit - I want to edit a FAQ or guide - General
 
-[b]Body:[/b] https://www.feralhosting.com/faq/view?question=122 I fixed a broken link.
+**Body:** https://www.feralhosting.com/faq/view?question=122 I fixed a broken link.
 
-[h3]Feral FAQ Cheat Sheet[/h3]
+### Feral FAQ Cheat Sheet
+
 What is this? this is a list of preferred formatting when adding certain info. Feel free to add to this.
 
-[b]Use [code single]$(whoami)[/code] and [code single]$(hostname)[/code] to automatically insert a users info.[/b]
+Use `$(whoami)` and `$(hostname)` to automatically insert a users info.
 
-[code]cd ~/www/$(whoami).$(hostname)/public_html/[/code]
-[b]The following command in SSH to see the hostname and IP[/b]
+~~~
+cd ~/www/$(whoami).$(hostname)/public_html/
+~~~
 
-[code]host $(hostname)[/code]
-[b]The following command in SSH to see the IP only[/b]
+The following command in SSH to see the `hostname` and IP:
 
-[code]hostname -i[/code]
-The following command to get your external IP
+~~~
+host $(hostname)
+~~~
 
-[code]curl -s icanhazip.com[/code]
-[b][url=http://linux.die.net/man/1/wget]wget[/url][/b]
+The following command in SSH to see the IP only:
 
--q quiet
--N Overwrite if newer or different (timestamps)
--O Save to file.
--P Set directory prefix to prefix. Is the directory where all other files and subdirectories will be saved to
+~~~
+hostname -i
+~~~
 
-[code]wget -q www.somelink.com/script.sh -O thisfile.sh[/code]
+The following command to get your external IP:
+
+~~~
+curl -s icanhazip.com
+~~~
+
+[wget](http://linux.die.net/man/1/wget)
+
+`-q` quiet
+`-N` Overwrite if newer or different (timestamps)
+`-O` Save to file.
+`-P` Set directory prefix to prefix. Is the directory where all other files and subdirectories will be saved to
+
+~~~
+wget -q www.somelink.com/script.sh -O thisfile.sh
+~~~
+
 You will see most FAQs use this format:
 
-[code]wget -qO ~/thisfile.sh www.somelink.com/script.sh[/code]
-This basically just puts the file in the slot root with the use of [code single]~/[/code]
+~~~
+wget -qO ~/thisfile.sh www.somelink.com/script.sh
+~~~
 
-[b][url=http://linux.die.net/man/1/tar]tar[/url][/b]
+This basically just puts the file in the slot root with the use of `~/`
 
--c create
--x extract
--z .gz or .tgz
--j .bz2
--f file
--v verbose
--C to directory
+[tar](http://linux.die.net/man/1/tar)
 
-[code]tar -xzf archive.tar.gz[/code]
-[code]tar -xzf archive.tar.gz -C some/directory/[/code]
-[b][url=http://linux.die.net/man/1/unzip]unzip[/url][/b]
+`-c` create
+`-x` extract
+`-z` .gz or .tgz
+`-j` .bz2
+`-f` file
+`-v` verbose
+`-C` to directory
 
--q quiet
--o overwrite
--d extract to directory 
+~~~
+tar xzf archive.tar.gz
+~~~
 
-[code]unzip -qo archive.zip[/code]
-[code]unzip -qo archive.zip -d some/directory/[/code]
-[b]screen[/b]
+~~~
+tar xzf archive.tar.gz -C some/directory/
+~~~
+
+[unzip](http://linux.die.net/man/1/unzip)
+
+`-q` quiet
+`-o` overwrite
+`-d` extract to directory 
+
+~~~
+unzip -qo archive.zip
+~~~
+
+~~~
+unzip -qo archive.zip -d some/directory/
+~~~
+
+**screen**
 
 Send a command to a running screen and window of choice.
 
-[code]screen -S screen-name -p 0 -X exec your-command-goes-here[/code]
-[code single]-S[/code] screen-name you want to match
-[code single]-p[/code] number of the screen window, 0 in this case sends it to the first.
-[code single]exec[/code] some-command
+~~~
+screen -S screen-name -p 0 -X exec your-command-goes-here
+~~~
 
-When using [b]screen[/b] give the window a name by using [b]-S[/b] for easier management. The word after the [b]-S[/b] is the name of the window, in this case rtorrent.
+`-S` screen-name you want to match
+`-p` number of the screen window, 0 in this case sends it to the first.
+`exec` some-command
+
+When using **screen** give the window a name by using **-S** for easier management. The word after the **-S** is the name of the window, in this case rtorrent.
 
 This will attach to a screen with this name:
 
-[code]screen -S rtorrent rtorrent[/code]
+~~~
+screen -S rtorrent rtorrent
+~~~
+
 This will attach to a screen with this name or create it if it doesn't:
 
-[code]screen -R rtorrent rtorrent[/code]
+~~~
+screen -R rtorrent rtorrent
+~~~
+
 Will start the selected process in the background as a daemon and detach from it immediately:
 
-[code]screen -dmS rtorrent rtorrent[/code]
-[b][url=http://linux.die.net/man/1/kill]kill[/url][/b]
+~~~
+screen -dmS rtorrent rtorrent
+~~~
 
-[code]kill -9 PID[/code]
-[b][url=http://linux.die.net/man/1/killall]killall[/url][/b]
+[kill](http://linux.die.net/man/1/kill)
 
-[code]killall -9 -u $(whoami) processname[/code]
-[b]Use [b]TAB[/b] to autocomplete parts of your SSH commands.[/b]
+~~~
+kill -9 PID
+~~~
+
+[killall](http://linux.die.net/man/1/killall)
+
+~~~
+killall -9 -u $(whoami) processname
+~~~
+
+Use **TAB** to autocomplete parts of your SSH commands.
 
 For example: if I am in my home folder and I wish to go to my 
 
-[code]~/private/rtorrent[/code]
+~~~
+~/private/rtorrent
+~~~
+
 I can do this
 
-[code]cd ~/p [b]TAB[/b][/code]
+~~~
+cd ~/p TAB
+~~~
+
 Which will give me this:
 
-[code]~/private/[/code]
-Unless I have more than one folder starting with [b]p[/b]. then I must give a second or third letter depending on how they conflict. In this case I do not have a conflicting folder name.
+~~~
+~/private/
+~~~
+
+Unless I have more than one folder starting with **p**. then I must give a second or third letter depending on how they conflict. In this case I do not have a conflicting folder name.
 
 Then if I do:
 
-[code]cd ~/private/r [b]TAB[/b][/code]
+~~~
+cd ~/private/r TAB
+~~~
+
 I will end up with this:
 
-[code]cd ~/private/rtorrent/[/code]
-So now I press enter. I have now used TAB to auto-complete parts of my [b]cd[/b] command.
+~~~
+cd ~/private/rtorrent/
+~~~
 
-[b]github url shortening[/b]
+So now I press enter. I have now used TAB to auto-complete parts of my **cd** command.
 
-[url=http://git.io/]http://git.io/[/url]
+**github url shortening**
 
-[url=https://github.com/blog/985-git-io-github-url-shortener]git-io-github-url-shortener[/url]
+[http://git.io/](http://git.io/)
+
+[git-io-github-url-shortener](https://github.com/blog/985-git-io-github-url-shortener)
 
 You can do it in SSH using this command.
 
-[code]curl -i http://git.io -F "url=YOU.URL.HERE"[/code]
-[b]Chaining Commands[/b]
+~~~
+curl -i http://git.io -F "url=YOU.URL.HERE"
+~~~
 
-The use of [code single]&&[/code] will move to the next command if the previous command was successful.
+**Chaining Commands**
 
-[code]cd ~/private && mkdir test && cd test[/code]
-So if the directory [code single]~/private[/code] did not exist the command would stop at the point where a single command did not execute successfully.
+The use of `&&` will move to the next command if the previous command was successful.
 
-The use is [code single];[/code] will just chain a series of commands. 
+~~~
+cd ~/private && mkdir test && cd test
+~~~
 
-[code]cd ~/private; mkdir test; cd test[/code]
-Here it will just do command one then execute the next until it reaches the end. So if [code single]~/private[/code] did not exist the command would create the [code single]test[/code] folder in the wrong place.
+So if the directory `~/private` did not exist the command would stop at the point where a single command did not execute successfully.
 
-[b]Run a process and send it to the background.[/b]
+The use is `;` will just chain a series of commands. 
 
-if you add a [code single]&[/code] to the end of your command it will be sent to the background as your run it.
+~~~
+cd ~/private; mkdir test; cd test
+~~~
 
-[code]./some/path/to/a/binary &[/code]
-[h3]Crontab[/h3]
+Here it will just do command one then execute the next until it reaches the end. So if `~/private` did not exist the command would create the `test` folder in the wrong place.
+
+**Run a process and send it to the background.**
+
+if you add a `&` to the end of your command it will be sent to the background as your run it.
+
+~~~
+./some/path/to/a/binary &
+~~~
+
+### Crontab
+
 To edit your crontab:
 
-[code]crontab -e[/code]
+~~~
+crontab -e
+~~~
+
 To execute a bash script from crontab you need to use this command:
 
-[code]bash -l[/code]
+~~~
+bash -l
+~~~
+
 For example:
 
-[code]@reboot bash -l ~/myscript.sh[/code]
+~~~
+@reboot bash -l ~/myscript.sh
+~~~
+
 You can use this command to easily create a cronjob for users in some sort of support capacity:
 
-[code](crontab -l ; echo "* * * * * some/cron/thing") |uniq - | crontab -[/code]
+~~~
+(crontab -l ; echo "* * * * * some/cron/thing") |uniq - | crontab -
+~~~
+
 This will create a specified cronjob while also checking to make sure it is not created more than once. So with a single command you can have create and insert a cronjob for a user. It only checks vs the last entry though.
 
 
