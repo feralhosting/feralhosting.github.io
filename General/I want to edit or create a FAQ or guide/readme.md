@@ -248,9 +248,7 @@ Please leave 4 blank lines at the end of any question you edit or submit. This i
 
 Credit will be attributed to the original author(s) where needed manually. So do not worry about this.
 
-**After you have edited the guide please submit a ticket called:**
-
-`FAQ Edit - FAQ name - Category`
+**Attention:** After you have edited the guide please submit a ticket using the title format `FAQ Edit - FAQ name - Category`
 
 In the body submit a link to the FAQ you edited. So for example:
 
@@ -433,7 +431,7 @@ You can do it in SSH using this command.
 curl -i http://git.io -F "url=YOU.URL.HERE"
 ~~~
 
-**Chaining Commands**
+### Chaining Commands
 
 The use of `&&` will move to the next command if the previous command was successful.
 
@@ -461,22 +459,24 @@ if you add a `&` to the end of your command it will be sent to the background as
 
 ### Crontab
 
-**Important note:** It is best to use full paths to the programs you wish to execute. To get the full path do this in SSH:
+**Important note:** It is generally best practice to use full paths to the programs you wish to execute. To get the full path do this in SSH:
 
 Use the `whereis` command to find the binary locations:
 
 ~~~
-whereis rsync
+whereis cp
 ~~~
 
+Will return something like this:
+
 ~~~
-rsync: /usr/bin/rsync /usr/bin/X11/rsync /usr/share/man/man1/rsync.1.gz
+cp: /bin/cp /usr/share/man/man1/cp.1.gz
 ~~~
 
 Here the path we need is:
 
 ~~~
-/usr/bin/rsync
+/bin/cp
 ~~~
 
 To edit your crontab:
