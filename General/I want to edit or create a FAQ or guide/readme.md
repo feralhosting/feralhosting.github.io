@@ -17,7 +17,7 @@ You can use Markdown to edit or create a FAQ if you wish. You will have to conve
 
 Here are some good on-line Markdown editors.
 
-[http://benweet.github.io/stackedit/](http://benweet.github.io/stackedit/)
+[https://stackedit.io/](https://stackedit.io/)
 
 [http://markable.in/](http://markable.in/editor/) 
 
