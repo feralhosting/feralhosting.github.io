@@ -36,12 +36,13 @@ For example you would close code like this: `[/code]`
 
 ### Title tags:
 
-`[h1]` Title h1 `[/h1][/code]
+`[h1]` Title h1 `[/h1]`
 
 Here is the markdown equivalent:
 
 Markdown Title h1
 `===`
+
 
 `[h2]` Title h2 `[/h2]`
 
@@ -49,6 +50,7 @@ Here is the markdown equivalent:
 
 Markdown Title h2
 `---`
+
 
 `[h3]` Title h3 `[/h3]`
 
@@ -144,7 +146,7 @@ Here is the markdown equivalent:
 
 `*` italic `*`
 
-`[em]` italic (can/will be manually replaced by italic) `[/em]`
+`[em]` italic (will be manually replaced by italic) `[/em]`
 
 Here is the markdown equivalent:
 
@@ -200,15 +202,15 @@ Here is the markdown equivalent:
 
 ### Custom Software
 
-Custom software installations that have a typical structures, such as `~/something/bin` should be installed to `~/programs`. The use this command to add it to the [code single]PATH[/code] if needed. This will fall in line with other software installation FAQs.
+Custom software installations that have a typical structures, such as `~/something/bin` should be installed to `~/programs`. The use this command to add it to the `PATH` if needed. This will fall in line with other software installation FAQs.
 
 ~~~
-[[ ! "$(grep '~/programs/bin' ~/.bashrc)" ]] && echo 'PATH=~/programs/bin:$PATH' >> ~/.bashrc ; source ~/.bashrc
+[[ ! "$(grep '~/programs/bin' ~/.bashrc)" ]] && echo 'export PATH=~/programs/bin:$PATH' >> ~/.bashrc ; source ~/.bashrc
 ~~~
 
 Exceptions to the rule?
 
-1: Programs like AeroFS and Spideroak that do not have a directory structure that would work for the [code single]~/programs[/code] location or other self contained applications.
+1: Programs like AeroFS and Spideroak that do not have a directory structure that would work for the `~/programs` location or other self contained applications.
 
 2: Programs that might conflict with slot operations such as Python. Then use a custom location for this software. Try not to use a very complex or needlessly deep directory structure.
 
@@ -223,7 +225,7 @@ When a `--user` mod is installed using the slot's included Python, it will alway
 So in this case, use this command to add the `PATH` to the `~/.bashrc`. This will fall in line with other Python FAQs.
 
 ~~~
-[[ ! "$(grep '~/.local/bin' ~/.bashrc)" ]] && echo 'PATH=~/.local/bin:$PATH' >> ~/.bashrc ; source ~/.bashrc
+[[ ! "$(grep '~/.local/bin' ~/.bashrc)" ]] && echo 'export PATH=~/.local/bin:$PATH' >> ~/.bashrc ; source ~/.bashrc
 ~~~
 
 ### File Hosting
@@ -459,6 +461,24 @@ if you add a `&` to the end of your command it will be sent to the background as
 
 ### Crontab
 
+**Important note:** It is best to use full paths to the programs you wish to execute. To get the full path do this in SSH:
+
+Use the `whereis` command to find the binary locations:
+
+~~~
+whereis rsync
+~~~
+
+~~~
+rsync: /usr/bin/rsync /usr/bin/X11/rsync /usr/share/man/man1/rsync.1.gz
+~~~
+
+Here the path we need is:
+
+~~~
+/usr/bin/rsync
+~~~
+
 To edit your crontab:
 
 ~~~
@@ -480,7 +500,7 @@ For example:
 You can use this command to easily create a cronjob for users in some sort of support capacity:
 
 ~~~
-(crontab -l ; echo "* * * * * some/cron/thing") |uniq - | crontab -
+(crontab -l ; echo "* * * * * some/cron/thing") | uniq - | crontab -
 ~~~
 
 This will create a specified cronjob while also checking to make sure it is not created more than once. So with a single command you can have create and insert a cronjob for a user. It only checks vs the last entry though.
