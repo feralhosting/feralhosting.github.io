@@ -98,7 +98,16 @@ lines[/code]
 Here is the markdown equivalent:
 
     ~~~
-    Standard code blocks
+    Standard code blocks with a single line
+    ~~~
+
+    ~~~
+    Standard
+    code 
+    blocks
+    with
+    multiple
+    lines
     ~~~
 
 In-line code blocks:
