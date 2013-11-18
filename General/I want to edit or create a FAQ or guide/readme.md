@@ -188,7 +188,7 @@ Bold and Italic tags
 Bold:
 
 ~~~
-[b] bold [/b]
+[b]bold[/b]
 ~~~
 
 Here is the markdown equivalent:
@@ -200,7 +200,7 @@ Here is the markdown equivalent:
 Strong:
 
 ~~~
-[strong] strong (will be manually replaced by bold) [/strong]
+[strong]strong (will be manually replaced by bold)[/strong]
 ~~~
 
 Here is the markdown equivalent:
@@ -212,7 +212,7 @@ Here is the markdown equivalent:
 Italic:
 
 ~~~
-[i] italic [/i]
+[i]italic[/i]
 ~~~
 
 Here is the markdown equivalent:
@@ -224,7 +224,7 @@ Here is the markdown equivalent:
 Emphasis:
 
 ~~~
-[em] emphasis (will be manually replaced by italic) [/em]
+[em]emphasis (will be manually replaced by italic)[/em]
 ~~~
 
 Here is the markdown equivalent:
