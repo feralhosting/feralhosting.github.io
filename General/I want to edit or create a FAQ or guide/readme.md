@@ -36,7 +36,7 @@ Please don't get too creative with the tags. These tools are very specific to th
 These are some Tags that work for formatting. They all need to be properly closed using `[/tag]`.
 For example you would close code like this: `[/code]`
 
-Title tags:
+Title tags
 ---
 
 `[h1]` Title h1 `[/h1]`
@@ -79,7 +79,7 @@ Here is the markdown equivalent:
 
 `######` Markdown Title h6
 
-Code blocks:
+Code blocks
 ---
 
 ~~~
@@ -113,7 +113,7 @@ Here is the markdown equivalent:
 `in-line code`
 ~~~
 
-CODE blocks specifics:
+CODE blocks specifics
 ---
 
 For formatted code blocks follow this rule below:
@@ -394,7 +394,7 @@ kill -9 PID
 killall -9 -u $(whoami) processname
 ~~~
 
-### `TAB` autocomplete
+### TAB autocomplete
 
 Use `TAB` to autocomplete parts of your SSH commands.
 
