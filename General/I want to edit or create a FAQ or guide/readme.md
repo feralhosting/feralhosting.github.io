@@ -39,45 +39,79 @@ For example you would close code like this: `[/code]`
 Title tags
 ---
 
-`[h1]` Title h1 `[/h1]`
+h1
+
+~~~
+[h1] Title h1 [/h1]
+~~~
 
 Here is the markdown equivalent:
 
+~~~
 Markdown Title h1
-`===`
+===
+~~~
 
+h2
 
-`[h2]` Title h2 `[/h2]`
+~~~
+[h2] Title h2 [/h2]
+~~~
 
 Here is the markdown equivalent:
 
+~~~
 Markdown Title h2
-`---`
+---
+~~~
 
+h3
 
-`[h3]` Title h3 `[/h3]`
-
-Here is the markdown equivalent:
-
-`###` Markdown Title h3
-
-`[h4]` Title h4 `[/h4]`
+~~~
+[h3] Title h3 [/h3]
+~~~
 
 Here is the markdown equivalent:
 
-`####` Markdown Title h4
+~~~
+### Markdown Title h3
+~~~
 
-`[h5]` Title h5 `[/h5]`
+h4
+
+~~~
+[h4] Title h4 [/h4]
+~~~
 
 Here is the markdown equivalent:
 
-`#####` Markdown Title h5
+~~~
+#### Markdown Title h4
+~~~
 
-`[h6]` Title h6 `[/h6]`
+h5
+
+~~~
+[h5] Title h5 [/h5]
+~~~
 
 Here is the markdown equivalent:
 
-`######` Markdown Title h6
+~~~
+##### Markdown Title h5
+~~~
+
+h6
+
+~~~
+[h6] Title h6 [/h6]
+~~~
+
+Here is the markdown equivalent:
+
+~~~
+###### Markdown Title h6
+~~~
 
 Code blocks
 ---
@@ -97,9 +131,13 @@ lines[/code]
 
 Here is the markdown equivalent:
 
+For single lines:
+
     ~~~
     Standard code blocks with a single line
     ~~~
+
+For multiple lines:
 
     ~~~
     Standard
@@ -143,29 +181,53 @@ This rule does not apply when using markdown and the converter to format the doc
 Bold and Italic tags
 ---
 
-`[b]` bold `[/b]`
+Bold:
+
+~~~
+[b] bold [/b]
+~~~
 
 Here is the markdown equivalent:
 
-`**` bold `**`
+~~~
+** bold **
+~~~
 
-`[strong]` strong (will be manually replaced by bold) `[/strong]`
+Strong:
 
-Here is the markdown equivalent:
-
-`**` strong `**`
-
-`[i]` italic `[/i]`
-
-Here is the markdown equivalent:
-
-`*` italic `*`
-
-`[em]` italic (will be manually replaced by italic) `[/em]`
+~~~
+[strong] strong (will be manually replaced by bold) [/strong]
+~~~
 
 Here is the markdown equivalent:
 
-`*` italic `*`
+~~~
+** strong **
+~~~
+
+Italic:
+
+~~~
+[i] italic [/i]
+~~~
+
+Here is the markdown equivalent:
+
+~~~
+* italic *
+~~~
+
+Emphasis:
+
+~~~
+[em] italic (will be manually replaced by italic) [/em]
+~~~
+
+Here is the markdown equivalent:
+
+~~~
+* emphasis *
+~~~
 
 Image tags
 ---
