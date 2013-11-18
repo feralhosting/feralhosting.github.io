@@ -42,7 +42,7 @@ Title tags
 h1
 
 ~~~
-[h1] Title h1 [/h1]
+[h1]Title h1[/h1]
 ~~~
 
 Here is the markdown equivalent:
@@ -55,7 +55,7 @@ Markdown Title h1
 h2
 
 ~~~
-[h2] Title h2 [/h2]
+[h2]Title h2[/h2]
 ~~~
 
 Here is the markdown equivalent:
@@ -68,7 +68,7 @@ Markdown Title h2
 h3
 
 ~~~
-[h3] Title h3 [/h3]
+[h3]Title h3[/h3]
 ~~~
 
 Here is the markdown equivalent:
@@ -80,7 +80,7 @@ Here is the markdown equivalent:
 h4
 
 ~~~
-[h4] Title h4 [/h4]
+[h4]Title h4[/h4]
 ~~~
 
 Here is the markdown equivalent:
@@ -92,7 +92,7 @@ Here is the markdown equivalent:
 h5
 
 ~~~
-[h5] Title h5 [/h5]
+[h5]Title h5[/h5]
 ~~~
 
 Here is the markdown equivalent:
@@ -104,7 +104,7 @@ Here is the markdown equivalent:
 h6
 
 ~~~
-[h6] Title h6 [/h6]
+[h6]Title h6[/h6]
 ~~~
 
 Here is the markdown equivalent:
@@ -194,7 +194,7 @@ Bold:
 Here is the markdown equivalent:
 
 ~~~
-** bold **
+**bold**
 ~~~
 
 Strong:
@@ -206,7 +206,7 @@ Strong:
 Here is the markdown equivalent:
 
 ~~~
-** strong **
+**strong**
 ~~~
 
 Italic:
@@ -218,7 +218,7 @@ Italic:
 Here is the markdown equivalent:
 
 ~~~
-* italic *
+*italic*
 ~~~
 
 Emphasis:
@@ -230,7 +230,7 @@ Emphasis:
 Here is the markdown equivalent:
 
 ~~~
-* emphasis *
+*emphasis*
 ~~~
 
 Image tags
