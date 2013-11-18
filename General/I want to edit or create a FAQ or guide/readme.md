@@ -116,9 +116,13 @@ Here is the markdown equivalent:
 Code blocks
 ---
 
+For single lines:
+
 ~~~
 [code]Standard code blocks with a single line[/code]
 ~~~
+
+For multiple lines:
 
 ~~~
 [code]Standard
@@ -220,7 +224,7 @@ Here is the markdown equivalent:
 Emphasis:
 
 ~~~
-[em] italic (will be manually replaced by italic) [/em]
+[em] emphasis (will be manually replaced by italic) [/em]
 ~~~
 
 Here is the markdown equivalent:
