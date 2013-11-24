@@ -46,8 +46,9 @@
 [SSH]()
 
   * [SSH guide basics - PuTTy](SSH/SSH%20guide%20basics%20-%20PuTTy/readme.md)
-  * [SSH guide basics - Mac](SSH/SSH%20guide%20basics%20-%20Mac/readme.md)
+  * [SSH guide basics - OS X](SSH/SSH%20guide%20basics%20-%20Mac/readme.md)
   * [SSH tunnels basics - Putty and setting a Socks proxy](SSH/SSH%20tunnels%20basics%20-%20Putty%20and%20setting%20a%20Socks%20proxy/readme.md)
+  * [SSH tunnels - OS X](SSH/SSH%20tunnels%20-%20OS%20X/readme.md)
   * [SSH tunnels - MyEnTunnel 3.5 using Plink and setting a Socks proxy](SSH/SSH%20tunnels%20-%20MyEnTunnel%203.5%20and%20Plink/readme.md)
   * [SSH tunnelled browser on your Android phone](SSH/SSH%20tunneled%20browser%20on%20your%20Android%20phone/readme.md)
   * [SSH Tunnels - How to use them with your applications](SSH/SSH%20Tunnels%20-%20How%20to%20use%20them%20with%20your%20applications/readme.md)
