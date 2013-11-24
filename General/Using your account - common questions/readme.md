@@ -15,14 +15,30 @@ Transmission + Transmission remote GUI - [Transmission and Transmission Remote G
 MYSQL - [Using Mysql](https://www.feralhosting.com/faq/view?question=9)
 OpenVPN - [Using Openvpn](https://www.feralhosting.com/faq/view?question=5)
 
+**Q:** Can I send emails from my slot?
+
+A: Email has been blocked due to abuse from people attempting to spam. If you need to send email from your programs or Web Apps you can usually configure them to use an external smtp service like `Google Apps`. Here is an example of the configuration settings - [Google smtp settings](https://www.digitalocean.com/community/articles/how-to-use-google-s-smtp-server)
+
+**Q:** Does my slot have a dedicated IP? 
+
+A: You server has a dedicated IP that is shared by all the users on your server. So while you slot does have a dedicated IP, this IP is not unique to you.
+
+**Q:** Is my server a dedicated server?
+
+A: No, Feral does not provide any dedicated servers. You slot will on a server that is shared by other users.
+
+**Q:** Where is my slot located? Where are the the servers hosted.
+
+A: The servers are hosted at the [Interxion](http://www.interxion.com) carrier-neutral data centre in the [Netherlands](http://en.wikipedia.org/wiki/Netherlands).
+
 **Q:** What software is installed on my slot?
 
 A: You can check this yourself by using these command in [SSH](https://www.feralhosting.com/faq/view?question=12)
 
-To see if a specific programs is installed you can do this:
+To see if a specific programs is installed you can do this, where `program-name` is the name of the program you want information about:
 
 ~~~
-aptitude show programname | grep State
+aptitude show program-name | grep State
 ~~~
 
 To see every installed program use this commands to create a new file in your server root called `software.txt` that will list all installed programs:
@@ -81,9 +97,9 @@ A: Feral only supports one user account. This means they will only provide and s
 
 A: Feral do not provide FTPS access as part of their set-up, only SFTP. You can however use this FAQ - [Installing an FTP daemon for extra accounts](https://www.feralhosting.com/faq/view?question=193) to set-up FTPS with limited users inside jailed directories.
 
-**Q:** Is there test file for Cogent?
+**Q:** Is there test file for Feral?
 
-A: Yes, here it is:
+A: Yes, here are some links:
 
 [http://aphrodite.feralhosting.com/test.bin](http://aphrodite.feralhosting.com/test.bin)
 
@@ -131,24 +147,7 @@ Related FAQ: [Late Payments](https://www.feralhosting.com/faq/view?question=8)
 
 **Q:** Can I install my own software software?
 
-A: Users do not have Root privileges so cannot use apt or packet managers to install software. In order to install software a user must install the program to their `$HOME` location, for example:
-
-~~~
-./configure --prefix=$HOME/progams
-~~~
-
-The software may not always support this though, and it it not an issue the staff support. You can always jump on IRC and ask, maybe another user will be around willing to help.
-
-Here is a [Generic Software Installation Guide](https://www.feralhosting.com/faq/view?question=195)
-
-Here are some setup guides for software, check the FAQs for more:
-
-[Git - How to Install](https://www.feralhosting.com/faq/view?question=206)
-[Python - How to install](https://www.feralhosting.com/faq/view?question=204)
-[Dropbox - How to install](https://www.feralhosting.com/faq/view?question=205)
-[Java 1.7](https://www.feralhosting.com/faq/view?question=183)
-
-Most pre-built binaries can be run directly from your slot.
+A: Users do not have Root privileges so cannot use apt or packet managers to install software. See this FAQ for a more in depth explanation with many linked examples - [Generic Software Installation Guide](https://www.feralhosting.com/faq/view?question=195)
 
 If you require and dependencies that are part of the Debian Stable branch, open a ticket and ask staff if they can install them. This is something they will do for users, but they will not support the installation or maintenance of software that they have not provided.
 
@@ -162,11 +161,9 @@ A: Anything that is leaving(OUT) your server is upload. So anything your server 
 
 **SFTP: **
 
-SFTP is the ideal and supported way to securely transfer data between the server and your home computer. SFTP is FTP over SSH. All Feral users have SSH access to their slots. 
+SFTP is the ideal and supported way to securely transfer data between the server and your home computer. SFTP is FTP over SSH. All Feral users have SSH access to their slots. Feral does not use or support FTPS for file transfer.
 
-`Feral does not use or support FTPS for file transfer.`
-
-Here are a list of Windows and Mac FTP/SFTP clients
+Here are a list of Windows and Mac FTP/SFTP clients:
 
 **Windows Free Solutions:**
 
@@ -185,11 +182,9 @@ Related tutorial: [Automated Sync from SeedBox to Home](https://www.feralhosting
 
 **FTP**
 
-FTP is a second method for transferring files if SFTP is not available or slow. We recommend using the [FileZilla client](http://filezilla-project.org/download.php?type=client). It runs on all Major platforms. If you require more downloading power, please use a [multi-part](http://en.wikipedia.org/wiki/Download_acceleration) ftp client, like [CuteFTP Home or Pro](http://www.globalscape.com/downloads/). There is a [Mac version](http://www.globalscape.com/cuteftpmacpro/) of CuteFTP as well.
+FTP is a second method for transferring files if SFTP is not available or slow. We recommend using the [FileZilla client](http://filezilla-project.org/download.php?type=client). It runs on all Major platforms. If you require more downloading power, please use a [multi-part](http://en.wikipedia.org/wiki/Download_acceleration) ftp client, like [Bitkinex Client](http://www.bitkinex.com/download) . There is a [Mac version](http://www.globalscape.com/cuteftpmacpro/) of CuteFTP as well.
 
 Related tutorial: [What to Do If FTP Speeds Are Slow](https://www.feralhosting.com/faq/view?question=28)
-
-Sometimes SFTP is considerably slower than what is possible; if this is the case, try using FTP. If using a secure connection is paramount, connect using OpenVPN before FTP is used. Please see this [FAQ](https://www.feralhosting.com/faq/view?question=5). Macs usually have OpenVPN support built-in.
 
 **SSH**
 
