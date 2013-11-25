@@ -1,5 +1,5 @@
 
-Your server is a remote device. What does this mean? It means that your Feral slot is totally separate from your physical location. Like a computer in another person's house. This is often where people get confused, regarding what is done on their home devices and what the server does. I will do my best to make it as easy to understand as possible, so that at the end, hopefully, you have a clear picture of how this whole seedslot thing works. 
+Your server is a remote device. What does this mean? It means that your Feral slot is totally separate from your physical location. Like a computer in another person's house. This is often where people get confused, regarding what is done on their home devices and what the server does. I will do my best to make it as easy to understand as possible, so that at the end, hopefully, you have a clear picture of how this whole seed slot thing works. 
 
 Let us look at the difference in physical locations.
 
@@ -15,7 +15,8 @@ All *outgoing* traffic from your Feral Slot originates from this Netherlands loc
 
 So how do I do stuff? Well, it is actually quite easy once you understand the basic concepts. Your slot is another device in another place and Feral's set-up provides you with the tools and services you need to manage it remotely.
 
-### Web Gui
+Web Gui
+---
 
 A Web Gui is provided for rutorrent, deluge and transmission to remotely control the applications running on the server.
 
@@ -53,7 +54,8 @@ As the image shows, the Web Gui interacts with the processes running on the serv
 
 This means you can turn off your PC and it will not affect the running processes such as rtorrent or deluge. They run on your server and you are only interacting with them using the Web Gui. Closing the Web Gui or turning off you PC will not stop theses programs from working.
 
-### Rutorrent Web Gui
+Rutorrent Web Gui
+---
 
 **Important note:** Rutorrent (Gui) is blamed for causing rtorrent (the actual program) to crash and become unstable when dealing with large number of active torrents, in the range 1500 to 5000. In this case it is recommended to only use rtorrent (SSH) for managing your torrents. This means you should avoid using the Gui with large volumes of files and active torrents.
 
@@ -77,7 +79,8 @@ Now you will get this window. Here you browse for the torrent files you download
 
 **Related tutorial:** [Feralstats plugin for ruTorrent](https://www.feralhosting.com/faq/view?question=126)
 
-### Deluge Web Gui
+Deluge Web Gui
+---
 
 Deluge is a fully fledged BitTorrent client that aggressively downloads content from peers. It provides it's own Web interface to control access. Deluge is the other client we recommend. Deluge is great for initially seeding your downloads or uploads because of its peering strategy. For seeding, Deluge is a great choice, however, its limited to 1000 open files (most torrents contain multiple files) therefore it is not well suited to seeding many torrents, about 250 torrents (this is an average of 4 files per torrent). 
 
@@ -103,7 +106,8 @@ Now select the type of torrent, file or magnet URL you would like to upload.
 
 **Related tutorial:** [Deluge Thin Client](https://www.feralhosting.com/faq/view?question=76)
 
-### Transmission Web Gui
+Transmission Web Gui
+---
 
 Transmission is a fast, easy, and free multi-platform BitTorrent client that comes with a Web interface. While not the preferred client of those offered, transmission's interface is simple and easy to understand. Transmission works well for low numbers of torrents, less than 100, and can be used at most private trackers. Please be aware, some trackers may not support transmission or the version we use.  
 
@@ -119,7 +123,8 @@ Now provide the file or URL of the torrent you wish to open.
 
 **Related tutorial:** [Transmission Remote Gui](https://www.feralhosting.com/faq/view?question=4)
 
-### Remote Clients
+Remote Clients
+---
 
 You can also control some of the server software as if it was installed on your PC in some cases using these programs.
 
@@ -131,7 +136,8 @@ You can also control some of the server software as if it was installed on your 
 
 Here is a brief overview of how SSH works.
 
-### SSH
+SSH
+---
 
 SSH stands for **Secure Shell**, and is a command line interface to interact with your slot. You can move, copy, delete, archive and create files, among other things, on your slot through SSH. Learning the basics of SSH will save you time and help you be more efficient. SSH gives you control over the device as if you were controlling it locally. This means that you can send commands and control applications. SSH is a pretty powerful feature that will let you do cool things like install software and stuff, but that is covered in other FAQS. We recommend using the [SSH guide basics - PuTTy](https://www.feralhosting.com/faq/view?question=12) FAQ to get started.
 
@@ -147,7 +153,8 @@ Using SSH is an important part of using your slot as it will give you a great de
 
 **Related tutorial:**  [Public Key Authentication for password-less login](https://www.feralhosting.com/faq/view?question=13)
 
-### SSH Tunnels
+SSH Tunnels
+---
 
 All slots allow the user to connect using SSH and create something called an SSH Tunnel. This will allow you to **selectively** route all traffic from applications through your server.
 
@@ -165,7 +172,8 @@ Here is a picture showing the basic concepts of using SSH tunnels with your slot
 
 **Related tutorial:**  [SSH guide basics - Mac](https://www.feralhosting.com/faq/view?question=217)
 
-### OpenVPN
+OpenVPN
+---
 
 A VPN can help mask your identity, in the form of your ISP assigned IP address, when browsing, it does not alone make you completely anonymous in the way they are often marketed.
 
@@ -177,7 +185,7 @@ Privacy is a person’s right to control access to his or her personal informati
 Anonymity is nobody knowing who you are, but potentially seeing what you do.
 Anonymity is a condition in which an individual’s true identity is unknown.
 
-Traffic leaving and returning to the server behaves as normal. This means you should still uses `https` where possible and maintain good browsing practices. A VPN does wave a magical wand and make you a [super secret squirrel](http://i.imgur.com/ZlUEvSU.jpg).
+Traffic leaving and returning to the server behaves as normal. This means you should still uses `https` where possible and maintain good browsing practices. A VPN does not wave a magical wand and make you a [super secret squirrel](http://i.imgur.com/ZlUEvSU.jpg).
 
 All slots can install OpenVPN Server so that users can use OpenVPN supporting software (clients) to route all their local traffic through their feral slot via the OpenVPN server.
 
@@ -199,17 +207,19 @@ Here is a picture showing the basic concept of using OpenVPN with your slot.
 
 **Related tutorial:**  [OpenVPN - Connect on Android 4.0 and up - using OpenVPN Connect](https://www.feralhosting.com/faq/view?question=220)
 
-### FTP / SFTP / SSH Access
+FTP / SFTP / SSH Access
+---
 
 Once you have downloaded some stuff, you have a few options on how to manage that data.
 
-**FTP/SFTP** using applications like Filezilla, Bitkinex, Winscp, LFTP and many more.
+**FTP/SFTP** using applications like Filezilla, Bitkinex, Winscp, Cyberduck, LFTP and many more.
 
 **WWW via HTTP or HTTPS** via an Apache Web server where you can access your files and other Web apps, like the Web Gui for Rutorrent or Deluge.
 
 Here you will find the username, password and host you need to FTP, SFTP or SSH into your slot.
 		
-### FTP
+FTP
+---
 
 FTP stands for **File Transfer Protocol** and can be used to transfer files from your slot to your home computer or elsewhere. Most, if not all clients are capable of using FTP.
 
@@ -217,7 +227,8 @@ FTP port is 21
 
 [FTP and SFTP basics - Filezilla](https://www.feralhosting.com/faq/view?question=187)
 			
-### SFTP - Recommended
+SFTP - Recommended
+---
 
 SFTP stands for **Secure File Transfer Protocol** and is similar to FTP, with the addition of encryption. SFTP is the Recommended way to securely transfer data between the server and your home computer. 
 
@@ -239,13 +250,15 @@ Other, better solutions like [Interarchy](http://nolobe.com/interarchy/) are not
 **Related tutorial:**  [What to do if FTP speeds are slow](https://www.feralhosting.com/faq/view?question=28)
 **Related tutorial:**  [What is multisegmented downloading - how does it help](https://www.feralhosting.com/faq/view?question=182)
 
-### FTPS/SFTP and jailed/limited users.
+FTPS/SFTP and jailed/limited users.
+---
 
 If you would like to share access to your slot but not share the credentials Feral provided. (see [Using your account - common questions](https://www.feralhosting.com/faq/view?question=14) this FAQ for more info on sharing your account) you will have to manually install and configure this software according to this FAQ:
 
 [Installing an FTP daemon for extra accounts](https://www.feralhosting.com/faq/view?question=193)
 
-### WWW/HTTP Access
+WWW/HTTP Access
+---
 
 To full take advantage of your WWW you will need to follow some of the Staff and user created guides in the FAQs.
 
