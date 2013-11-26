@@ -1,4 +1,3 @@
-apache2nginx
 
 A web server is software that sends web pages to your browser over the HTTP protocol. Apache is the name of the current web server we're using, however we're looking to move to `nginx` as it's easier to configure, uses less memory and is faster. Updating to `nginx` is essential if you want to run a lot of concurrent HTTP connections.
 
@@ -25,6 +24,8 @@ After **waiting 5 minutes** Apache will shut down and `nginx` will have been aut
 - Deny access to areas of rutorrent / wtorrent which do not need web access
 - Deny access to all files beginning with `.ht`
 - Deny access to any folder with a `.htaccess` file at the time of auto-configuration
+
+**Important note:** The SCGI rpc password will be the same as the rutorrent password, for your Feral username, at the time the update was initiated. See this FAQ for changing these passwords if you have forgotten them - [Password protect your WWW folder](https://www.feralhosting.com/faq/view?question=22)
 
 Additional domain top-level configuration and domains can be updated by dropping (or editing) files in the directory: 
 
