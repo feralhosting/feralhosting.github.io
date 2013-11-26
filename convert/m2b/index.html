@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foundation | Welcome</title>
+    <title>Markdown Github to BBCode Feral converter</title>
     <link rel="stylesheet" href="css/foundation.css" />
     <script src="js/modernizr.js"></script>
     <style type="text/css" media="screen">
@@ -16,12 +16,21 @@
     .textareasize {
     height: 100%;
     }
+    body {
+        background-image: url('img/grey.png');
+    }
+    @media (max-width: 600px) {
+        body {
+        background-image: url('img/grey_@2X.png');
+        }
+    }
     </style>
     <script type="text/javascript">
     function convert()
     {
     var left = document.getElementById("left_ta");
     var right = document.getElementById("right_ta");
+    
     var left_value = left.value;
         //general Markdown conversion
         left_value = left_value
