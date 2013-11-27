@@ -6,7 +6,7 @@ Let us overview the options available on the feralhosting.com website for managi
 
 You will be able to access the Manager at all times to overview and manage key aspects of your account and related services. The Account Manager does not run on your Slot's server.
 
-![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral Wiki/General/Your Feral slot is active - Part 1 - The Account Manager/01 account overview 1.png)
+![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/General/Your%20Feral%20slot%20is%20active%20-%20Part%201%20-%20The%20Account%20Manager/01 account overview 1.png)
 
 Account Overview
 ---
@@ -17,8 +17,8 @@ This is the first page you see after logging in. It displays the username and em
 
 **Slots**
 
-- [ServerName - Helium-4/Neon-4/Argon-4/Xenon-4/Radon-4](https://www.feralhosting.com/manager/slot/) - Click this to visit your Slot Details pages for this slot.
-- [Install Software](https://www.feralhosting.com/manager/slot/install) - This will take you to the Install Software page for this slot.
+- [Server - Helium-4/Neon-4/Argon-4/Xenon-4/Radon-4](https://www.feralhosting.com/manager/slot/) - Click this to visit your Slot Details pages for that slot.
+- [Install Software](https://www.feralhosting.com/manager/slot/install) - This will take you to the Install Software page for that slot.
 - [Usage](https://www.feralhosting.com/manager/slot/usage) - Check on your slot usage such as your disk space and upload quota.
 
 **Support**
@@ -43,11 +43,13 @@ Payment Status:
 
 The colours have a specific meaning in regards to the payment status of you slot.
 
-![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral Wiki/General/Your Feral slot is active - Part 1 - The Account Manager/paymentstatus.png)
+![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/General/Your%20Feral%20slot%20is%20active%20-%20Part%201%20-%20The%20Account%20Manager/paymentstatus.png)
 
 You have a **72 hour** grace period in the event that you forget or cannot to make a payment before the deadline. 
 
 **Important note:** You should always open a ticket to warn or inform staff of payment issues, so they can access your situation and help if possible.
+
+Related article - [Late payments](https://www.feralhosting.com/faq/view?question=8)
 
 Payment Methods
 ---
@@ -56,18 +58,18 @@ On this page you will also see the payment options available to you to purchase 
 
 **Important note:** Stripes and GoCardless (UK only) are only available to users who have already purchased a service using Google Wallet or Bitcoin.
 
-![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral Wiki/General/Your Feral slot is active - Part 1 - The Account Manager/payment.png)
+![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/General/Your%20Feral%20slot%20is%20active%20-%20Part%201%20-%20The%20Account%20Manager/payment.png)
 
 Slot Details Page
 ---
 
-![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral Wiki/General/Your Feral slot is active - Part 1 - The Account Manager/02 slot detail 0.png)
+![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/General/Your%20Feral%20slot%20is%20active%20-%20Part%201%20-%20The%20Account%20Manager/02 slot detail 0.png)
 
 This is where you will find important username and password information for the installed services on your slot. This page is always accessible by clicking on the server name of you slot in the Account Overview.
 
-![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral Wiki/General/Your Feral slot is active - Part 1 - The Account Manager/02 slot detail 1.png)
+![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/General/Your%20Feral%20slot%20is%20active%20-%20Part%201%20-%20The%20Account%20Manager/02 slot detail 1.png)
 
-![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral Wiki/General/Your Feral slot is active - Part 1 - The Account Manager/02 slot detail 2.png)
+![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/General/Your%20Feral%20slot%20is%20active%20-%20Part%201%20-%20The%20Account%20Manager/02 slot detail 2.png)
 
 Feral provide all the basic tools you need to get going. This guide will not cover every possible scenario, like using watch folders and RSS. These topics are already covered in the [FAQs](https://www.feralhosting.com/faq/) and would only complicate this one. 
 
@@ -76,13 +78,13 @@ With these links and with the help of this FAQ you should be downloading in no t
 Installing Software
 ---
 
-![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral Wiki/General/Your Feral slot is active - Part 1 - The Account Manager/03 install software 0.png)
+![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/General/Your%20Feral%20slot%20is%20active%20-%20Part%201%20-%20The%20Account%20Manager/03 install software 0.png)
 
 Below is a screen-shot of the Software install page. All users with an active slot can access this page via their feralhosting.com manager. This is where you will install the core services provided by Feral as part of the slot packages.
 
-![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral Wiki/General/Your Feral slot is active - Part 1 - The Account Manager/03 install software 1.png)
+![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/General/Your%20Feral%20slot%20is%20active%20-%20Part%201%20-%20The%20Account%20Manager/03 install software 1.png)
 
-To install a program you select the radial button next to the application you want and then click on "Install Software" to start the process.
+To install a program you select the radial button next to the application you want and then click on `Install Software` to start the process.
 
 **Important note:** Occasionally the installer does not complete, meaning the "You have requested..." dialogue never gets updated. In this case you can:
 
@@ -94,17 +96,19 @@ If that does not work then:
 
 Once you install software from the Manager any relevant information, such as URLs, usernames and passwords will be visible from the [Slot Details](https://www.feralhosting.com/manager/slot/?) page.
 
+![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/0%20Generic/slot_detail_link.png)
+
 This information should be all you need to access the Web Gui for the selected app/s
 
 **Important Note:** If you have just received your slot, please allow some extra time for things to work, even after the process has show to be completed.
 
-**Remember:** you are remotely managing programs on the Feral slot from home or wherever you are. These programs run on the server and not on your laptop or PC.
-
-These are the three basic ways in which you will manage the core features of your slot.
+Remember, you are remotely managing programs on the Feral slot from home or wherever you are. These programs run on the server and not on your laptop or PC. These are the three basic ways in which you will manage the core features of your slot.
 
 - HTTP - Web Gui and more
 - SSH
 - FTP/SFTP
+
+And we will cover these topics in part 2 of this article - [Your Feral slot is active - Part 2 - Using your slot](https://www.feralhosting.com/faq/view?question=225)
 
 
 
