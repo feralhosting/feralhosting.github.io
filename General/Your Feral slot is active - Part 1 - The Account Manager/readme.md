@@ -1,17 +1,17 @@
 
-Let us overview the options available on the feralhosting.com website for managing your slot. 
+Your feralhosting.com Account
+---
 
-### Your feralhosting.com Account
+Let us overview the options available on the feralhosting.com website for managing your slot using the [Account Manager](https://www.feralhosting.com/manager/) 
 
-You will be able to access the Manager at all times. It does not run on your Slot's server: [www.feralhosting.com/manager/](https://www.feralhosting.com/manager/) 
+You will be able to access the Manager at all times to overview and manage key aspects of your account and related services. The Account Manager does not run on your Slot's server.
 
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral Wiki/General/Your Feral slot is active - Part 1 - The Account Manager/01 account overview 1.png)
 
-#### Account Overview
+Account Overview
+---
 
-This is the first page you see after logging in. It displays the username and email associated with your account as well as displaying the payment status for your slot(s).
-
-Here you can manage and oversee some of the core features of your account, such as:
+This is the first page you see after logging in. It displays the username and email associated with your account as well as displaying the payment status for your slot(s). Here you can manage and oversee some of the core features of your account, such as:
 
 [Overview](https://www.feralhosting.com/manager/) - This link takes you to the slot overview page
 
@@ -38,7 +38,8 @@ Now, the feralhosting.com manager is only part of managing your slot. Whilst you
 - FTP/SFTP programs, like Filezilla to download and upload data.
 - Web browsers, like Firefox to visit the Web Gui for installed programs.
 
-### Payment Status:
+Payment Status:
+---
 
 The colours have a specific meaning in regards to the payment status of you slot.
 
@@ -48,7 +49,17 @@ You have a **72 hour** grace period in the event that you forget or cannot to ma
 
 **Important note:** You should always open a ticket to warn or inform staff of payment issues, so they can access your situation and help if possible.
 
-### Slot Details Page
+Payment Methods
+---
+
+On this page you will also see the payment options available to you to purchase or renew your services.
+
+**Important note:** Stripes and GoCardless (UK only) are only available to users who have already purchased a service using Google Wallet or Bitcoin.
+
+![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral Wiki/General/Your Feral slot is active - Part 1 - The Account Manager/payment.png)
+
+Slot Details Page
+---
 
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral Wiki/General/Your Feral slot is active - Part 1 - The Account Manager/02 slot detail 0.png)
 
@@ -62,7 +73,8 @@ Feral provide all the basic tools you need to get going. This guide will not cov
 
 With these links and with the help of this FAQ you should be downloading in no time at all.
 
-### Installing Software
+Installing Software
+---
 
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral Wiki/General/Your Feral slot is active - Part 1 - The Account Manager/03 install software 0.png)
 
