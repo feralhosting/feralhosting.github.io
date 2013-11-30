@@ -148,7 +148,7 @@
   * [Deluge - Running more than one instance]()
   * [node.js - How to install](Software/node.js%20-%20How%20to%20install/readme.md)
   * [SpiderOak](Software/SpiderOak/readme.md)
-  * [Python - How to install]()
+  * [Python - How to install](Software/Python%20-%20How%20to%20install/readme.md)
   * [WhatFreeGrab - Basic usage](Software/whatfreegrab/readme.md)
   * [CMAKE - Basic Setup](Software/CMAKE%20-%20Basic%20Setup/readme.md)
   * [Curl - Basic Setup](Software/Curl%20-%20Basic%20Setup/readme.md)
