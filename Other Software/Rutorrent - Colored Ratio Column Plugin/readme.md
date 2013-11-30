@@ -4,7 +4,7 @@ This rutorret plugin automatically changes the text in the rutorrent ratio colum
 Install it using [SSH](https://www.feralhosting.com/faq/view?question=12):
 
 ~~~
-wget -qO ~/ratio.zip http://git.io/7MNLaw
+wget -qO ~/ratio.zip http://git.io/FokoFQ
 unzip -qo ~/ratio.zip -d ~/www/$(whoami).$(hostname)/public_html/rutorrent/plugins/
 rm -f ~/ratio.zip
 ~~~
