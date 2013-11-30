@@ -113,7 +113,7 @@
 
 [Software]()
 
-  * [Generic software install guide - ZNC as an example](Software/Generic%20Software%20Installation%20Guide/readme.md)
+  * [Generic Software Installation Guide](Software/Generic%20Software%20Installation%20Guide/readme.md)
   * [Subsonic 4.8 or Madsonic 5.0](Software/Subsonic%20and%20Madsonic/readme.md)
   * [Java 1.7](Software/Java%201.7/readme.md)
   * [Autodl-irssi and rutorrent plugin - community edition](Software/Autodl-irssi%20and%20rutorrent%20plugin%20-%20community%20edition/readme.md)
