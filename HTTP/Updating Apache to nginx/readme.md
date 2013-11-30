@@ -76,7 +76,7 @@ This is normal, your changes have been applied. You may need clear your browser 
 `nginx` can be killed and then automatically restarted by running the [SSH command](https://www.feralhosting.com/faq/view?question=12) 
 
 ~~~
-killall -9 nginx php5-fpm -u $(whoami)
+killall -9 -u $(whoami) nginx php5-fpm
 ~~~
 
 and then waiting up to 5 minutes for it to be restarted.
