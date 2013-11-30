@@ -97,6 +97,7 @@ Remove the localhost daemon
 Click `Add` and enter the address of your Feral server, for example: `athena.feralhosting.com` found on your [Slot Detail](https://www.feralhosting.com/manager/) page for the relevant slot.
 
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/0%20Generic/slot_detail_link.png)
+
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/0%20Generic/slot_detail_ssh.png)
 
 Set the port to the port you got in Step 1. Enter the username and password you got from Step 1, in our case `username` and `dgeyh47563483HDgr`
