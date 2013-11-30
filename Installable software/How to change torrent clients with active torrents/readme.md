@@ -72,6 +72,7 @@ cp -rf ~/private/rtorrent/work/*.torrent ~/private/deluge/watch
 ### Transmission throttle
 
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/General/Completing%20a%20data%20transfer/transmission 1.png)
+
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/General/Completing%20a%20data%20transfer/transmission 2.png)
 
 ### transmission to rtorrent
