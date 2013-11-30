@@ -14,7 +14,9 @@ These are parallel (concurrent) downloads and not multi segmented. Filezilla doe
 `Properties > Connections > Total number of connections used by this data source:`
 
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/SFTP%20and%20FTP/What%20to%20do%20if%20FTP%20speeds%20are%20slow/bit-1.png)
+
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/SFTP%20and%20FTP/What%20to%20do%20if%20FTP%20speeds%20are%20slow/bit-2.png)
+
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/SFTP%20and%20FTP/What%20to%20do%20if%20FTP%20speeds%20are%20slow/bit-3.png)
 
 You can set this individually for each connection instead, to do this right click on the relevant connection go to it's properties. then:
@@ -22,6 +24,7 @@ You can set this individually for each connection instead, to do this right clic
 Increase this number to `50` connections (default is `5` connections, you can experiment with this number later). First uncheck in the same window: `Inherit properties from the parent node (SFTP/SSH)`, otherwise the options stay greyed out.
 
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/SFTP%20and%20FTP/What%20to%20do%20if%20FTP%20speeds%20are%20slow/bit-4.png)
+
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/SFTP%20and%20FTP/What%20to%20do%20if%20FTP%20speeds%20are%20slow/bit-5.png)
 
 ### In CuteFTP Pro
