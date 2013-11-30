@@ -1,5 +1,6 @@
 
-### Text editing
+Text editing
+---
 
 Text editing when using SFTP/FTP
 
@@ -15,7 +16,8 @@ So get Notepad ++ and install it. - [http://notepad-plus-plus.org/](http://notep
 
 **Important note:** Transfers over SFTP are all binary (Feral uses OpenSSH with SFTP v3). Setting transfers to binary for text transfers is just useful in case you used the proftpd guide with ftps. So it is recommended you do it.
 
-### In Filezilla:
+In Filezilla:
+---
 
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/SFTP%20and%20FTP/Text%20editing/filezilla/1.png)
 
@@ -23,18 +25,23 @@ Here you can force Binary transfer in Filezilla just to be certain:
 
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/SFTP%20and%20FTP/Text%20editing/filezilla/2.png)
 
-### In Winscp:
+In Winscp:
+---
 
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/SFTP%20and%20FTP/Text%20editing/winscp/1.png)
+
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/SFTP%20and%20FTP/Text%20editing/winscp/2.png)
+
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/SFTP%20and%20FTP/Text%20editing/winscp/3.png)
 
 Here you can force Binary transfer in WinSCP just to be certain:
 
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/SFTP%20and%20FTP/Text%20editing/winscp/transfer%201.png)
+
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/SFTP%20and%20FTP/Text%20editing/winscp/transfer%202.png)
 
-### Notepadd ++
+Notepadd ++
+---
 
 Here is an example of the recommend settings for Notepad ++ when creating or editing UNIX files.
 
