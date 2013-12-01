@@ -109,7 +109,7 @@
 
 [Slot Plans]()
 
-  * [Testing the Speed of Your Server]()
+  * [Testing the Speed of Your Server](Slot%20Plans/readme.md)
 
 [Software]()
 
