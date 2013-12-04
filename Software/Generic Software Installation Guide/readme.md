@@ -1,8 +1,8 @@
 
-**Important note:** Just because you can do something does not automatically mean you should. For example, custom python installations tend to cause more problems that they solve.  Also if you think the programs you want to install will interfere with other users or that Staff might not want you using them you should [open a ticket](https://www.feralhosting.com/manager/tickets/new) and ask first. Please use some common sense with the programs you try to install and use.
-
 Generic Software Guide Introduction:
 ---
+
+**Important note:** Just because you can do something does not automatically mean you should. For example, custom python installations tend to cause more problems that they solve.  Also if you think the programs you want to install will interfere with other users or that Staff might not want you using them you should [open a ticket](https://www.feralhosting.com/manager/tickets/new) and ask first. Please use some common sense with the programs you try to install and use.
 
 With your Feral slot you do not have `root` access to the server. Your account runs as user account in a Debian Linux environment. These are not dedicated servers which means you cannot use these commands on your slot:
 
@@ -262,7 +262,7 @@ cp -rf ~/node-v0.10.22-linux-x64/. ~/programs
 Now we add this location to our `PATH` using the special command.
 
 ~~~
-[[][/[][ ! "$(grep '~/programs/bin' ~/.bashrc)" ]] && echo 'export PATH=~/programs/bin:$PATH' >> ~/.bashrc ; source ~/.bashrc
+[ ! "$(grep '~/programs/bin' ~/.bashrc)" ] && echo 'export PATH=~/programs/bin:$PATH' >> ~/.bashrc ; source ~/.bashrc
 ~~~
 
 This command is meant to be reusable without duplicating the intended result. It will check to see if the location already exists before appending to the `~/bashrc` and reloading the file. You do not need to understand the entire command, just the intended function.
@@ -343,7 +343,7 @@ rm -rf ~/curl-7.33.0 ~/curl.tar.gz
 Now we add this location to our `PATH` using the special command.
 
 ~~~
-[[][/[][ ! "$(grep '~/programs/bin' ~/.bashrc)" ]] && echo 'export PATH=~/programs/bin:$PATH' >> ~/.bashrc ; source ~/.bashrc
+[ ! "$(grep '~/programs/bin' ~/.bashrc)" ] && echo 'export PATH=~/programs/bin:$PATH' >> ~/.bashrc ; source ~/.bashrc
 ~~~
 
 This command is meant to be reusable without duplicating the intended result. It will check to see if the location already exists before appending to the `~/bashrc` and reloading the file. You do not need to understand the entire command, just the intended function.
