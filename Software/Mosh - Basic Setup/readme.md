@@ -13,7 +13,7 @@ Use these first two commands to create to do some pre requisite tasks:
 
 ~~~
 mkdir -p ~/programs
-[[][/[][ ! "$(grep '~/programs/bin' ~/.bashrc)" ]] && echo 'export PATH=~/programs/bin:$PATH' >> ~/.bashrc ; source ~/.bashrc
+[[ ! "$(grep '~/programs/bin' ~/.bashrc)" ]] && echo 'export PATH=~/programs/bin:$PATH' >> ~/.bashrc ; source ~/.bashrc
 ~~~
 
 Protobuf
@@ -50,14 +50,21 @@ mosh-server: error while loading shared libraries: libprotobuf.so.8: cannot open
 By using this command:
 
 ~~~
-[[][/[][ ! "$(grep '~/programs/lib' ~/.bashrc)" ]] && echo 'export LD_LIBRARY_PATH=~/programs/lib:$LD_LIBRARY_PATH' >> ~/.bashrc ; source ~/.bashrc
+[[ ! "$(grep '~/programs/lib' ~/.bashrc)" ]] && echo 'export LD_LIBRARY_PATH=~/programs/lib:$LD_LIBRARY_PATH' >> ~/.bashrc ; source ~/.bashrc
 ~~~
 
 Connect to your slot using this command.
+
+For older versions of `mosh`
 
 ~~~
 mosh username@server.feralhosting.com --server="LANG=$LANG mosh-server"
 ~~~
 
+For 1.2.4 +
+
+~~~
+mosh username@server.feralhosting.com
+~~~
 
 
