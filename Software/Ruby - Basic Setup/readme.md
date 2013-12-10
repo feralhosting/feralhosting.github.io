@@ -27,16 +27,16 @@ Use these first two commands to create to do some pre requisite tasks:
 
 ~~~
 mkdir -p ~/programs
-[[][/[][ ! "$(grep '~/programs/bin' ~/.bashrc)" ]] && echo 'export PATH=~/programs/bin:$PATH' >> ~/.bashrc ; source ~/.bashrc
+[ ! "$(grep '~/programs/bin' ~/.bashrc)" ] && echo 'export PATH=~/programs/bin:$PATH' >> ~/.bashrc ; source ~/.bashrc
 ~~~
 
 Install the program using these commands:
 
 ~~~
-wget -qO ~/ruby.tar.gz http://cache.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p247.tar.gz
-tar xf ~/ruby.tar.gz && cd ~/ruby-*
+wget -qO ~/ruby.tar.gz http://cache.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p353.tar.gz
+tar xf ~/ruby.tar.gz && cd ~/ruby-2.0.0-p353
 ./configure --prefix=$HOME/programs && make && make install
-cd && rm -rf ~/ruby-* ~/ruby.tar.gz
+cd && rm -rf ~/{ruby-2.0.0-p353,ruby.tar.gz}
 ~~~
 
 Now these to check your versions:

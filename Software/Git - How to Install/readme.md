@@ -34,7 +34,7 @@ mkdir -p ~/programs
 wget -qO ~/git-1.8.5.1.tar.gz http://git-core.googlecode.com/files/git-1.8.5.1.tar.gz
 tar xf ~/git-1.8.5.1.tar.gz && cd ~/git-1.8.5.1
 ./configure --prefix=$HOME/programs --with-curl=/opt/curl/current
-make && make install && cd && rm -rf ~/git-1.8.5.1 git-1.8.5.1.tar.gz
+make && make install && cd && rm -rf ~/{git-1.8.5.1,git-1.8.5.1.tar.gz}
 ~~~
 
 Then do this to check the version.
