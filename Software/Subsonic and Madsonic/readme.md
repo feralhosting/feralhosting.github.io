@@ -242,7 +242,7 @@ chmod 700  ~/private/subsonic/transcode/{Audioffmpeg,ffmpeg,lame,flac}
 Tidy up to files we downloaded:
 
 ~~~
-rm -f ~/{subsonic.tar.gz,ffmpeg.zip
+rm -f ~/{subsonic.tar.gz,ffmpeg.zip}
 ~~~
 
 Now you can edit the `subsonic.sh` with a text editor over ftp or do this
