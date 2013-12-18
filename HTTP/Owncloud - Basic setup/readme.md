@@ -16,7 +16,7 @@ http://server.feralhosting.com/username/setup-owncloud.php
 http://username.server.feralhosting.com/setup-owncloud.php
 ~~~
 
-You should be able to just click on this file from your apache/ngninx/h5ai index.
+You should be able to just click on this file from your apache/h5ai index.
 
 **1:** Just click next
 
@@ -36,7 +36,8 @@ Once you have visited the URl in a browser you will see this:
 
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/HTTP/Owncloud%20-%20Basic%20setup/1.png)
 
-### Using Owncloud with the valid SSL URL format instead of the default.
+Using Owncloud with the valid SSL URL format instead of the default.
+---
 
 If you want to be able to use the valid SSL URL with owncloud you must make these edits.
 

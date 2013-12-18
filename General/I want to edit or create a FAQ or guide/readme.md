@@ -1,15 +1,35 @@
 
+Titles
+---
+
+For titling your FAQ you can use - [titlecapitalization.com](http://titlecapitalization.com/)
+
 How do I create a FAQ?
 ---
 
 Click on this link: [Add a Question](https://www.feralhosting.com/faq/add) and paste in your formatted text as the answer. Your question is the Title of the FAQ or guide. Open a ticket as outlined below to inform staff of the new FAQ.
 
-See below for formatting guidelines
+**Important note:** After you have created the guide please submit a ticket using the title format `New FAQ - FAQ name - Category`
+
+**Title:** New FAQ - How To Use SSH - SSH
+
+**Body:** Can you please review my new FAQ
 
 How do I edit a FAQ?
 ---
 
 Simply **click on edit at the bottom of the FAQ** and submit your edited version along with reason for the change.
+
+**Important note:** After you have edited the guide please submit a ticket using the title format `FAQ Edit - FAQ name - Category`
+
+In the body submit a link to the FAQ you edited. So for example:
+
+**Title:** FAQ Edit - SSH Guide Basics - PuTTy - SSH
+
+**Body:** https://www.feralhosting.com/faq/view?question=12 I fixed a broken link.
+
+Formatting
+---
 
 You can use Markdown to edit or create a FAQ if you wish. You will have to convert it to Feral BBCode using this tool:
 
@@ -286,17 +306,25 @@ Here is the markdown equivalent:
 Custom Software
 ---
 
-Custom software installations that have a typical structures, such as `~/something/bin` should be installed to `~/programs`. The use this command to add it to the `PATH` if needed. This will fall in line with other software installation FAQs.
+Custom software installations that have a typical directory structures, such as `~/bin` should be installed to `$HOME`, like this:
 
 ~~~
-[[ ! "$(grep '~/programs/bin' ~/.bashrc)" ]] && echo 'export PATH=~/programs/bin:$PATH' >> ~/.bashrc ; source ~/.bashrc
+configure --prefix=$HOME
+~~~
+
+This will use the `~/bin` folder for binaries and this location will automatically be added to the `PATH` via the `~/.profile` file once the user has logged out of their SSH session and logs back in.
+
+You can ask them to log out and log into a new SSH session or optionally use this command at the start of the FAQ to create the directory and to reload the shell for the change to take effect:
+
+~~~
+mkdir -p ~/bin && bash
 ~~~
 
 Exceptions to the rule?
 
-1: Programs like AeroFS and Spideroak that do not have a directory structure that would work for the `~/programs` location or other self contained applications.
+1: Programs like AeroFS,Spideroak and Filebot that do not have a conventional directory structure that would work with the `~/bin` location, or for other self contained applications.
 
-2: Programs that might conflict with slot operations such as Python. Then use a custom location for this software. Try not to use a very complex or needlessly deep directory structure.
+2: Programs that might conflict with slot operations such as Python or where you want multiple versions of an application. Then use a custom location for this software. Try not to use a very complex or needlessly deep directory structure where possible. In these cases it is advised you do not add the locations to the PATH and provide full paths to the binaries for use when needed instead.
 
 Python and user mods.
 ---
@@ -307,10 +335,10 @@ When a `--user` mod is installed using the slot's included Python, it will alway
 ~/.local/bin
 ~~~
 
-So in this case, use this command to add the `PATH` to the `~/.bashrc`. This will fall in line with other Python FAQs.
+Python will detect this location for any required dependencies a script might have, but if you need to call an installed module directly in your terminal you can use this command to add the `~/.local/bin` to the `~/.bashrc`.
 
 ~~~
-[[ ! "$(grep '~/.local/bin' ~/.bashrc)" ]] && echo 'export PATH=~/.local/bin:$PATH' >> ~/.bashrc ; source ~/.bashrc
+[ ! "$(grep '~/.local/bin' ~/.bashrc)" ] && echo 'export PATH=~/.local/bin:$PATH' >> ~/.bashrc ; source ~/.bashrc
 ~~~
 
 File Hosting
@@ -332,16 +360,6 @@ Closing: At the end of the FAQ
 ---
 
 Please leave 4 blank lines at the end of any question you edit or submit. This is a visual thing.
-
-Credit will be attributed to the original author(s) where needed manually. So do not worry about this.
-
-**Attention:** After you have edited the guide please submit a ticket using the title format `FAQ Edit - FAQ name - Category`
-
-In the body submit a link to the FAQ you edited. So for example:
-
-**Title:** FAQ Edit - I want to edit a FAQ or guide - General
-
-**Body:** https://www.feralhosting.com/faq/view?question=122 I fixed a broken link.
 
 Feral FAQ Cheat Sheet
 ---
@@ -584,14 +602,5 @@ For example:
 ~~~
 @reboot bash -l ~/myscript.sh
 ~~~
-
-You can use this command to easily create a cronjob for users in some sort of support capacity:
-
-~~~
-(crontab -l ; echo "* * * * * some/cron/thing") | uniq - | crontab -
-~~~
-
-This will create a specified cronjob while also checking to make sure it is not created more than once. So with a single command you can have create and insert a cronjob for a user. It only checks vs the last entry though.
-
 
 

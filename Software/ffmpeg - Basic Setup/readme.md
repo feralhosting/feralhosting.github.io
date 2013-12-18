@@ -15,33 +15,28 @@ ffmpeg installation (static)
 FFmpeg is already installed on your slots and available for you to use, do this command in SSH to see:
 
 ~~~
-ffmpeg
+ffmpeg -v
 ~~~
 
-If you require and alternative or updated build then use this FAQ to install a pre compiled statically linked version.
+If you require and alternative or updated build then use this FAQ to install a pre compiled statically linked version. We will use the statically linked, pre-compiled version of `ffmepg` from [http://johnvansickle.com/ffmpeg/](http://johnvansickle.com/ffmpeg/)
 
-**Important note:** `ffmpeg` has a directory structure that does not really fit in with other FAQs so it gets to use a unique location and `PATH`. It will be installed to `~/ffmpeg` in this FAQ:
-
-We will use the statically linked, pre-compiled version of `ffmepg` since it makes this a lot easier. All versions are from [http://johnvansickle.com/ffmpeg/](http://johnvansickle.com/ffmpeg/)
-
-Use these first two commands to create to do some pre requisite tasks:
+Use this command to create the `~/bin` directory and reload your shell for this change to take effect.
 
 ~~~
-mkdir -p ~/programs
-[[][/[][ ! "$(grep '~/ffmpeg' ~/.bashrc)" ]] && echo 'export PATH=~/ffmpeg:$PATH' >> ~/.bashrc ; source ~/.bashrc
+mkdir -p ~/bin && bash
 ~~~
 
-Install the program using these commands:
+**1:** Install the program using these commands:
 
 ~~~
 wget -qO ~/ffmpeg.tar.gz http://johnvansickle.com/ffmpeg/releases/ffmpeg-2.0.1-64bit-static.tar.bz2
-tar xf ~/ffmpeg.tar.gz
-cp ~/ffmpeg-2.0.1-64bit-static/. ~/ffmpeg
-chmod 700 ~/ffmpeg/ffmpeg  ~/ffmpeg/ffprobe  ~/ffmpeg/ffmpeg-10bit
-rm -f ~/ffmpeg.tar.gz ~/ffmpeg-2.0.1-64bit-static
+tar xf ~/ffmpeg.tar.gz && cd && rm -rf ffmpeg-2.0.1-64bit-static/{manpages,presets,readme.txt}
+cp ~/ffmpeg-2.0.1-64bit-static/* ~/bin
+chmod 700 ~/bin/{ffmpeg,ffprobe,ffmpeg-10bit,qt-faststart}
+cd && rm -rf ffmpeg{.tar.gz,-2.0.1-64bit-static}
 ~~~
 
-Check your version:
+**2:** Check your version:
 
 ~~~
 ffmpeg -version
@@ -50,7 +45,7 @@ ffmpeg -version
 The path to the binary will be:
 
 ~~~
-~/ffmpeg/ffmpeg
+~/bin/ffmpeg
 ~~~
 
 

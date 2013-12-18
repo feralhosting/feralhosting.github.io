@@ -40,41 +40,18 @@ Installed Software locations:
 Throughout the Feral FAQs you will see that all user installed programs are installed to a single location which is:
 
 ~~~
-~/programs
+$HOME
 ~~~
 
-And then this location is added to the `PATH`:
+This is effectively your home directory and will mimic the conventional directory structure used by Unix type platforms for installing software, where applicable. Then you will see that this location is added to the `PATH` (this is done automatically at login if the folder exists):
 
 ~~~
-~/programs/bin
+~/bin
 ~~~
 
-When we add a location to the `PATH` in Linux it basically tells the SSH terminal to include this location when it looks for the binaries to execute. If a location is not in the `PATH` you would be required to use a full path to that program in order to execute it in your terminal. This method is used for simplicity. All files are installed to the `~/programs` folder and generally maintain a standardised directory structure.
+When we add a location to the `PATH` in Linux it basically tells the SSH terminal to include this location when it looks for the binaries to execute. If a location is not in the `PATH` you would be required to use a full path to that program in order to execute it in your terminal. This method is used for simplicity. All files are installed to the `~/bin` folder and generally maintain a conventional directory structure.
 
 This FAQ will use the same directory structure for any examples used, though once you understand the process you can install applications where ever you want. 
-
-Alternative Software locations:
----
-
-Say you wanted multiple versions of a program installed. If you installed them all to `~/programs` you would just overwrite the previous version as it installed. To avoid this you would use a different `--prefix` when configuring, for example:
-
-~~~
---prefix=$HOME/python27
-~~~
-
-~~~
---prefix=$HOME/python30
-~~~
-
-Or if you wanted all custom software in a managed location:
-
-~~~
---prefix=$HOME/applications/python/python27
-~~~
-
-~~~
---prefix=$HOME/applications/python/python30
-~~~
 
 You could then manage you installations and have more than one version of a program.
 
@@ -95,30 +72,55 @@ If you do not specify a `prefix` what happens is that `configure` will assume yo
 So when we pass this argument to `configure`:
 
 ~~~
---prefix=$HOME/desired-location
+--prefix=$HOME
 ~~~
 
-We are telling it to install the application to `desired-location` in our `HOME` directory. For example, with the above `prefix` our application will use this as the root installation directory when configuring the application
+We are telling it to install the application to root of our slot using the variable `HOME`. For example, with the above `prefix` our application will use this as the root installation directory when configuring the application
 
 ~~~
-/media/12345/username/home/desired-location
+/media/12345/home/username
 ~~~
 
-**Important note:** You can read the `configure` file with a text editor. In this file you will be able to find and see the available arguments you can use with this installation when you encounter some errors. Search for `--prefix` to find the rest of the options.
+**Important note:** You can read the `configure` file with a text editor. In this file you will be able to find and see the available arguments you can use with this installation when you encounter some errors. the `configure` script is a text file you can open with a text editor. Open it and search for `--prefix` to find the rest of the options that may help solve the issue.
 
-In some cases `configure` does not exist or is not included with the files and you must refer to the developers documentation to see how the files are required to be processed.
+In some cases `configure` does not exist or is not included with the files and you must refer to the developers documentation to see how the files are required to be processed. This may require you to run a `autogen` or `bootstrap` script first.
+
+Alternative Software locations:
+---
+
+Say you wanted multiple versions of a program installed. If you installed them all to `$HOME` you would just overwrite the previous version as it installed. To avoid this you would use a different `--prefix` when configuring, for example:
+
+~~~
+--prefix=$HOME/python27
+~~~
+
+~~~
+--prefix=$HOME/python30
+~~~
+
+Or if you wanted all custom software in a managed location:
+
+~~~
+--prefix=$HOME/applications/python/python27
+~~~
+
+~~~
+--prefix=$HOME/applications/python/python30
+~~~
 
 PATH explained:
 ---
+
+**Important note:** The location `~/bin` is automatically added to your system PATH if the folder exists, upon logging into your SSH session. This is done by loading a setting in the `~/.profile` file on your slot when you log in via SSH. The examples used in the explanation below are for demonstration purposes only.
 
 The concept of the `PATH` for new users can be a difficult one to come to terms with so I will briefly explain it here.
 
 Your terminal makes use of all kinds of variables when processing information. `PATH` is one of these variables. `PATH` is basically just a list of locations, in order of preference from left to right, that the shell will look at when searching for a binary to execute. So when I use certain command in the terminal like `cp` or `mv` or `rm` I don't have to use the full path to the binary each and every time. Being a variable is means we can modify those locations to suit our needs and this will in turn be reflected in the behaviour of our terminal. The command for doing this will be used and explained through the FAQ.
 
-One thing to consider when adding locations to the `PATH` variable is the order in which you wish the locations to be checked
+One thing to consider when adding locations to the `PATH` variable is the order in which you wish the locations to be checked. Here is a standard entry to include a location to the `PATH` variable and I will explain this by breaking it down:
 
 ~~~
-PATH=~/programs/bin:$PATH
+PATH=~/bin:$PATH
 ~~~
 
 This is the variable we are modifying by saying `PATH` equals something. Like this:
@@ -130,7 +132,7 @@ PATH=
 This is the location we are including:
 
 ~~~
-~/programs/bin
+~/bin
 ~~~
 
 This means that we want to come before, or on the left of the existing `PATH` locations
@@ -142,26 +144,26 @@ This means that we want to come before, or on the left of the existing `PATH` lo
 To have it come after you would do this:
 
 ~~~
-PATH=$PATH:~/programs/bin
+PATH=$PATH:~/bin
 ~~~
 
-And example of this in use:
+An example of this in use:
 
 Let us say when have installed the statically pre-compiled `ffmpeg` binary to our slot. How do we use this over the existing `ffmpeg` already installed on the slot?
 
-If we have installed it to `~/programs` then we would use this `PATH` in our `~/.bashrc`:
+If we have installed it to `~/bin` then we would use this `PATH` in our `~/.bashrc`:
 
 ~~~
-PATH=~/programs/bin:$PATH
+PATH=~/bin:$PATH
 ~~~
 
-If we instead did this, it would find the existing `ffmpeg` before find our own installation since it will look in the existing `PATH` locations first and it will find the default installation of `ffmpeg`:
+If we instead did this, it would find the existing, installed `ffmpeg` before find our own installation since it will look in the existing `PATH` locations first and it will find the default installation of `ffmpeg`:
 
 ~~~
-PATH=$PATH:~/programs/bin
+PATH=$PATH:~/bin
 ~~~
 
-**Important note:** This also means that the order in which you add paths to your `~/ bashrc` can change the search result.
+**Important note:** This also means that the order in which you add paths to your `~/.bashrc` can change the search result.
 
 For more information see this page - [internal variables.](http://tldp.org/LDP/abs/html/internalvariables.html)
 
@@ -227,8 +229,18 @@ In this example we will look at two particular applications that both have exist
 
 [node.js - How to install](https://www.feralhosting.com/faq/view?question=199)
 
+### node
+
+The first thing to do is to create the `~/bin` directory and reload the relevant files for the PATH setting to take effect using this command:
+
 ~~~
-wget -qO ~/node.js.tar.gz http://nodejs.org/dist/v0.10.22/node-v0.10.22-linux-x64.tar.gz
+mkdir -p ~/bin && bash
+~~~
+
+Now download the required files:
+
+~~~
+wget -qO ~/node.js.tar.gz http://nodejs.org/dist/v0.10.23/node-v0.10.23-linux-x64.tar.gz
 ~~~
 
 Now we have downloaded the archive to our `HOME` folder we can unpack it. In this case the archive is a tar archive to we will use `tar` to extract it.
@@ -237,7 +249,7 @@ Now we have downloaded the archive to our `HOME` folder we can unpack it. In thi
 tar xf ~/node.js.tar.gz
 ~~~
 
-**Important note:** Effectively, once you have extracted the the contents of the archive, the program is ready to use by directly calling it via a full path in you terminal using `~/node-v0.10.22-linux-x64/bin/node` . For the purposes of this FAQ will continue to move the files to a desired location and add that location to our `PATH` for easy use and so you become more familiar with the overall process.
+**Important note:** Effectively, once you have extracted the the contents of the archive, the program is ready to use by directly calling it via a full path in you terminal using `~/node-v0.10.23-linux-x64/bin/node` . For the purposes of this FAQ will continue to move the files to a desired location and add that location to our `PATH` for easy use and so you become more familiar with the overall process.
 
 Now the contents of the archive has just been extracted to the `HOME` folder of our slot. It will generally be safe to assume the new folder name is the same as the archive's minus the extension, but to make sure, we can type this command in our terminal:
 
@@ -245,7 +257,7 @@ Now the contents of the archive has just been extracted to the `HOME` folder of 
 ls
 ~~~
 
-As we can see the folder name is `node-v0.10.22-linux-x64`
+As we can see the folder name is `node-v0.10.23-linux-x64`
 
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral Wiki/Software/Generic Software Installation Guide/lsnode.png)
 
@@ -253,32 +265,44 @@ The directory structure of the pre-compiled programs will commonly resemble the 
 
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral Wiki/Software/Generic Software Installation Guide/nodedirectory.png)
 
-So what we need to do is copy the contents of the folder to our desired location:
+So what we need to do is copy the contents of the folder to our desired location, being our server root (using the shorthand `~/`)  in this example:
 
 ~~~
-cp -rf ~/node-v0.10.22-linux-x64/. ~/programs
+cp -rf ~/node-v0.10.23-linux-x64/. ~/
 ~~~
 
-Now we add this location to our `PATH` using the special command.
-
-~~~
-[ ! "$(grep '~/programs/bin' ~/.bashrc)" ] && echo 'export PATH=~/programs/bin:$PATH' >> ~/.bashrc ; source ~/.bashrc
-~~~
-
-This command is meant to be reusable without duplicating the intended result. It will check to see if the location already exists before appending to the `~/bashrc` and reloading the file. You do not need to understand the entire command, just the intended function.
-
-So you have now installed `node` and it is ready for use by simple called `node` in the terminal.
+Now installed `node` and it is ready for use by simple called `node` in the terminal.
 
 ~~~
 node -v
 ~~~
 
-And that is how you can install and use software that has be pre compiled to run on the linux platform.
+And that is how you can install and use software that has be pre compiled to run on the linux platform. Now to tidy up a bit.
 
-**Important note:** Not every pre-compiled binary will conform to this FAQ and might have a unique directory structure that doe not quite fit in with what was described in this section. See the `ffmpeg` example to see this.
+Use the `cd` command. Using just `cd` on its own will return you to the `HOME` directory.
+
+~~~
+cd
+~~~
+
+Now you can delete the files and folders we no longer require.
+
+~~~
+rm -rf node{-v0.10.23-linux-x64,.js.tar.gz}
+~~~
+
+We are using [bash brace expansion](https://www.gnu.org/software/bash/manual/html_node/Brace-Expansion.html) to remove the files.
+
+**Important note:** Not every pre-compiled binary will conform to this FAQ and might have a unique directory structure that doe not quite fit in with what was described in this section. See the `filebot` example to see this.
 
 2: Compiling from source
 ---
+
+The first thing to do is to create the `~/bin` directory and reload the relevant files for the PATH setting to take effect using this command:
+
+~~~
+mkdir -p ~/bin && bash
+~~~
 
 When compiling from source you will need to follow this outline, we will use `curl` as the installation example:
 
@@ -308,10 +332,10 @@ As we can see the folder name is `curl-7.33.0`. So now we move into this folder 
 cd ~/curl-7.33.0
 ~~~
 
-Now we will configure `curl` to use our desired installation location, which is `~/programs`:
+Now we will configure `curl` to use our desired installation location, which is `$HOME`:
 
 ~~~
-./configure --prefix=$HOME/programs
+./configure --prefix=$HOME
 ~~~
 
 Once the configuration is complete you can `make` the file:
@@ -334,19 +358,13 @@ Once this command has completed you can leave the folder using the `cd` command.
 cd
 ~~~
 
-You can now remove the downloaded files. As you can see in this command there is one folder `~/curl-7.33.0` and one archive `~/curl.tar.gz` being removed. You can chain more than one file or folder to be removed this way.
+You can now remove the downloaded files. As you can see in this command there is one folder `curl-7.33.0` and one archive `curl.tar.gz` being removed. You can chain more than one file or folder to be removed this way.
 
 ~~~
-rm -rf ~/curl-7.33.0 ~/curl.tar.gz
+rm -rf  curl{-7.33.0,.tar.gz}
 ~~~
 
-Now we add this location to our `PATH` using the special command.
-
-~~~
-[ ! "$(grep '~/programs/bin' ~/.bashrc)" ] && echo 'export PATH=~/programs/bin:$PATH' >> ~/.bashrc ; source ~/.bashrc
-~~~
-
-This command is meant to be reusable without duplicating the intended result. It will check to see if the location already exists before appending to the `~/bashrc` and reloading the file. You do not need to understand the entire command, just the intended function.
+We are using [bash brace expansion](https://www.gnu.org/software/bash/manual/html_node/Brace-Expansion.html) to remove the files.
 
 Do this command to call `curl` and check it's version.
 
@@ -384,7 +402,11 @@ cp -rf ~/desired-location/usr/bin/. ~/desired-location
 ~~~
 
 ~~~
-rm -rf ~/desired-location/etc ~/desired-location/usr ~/some.deb.deb
+cd
+~~~
+
+~~~
+rm -rf some.deb desired-location/{etc,usr}
 ~~~
 
 Examples:

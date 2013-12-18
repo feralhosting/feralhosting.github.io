@@ -23,11 +23,21 @@ ruby -v
 Ruby manual installation
 ---
 
-Use these first two commands to create to do some pre requisite tasks:
+Use this command to create the `~/bin` directory and reload your shell for this change to take effect.
 
 ~~~
-mkdir -p ~/programs
-[ ! "$(grep '~/programs/bin' ~/.bashrc)" ] && echo 'export PATH=~/programs/bin:$PATH' >> ~/.bashrc ; source ~/.bashrc
+mkdir -p ~/bin && bash
+~~~
+
+Use these first two commands to create to do some pre requisite tasks:
+
+First we need a pretty important, but optional, ruby dependency.  This lets us have a "history" in our ruby shell.
+
+~~~
+wget -qO ~/readline.tar.gz ftp://ftp.cwru.edu/pub/bash/readline-6.2.tar.gz
+tar xf ~/readline.tar.gz && cd readline-6.2
+./configure --prefix=$HOME && make && make install
+cd && rm -rf readline{.tar.gz,-6.2}
 ~~~
 
 Install the program using these commands:
@@ -35,8 +45,8 @@ Install the program using these commands:
 ~~~
 wget -qO ~/ruby.tar.gz http://cache.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p353.tar.gz
 tar xf ~/ruby.tar.gz && cd ~/ruby-2.0.0-p353
-./configure --prefix=$HOME/programs && make && make install
-cd && rm -rf ~/{ruby-2.0.0-p353,ruby.tar.gz}
+./configure --prefix=$HOME && make && make install
+cd && rm -rf ruby{-2.0.0-p353,.tar.gz}
 ~~~
 
 Now these to check your versions:
