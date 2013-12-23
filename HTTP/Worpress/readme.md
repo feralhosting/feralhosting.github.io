@@ -13,9 +13,10 @@ This is a relevant FAQ: [PHP - modify settings](https://www.feralhosting.com/faq
 
 **Step 2:** Then in SSH do these commands. Use this FAQ if you do not know how to SSH into your slot: [SSH basics - Putty](https://www.feralhosting.com/faq/view?question=12)
 
-### Bash script easy download and extract to default WWW
+Bash script easy download and extract to default WWW
+---
 
-This bash script will download and extract Wordpress for you to your default WWW directory.
+This bash script will download and extract Wordpress for you to your **default** WWW directory.
 
 ~~~
 wget -qO ~/wordpress.sh http://git.io/sBXgog && bash ~/wordpress.sh
@@ -23,27 +24,41 @@ wget -qO ~/wordpress.sh http://git.io/sBXgog && bash ~/wordpress.sh
 
 Done.
 
-### Manual installation via SSH:
+Manual installation via SSH:
+---
 
 ~~~
 wget -qO ~/latest.tar.gz http://wordpress.org/latest.tar.gz
 ~~~
 
-Then do this command:
+### Using the default Feral domain:
+
+Then do this command to install wordpress to the default Feral domain:
 
 ~~~
-tar -xzf ~/latest.tar.gz -C ~/www/$(whoami).$(hostname)/public_html
+tar xf ~/latest.tar.gz -C ~/www/$(whoami).$(hostname)/public_html/
+~~~
+
+### Using a Custom domain:
+
+This requires you have followed this FAQ - [Host a virtual host on your Feral slot](https://www.feralhosting.com/faq/view?question=52)
+
+Use this command format, where `example.co.uk` is replaced by your domain name.
+
+~~~
+tar xf ~/latest.tar.gz -C ~/www/example.co.uk/public_html/
 ~~~
 
 Optionally: remove the tar archive:
 
 ~~~
-rm -f ~/latest.tar.gz
+cd && rm -f latest.tar.gz
 ~~~
 
 Now Visit your `public_html/wordpress` directory in a Web Browser and complete the installation:
 
-### Mysql connection with a socket:
+Mysql connection with a socket:
+---
 
 **Important note:** This is the default connection option.
 
@@ -63,7 +78,8 @@ This images shows the hows the fields would be filled out when using a socket.
 
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/HTTP/Worpress/socket.png)
 
-### Mysql connection with networking enabled:
+Mysql connection with networking enabled:
+---
 
 Please see this [FAQ](https://www.feralhosting.com/faq/view?question=9) for enabling networking.
 

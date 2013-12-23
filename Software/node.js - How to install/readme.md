@@ -12,12 +12,16 @@ You login information for the relevant slot will be shown here:
 node.js installation
 ---
 
-These commands will download the linked version of node.js and set it up inside your `~/private` directory.
-
-This downloads the `node-v0.10.23-linux-x64.tar.gz` and then saves it as `node.tar.gz` in your  `~/private` directory.
+Use this command to create the `~/bin` directory and reload your shell for this change to take effect.
 
 ~~~
-wget -qO ~/node.js.tar.gz http://nodejs.org/dist/v0.10.23/node-v0.10.23-linux-x64.tar.gz
+mkdir -p ~/bin && bash
+~~~
+
+This command downloads the `node-v0.10.24-linux-x64.tar.gz` and then saves it as `node.tar.gz` in your servers root directory.
+
+~~~
+wget -qO ~/node.js.tar.gz http://nodejs.org/dist/v0.10.24/node-v0.10.24-linux-x64.tar.gz
 ~~~
 
 This unpacks the folder archived inside the node.tar.gz.
@@ -26,22 +30,16 @@ This unpacks the folder archived inside the node.tar.gz.
 tar xf ~/node.js.tar.gz
 ~~~
 
-This moves and renames the recently unpacked folder to `~/node`
+This copies the contents of the unpacked archive to your server root using  `~/`:
 
 ~~~
-cp -rf ~/node-v0.10.23-linux-x64/. ~/programs
+cp -rf ~/node-v0.10.24-linux-x64/. ~/
 ~~~
 
 This deletes the tar archive and unpacked folder we no longer need.
 
 ~~~
-rm -rf ~/{node.js.tar.gz,node-v0.10.23-linux-x64}
-~~~
-
-This command appends the path to the bottom of the `~/.bashrc` for you. As long as you have not changed the paths in the previous commands. If you have, for example, decided to store the main directory in the root, you need to edit the path in the echo.
-
-~~~
-[ ! "$(grep '~/programs/bin' ~/.bashrc)" ] && echo 'export PATH=~/programs/bin:$PATH' >> ~/.bashrc ; source ~/.bashrc
+cd && rm -rf node{.js.tar.gz,-v0.10.24-linux-x64}
 ~~~
 
 Tries to call `node.js` to check the version:
@@ -53,23 +51,32 @@ node -v
 Which should return:
 
 ~~~
-v0.10.23
+v0.10.24
 ~~~
 
 If you see the version then it is ready to use.
 
 Once you have done this, you are ready to start writing and running your `node.js` apps from anywhere in your account. I personally put all my apps in `~/node/apps/` to keep things tidy though.
 
-### Install from source:
+Install from source
+---
 
 **Important note:** node takes a very long time to compile from source.
 
+Use this command to create the `~/bin` directory and reload your shell for this change to take effect.
+
 ~~~
-wget -qO ~/node.tar.gz http://nodejs.org/dist/v0.10.23/node-v0.10.23.tar.gz
-tar xf ~/node.tar.gz && cd ~/node-v0.10.23
-./configure --prefix=$HOME/programs
+mkdir -p ~/bin && bash
+~~~
+
+Now run these commands:
+
+~~~
+wget -qO ~/node.tar.gz http://nodejs.org/dist/v0.10.24/node-v0.10.24.tar.gz
+tar xf ~/node.tar.gz && cd ~/node-v0.10.24
+./configure --prefix=$HOME
 make && make install && cd
-rm -rf ~/{node-v0.10.23,node.tar.gz}
+rm -rf ~/{node-v0.10.24,node.tar.gz}
 ~~~
 
 
