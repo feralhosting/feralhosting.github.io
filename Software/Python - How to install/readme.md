@@ -130,19 +130,7 @@ When it is finished installing, do some clean up with this command.
 cd && rm -rf ~/Python-2.7.6 ~/Python-2.7.6.tgz
 ~~~
 
-Python has been installed. Now use this command to add the PATH to your `~/.bashrc`
-
-~~~
-echo 'export PATH=~/python/python.2.7/bin:$PATH' >> ~/.bashrc
-~~~
-
-Now use this command to reload the shell:
-
-~~~
-bash
-~~~
-
-Now check which version is in use:
+Python has been installed. Now check which version is in use:
 
 ~~~
 ~/python/python.2.7/bin/python -V
@@ -152,8 +140,8 @@ Installing distribute
 ---
 
 ~~~
-curl -o ~/distribute_setup.py http://python-distribute.org/distribute_setup.py
-python ~/distribute_setup.py
+wget -qO ~/distribute_setup.py http://python-distribute.org/distribute_setup.py
+~/python/python.2.7/bin/python ~/distribute_setup.py
 rm -f ~/distribute_setup.py
 ~~~
 
@@ -163,9 +151,9 @@ Installing setuptools:
 ---
 
 ~~~
-wget https://pypi.python.org/packages/2.7/s/setuptools/setuptools-0.6c11-py2.7.egg
-bash ~/setuptools-0.6c11-py2.7.egg
-rm -f ~/setuptools-0.6c11-py2.7.egg
+wget -qO ~/setuptools.egg https://pypi.python.org/packages/2.7/s/setuptools/setuptools-0.6c11-py2.7.egg
+~/python/python.2.7/bin/python ~/setuptools.egg
+rm -f ~/setuptools.egg
 ~~~
 
 That is done. Python and set-up tools are now installed and added to your paths. There should be no need to prefix when installing mods.
@@ -177,19 +165,11 @@ Using `easy_install` from the command line to install mods:
 ~~~
 
 ~~~
-~/python/python.2.7/bin/easy_install virtualenv
+~/python/python.2.7/bin/pip install virtualenv
 ~~~
 
 ~~~
-~/python/python.2.7/bin/easy_install flexget
-~~~
-
-### Optional Stuff:
-
-Specify a custom libraries path.
-
-~~~
-echo 'export PYTHONPATH=~/path/to/my/libs:$PATH' >> ~/.bashrc
+~/python/python.2.7/bin/pip install flexget
 ~~~
 
 
