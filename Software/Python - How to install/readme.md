@@ -21,10 +21,10 @@ python -V
 
 To install python mods using the Feral python uses these steps:
 
-**1:** Add the location to your PATH:
+**1:** Add the `~/.local/bin` location to your `PATH` using this command:
 
 ~~~
-[[][/[][ ! "$(grep '~/.local/bin' ~/.bashrc)" ]] && echo 'export PATH=~/.local/bin:$PATH' >> ~/.bashrc ; source ~/.bashrc
+[ ! "$(grep '~/.local/bin' ~/.bashrc)" ] && echo 'export PATH=~/.local/bin:$PATH' >> ~/.bashrc ; source ~/.bashrc
 ~~~
 
 **2:** Now install `virtualenv` like this:
@@ -56,9 +56,11 @@ virtualenv ~/flexget/
 
 **Related FAQ:** [Flexget - Basic installation](https://www.feralhosting.com/faq/view?question=234)
 
-You **do not** need to follow this FAQ to use python or python scripts. If you have a missing module you can open a ticket and ask staff to install it.
+Installing Python locally:
 
-This is a basic guide to installing Python to your home directory and using it as your default Python. You will also be able to use easy_install to install mods.
+You **do not** need to follow this FAQ to use python or python scripts. If you have a missing module you can open a ticket and ask staff to install it or use the above section to install it locally.
+
+This is a basic guide to installing Python to your home directory . You will also be able to use `easy_install` to install mods.
 
 ### Python Active State 2.7.5.6:
 
@@ -72,6 +74,8 @@ bash ~/ActivePython-2.7.5.6-linux-x86_64/install.sh
 
 Select a path to install to. This will create the path if it does not exist.
 
+**Important note:** We do not recommend you install directly to `$HOME` or use this installation in the `PATH` over the existing version.  There will be problems if you do. Do something like this instead:
+
 ~~~
 Install directory: ~/activestate
 ~~~
@@ -83,22 +87,32 @@ Read the information displayed, it will tell you what `PATH` to add and where.
 Optional: To remove the installation files.
 
 ~~~
-rm -f ActivePython-2.7.5.6-linux-x86_64.tar.gz ~/ActivePython-2.7.5.6-linux-x86_64
+cd && rm -f ActivePython{-2.7.5.6-linux-x86_64.tar.gz,-2.7.5.6-linux-x86_64}
 ~~~
 
 Type this command to reload the shell:
 
 ~~~
-source ~/.bashrc
+bash
+~~~
+
+To use `easy_install` with this installation use the full path to your installation.
+
+~~~
+~/activestate/bin/easy_install
 ~~~
 
 Done.
 
-### Compile Python from source.
+### Installing Python 2.7.6 from source:
 
 In SSH do these commands. Use this FAQ if you do not know how to SSH into your slot: [SSH basics - Putty](https://www.feralhosting.com/faq/view?question=12)
 
-### Installing Python 2.7.6:
+**Important note:** We do not recommend you install directly to `$HOME` or use this installation in the `PATH` over the existing version.  There will be problems if you do. Do something like this instead:
+
+~~~
+--prefix=$HOME/python/python.2.7
+~~~
 
 ~~~
 mkdir -p ~/python/python.2.7
@@ -124,16 +138,17 @@ echo 'export PATH=~/python/python.2.7/bin:$PATH' >> ~/.bashrc
 Now use this command to reload the shell:
 
 ~~~
-source ~/.bashrc
+bash
 ~~~
 
 Now check which version is in use:
 
 ~~~
-python -V
+~/python/python.2.7/bin/python -V
 ~~~
 
-### Installing distribute
+Installing distribute
+---
 
 ~~~
 curl -o ~/distribute_setup.py http://python-distribute.org/distribute_setup.py
@@ -143,7 +158,8 @@ rm -f ~/distribute_setup.py
 
 Distribute is replacing setuptools.
 
-### Installing setuptools:
+Installing setuptools:
+---
 
 ~~~
 wget https://pypi.python.org/packages/2.7/s/setuptools/setuptools-0.6c11-py2.7.egg
@@ -156,15 +172,15 @@ That is done. Python and set-up tools are now installed and added to your paths.
 Using `easy_install` from the command line to install mods:
 
 ~~~
-easy_install pip
+~/python/python.2.7/bin/easy_install pip
 ~~~
 
 ~~~
-easy_install virtualenv
+~/python/python.2.7/bin/easy_install virtualenv
 ~~~
 
 ~~~
-easy_install flexget
+~/python/python.2.7/bin/easy_install flexget
 ~~~
 
 ### Optional Stuff:
