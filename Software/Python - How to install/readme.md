@@ -68,7 +68,7 @@ Includes lots of things such as VirtualENV, distribute, PIP and more. Super simp
 
 ~~~
 wget -qO ~/ActivePython.tar.gz http://downloads.activestate.com/ActivePython/releases/2.7.5.6/ActivePython-2.7.5.6-linux-x86_64.tar.gz
-tar -xzf ActivePython.tar.gz
+tar xf ActivePython.tar.gz
 bash ~/ActivePython-2.7.5.6-linux-x86_64/install.sh
 ~~~
 
@@ -104,7 +104,8 @@ To use `easy_install` with this installation use the full path to your installat
 
 Done.
 
-### Installing Python 2.7.6 from source:
+Installing Python 2.7.6 from source:
+--
 
 In SSH do these commands. Use this FAQ if you do not know how to SSH into your slot: [SSH basics - Putty](https://www.feralhosting.com/faq/view?question=12)
 
@@ -117,7 +118,7 @@ In SSH do these commands. Use this FAQ if you do not know how to SSH into your s
 ~~~
 mkdir -p ~/python/python.2.7
 wget -qO ~/Python-2.7.6.tgz http://www.python.org/ftp/python/2.7.6/Python-2.7.6.tgz
-tar -xzf ~/Python-2.7.6.tgz && cd ~/Python-2.7.6
+tar xf ~/Python-2.7.6.tgz && cd ~/Python-2.7.6
 ./configure --prefix=$HOME/python/python.2.7 && make && make install
 ~~~
 

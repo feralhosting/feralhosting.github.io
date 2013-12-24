@@ -59,7 +59,7 @@ teamspeak
 
 **Features:**
 
-Installs and starts a new instance of `3.0.10.1`
+Installs and starts a new instance of `3.0.10.2`
 
 Sets up the `ts3server.ini` for the user automatically.
 
@@ -86,7 +86,7 @@ Please see the rest of this FAQ for client set-up using your privilege key.
 Manual Installation steps:
 ---
 
-We need the `Linux Server amd64 3.0.10.1`  which you can download manually and then upload to your server. Please just upload the zip to your server root/home folder to keep in line with the rest of the guide.
+We need the `Linux Server amd64 3.0.10.2`  which you can download manually and then upload to your server. Please just upload the zip to your server root/home folder to keep in line with the rest of the guide.
 
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/Software/Teamspeak%203%20server/0.png)
 
@@ -97,7 +97,7 @@ We need the `Linux Server amd64 3.0.10.1`  which you can download manually and t
 Download the server:
 
 ~~~
-wget -qO ~/teamspeak.tar.gz http://dl.4players.de/ts/releases/3.0.10.1/teamspeak3-server_linux-amd64-3.0.10.1.tar.gz
+wget -qO ~/teamspeak.tar.gz http://dl.4players.de/ts/releases/3.0.10.2/teamspeak3-server_linux-amd64-3.0.10.2.tar.gz
 tar xf ~/teamspeak.tar.gz
 cp -rf ~/teamspeak3-server_linux-amd64/. ~/private/teamspeak
 rm -rf ~/teamspeak3-server_linux-amd64 ~/teamspeak.tar.gz
