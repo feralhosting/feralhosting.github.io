@@ -18,10 +18,10 @@ If you need a newer version of Java, such as 1.7, follow these directions. These
 Installing Java into a user directory, and setting paths.
 ---
 
-Run this prerequisite command first:
+Use this command to create the `~/bin` directory and reload your shell for this change to take effect.
 
 ~~~
-mkdir -p ~/bin && source ~/{.profile,.bashrc}
+mkdir -p ~/bin && bash
 ~~~
 
 Files found via [http://www.java.com/en/download/manual.jsp?locale=en](http://www.java.com/en/download/manual.jsp?locale=en). You want the `.tar.gz` file, not the `.deb` or `.rpm` -- those are used when you are installing with root privileges.
@@ -38,12 +38,12 @@ Unpack the files:
 ---
 
 ~~~
-tar xf ~/java.tar.gz && cp -rf ~/jre1.7.0_45/. ~/ && rm -rf ~/java.tar.gz ~/jre1.7.0_45
+tar xf ~/java.tar.gz && cp -rf ~/jre1.7.0_45/. ~/ && cd && rm -rf java.tar.gz jre1.7.0_45
 ~~~
 
 This command also removes the folders and archives we don't need after we are done with them.
 
-Manually call java it like this:
+Manually call `java` it like this:
 
 ~~~
 ~/bin/java -version
@@ -57,7 +57,7 @@ Java(TM) SE Runtime Environment (build 1.7.0_40-b43)
 Java HotSpot(TM) 64-Bit Server VM (build 24.0-b56, mixed mode)
 ~~~
 
-Now do this command from any location:
+Unless you used the `-version` command before installing the update can just do this command below, otherwise log into a new SSH session for the changes to take effect and then check your version again.
 
 ~~~
 java -version
