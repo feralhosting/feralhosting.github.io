@@ -24,9 +24,8 @@ In SSH do the commands described in this FAQ. If you do not know how to SSH into
 1: Do these preparation steps:
 
 ~~~
-mkdir -p ~/programs
-[[][/[][ ! "$(grep '~/.local/bin' ~/.bashrc)" ]] && echo 'export PATH=~/.local/bin:$PATH' >> ~/.bashrc ; source ~/.bashrc
-[[][/[][ ! "$(grep '~/programs/bin' ~/.bashrc)" ]] && echo 'export PATH=~/programs/bin:$PATH' >> ~/.bashrc ; source ~/.bashrc
+mkdir -p ~/bin && bash
+[ ! "$(grep '~/.local/bin' ~/.bashrc)" ] && echo 'export PATH=~/.local/bin:$PATH' >> ~/.bashrc ; source ~/.bashrc
 ~~~
 
 2: Install librsync
@@ -34,8 +33,8 @@ mkdir -p ~/programs
 ~~~
 wget -qO ~/librsync.tar.gz http://downloads.sourceforge.net/project/librsync/librsync/0.9.7/librsync-0.9.7.tar.gz
 tar xf ~/librsync.tar.gz && cd ~/librsync-0.9.7
-./configure --prefix=$HOME/programs --with-pic
-make && make install && cd && rm -rf ~/librsync-0.9.7 ~/librsync-0.9.7
+./configure --prefix=$HOME --with-pic && make && make install
+cd && rm -rf librsync{-0.9.7,.tar.gz}
 ~~~
 
 3: Install Duplicity
@@ -43,8 +42,8 @@ make && make install && cd && rm -rf ~/librsync-0.9.7 ~/librsync-0.9.7
 ~~~
 wget -qO ~/duplicity.tar.gz http://code.launchpad.net/duplicity/0.6-series/0.6.22/+download/duplicity-0.6.22.tar.gz
 tar xf ~/duplicity.tar.gz && cd ~/duplicity-0.6.22
-python setup.py install --prefix=$HOME/.local --librsync-dir=$HOME/programs
-cd && rm -rf ~/duplicity-0.6.22 ~/duplicity.tar.gz
+python setup.py install --prefix=$HOME/.local --librsync-dir=$HOME
+cd && rm -rf duplicity{-0.6.22,.tar.gz}
 ~~~
 
 Check it was installed correctly.

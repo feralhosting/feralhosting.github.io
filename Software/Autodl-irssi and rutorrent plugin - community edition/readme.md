@@ -49,11 +49,13 @@ After you’re connected to your box, run the following commands:
 
 We highly recommend that you perform a clean install when switching from the official release of autodl-irssi to prevent any possible conflicts. Running these commands in your terminal or deleting that directory through an FTP client is suggested:
 
+**Important note:** These commands do not delete the `~/.autodl` folder or the `~/.autodl/autodl.cfg` but this file will be overwritten during manual installation below so please back it up now if you need it.
+
 ~~~
 killall -9 irssi -u $(whoami); screen -wipe
-rm -rf ~/.irssi/scripts/AutodlIrssi
-rm -f ~/.irssi/scripts/autorun/autodl-irssi.pl
-rm -rf ~/www/$(whoami).$(hostname)/public_html/rutorrent/plugins/autodl-irssi
+cp -f ~/.autodl/autodl.cfg ~/.autodl/autodl.cfg.bak
+cd && rm -rf .irssi/scripts/AutodlIrssi .irssi/scripts/autorun/autodl-irssi.pl
+cd && www/$(whoami).$(hostname)/public_html/rutorrent/plugins/autodl-irssi
 ~~~
 
 Automated installation
@@ -78,7 +80,7 @@ echo -e "[options]\ngui-server-port = 0\ngui-server-password = PASS" > ~/.autodl
 wget -qO ~/autodl-irssi.zip https://autodl-irssi-community.googlecode.com/files/autodl-irssi-community.zip
 unzip -qo ~/autodl-irssi.zip -d ~/.irssi/scripts/
 cp -f ~/.irssi/scripts/autodl-irssi.pl ~/.irssi/scripts/autorun/
-rm -f ~/autodl-irssi.zip ~/.irssi/scripts/README* ~/.irssi/scripts/autodl-irssi.pl
+cd && rm -f autodl-irssi.zip .irssi/scripts/{README*,autodl-irssi.pl,CONTRIBUTING.md}
 ~~~
 
 Configuring your autodl-irssi connection to the autodl-irssi rutorrent plugin. This step is not required. If you don’t want to use the UI configuration editor, 

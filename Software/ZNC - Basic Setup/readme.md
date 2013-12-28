@@ -16,21 +16,19 @@ You login information for the relevant slot will be shown here:
 ZNC installation
 ---
 
-Use these first two commands to create to do some pre requisite tasks:
+Use this command to create the `~/bin` directory and reload your shell for this change to take effect.
 
 ~~~
-mkdir -p ~/programs
-[[][/[][ ! "$(grep '~/programs/bin' ~/.bashrc)" ]] && echo 'export PATH=~/programs/bin:$PATH' >> ~/.bashrc ; source ~/.bashrc
+mkdir -p ~/bin && bash
 ~~~
 
-Install the program using these commands:
+Install the `znc` using these commands:
 
 ~~~
-wget -qO ~/znc.tar.gz http://znc.in/releases/znc-latest.tar.gz
-tar xf ~/znc.tar.gz && cd ~/znc-*
-./configure --prefix=$HOME/programs
-make && make install && cd
-rm -rf ~/znc.tar.gz ~/znc-*
+wget -qO ~/znc-1.2.tar.gz http://znc.in/releases/znc-latest.tar.gz
+tar xf ~/znc-1.2.tar.gz && cd ~/znc-1.2
+./configure --prefix=$HOME && make && make install
+cd && rm -rf znc{-1.2,1.2.tar.gz}
 ~~~
 
 Once it is installed and ready we can start to configure `znc` using this command:

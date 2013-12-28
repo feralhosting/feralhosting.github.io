@@ -127,7 +127,7 @@ The configuration and installation can take some time to be patient.
 When it is finished installing, do some clean up with this command.
 
 ~~~
-cd && rm -rf ~/Python-2.7.6 ~/Python-2.7.6.tgz
+cd && rm -rf ~/Python{-2.7.6,-2.7.6.tgz}
 ~~~
 
 Python has been installed. Now check which version is in use:
@@ -142,7 +142,7 @@ Installing distribute
 ~~~
 wget -qO ~/distribute_setup.py http://python-distribute.org/distribute_setup.py
 ~/python/python.2.7/bin/python ~/distribute_setup.py
-rm -f ~/distribute_setup.py
+cd && rm -f distribute_setup.py
 ~~~
 
 Distribute is replacing setuptools.
@@ -153,7 +153,7 @@ Installing setuptools:
 ~~~
 wget -qO ~/setuptools.egg https://pypi.python.org/packages/2.7/s/setuptools/setuptools-0.6c11-py2.7.egg
 ~/python/python.2.7/bin/python ~/setuptools.egg
-rm -f ~/setuptools.egg
+cd && rm -f setuptools.egg
 ~~~
 
 That is done. Python and set-up tools are now installed and added to your paths. There should be no need to prefix when installing mods.
