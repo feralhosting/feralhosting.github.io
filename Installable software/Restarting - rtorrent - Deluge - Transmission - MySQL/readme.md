@@ -1,7 +1,8 @@
 
 **Important note:** A quick way to restart software is to install it again from the software page - this will leave data intact, but will reset configuration, passwords, RSS feeds and custom folders.
 
-### Bash script
+Bash script
+---
 
 Here is a simple bash script for restarting rtorrent,deluge, transmission (kill only) and mysql with some checks to see they restarted. The script performs the basic kill and restart (where applicable) functions outlined in this FAQ.
 
@@ -15,7 +16,8 @@ wget -qO ~/restart.sh http://git.io/5Uw8Gw && bash ~/restart.sh
 
 Copy and paste commands directly as written in this FAQ.
 
-### Restarting rtorrent
+Restarting rtorrent
+---
 
 Run the following commands through [SSH](https://www.feralhosting.com/faq/view?question=12).
 
@@ -63,7 +65,8 @@ If all goes well, you should be greeted with your rtorrent  and you should see y
 
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/Installable%20software/Restarting%20-%20rtorrent%20-%20Deluge%20-%20Transmission%20-%20MySQL/1.png)
 
-### Restarting Transmission
+Restarting Transmission
+---
 
 Run the following commands in [SSH](https://www.feralhosting.com/faq/view?question=12).
 
@@ -85,7 +88,8 @@ You will see this if the process is running.
 
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/Installable%20software/Restarting%20-%20rtorrent%20-%20Deluge%20-%20Transmission%20-%20MySQL/transmission.png)
 
-### Restarting Deluge
+Restarting Deluge
+---
 
 Run the following commands through [ SSH](https://www.feralhosting.com/faq/view?question=12).
 
