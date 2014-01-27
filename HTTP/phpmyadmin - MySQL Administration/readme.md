@@ -12,11 +12,11 @@ In SSH do these commands. Use this FAQ if you do not know how to SSH into your s
 Download the phpMyAdmin package:
 
 ~~~
-wget -qO ~/phpMyAdmin.zip http://sourceforge.net/projects/phpmyadmin/files/latest/download
-unzip -qo phpMyAdmin.zip 
+wget -qO ~/phpMyAdmin.zip http://downloads.sourceforge.net/project/phpmyadmin/phpMyAdmin/4.1.5/phpMyAdmin-4.1.5-all-languages.zip
+unzip -qo ~/phpMyAdmin.zip 
 cp -rf ~/phpMyAdmin-*-all-languages/. ~/www/$(whoami).$(hostname)/public_html/phpmyadmin
 mkdir -p ~/www/$(whoami).$(hostname)/public_html/phpmyadmin/config
-rm -rf ~/phpMyAdmin.zip ~/phpMyAdmin-*-languages
+cd && rm -rf phpMyAdmin{-*-languages,.zip}
 ~~~
 
 ### https URL redirect fix:
@@ -34,7 +34,7 @@ sed -i 's/443/80/g' ~/www/$(whoami).$(hostname)/public_html/phpmyadmin/libraries
 **nginx**
 
 ~~~
-sed -i 's/443/8080/g' ~/www/$(whoami).$(hostname)/public_html/phpmyadmin/libraries/Config.class.php
+sed -i 's/ 80)/ 8080)/g;s/443/8080/g' ~/www/$(whoami).$(hostname)/public_html/phpmyadmin/libraries/Config.class.php
 ~~~
 
 ### Completing the Setup
@@ -70,7 +70,7 @@ Once you have saved the configuration you need to run these two command in SSH t
 ~~~
 cd ~/www/$(whoami).$(hostname)/public_html/
 cp -f phpmyadmin/config/config.inc.php ~/www/$(whoami).$(hostname)/public_html/phpmyadmin/config.inc.php
-rm -rf ~/www/$(whoami).$(hostname)/public_html/phpmyadmin/config && cd
+cd && rm -rf www/$(whoami).$(hostname)/public_html/phpmyadmin/config
 ~~~
 
 Now you can return to the main page and login at:

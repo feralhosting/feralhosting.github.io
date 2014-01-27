@@ -24,18 +24,17 @@ Curl manual installation:
 Use these first two commands to create to do some pre requisite tasks:
 
 ~~~
-mkdir -p ~/programs
-[[][/[][ ! "$(grep '~/programs/bin' ~/.bashrc)" ]] && echo 'export PATH=~/programs/bin:$PATH' >> ~/.bashrc ; source ~/.bashrc
+mkdir -p ~/bin && bash
 ~~~
 
 Install the program using these commands:
 
 ~~~
-wget -qO ~/curl.tar.gz http://curl.haxx.se/download/curl-7.33.0.tar.gz
-tar xf ~/curl.tar.gz && cd ~/curl-7.33.0
-./configure --prefix=$HOME/programs
-make && make install && cd
-rm -rf ~/curl-7.33.0 ~/curl.tar.gz
+wget -qO ~/curl.tar.gz http://curl.haxx.se/download/curl-7.34.0.tar.gz
+tar xf ~/curl.tar.gz && cd ~/curl-7.34.0
+./configure --prefix=$HOME
+make && make install
+cd && rm -rf curl{-7.34.0,.tar.gz}
 ~~~
 
 Check your version:

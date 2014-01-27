@@ -3,12 +3,13 @@ These applications are listed here for your convenience only. They are not endor
 
 Some applications gave a portable version or PortableApps version. Portable apps can be run from a USB stick and do not write any configs to the local PC. Carry your apps in your pocket! There are lots more portable apps [here](http://portableapps.com/apps). 
 
-### Windows
+Windows
+---
 
 [Bitkinex](http://www.bitkinex.com/ftp/client/bitkinex323.exe) - BitKinex is a handy network client supporting multiple transfer protocols (FTP, FTP(S), SFTP, HTTP(S) and WebDAV). Supports segmented downloads - [Full Features list](http://www.bitkinex.com/features)
 
-[WinSCP 5.1.7](http://winscp.net/download/winscp517setup.exe) - **Free** SFTP and FTP client for Windows. Supports custom commands. 
-Also available - [WinSCP Portable 5.*.*](http://portableapps.com/apps/internet/winscp_portable)
+[WinSCP 5.5.0](http://winscp.net/download/winscp550setup.exe) - **Free** SFTP and FTP client for Windows. Supports custom commands. 
+Also available - [WinSCP Portable 5.5.0](http://portableapps.com/apps/internet/winscp_portable)
 
 [FileZilla](https://www.feralhosting.com/faq/view?question=187) - **Free** FTP client that runs on  **all major platforms**. Supports transferring multiple files at the same time. 
 Also available - [FileZilla Portable](http://portableapps.com/apps/internet/filezilla_portable).
@@ -28,7 +29,8 @@ Also available - [Putty Portable](http://portableapps.com/apps/internet/putty_po
 
 [7-Zip](http://www.7-zip.org/) - 7-Zip is open source software. Most of the source code is under the GNU LGPL license. The unRAR code is under a mixed license: GNU LGPL + unRAR restrictions.
 
-### Mac
+Mac
+---
 
 [FileZilla](https://www.feralhosting.com/faq/view?question=187) - **[b]Free**[/b] FTP client that runs on  **all major platforms, including Mac. ** Supports transferring multiple files at the same time
 
@@ -40,7 +42,8 @@ Also available - [Putty Portable](http://portableapps.com/apps/internet/putty_po
 
 [CuteFTP Pro](http://www.cuteftp.com/cuteftpmacpro/) - paid FTP and SFTP client for Mac OSX.
 
-### Linux
+Linux
+---
 
 [p7zip](https://www.feralhosting.com/faq/view?question=245) - **Free** archiving client for **all major platforms**. It can handle .zip and `.rar` files, as well as its own format - `.7z` 
 Also available - [7-zip Portable](http://portableapps.com/apps/utilities/7-zip_portable). 
@@ -53,7 +56,8 @@ Also available - [7-zip Portable](http://portableapps.com/apps/utilities/7-zip_p
 
 [Deluge Thin Client](https://www.feralhosting.com/faq/view?question=76)
 
-### IRC Chat Programs
+IRC Chat Programs
+---
 
 [Chatzilla](http://chatzilla.hacksrus.com/) - **Free** IRC client for Windows, which runs as an add-on in [Firefox](http://www.getfirefox.com). 
 Also available - [Chatzilla Standalone](http://chatzilla.rdmsoft.com/xulrunner/) - will run without a Firefox session running.
@@ -64,7 +68,8 @@ Also available - [Chatzilla Standalone](http://chatzilla.rdmsoft.com/xulrunner/)
 
 [I-N-V-I-S-I-O-N (MiRC)](http://i-n-v-i-s-i-o-n.com/cms/index.php?option=com_frontpage&Itemid=1) - advanced feature rich all around script for mIRC
 
-### Android
+Android
+---
 
 [Transdroid](https://www.feralhosting.com/faq/view?question=81) - **Free** - Transdroid is an Android  remote client for your BitTorrent application running on a server or home computer. Currently Transmission, µTorrent, BitTorrent 6+ and Deluge 1.2+ are supported. It can show the active torrents, pause, resume or remove them and new torrents can be added via URL.
 

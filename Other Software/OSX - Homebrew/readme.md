@@ -1,5 +1,6 @@
 
-### Installing [homebrew](http://brew.sh/) on OS X Mavericks
+Installing [homebrew](http://brew.sh/) on OS X Mavericks
+---
 
 This is quite a simple thing to do and once you have done it you will be able to install some useful apps for use with your slot.
 
@@ -13,12 +14,13 @@ If you haven't already created a dock icon for "Terminal", open your Macintosh H
 
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/0%20Generic/terminalicon.png)
 
-### Installing homebrew
+Installing homebrew
+---
 
 In your terminal you need yo paste this command and then press enter:
 
 ~~~
-ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 ~~~
 
 This will begin the homebrew installation procedure:
@@ -69,7 +71,8 @@ Do this now:
 
 You have now successfully installed homebrew and are now ready to install some apps.
 
-### Installing homebrew apps.
+Installing homebrew apps.
+---
 
 The first thing to do is update the formulae:
 

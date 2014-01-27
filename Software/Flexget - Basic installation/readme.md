@@ -12,21 +12,28 @@ You login information for the relevant slot will be shown here:
 Flexget Setup
 ---
 
-Add this location to your PATH using this command:
+Create our VirtualENV environment using `pip`. Do not use `easy_install` to install `virtualenv`
 
 ~~~
-[[][/[][ ! "$(grep '~/.local/bin' ~/.bashrc)" ]] && echo 'export PATH=~/.local/bin:$PATH' >> ~/.bashrc ; source ~/.bashrc
-~~~
-
-**Important note:** Why is the `~/flexget/bin` not added to the PATH to? to avoid potential `easy_install`, `pip` and mods conflicts. Use the activate command below instead.
-
-Create our VirtualENV environment and 
-
-~~~
-easy_install --user virtualenv
-virtualenv ~/flexget/
+easy_install --user pip
+~/.local/bin/pip install --user virtualenv
+~/.local/bin/virtualenv ~/flexget/
 ~/flexget/bin/pip install flexget
 ~~~
+
+**Important note:** If you installed `virtualenv` using `easy_install` and have some errors when trying to create a virtual environment, then do these steps:
+
+~~~
+easy_install --user pip
+~/.local/bin/pip uninstall virtualenv
+cd && rm -rf .local/bin/virtualenv*
+~/.local/bin/pip install --user virtualenv
+~/.local/bin/virtualenv ~/flexget/
+~/flexget/bin/pip install flexget
+~~~
+
+Running flexget
+---
 
 Now you can either call `flexget` directly like this:
 

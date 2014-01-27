@@ -15,8 +15,7 @@ CMAKE installation
 Use these first two commands to create to do some pre requisite tasks:
 
 ~~~
-mkdir -p ~/programs
-[[][/[][ ! "$(grep '~/programs/bin' ~/.bashrc)" ]] && echo 'export PATH=~/programs/bin:$PATH' >> ~/.bashrc ; source ~/.bashrc
+mkdir -p ~/bin && bash
 ~~~
 
 Install the program using these commands:
@@ -27,8 +26,8 @@ Using the pre-compiled binary:
 ~~~
 wget -qO ~/cmake.tar.gz http://www.cmake.org/files/v2.8/cmake-2.8.12.1-Linux-i386.tar.gz
 tar xf ~/cmake.tar.gz
-cp -rf ~/cmake-2.8.12.1-Linux-i386/. ~/programs
-rm -rf ~/cmake-2.8.12.1-Linux-i386 ~/cmake.tar.gz
+cp -rf ~/cmake-2.8.12.1-Linux-i386/. ~/
+cd && rm -rf cmake{-2.8.12.1-Linux-i386,.tar.gz}
 ~~~
 
 Using the source code:
@@ -37,9 +36,9 @@ Using the source code:
 ~~~
 wget -qO ~/cmake.tar.gz http://www.cmake.org/files/v2.8/cmake-2.8.12.1.tar.gz
 tar xf ~/cmake.tar.gz && cd ~/cmake-2.8.12.1
-./configure --prefix=$HOME/programs
-make && make install && cd
-rm -rf ~/cmake.tar.gz ~/cmake-2.8.12.1
+./configure --prefix=$HOME
+make && make install
+cd && rm -rf cmake{-2.8.12.1,.tar.gz}
 ~~~
 
 Usage:
@@ -48,7 +47,7 @@ Usage:
 You can use this prefix to specify the directory you wish to install the program to.
 
 ~~~
-cmake -DPREFIX=$HOME/desired-location
+cmake -DPREFIX=$HOME
 ~~~
 
 Issues with CURL:
@@ -67,7 +66,7 @@ If this line exists then remove it.
 This example is how `weechat` is installed on the slot when the script is used.
 
 ~~~
-cmake -DCMAKE_INSTALL_RPATH=/opt/curl/current/lib -DPREFIX=$HOME/programs -DCURL_LIBRARY=/opt/curl/current/lib/libcurl.so -DCURL_INCLUDE_DIR=/opt/curl/current/include
+cmake -DCMAKE_INSTALL_RPATH=/opt/curl/current/lib -DPREFIX=$HOME -DCURL_LIBRARY=/opt/curl/current/lib/libcurl.so -DCURL_INCLUDE_DIR=/opt/curl/current/include
 ~~~
 
 

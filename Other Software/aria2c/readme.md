@@ -3,13 +3,14 @@ aria2 is a lightweight multi-protocol & multi-source command-line download utili
 
 [aria2c command documentation](http://aria2.sourceforge.net/manual/en/html/aria2c.html)
 
-### Using the aria2c Windows Command line binary with the Web Gui
+Using the aria2c Windows Command line binary with the Web Gui
+---
 
 **1:** Getting the [aria2c](http://aria2.sourceforge.net/) executable.
 
 **Important note:** This is required for use with the Web Gui. The Web Gui does not come with the binary.
 
-[aria2c 1.18.1 x86](http://sourceforge.net/projects/aria2/files/stable/aria2-1.18.1/aria2-1.18.1-win-32bit-build1.zip/download) or [aria2c 1.18.1 x64](http://sourceforge.net/projects/aria2/files/stable/aria2-1.18.1/aria2-1.18.1-win-64bit-build1.zip/download) - Windows command line executable. 
+[aria2c 1.18.3 x86](http://downloads.sourceforge.net/project/aria2/stable/aria2-1.18.3/aria2-1.18.3-win-32bit-build1.zip) or [aria2c 1.18.3 x64](http://downloads.sourceforge.net/project/aria2/stable/aria2-1.18.3/aria2-1.18.3-win-64bit-build1.zip) - Windows command line executable. 
 
 **2:** Getting [Aria2c Web Gui](https://github.com/ziahamza/webui-aria2/) - A very simple Web application that you can download and run in any browser.
 
@@ -17,7 +18,8 @@ aria2 is a lightweight multi-protocol & multi-source command-line download utili
 
 **3:** Unpacking the files and set-up:
 
-### aria2c.exe
+aria2c.exe
+---
 
 **Important note:** This section is aimed at getting the aria2c process running as simply as possible for use with the Web Gui. In the Web Gui you can configure many of aria2c's options and settings per session. Please see the custom set-up section for a more advanced set-up using a custom `.conf` file, if you want certain settings to persist like username or site specific settings.
 
@@ -67,7 +69,8 @@ For a full list of options and their defaults please refer to this page:
 
 Now jump to the aria Web Gui section
 
-### aria2c custom setup
+aria2c custom setup
+---
 
 `aria2c.exe` or the Web Gui do not remember your configuration settings if you restart `aria2c.exe` The `aria2c.bat` or `aria2.conf`  files are easily edited to add or remove command line options that suit your needs. This means it will always start with the settings you want. Also to have the program run in the background (no command prompt window) making it set and forget you need to use this custom set-up:
 
@@ -75,7 +78,7 @@ This set-up will allow you to easily download from password protected http/s fol
 
 **What is this custom set-up then? **
 
-This is the aria2c v1.18.0 x64 or x86 exe, in a folder that includes a `aria2c.bat`, a `runme.vbs` file and a custom `aria2.conf` with some pre configured settings.
+This is the aria2c v1.18.3 x64 or x86 exe, in a folder that includes a `aria2c.bat`, a `runme.vbs` file and a custom `aria2.conf` with some pre configured settings.
 
 The `aria2c.bat` file contains the command we use to run aria2c. In this case, executing it and loading our custom `aria2.conf`. You can tweak the `aria2c.bat` or the `aria2.conf` to decide start-up parameters
 

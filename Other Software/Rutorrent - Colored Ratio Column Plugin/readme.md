@@ -6,7 +6,7 @@ Install it using [SSH](https://www.feralhosting.com/faq/view?question=12):
 ~~~
 wget -qO ~/ratio.zip http://git.io/FokoFQ
 unzip -qo ~/ratio.zip -d ~/www/$(whoami).$(hostname)/public_html/rutorrent/plugins/
-rm -f ~/ratio.zip
+cd && rm -f ratio.zip
 ~~~
 
 **Important note:** What is different from the original?

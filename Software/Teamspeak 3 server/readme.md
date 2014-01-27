@@ -44,7 +44,7 @@ Teamspeak 3 on Feral Slots.
 To install this software using a custom bash script connect to your slot using SSH. If you don't know how to do this [here is a basic guide](https://www.feralhosting.com/faq/view?question=12):
 
 ~~~
-wget -qO ~/teamspeak.sh http://git.io/rHYfHg && bash ~/teamspeak.sh
+wget -qO ~/install.teamspeak.sh http://git.io/aOACkQ && bash ~/install.teamspeak.sh
 ~~~
 
 Once this script has been executed to completion once, one script is copied to your `~/bin` folder.
@@ -59,7 +59,7 @@ teamspeak
 
 **Features:**
 
-Installs and starts a new instance of `3.0.10.2`
+Installs and starts a new instance of `3.0.10.3`
 
 Sets up the `ts3server.ini` for the user automatically.
 
@@ -86,7 +86,7 @@ Please see the rest of this FAQ for client set-up using your privilege key.
 Manual Installation steps:
 ---
 
-We need the `Linux Server amd64 3.0.10.2`  which you can download manually and then upload to your server. Please just upload the zip to your server root/home folder to keep in line with the rest of the guide.
+We need the `Linux Server amd64 3.0.10.3`  which you can download manually and then upload to your server. Please just upload the zip to your server root/home folder to keep in line with the rest of the guide.
 
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/Software/Teamspeak%203%20server/0.png)
 
@@ -97,7 +97,7 @@ We need the `Linux Server amd64 3.0.10.2`  which you can download manually and t
 Download the server:
 
 ~~~
-wget -qO ~/teamspeak.tar.gz http://dl.4players.de/ts/releases/3.0.10.2/teamspeak3-server_linux-amd64-3.0.10.2.tar.gz
+wget -qO ~/teamspeak.tar.gz http://dl.4players.de/ts/releases/3.0.10.3/teamspeak3-server_linux-amd64-3.0.10.3.tar.gz
 tar xf ~/teamspeak.tar.gz
 cp -rf ~/teamspeak3-server_linux-amd64/. ~/private/teamspeak
 rm -rf ~/teamspeak3-server_linux-amd64 ~/teamspeak.tar.gz

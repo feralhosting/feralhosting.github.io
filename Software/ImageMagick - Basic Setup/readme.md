@@ -20,19 +20,18 @@ Manual installation:
 Use these first two commands to create to do some pre requisite tasks:
 
 ~~~
-mkdir -p ~/programs
-[[][/[][ ! "$(grep '~/programs/bin' ~/.bashrc)" ]] && echo 'export PATH=~/programs/bin:$PATH' >> ~/.bashrc ; source ~/.bashrc
+mkdir -p ~/bin && bash
 ~~~
 
 Install the program using these commands:
 
 ~~~
-wget -qO ~/imagemagick.tar.gz http://www.imagemagick.org/download/ImageMagick.tar.gz
-tar xf ~/imagemagick.tar.gz
-cd ~/ImageMagick-6.8.7-5
-./configure --prefix=$HOME/programs
-make && make install && cd 
-rm -rf ~/imagemagick.tar.gz ~/ImageMagick-6.8.7-5
+wget -qO ~/ImageMagick.tar.gz http://www.imagemagick.org/download/ImageMagick.tar.gz
+tar xf ~/ImageMagick.tar.gz && cd ~/ImageMagick-*
+./configure --prefix=$HOME
+make && make install
+cd && rm -rf ImageMagick{.tar.gz,-*}
 ~~~
+
 
 
