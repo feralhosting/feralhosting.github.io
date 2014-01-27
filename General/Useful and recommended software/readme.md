@@ -8,8 +8,8 @@ Windows
 
 [Bitkinex](http://www.bitkinex.com/ftp/client/bitkinex323.exe) - BitKinex is a handy network client supporting multiple transfer protocols (FTP, FTP(S), SFTP, HTTP(S) and WebDAV). Supports segmented downloads - [Full Features list](http://www.bitkinex.com/features)
 
-[WinSCP 5.5.0](http://winscp.net/download/winscp550setup.exe) - **Free** SFTP and FTP client for Windows. Supports custom commands. 
-Also available - [WinSCP Portable 5.5.0](http://portableapps.com/apps/internet/winscp_portable)
+[WinSCP](http://winscp.net/eng/download.php) - **Free** SFTP and FTP client for Windows. Supports custom commands. 
+Also available - [WinSCP Portable](http://portableapps.com/apps/internet/winscp_portable)
 
 [FileZilla](https://www.feralhosting.com/faq/view?question=187) - **Free** FTP client that runs on  **all major platforms**. Supports transferring multiple files at the same time. 
 Also available - [FileZilla Portable](http://portableapps.com/apps/internet/filezilla_portable).

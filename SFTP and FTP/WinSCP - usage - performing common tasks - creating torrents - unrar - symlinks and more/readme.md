@@ -1,18 +1,12 @@
 
-WinSCP is an open source SFTP client and FTP client for Windows. Its main function is the secure file transfer between a local and a remote computer. Beyond this, WinSCP offers basic file manager functionality. It uses Secure Shell (SSH) and supports, in addition to Secure FTP, also legacy SCP protocol.
+[Introducing WinSCP](http://winscp.net/eng/docs/introduction)
 
 WinSCP is often disregarded by many users. The purpose of this tutorial, however, is to show you that WinSCP is much more than a file transfer client - it offers a clean, well designed graphic user interface (GUI) for performing many common tasks that otherwise could be confusing for a novice Linux user to achieve in the shell.
-
-WinSCP is a very useful program for novice users.
 
 Getting Familiar with WinSCP
 ---
 
-[Download](http://winscp.net/download/winscp517setup.exe) the installer version 5.1.7. This installation package has certain explorer like plug-ins for drag and drop.
-
-[Download](http://winscp.net/download/winscp517.zip) Portable version 5.1.7. This way WinSCP will store all its settings in its own directory, not writing anything into the registry. Portable also means you will be able to run it from your USB drive.
-
-Install or Save the executable to a directory of your choice and launch it. It will display a configuration window. Fill out the fields as suggested in the screen-shot below:
+For this FAQ we recommend you download and install the installation package. [Download](http://winscp.net/eng/download.php)
 
 ![](http://i31.tinypic.com/3133fdk.jpg)
 
