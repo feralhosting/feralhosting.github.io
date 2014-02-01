@@ -4,9 +4,9 @@
 In SSH do these commands. Use this FAQ if you do not know how to SSH into your slot: [SSH basics - Putty](https://www.feralhosting.com/faq/view?question=12)
 
 ~~~
-wget -qO ~/pydio.zip http://downloads.sourceforge.net/project/ajaxplorer/pydio/stable-channel/5.0.4/pydio-core-5.0.4.zip
+wget -qO ~/pydio.zip http://downloads.sourceforge.net/project/ajaxplorer/pydio/stable-channel/5.2.0/pydio-core-5.2.0.zip
 unzip -qo ~/pydio.zip
-cp -rf ~/pydio-core-5.0.4/. ~/www/$(whoami).$(hostname)/public_html/pydio
+cp -rf ~/pydio-core-5.2.0/. ~/www/$(whoami).$(hostname)/public_html/pydio
 sed -i 's|//define("AJXP_LOCALE", "en_EN.UTF-8");|define("AJXP_LOCALE", "en_GB.UTF-8");|g' ~/www/$(whoami).$(hostname)/public_html/pydio/conf/bootstrap_conf.php
 ~~~
 
@@ -17,7 +17,7 @@ Or you could edit it to be say `en_US.UTF-8` if you wanted.
 Remove the files we don't need:
 
 ~~~
-rm -f ~/pydio.zip && rm -rf ~/pydio-core-5.0.4
+cd && rm -rf pydio{-core-5.2.0,.zip}
 ~~~
 
 If you are using nginx you may want to do this:
