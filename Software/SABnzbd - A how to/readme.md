@@ -9,60 +9,46 @@ wget -qO ~/SABnzbd.tar.gz http://sourceforge.net/projects/sabnzbdplus/files/late
 **2:** Extract the files from the archive.
 
 ~~~
-tar -xzf ~/SABnzbd.tar.gz
+tar xf ~/SABnzbd.tar.gz
 ~~~
 
 **3:** Run SABnzbd.py
 
-~~~
-screen -fa -dmS sabnzbd python SABnzbd-*/SABnzbd.py --server $(whoami).$(hostname):PORT
-~~~
+**3.1:** Replace `PORT` in `$(hostname):PORT` with a port number between the range of ` 6000` to `50000`. This is the default port. If you pick the same port as someone else, you'll get an error.  Quit and restart with a different port number.
 
-Be sure to replace **PORT** with any port number, anything over 6000 should do.  I used 6903.  If you pick the same port as someone else, you'll get an error.  Quit and restart with a different port number.
+**3.2:** Replace `PORT` in `--https PORT` with a port number between the range of ` 6000` to `50000`. Do not use the same port as the default port, use one above or below to keep things simple. This will be your https port. You will be required to accept the invalid certificate in order to connect.
 
-**Important note:** Once you have completed the Web Gui wizard and it restarts the but the Web Gui is not loading:
-
-1: In SSH connect to the screen process using this command:
+This is the command you will need to edit:
 
 ~~~
-screen -r sabnzbd
+screen -fa -dmS sabnzbd python SABnzbd-*/SABnzbd.py --browser 0 --server $(hostname):PORT --https PORT
 ~~~
 
-The press enter, you will now see the lynx setup wizard. Now press `q` then press `y` to quit the setup wizard. It should now restart properly
-
-2: If you chose to connect using SSL and it restarted with port 9090 then you can edit the port on this file:
+For example:
 
 ~~~
-nano -w ~/.sabnzbd/sabnzbd.ini
-~~~
-
-The edit the `https_port` setting.
-
-Pick any port between 6000 - 50000 and then save you changes by pressing and holding CTRL and then press x. Press y to confirm and save. Now connect to the screen using this command.
-
-Use this command to kill the screen and the process:
-
-~~~
-screen -S sabnzbd -X quit
-~~~
-
-Now you can restart it using just this command and the new SSL port will have taken effect.
-
-~~~
-screen -fa -dmS sabnzbd python SABnzbd-*/SABnzbd.py
+screen -fa -dmS sabnzbd python SABnzbd-*/SABnzbd.py --browser 0 --server $(hostname):12345 --https 12346
 ~~~
 
 **4:** Access SABnzb through your browser.
 
+**Important note:** Make sure to use the https port in the URL,
+
 ~~~
-http://username.server.feralhosting.com:PORT/sabnzbd/
+https://server.feralhosting.com:PORT/sabnzbd/
+~~~
+
+For example:
+
+~~~
+https://peterpan.feralhosting.com:12346/sabnzbd/
 ~~~
 
 **5:** Follow the SABnzbd wizard to set up your Usenet account.
 
 ** Make sure you set-up a username and password under `Config > General`**
 
-**6:**  You'll need to make 3 folders, you can make the toplevel 'downloads' folder wherever you wish:
+**6:**  You'll need to make 3 folders, you can make the top level 'downloads' folder wherever you wish:
 
 ~~~
 downloads
@@ -74,12 +60,10 @@ Inside this new folder make another 2 folder with these names:
 complete
 ~~~
 
- 
 ~~~
 incomplete
 ~~~
 
- 
 (**Note, the two subfolders are required**)
 
 Make sure you've set the proper path to these under `Config` in the web interface. **You will need to use the full path**. Below you'll find a sample path:
@@ -88,6 +72,32 @@ Make sure you've set the proper path to these under `Config` in the web interfac
 /media/DiskID/home/username/private/sab/downloads/
 ~~~
 
+Connecting in SSH and restarting sabnzbd
+----
+
+**Attach to the screen:**
+
+To the screen process using this command:
+
+~~~
+screen -r sabnzbd
+~~~
+
+**Kill the screen:**
+
+Use this command to kill the screen and the process if needed:
+
+~~~
+screen -S sabnzbd -X quit
+~~~
+
+**Restart  the screen**
+
+You can restart it using just this command once you have used the main command above once as it configures the `ini` file.
+
+~~~
+screen -fa -dmS sabnzbd python SABnzbd-*/SABnzbd.py
+~~~
 
 
 
