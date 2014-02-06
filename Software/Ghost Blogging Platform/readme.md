@@ -55,9 +55,9 @@ Find this:
 
 ~~~
 server: {
-    // Host to be passed to node's `net.Server#listen()`
+    // Host to be passed to node's net.Server#listen()
     host: '127.0.0.1',
-    // Port to be passed to node's `net.Server#listen()`, for iisnode set this to `process.env.PORT`
+    // Port to be passed to node's net.Server#listen(), for iisnode set this to process.env.PORT
     port: '2368'
 }
 ~~~
@@ -66,9 +66,9 @@ Change the host to `0.0.0.0` and choose a port between the ranges `6000` - `5000
 
 ~~~
 server: {
-    // Host to be passed to node's `net.Server#listen()`
+    // Host to be passed to node's net.Server#listen()
     host: '0.0.0.0',
-    // Port to be passed to node's `net.Server#listen()`, for iisnode set this to `process.env.PORT`
+    // Port to be passed to node's net.Server#listen(), for iisnode set this to process.env.PORT
     port: '23684'
 }
 ~~~
@@ -140,3 +140,6 @@ Visit this URL to configure your admin account.
 ~~~
 https://server.feralhosting.com/username/blog/ghost
 ~~~
+
+
+
