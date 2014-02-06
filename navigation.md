@@ -152,6 +152,8 @@
   * [Ruby - Basic Setup](Software/Ruby%20-%20Basic%20Setup/readme.md)
   * [ZNC - Basic Setup](Software/ZNC%20-%20Basic%20Setup/readme.md)
   * [ffmpef - Basic Setup](Software/ffmpeg%20-%20Basic%20Setup/readme.md)
+  * [etherpad-lite](Software/etherpad/readme.md)
+  * [Ghost Blogging Platform](Software/Ghost%20Blogging%20Platform/readme.md)
 
 [Linux Command-Line (Advanced)]()
 
