@@ -118,6 +118,7 @@ Now we are ready to start Ghost:
 
 ~~~
 screen -S ghost
+cd ~/ghost
 npm start
 ~~~
 
