@@ -31,7 +31,7 @@ This method will download  and install/update the 64 bit java files for Linux
 Download v7 update 51:
 
 ~~~
-wget -qO ~/java.tar.gz http://javadl.sun.com/webapps/download/AutoDL?BundleId=83374
+wget -qO ~/java.tar.gz http://javadl.sun.com/webapps/download/AutoDL?BundleId=83376
 ~~~
 
 Unpack the files:
