@@ -28,7 +28,7 @@ Then wait for the daemon to be automatically restarted, it can take up to five m
 **List available modules.**
 
 ~~~
-ls -1 ls /etc/apache2/mods-available/
+ls -1 /etc/apache2/mods-available/
 ~~~
 
 **For example. Here is the way you would load the Auth Digest module:**

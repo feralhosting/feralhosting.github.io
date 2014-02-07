@@ -2,13 +2,7 @@
 Ghost Blogging Platform
 ---
 
-Prerequisites of using the Ghost blogging platform.
-
-1: You will need to have updated to [nginx](https://www.feralhosting.com/faq/view?question=231)
-
-2: You have installed [node.js](https://www.feralhosting.com/faq/view?question=199)
-
-Once you have done these two thing then you can install and use Ghost.
+**Important note:** You will need to have installed `node.js` to use Ghost. See this FAQ - [node.js - How to install](http://https://www.feralhosting.com/faq/view?question=199)
 
 Installation:
 ---
@@ -73,7 +67,39 @@ server: {
 }
 ~~~
 
-Now we shall create a custom nginx conf file.
+Proxypass URLS with Apache or Nginx.
+---
+
+### Apache:
+
+Create a new blank file using this command:
+
+~~~
+nano ~/.apache2/conf.d/ghost.conf
+~~~
+
+**Important note:** Do not forget to change the `PORT` to the same port as used by Ghost.
+
+Now we will copy and paste the below code into this file, making sure to customise the `PORT` to match that used by Ghost:
+
+~~~
+Include /etc/apache2/mods-available/proxy.load
+Include /etc/apache2/mods-available/proxy_http.load
+
+ProxyRequests Off
+ProxyPreserveHost On
+
+ProxyPass /blog http://10.0.0.1:PORT/${USER}/blog
+ProxyPassReverse /blog http://10.0.0.1:PORT/${USER}/blog
+~~~
+
+Once you have copied and pasted this then press and hold `CTRL` and then press `x` to save. Press `y` to confirm. Now you can reload the conf like this:
+
+~~~
+/usr/sbin/apache2ctl -k graceful
+~~~
+
+### Nginx:
 
 ~~~
 nano ~/.nginx/conf.d/000-default-server.d/ghost.conf
@@ -110,6 +136,12 @@ Then copy and paste this into the file.
 
 Press and hold `CTRL` and then press `x` to save. Press `y` to confirm.
 
+Now reload the nginx conf files for the change to take effect using this command:
+
+~~~
+/usr/sbin/nginx -s reload -c ~/.nginx/nginx.conf
+~~~
+
 Running Ghost:
 ---
 
@@ -122,7 +154,7 @@ cd ~/ghost
 npm start
 ~~~
 
-Now once it has loaded  you will see somethng like this:
+Now once it has loaded  you will see something like this:
 
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/Software/Ghost%20Blogging%20Platform/1.png)
 
