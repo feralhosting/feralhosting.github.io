@@ -1,5 +1,6 @@
 
-There are some things you can do to tweak some settings using htaccess.
+Apache using htaccess
+---
 
 In your `.htaccess` files you can add these lines and change the paths or numbers to match yours:
 
@@ -60,9 +61,30 @@ Will allow larger file uploads, up to 100M.
 
 And so on.
 
-### nginx
 
-Execute this command after nginx is installed:
+Apache using php.ini
+---
+
+In SSH do the commands described in this FAQ. If you do not know how to SSH into your slot use this FAQ: [SSH basics - Putty](https://www.feralhosting.com/faq/view?question=12)
+
+~~~
+cp -f /etc/php5/apache2/php.ini ~/.apache2/php.ini
+echo -n 'PHPINIDir "${HOME}/.apache2/php.ini"' > ~/.apache2/conf.d/php.conf
+/usr/sbin/apache2ctl -k graceful
+~~~
+
+You can now edit your php.ini at `~/.apache2/php.ini`. For changes to take effect you must reload the apache conf files using thins command:
+
+~~~
+/usr/sbin/apache2ctl -k graceful
+~~~
+
+nginx using php.ini
+---
+
+You will have to have already updated to nginx for these commands to work using this FAQ - [Updating Apache to nginx](https://www.feralhosting.com/faq/view?question=231)
+
+In SSH do the commands described in this FAQ. If you do not know how to SSH into your slot use this FAQ: [SSH basics - Putty](https://www.feralhosting.com/faq/view?question=12)
 
 ~~~
 mv -f ~/.nginx/php/php.ini  ~/.nginx/php/php.ini.bak
