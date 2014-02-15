@@ -90,4 +90,10 @@ ps x | grep nginx | grep -v grep
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/HTTP/Updating%20Apache%20to%20nginx/started.png)
 
 
+**Notes:**
 
+In regards to this particular action:
+
+- Deny access to any folder with a `.htaccess` file at the time of auto-configuration
+
+What will happen is that a numbered `deny.conf` will be created in the the `~/.nginx/conf.d/000-default-server.d` directory. This can break certain apps and will happen during the upgrade from Apache to nginx. An example of this is `_h5ai` if ti was present during before upgrading to nginx.

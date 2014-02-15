@@ -24,21 +24,21 @@ Using the pre-compiled binary:
 ---
 
 ~~~
-wget -qO ~/cmake.tar.gz http://www.cmake.org/files/v2.8/cmake-2.8.12.1-Linux-i386.tar.gz
+wget -qO ~/cmake.tar.gz http://www.cmake.org/files/v2.8/cmake-2.8.12.2-Linux-i386.tar.gz
 tar xf ~/cmake.tar.gz
-cp -rf ~/cmake-2.8.12.1-Linux-i386/. ~/
-cd && rm -rf cmake{-2.8.12.1-Linux-i386,.tar.gz}
+cp -rf ~/cmake-2.8.12.2-Linux-i386/. ~/
+cd && rm -rf cmake{-2.8.12.2-Linux-i386,.tar.gz}
 ~~~
 
 Using the source code:
 ---
 
 ~~~
-wget -qO ~/cmake.tar.gz http://www.cmake.org/files/v2.8/cmake-2.8.12.1.tar.gz
-tar xf ~/cmake.tar.gz && cd ~/cmake-2.8.12.1
+wget -qO ~/cmake.tar.gz http://www.cmake.org/files/v2.8/cmake-2.8.12.2.tar.gz
+tar xf ~/cmake.tar.gz && cd ~/cmake-2.8.12.2
 ./configure --prefix=$HOME
 make && make install
-cd && rm -rf cmake{-2.8.12.1,.tar.gz}
+cd && rm -rf cmake{-2.8.12.2,.tar.gz}
 ~~~
 
 Usage:

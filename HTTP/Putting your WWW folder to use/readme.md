@@ -5,7 +5,8 @@ If you follow the rest of this guide please be sure to [protect your files with 
 
 There are various useful and interesting ways to make use of this WWW folder, shown in some of the other FAQs in this section. In this FAQ we are going to focus on simplicity.
 
-### Let's get started 
+Let's get started 
+---
 
 Your `public_html` folder is located here:
 
@@ -21,7 +22,8 @@ An easy way to execute SSH commands in this folder is to use this command:
 
 This command will work for everyone to automatically find your username and servername and will be used through this FAQ.
 
-### Prevent search indexing - robots.txt
+Prevent search indexing - robots.txt
+---
 
 To prevent indexing by search engines use this command.
 
@@ -30,7 +32,8 @@ echo -e 'User-agent: *\nDisallow: /' > ~/www/$(whoami).$(hostname)/public_html/r
 ~~~
 [http://www.robotstxt.org/robotstxt.html](http://www.robotstxt.org/robotstxt.html)
 
-### Creating Symbolic links
+Creating Symbolic links
+---
 
 In SSH do these commands. Use this faq if you do not know how to SSH into your slot: [SSH basics - Putty](https://www.feralhosting.com/faq/view?question=12)
 
@@ -50,7 +53,8 @@ The format of the symbolic link command is like this:
 ln -s ~/the/folder/or/file/i/want/linked/to ~/the/destination/of/the/shortcut/and/the/name
 ~~~
 
-#### rtorrent data symbolic link
+rtorrent data symbolic link
+---
 
 ~~~
 ln -s ~/private/rtorrent/data/ ~/www/$(whoami).$(hostname)/public_html/links/rtorrent_data
@@ -58,7 +62,8 @@ ln -s ~/private/rtorrent/data/ ~/www/$(whoami).$(hostname)/public_html/links/rto
 
 Please make sure this is the correct path to your rTorrent your data folder if different from the default location.
 
-#### Tranmission default data folder
+Tranmission default data folder
+---
 
 ~~~
 ln -s ~/private/transmission/data/ ~/www/$(whoami).$(hostname)/public_html/links/transmission_data
@@ -66,7 +71,8 @@ ln -s ~/private/transmission/data/ ~/www/$(whoami).$(hostname)/public_html/links
 
 Please make sure this is the correct path to your Transmission your data folder if different from the default location
 
-#### Deluge default data folder
+Deluge default data folder
+---
 
 ~~~
 ln -s ~/private/deluge/data/ ~/www/$(whoami).$(hostname)/public_html/links/deluge_data
@@ -76,7 +82,8 @@ Please make sure this is the correct path to your Deluge your data folder if dif
 
 Now visit your WWW `links` folder in your browser, click on the newly created symbolic links, and you should be able to see a nice index of whatever files are inside the folders you have just linked to. Now you can use a browser or a download manager to download your stuff.
 
-### Optional
+Optional
+---
 
 [h5ai directory indexer](http://larsjung.de/h5ai/)
 
@@ -105,7 +112,7 @@ Use this command to append the required entry to an existing `.htaccess` files o
 echo -e '\nDirectoryIndex  index.html  index.php  /_h5ai/server/php/index.php' >> ~/www/$(whoami).$(hostname)/public_html/.htaccess
 ~~~
 
-_h5ai will now be ready to use in your WWW. By default this works from the WWW root down. 
+`_h5ai` will now be ready to use in your WWW. By default this works from the WWW root down. 
 
 If you would like to make it specific to certain folders you need to edit the `.htaccess ` files and remove this:
 
@@ -113,7 +120,7 @@ If you would like to make it specific to certain folders you need to edit the `.
 DirectoryIndex  index.html  index.php  /_h5ai/server/php/index.php
 ~~~
 
-Then, inside the directory you want to use _h5ai create either:
+Then, inside the directory you want to use `_h5ai` create either:
 
 1: Create a `.htaccess` file if there is not one present, or add the line to it 
 
@@ -121,35 +128,17 @@ Then, inside the directory you want to use _h5ai create either:
 
 **For nginx only:**
 
-Create a new file located here:
+Run these two commands:
 
 ~~~
-~/.nginx/conf.d/000-default-server.d/
-~~~
-
-Called:
-
-~~~
-h5ai.conf
-~~~
-
-Add this to the file and then save:
-
-~~~
-location / {
-    index  index.html  index.php  /_h5ai/server/php/index.php;
-}
-~~~
-
-Now reload your nginx configuration using this command:
-
-~~~
+echo -e 'location / {\n    index  index.html  index.php  /_h5ai/server/php/index.php;\n}' > ~/.nginx/conf.d/000-default-server.d/h5ai.conf
 /usr/sbin/nginx -s reload -c ~/.nginx/nginx.conf
 ~~~
 
 Once it has restarted the h5ai should be working.
 
-### h5ai custom directory with nginx that is not password protected
+h5ai custom directory with nginx that is not password protected
+---
 
 For a specific directory only, you can change the location in the `h5ai.conf` if the directory you want to use is not already password protected:
 
@@ -169,7 +158,8 @@ Then reload your nginx configuration:
 /usr/sbin/nginx -s reload -c ~/.nginx/nginx.conf
 ~~~
 
-### h5ai custom directory with nginx that is also password protected 
+h5ai custom directory with nginx that is also password protected 
+---
 
 If the directory you want to use h5ai with is already password protected then you must merge the changes into the `.conf` for that location and then remove the `h5ai.conf` or nginx won't restart:
 
@@ -189,7 +179,8 @@ Then delete the `h5ai.conf` and then reload your nginx configuration:
 /usr/sbin/nginx -s reload -c ~/.nginx/nginx.conf
 ~~~
 
-### Contribute:
+Contribute:
+---
 
 The repo for this custom file can be found here for users to check or to contribute to.
 

@@ -1,7 +1,8 @@
 
 **Important notice:** These custom installations are **NOT** restarted automatically. If you need to restart the process look for this file: `~/multirtru.restart.txt` in your slot root. This file has the custom restart commands for any custom installation you have created using the bash script. Copy and paste the command you need into your SSH window.
 
-### Bash script
+Bash script
+---
 
 This script will:
 
@@ -12,6 +13,7 @@ This script will:
 **5:** Start rtorrent in a screen using the unique `rtorrent.rc` for this instance.
 **6:** Create a file called `~/multirtru.restart.txt` in your slot root that contains the restart command for any custom installation you have created.
 **7:** If you are using nginx it will also create the `rpc` info required to use transdroid with this custom installation.
+**8:** Lets you delete a custom installation and all associated files and folders and reloads Apache/Nginx
 
 It will **NOT** damage your existing installation or overwrite custom instances if the same suffix is used.
 
@@ -19,7 +21,8 @@ It will **NOT** damage your existing installation or overwrite custom instances 
 wget -qO ~/multirtru.sh http://git.io/m_dugQ && bash ~/multirtru.sh
 ~~~
 
-### Important: Read this first
+Important: Read this first
+----
 
 When creating a new instance of rutorrent there is an important behaviour using the `.htaccess` and `.htpasswd` combo that you need to understand.
 
@@ -55,7 +58,8 @@ AuthName "username"
 
 2: All linked to `.htpasswd` files have the the same user and more importantly, the same md5 salt. Having the same username and password in not enough. It must be the same salt.
 
-### Running multiple instances of rtorrent and rutorrent
+Running multiple instances of rtorrent and rutorrent
+---
 
 You can do this in two ways.
 
@@ -71,13 +75,14 @@ If you want to clone an existing installation in whatever state it currently is 
 
 This is quite easy to do once you have understood the basic idea. We will:
 
-**1:** Clone the existing installation giving it a new name.
+**1:** Clone the existing installation and related files and folders, giving them a new name.
 **2:** We edit some files to reflect the new paths.
 **3:** We run our new instance in a custom named screen.
 **4:** Visit the new Web Gui in your WWW and use it.
 **5:** Repeat as many times as needed.
 
-### Clone our existing installation
+Clone our existing installation
+---
 
 **1:** Clone our `~/rtorrent.rc`
 
@@ -99,7 +104,8 @@ mkdir -p ~/private/rtorrent-1/data ~/private/rtorrent-1/watch ~/private/rtorrent
 
 **Important note:** Take note of the suffix `-1` used in all cases. rtorrent to rtorrent-1 and rutorrent to rutorrent-1.
 
-### Edit the files - rtorrent
+Edit the files - rtorrent
+---
 
 We must now make some edits to these files so that our new rtorrent and rutorrent will work together.
 
@@ -162,7 +168,8 @@ scgi_local = media/DiskID/home/username/private/rtorrent-1/.socket
 
 And then save the changes. in nano you would press and hold `CTRL` and then press `x`. Press `y` to confirm and exit
 
-### Edit the files - rutorrent
+Edit the files - rutorrent
+---
 
 Open your `~/www/username.feralhosting.com/public_html/rutorrent-1/conf/config.php`
 
@@ -182,7 +189,8 @@ For this example it is:
 $scgi_host = 'unix://'.$_pw['dir'].'/private/rtorrent-1/.socket';
 ~~~
 
-### Starting your new instance
+Starting your new instance
+---
 
 Load your custom instance in a new screen window.
 
@@ -206,7 +214,8 @@ You will now see what the actual error is.
 
 Press and hold `CTRL` and `a`, then press `d` to detach from this screen session.
 
-### More instances
+More instances
+---
 
 Bascially follow this FAQ again, as many times as you want and just change the suffix.
 

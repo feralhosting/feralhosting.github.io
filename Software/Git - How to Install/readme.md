@@ -20,7 +20,7 @@ git --version
 
 If you specifically need a higher version you can used the FAQ to install 1.8.5.1
 
-Git 1.8.5.3
+Git 1.9.0
 ---
 
 You need to SSH into your slot to complete this guide. If you don't know how to do this [here is a basic guide](https://www.feralhosting.com/faq/view?question=12)
@@ -32,11 +32,11 @@ mkdir -p ~/bin && bash
 Now install git using these commands:
 
 ~~~
-wget -qO ~/git-1.8.5.3.tar.gz http://git-core.googlecode.com/files/git-1.8.5.3.tar.gz
-tar xf ~/git-1.8.5.3.tar.gz && cd ~/git-1.8.5.3
+wget -qO ~/git-1.9.0.tar.gz http://git-core.googlecode.com/files/git-1.9.0.tar.gz
+tar xf ~/git-1.9.0.tar.gz && cd ~/git-1.9.0
 ./configure --prefix=$HOME --with-curl=/opt/curl/current
-make && make install 
-cd && rm -rf git{-1.8.5.3,-1.8.5.3.tar.gz}
+make && make install
+cd && rm -rf git{-1.9.0,-1.9.0.tar.gz}
 ~~~
 
 Then do this to check the version.

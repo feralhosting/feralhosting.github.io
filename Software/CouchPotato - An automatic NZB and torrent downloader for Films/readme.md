@@ -18,6 +18,12 @@ This script will set-up couchpotato and automatically proxypass it for you on Ap
 wget -qO ~/couchpotato.sh http://git.io/NWQA2Q && bash ~/couchpotato.sh
 ~~~
 
+**Important notes:** 
+
+**1:** If you get an empty blue screen in your browser press F5 (or CTRL + F5) to reload the page. That is all you should need to do.
+
+**2:** It may take a minute or two for the URL given in the script to work so be patient. Press F5 to reload the URL.
+
 **Run the CouchPotato Wizard**
 
 Visit the URL shown in SSH after the script completes. It will be in this format:

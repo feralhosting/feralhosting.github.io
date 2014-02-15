@@ -12,7 +12,7 @@ In SSH do these commands. Use this FAQ if you do not know how to SSH into your s
 Download the phpMyAdmin package:
 
 ~~~
-wget -qO ~/phpMyAdmin.zip http://downloads.sourceforge.net/project/phpmyadmin/phpMyAdmin/4.1.5/phpMyAdmin-4.1.5-all-languages.zip
+wget -qO ~/phpMyAdmin.zip http://downloads.sourceforge.net/project/phpmyadmin/phpMyAdmin/4.1.7/phpMyAdmin-4.1.7-all-languages.zip
 unzip -qo ~/phpMyAdmin.zip 
 cp -rf ~/phpMyAdmin-*-all-languages/. ~/www/$(whoami).$(hostname)/public_html/phpmyadmin
 mkdir -p ~/www/$(whoami).$(hostname)/public_html/phpmyadmin/config
