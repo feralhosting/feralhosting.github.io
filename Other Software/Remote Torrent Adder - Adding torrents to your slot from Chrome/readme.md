@@ -7,7 +7,8 @@
 
 **3:** Fill in the data in the form under the WebUI tab accordingly:
 
-### Rutorrent
+Rutorrent
+---
 
 **Client:** ruTorrent WebUI from the drop down menu
 
@@ -51,7 +52,16 @@ You will get an error like this:
 
 But it stills works.
 
-### Still having issues? read this section
+**Important note:**
+
+If you update to nginx run this command:
+
+~~~
+mkdir -p ~/www/$(whoami).$(hostname)/public_html/rutorrent/share/torrents
+~~~
+
+Still having issues?
+---
 
 If you are having issues you can try these server settings instead:
 
@@ -71,7 +81,8 @@ These settings will work if https redirection is not forced, or you have visited
 
 **SSL:** Checked if https is being forced, otherwise leave unchecked.
 
-### Client: Deluge
+Client: Deluge
+---
 
 **Host:** server.feralhosting.com
 
@@ -87,7 +98,8 @@ These settings will work if https redirection is not forced, or you have visited
 /username/deluge
 ~~~
 
-### Notes
+Notes
+---
 
 You can also let the option of downloading on your torrent only be available by right-clicking
 the torrent link by deselecting the "clicks on links" in the "link catching" tab.

@@ -14,12 +14,20 @@ Then restart Apache.
 **Restart Apache 2**
 
 ~~~
-pkill -u $(whoami) apache2
+/usr/sbin/apache2ctl restart
 ~~~
 
-Then wait for the daemon to be automatically restarted, it can take up to five minutes for Apache to restart.
+**Alternatively: Reload Apache configurations**
+
+This command will reload your `conf` files instead of restarting.
+
+~~~
+/usr/sbin/apache2ctl -k graceful
+~~~
 
 **List loaded modules:**
+
+This will list currently loaded modules that are usable:
 
 ~~~
 /usr/sbin/apachectl -t -D DUMP_MODULES
@@ -27,19 +35,15 @@ Then wait for the daemon to be automatically restarted, it can take up to five m
 
 **List available modules.**
 
+This will list all available modules that you can load:
+
 ~~~
 ls -1 /etc/apache2/mods-available/
 ~~~
 
 **For example. Here is the way you would load the Auth Digest module:**
 
-To load a modules you will need to create and then edit a **~/.apache2/conf.d/some.conf** file and then restart Apache like this:
-
-~~~
-touch ~/.apache2/conf.d/digest.conf
-~~~
-
-This creates a new file in the correct location, with a relevant name.
+To load a modules you will need to create and then edit a `~/.apache2/conf.d/some.conf` file and then restart Apache like this:
 
 ~~~
 nano ~/.apache2/conf.d/digest.conf
@@ -53,19 +57,11 @@ Include /etc/apache2/mods-available/auth_digest.load
 
 Save by pressing and holding `CTRL` and then pressing `x` then press `Y` to confirm.
 
-This command will reload your `conf` files.
+Reload the changes:
 
 ~~~
 /usr/sbin/apache2ctl -k graceful
 ~~~
-
-You can restart Apache using this command:
-
-~~~
-pkill -u $(whoami) apache2
-~~~
-
-**Important note:** It can take up to five minutes for Apache to restart.
 
 Test it is loaded: might be near the bottom
 
