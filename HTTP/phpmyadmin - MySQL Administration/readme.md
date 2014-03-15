@@ -7,19 +7,21 @@ This is a relevant FAQ: [Mysql - Change php settings using htaccess](https://www
 
 In SSH do these commands. Use this FAQ if you do not know how to SSH into your slot: [SSH basics - Putty](https://www.feralhosting.com/faq/view?question=12)
 
-### phpmyadmin basic setup
+phpmyadmin basic setup
+---
 
 Download the phpMyAdmin package:
 
 ~~~
-wget -qO ~/phpMyAdmin.zip http://downloads.sourceforge.net/project/phpmyadmin/phpMyAdmin/4.1.7/phpMyAdmin-4.1.7-all-languages.zip
+wget -qO ~/phpMyAdmin.zip http://downloads.sourceforge.net/project/phpmyadmin/phpMyAdmin/4.1.8/phpMyAdmin-4.1.8-all-languages.zip
 unzip -qo ~/phpMyAdmin.zip 
 cp -rf ~/phpMyAdmin-*-all-languages/. ~/www/$(whoami).$(hostname)/public_html/phpmyadmin
 mkdir -p ~/www/$(whoami).$(hostname)/public_html/phpmyadmin/config
 cd && rm -rf phpMyAdmin{-*-languages,.zip}
 ~~~
 
-### https URL redirect fix:
+https URL redirect fix:
+---
 
 **Important note:** These commands only apply to a fresh installation. For example updating Apache to nginx will break the fix.
 
@@ -37,7 +39,8 @@ sed -i 's/443/80/g' ~/www/$(whoami).$(hostname)/public_html/phpmyadmin/libraries
 sed -i 's/ 80)/ 8080)/g;s/443/8080/g' ~/www/$(whoami).$(hostname)/public_html/phpmyadmin/libraries/Config.class.php
 ~~~
 
-### Completing the Setup
+Completing the Setup
+---
 
 The rest of this FAQ must be completed in a Browser.
 
@@ -81,7 +84,8 @@ Now you can return to the main page and login at:
 
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/HTTP/phpmyadmin%20-%20MySQL%20Administration/5.png)
 
-### https URL redirect issue
+https URL redirect issue
+---
 
 **Important note:** If you force https and you did not run the fix commands above the you will most likely see this error after you log in.
 
@@ -97,15 +101,15 @@ https://somesite.com:80/...
 
 For nginx:
 
-```
+~~~
 https://somesite.com:8080/...
-```
+~~~
 
 If you manually edit out the port it works fine to
 
-```
+~~~
 https://somesite.com/...
-```
+~~~
 
 
 
