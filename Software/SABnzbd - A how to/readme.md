@@ -1,3 +1,4 @@
+
 **Please note that this software is not officially supported by Feral Hosting.**
 
 **1:** Download SABnzbd from [here](http://sabnzbd.org/download/) to your slot. You can do this either by downloading it on your computer and then uploading it using FTP/SFTP, or with the following command on your server using SSH:
@@ -98,6 +99,21 @@ You can restart it using just this command once you have used the main command a
 ~~~
 screen -fa -dmS sabnzbd python SABnzbd-*/SABnzbd.py
 ~~~
+
+**Added NZB's don't download**
+
+There's a bug in SabNZB that will prevent things from downloading if there's a `www-browser` session running in the background. You can check for and quit any `www-browser` with the below"
+
+~~~
+ps x | grep www-browser | grep -v grep
+~~~
+
+If this returns a line containing "www-browser" run the below
+
+~~~
+killall -9 -u $(whomani) www-browser
+~~~
+
 
 
 
