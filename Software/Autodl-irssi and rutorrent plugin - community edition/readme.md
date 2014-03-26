@@ -55,7 +55,7 @@ We highly recommend that you perform a clean install when switching from the off
 killall -9 irssi -u $(whoami); screen -wipe
 cp -f ~/.autodl/autodl.cfg ~/.autodl/autodl.cfg.bak
 cd && rm -rf .irssi/scripts/AutodlIrssi .irssi/scripts/autorun/autodl-irssi.pl
-cd && www/$(whoami).$(hostname)/public_html/rutorrent/plugins/autodl-irssi
+cd && rm -rf www/$(whoami).$(hostname)/public_html/rutorrent/plugins/autodl-irssi
 ~~~
 
 Automated installation
@@ -77,7 +77,7 @@ Manual installation
 ~~~
 mkdir -p ~/.irssi/scripts/autorun ~/.autodl
 echo -e "[options]\ngui-server-port = 0\ngui-server-password = PASS" > ~/.autodl/autodl.cfg
-wget -qO ~/autodl-irssi.zip https://autodl-irssi-community.googlecode.com/files/autodl-irssi-community.zip
+wget -qO ~/autodl-irssi.zip https://bitbucket.org/autodl-community/autodl-irssi/downloads/autodl-irssi-community.zip
 unzip -qo ~/autodl-irssi.zip -d ~/.irssi/scripts/
 cp -f ~/.irssi/scripts/autodl-irssi.pl ~/.irssi/scripts/autorun/
 cd && rm -f autodl-irssi.zip .irssi/scripts/{README*,autodl-irssi.pl,CONTRIBUTING.md}
@@ -147,13 +147,17 @@ screen -r autodl
 
 **Using rutorrent autodl-irssi plugin:**
 
-[http://code.google.com/p/rutorrent/wiki/PluginAutodlirssi#Usage](http://code.google.com/p/rutorrent/wiki/PluginAutodlirssi#Usage)
+Check out the Wiki Page.
+
+[https://github.com/autodl-community/autodl-irssi/wiki/_pages](https://github.com/autodl-community/autodl-irssi/wiki/_pages)
 
 ** Updating **
 
 If you are running the autodl-irssi-community version (installed here) and `NOT` the autodl-irssi version from months ago, you can update to the latest plugin version by re-running these steps, or running the following command in irssi:
 
-**Important note:** If you update the program you will have to apply the fix at the top of this FAQ again.
+**Important note:** If you update the core program files (not just not the trackers) you will have to run the fix script at the top of this FAQ again.
+
+Inside the screen you would type this into `irssi`:
 
 ~~~
 /autodl update
