@@ -114,7 +114,7 @@
 [Software]()
 
   * [Generic Software Installation Guide](Software/Generic%20Software%20Installation%20Guide/readme.md)
-  * [Subsonic 4.8 or Madsonic 5.0](Software/Subsonic%20and%20Madsonic/readme.md)
+  * [Subsonic or Madsonic](Software/Subsonic%20and%20Madsonic/readme.md)
   * [Java 1.7](Software/Java%201.7/readme.md)
   * [Autodl-irssi and rutorrent plugin - community edition](Software/Autodl-irssi%20and%20rutorrent%20plugin%20-%20community%20edition/readme.md)
   * [Plowshare - a download tool for file sharing websites - with auto captcha solving](Software/Plowshare-%20a%20download%20tool%20for%20file%20sharing%20websites%20-%20with%20auto%20captcha%20solving/readme.md)
