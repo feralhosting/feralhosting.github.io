@@ -3,47 +3,39 @@ This FAQ is for downloading and installing [WeeChat](http://www.weechat.org/) on
 
 WeeChat is a fast, light and extensible chat client. It runs on many platforms like Linux, Unix, BSD, GNU Hurd, Mac OS X and Windows (cygwin). 
 
-### 1: Do some ground work
-
-Put the files in a nice location:
+Please run this command in SSH first:
 
 ~~~
-mkdir -p ~/programs
+mkdir -p ~/bin && bash
 ~~~
 
-Add the location to your `PATH` using this command.
-
-~~~
-[[][/[][ ! "$(grep '~/programs/bin' ~/.bashrc)" ]] && echo 'export PATH=~/programs/bin:$PATH' >> ~/.bashrc ; source ~/.bashrc
-~~~
-
-### 2 Pre-built: Download and extract pre build cmake-2.8.12-Linux-i386
+### 1 Pre-built: Download and extract pre build cmake-2.8.12-Linux-i386
 
 **Recommended** fast and simple.
 
 ~~~
-wget -qO ~/cmake.tar.gz http://www.cmake.org/files/v2.8/cmake-2.8.12-Linux-i386.tar.gz
+wget -qO ~/cmake.tar.gz http://www.cmake.org/files/v2.8/cmake-2.8.12.2-Linux-i386.tar.gz
 tar xf ~/cmake.tar.gz
-cp -rf ~/cmake-2.8.12-Linux-i386/. ~/programs
-rm -rf ~/cmake-2.8.12-Linux-i386 ~/cmake.tar.gz
+cp -rf ~/cmake-2.8.12.2-Linux-i386/. ~/
+cd && rm -rf cmake{-2.8.12.2-Linux-i386,.tar.gz}
 ~~~
 
-### 3: Build WeeChat and install it
+### 2: Build WeeChat and install it
 
 Please use this script.
 
-**Important note:** You need to have completed Steps 1 and 2 before running this script.
+**Important note:** You need to have completed Step 1 before running this script.
 
 ~~~
 wget -qO ~/weechat.sh http://git.io/L6oalA && bash ~/weechat.sh
 ~~~
 
-### 4: Start WeeChat
+### 3: Start WeeChat
 
 We have added the location to the `PATH` in step 1, so we can use this command:
 
 ~~~
-screen -dmS weechat weechat-curses
+screen -dmS weechat weechat
 ~~~
 
 Now attach to the screen:
@@ -58,7 +50,7 @@ The full path to execute WeeChat is:
 ~/programs/bin/./weechat-curses
 ~~~
 
-### 5: Configure WeeChat
+### 4: Configure WeeChat
 
 These are some required settings. You enter them in WeeChat after you have started it.
 
@@ -85,7 +77,7 @@ Some final settings:
 
 Add other networks as desired.
 
-### 6: Connecting to predefined IRC networks
+### 5: Connecting to predefined IRC networks
 
 Use this command to connect to the Feral Hosting IRC channel,  `#feral` on the `What-Network`  IRC network that we defined in the previous step.
 
@@ -93,7 +85,7 @@ Use this command to connect to the Feral Hosting IRC channel,  `#feral` on the `
 /connect What-Network
 ~~~
 
-### 7: Join a channel
+### 6: Join a channel
 
 ~~~
 /j #feral
