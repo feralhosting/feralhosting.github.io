@@ -13,7 +13,7 @@ phpmyadmin basic setup
 Download the phpMyAdmin package:
 
 ~~~
-wget -qO ~/phpMyAdmin.zip http://downloads.sourceforge.net/project/phpmyadmin/phpMyAdmin/4.1.8/phpMyAdmin-4.1.8-all-languages.zip
+wget -qO ~/phpMyAdmin.zip http://downloads.sourceforge.net/project/phpmyadmin/phpMyAdmin/4.1.11/phpMyAdmin-4.1.11-all-languages.zip
 unzip -qo ~/phpMyAdmin.zip 
 cp -rf ~/phpMyAdmin-*-all-languages/. ~/www/$(whoami).$(hostname)/public_html/phpmyadmin
 mkdir -p ~/www/$(whoami).$(hostname)/public_html/phpmyadmin/config
