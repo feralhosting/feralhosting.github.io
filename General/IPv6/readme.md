@@ -31,25 +31,25 @@ If your ISP does not offer any support for IPv6 then a tunnel broker can be set 
 
 Here are a few [tunnel brokers](https://en.wikipedia.org/wiki/List_of_IPv6_tunnel_brokers):
 
+### Freenet6 (gogo6): http://www.gogo6.com/freenet6/tunnelbroker
 
+* Multiple locations spread out across the world for alternative connectivity.
+* Client is a simple download and run.
+* Website is difficult to navigate.
+    
+### SixXS: https://www.sixxs.net/main/
 
-* Freenet6 (gogo6): http://www.gogo6.com/freenet6/tunnelbroker
-    - Multiple locations spread out across the world for alternative connectivity.
-    - Client is a simple download and run.
-    - Website is difficult to navigate.
+* Provides a step-by-step guide (with pictures): https://www.sixxs.net/faq/account/?faq=10steps
+* Many locations available for alternative connectivity.
+* Requires a waiting period of at least a week to get activated.
     
-* SixXS: https://www.sixxs.net/main/
-    + Provides a step-by-step guide (with pictures): https://www.sixxs.net/faq/account/?faq=10steps
-    + Many locations available for alternative connectivity.
-    - Requires a waiting period of at least a week to get activated.
-    
-* Hurricane Electric: https://tunnelbroker.net/
-    + Tier 1 ISP who are providing us with IPv6 connectivity.
-    + No activation time.
-    - Requires your router to forward protocol 41.
+### Hurricane Electric: https://tunnelbroker.net/
+
+* Tier 1 ISP who are providing us with IPv6 connectivity.
+* No activation time.
+* Requires your router to forward protocol 41.
 
 These services are essentially providing a free proxy to promote and increase IPv6 connectivity. They do ask for a lot of information prior to the set up to help avoid abuse of their service.
-
 
 Welcome to the future
 ---
