@@ -108,7 +108,7 @@
   * [Using Transdroid to Control - rTorrent - Deluge - Transmission From Your Android Phone](Other%20Software/Using%20Transdroid%20to%20Control%20rTorrent%20-%20Deluge%20-%20Transmission%20From%20Your%20Android%20Phone/readme.md)
   * [torrents - make them easily in your browser](Other%20Software/torrents%20-%20make%20them%20easily%20in%20your%20browser/readme.md)
   * [Remote Torrent Adder - Adding torrents to your slot from Chrome](Other%20Software/Remote%20Torrent%20Adder%20-%20Adding%20torrents%20to%20your%20slot%20from%20Chrome/readme.md)
-  * [Growl notifications for rtorrent](Other%20software/Growl%20notifications%20for%20rtorrent/readme.md)
+  * [Growl notifications for rtorrent](Other%20Software/Growl%20notifications%20for%20rtorrent/readme.md)
 
 [Slot Plans]()
 
