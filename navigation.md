@@ -20,6 +20,7 @@
   * [I want to edit or create a FAQ or guide](General/I want to edit or create a FAQ or guide/readme.md)
   * [IRC - Register your nick with Nickserv](General/IRC%20-%20Register%20your%20nick%20with%20Nickserv/readme.md)
   * [Slot Upgrades - Additional Disk Space or Speed Requirements](General/Slot%20Upgrades%20-%20Additional%20Disk%20Space%20or%20Speed%20Requirements/readme.md)
+  * [IPv6](General/IPv6/readme.md)
 
 [Installable software]()
 
