@@ -93,7 +93,7 @@
   * [PHP - modify settings](HTTP/PHP%20-%20modify%20settings/readme.md)
   * [Adminer - MySQL administration](HTTP/Adminer%20-%20MySQL%20administration/readme.md)
   * [How do I connect to MySQL in PHP](HTTP/How%20do%20I%20connect%20to%20MySQL%20in%20PHP/README.md)
-  * [How to Run FLASK Webpages on Your Slot](HTTP/How%20to%20run%20FLASK%20webpages%20on%20your%20slot/readme.md)
+  * [How to Run FLASK Webpages on Your Slot](HTTP/How%20to%20Run%20FLASK%20Webpages%20on%20Your%20Slot/readme.md)
 
 [Other software]()
 
