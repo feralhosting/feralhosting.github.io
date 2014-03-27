@@ -57,3 +57,6 @@ Welcome to the future
 By connecting to IPv6 you greatly help us and the wider Internet out. In the future, IPv6 set up will be faster than IPv4.
 
 Please let us know if you run into problems (setting up, poor speeds, etc) and we'll try to help.
+
+
+
