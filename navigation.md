@@ -84,6 +84,7 @@
   * [Host a virtual host on your Feral slot](HTTP/Host%20a%20virtual%20host%20on%20your%20Feral%20slot/readme.md)
   * [Wordpress - Basic setup](HTTP/Worpress/readme.md)
   * [Pydio - Basic setup](HTTP/Pydio%20-%20Basic%20setup/readme.md)
+  * [Owncloud - Basic setup](HTTP/Owncloud%20-%20Basic%20setup/readme.md)
   * [Setting up Django application using Gunicorn - Nginx - Supervisor](HTTP/Setting%20up%20Django%20application%20using%20Gunicorn%20-%20Nginx%20-%20Supervisor/readme.md)
   * [Updating Apache to nginx](HTTP/Updating%20Apache%20to%20nginx/readme.md)
   * [phpmyadmin - MySQL Administration](HTTP/phpmyadmin%20-%20MySQL%20Administration/readme.md)
@@ -92,7 +93,7 @@
   * [PHP - modify settings](HTTP/PHP%20-%20modify%20settings/readme.md)
   * [Adminer - MySQL administration](HTTP/Adminer%20-%20MySQL%20administration/readme.md)
   * [How do I connect to MySQL in PHP](HTTP/How%20do%20I%20connect%20to%20MySQL%20in%20PHP/README.md)
-  * [Owncloud - Basic setup](HTTP/Owncloud%20-%20Basic%20setup/readme.md)
+  * [How to Run FLASK Webpages on Your Slot](HTTP/How%20to%20run%20FLASK%20webpages%20on%20your%20slot/readme.md)
 
 [Other software]()
 
