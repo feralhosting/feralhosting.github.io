@@ -100,6 +100,7 @@
   * [Rutorrent - Installing the fileshare plugin](Other%20Software/Rutorrent%20-%20Installing%20the%20fileshare%20plugin/readme.md)
   * [Rutorrent - Colored Ratio Column Plugin](Other%20Software/Rutorrent%20-%20Colored%20Ratio%20Column%20Plugin/readme.md)
   * [Rutorrent - Installing the mediashare plugin](Other%20Software/Rutorrent%20-%20Installing%20the%20mediashare%20plugin/readme.md)
+  * [OSX - Homebrew](Other%20Software/OSX%20-%20Homebrew/readme.md)
   * [aria2c](Other%20Software/aria2c/readme.md)
   * [Cygwin - Linux tools on Windows](Other%20Software/Cygwin%20-%20Linux%20tools%20on%20Windows/readme.md)
   * [OpenVPN - Connect on Android 4.0 and up - using OpenVPN Connect](Other%20Software/OpenVPN%20-%20Connect%20on%20Android%204.0%20and%20up%20-%20using%20OpenVPN%20Connect/readme.md)
@@ -107,7 +108,7 @@
   * [Using Transdroid to Control - rTorrent - Deluge - Transmission From Your Android Phone](Other%20Software/Using%20Transdroid%20to%20Control%20rTorrent%20-%20Deluge%20-%20Transmission%20From%20Your%20Android%20Phone/readme.md)
   * [torrents - make them easily in your browser](Other%20Software/torrents%20-%20make%20them%20easily%20in%20your%20browser/readme.md)
   * [Remote Torrent Adder - Adding torrents to your slot from Chrome](Other%20Software/Remote%20Torrent%20Adder%20-%20Adding%20torrents%20to%20your%20slot%20from%20Chrome/readme.md)
-  * [OSX - Homebrew](Other%20Software/OSX%20-%20Homebrew/readme.md)
+  * [Growl notifications for rtorrent](Other%20software/Growl%20notifications%20for%20rtorrent/readme.md)
 
 [Slot Plans]()
 
