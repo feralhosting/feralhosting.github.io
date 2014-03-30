@@ -19,7 +19,7 @@ Bash script easy download and extract to default WWW
 This bash script will download and extract Wordpress for you to your **default** WWW directory.
 
 ~~~
-wget -qO ~/wordpress.sh http://git.io/sBXgog && bash ~/wordpress.sh
+wget -qO ~/install.wordpress.sh http://git.io/2JBQlg && bash ~/install.wordpress.sh
 ~~~
 
 Done.

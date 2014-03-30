@@ -16,8 +16,8 @@ How to install and use the murmur Mumble server for use with Mumble clients.
 The murmur server is the server for the mumble VoIP client.
 
 ~~~
-wget -qO server.tar.bz2 http://downloads.sourceforge.net/project/mumble/Mumble/1.2.4/murmur-static_x86-1.2.4.tar.bz2
-tar -xjf server.tar.bz2 && cp -rf ~/murmur-static_x86-1.2.4/. ~/private/murmur && rm -rf ~/murmur-static_x86-1.2.4
+wget -qO ~/server.tar.bz2 http://downloads.sourceforge.net/project/mumble/Mumble/1.2.5/murmur-static_x86-1.2.5.tar.bz2
+tar xf server.tar.bz2 && cp -rf ~/murmur-static_x86-1.2.5/. ~/private/murmur && cd && rm -rf {murmur-static_x86-1.2.5,server.tar.bz2}
 ~~~
 
 That is basically it for the download and extraction of the server. There are a couple of things we need to do before we start it.

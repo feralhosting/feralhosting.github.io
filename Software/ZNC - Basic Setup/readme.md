@@ -28,7 +28,7 @@ Install the `znc` using these commands:
 wget -qO ~/znc-1.2.tar.gz http://znc.in/releases/znc-latest.tar.gz
 tar xf ~/znc-1.2.tar.gz && cd ~/znc-1.2
 ./configure --prefix=$HOME && make && make install
-cd && rm -rf znc{-1.2,1.2.tar.gz}
+cd && rm -rf znc{-1.2,-1.2.tar.gz}
 ~~~
 
 Once it is installed and ready we can start to configure `znc` using this command:

@@ -27,7 +27,7 @@ Please use this script.
 **Important note:** You need to have completed Step 1 before running this script.
 
 ~~~
-wget -qO ~/weechat.sh http://git.io/L6oalA && bash ~/weechat.sh
+wget -qO ~/install.weechat.sh http://git.io/L6oalA && bash ~/install.weechat.sh
 ~~~
 
 ### 3: Start WeeChat

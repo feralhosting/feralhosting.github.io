@@ -21,7 +21,7 @@ This bash script will perform the **basic setup** outlined in Steps 1,2,3,4,5,6.
 So if you use the bash script and complete it successfully you can continue from Step 7 of the FAQ.
 
 ~~~
-wget -qO ~/proftpd.sh http://git.io/nMVKJA && bash ~/proftpd.sh
+wget -qO ~/install.proftpd.sh http://git.io/nQJBxw && bash ~/install.proftpd.sh
 ~~~
 
 Manual Installation Steps

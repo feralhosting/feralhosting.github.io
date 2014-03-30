@@ -49,7 +49,7 @@ This bash script uses Ampache master from github and also applies some default c
 - Allows `mkv` files to be scanned and added to catalogues
 
 ~~~
-wget -qO ~/ampache.sh http://git.io/wESU5A && bash ~/ampache.sh
+wget -qO ~/install.ampache.sh http://git.io/ED3FAQ && bash ~/install.ampache.sh
 ~~~
 
 **Important note:** You must change this setting once you have access to the web interface for transcoding to work
