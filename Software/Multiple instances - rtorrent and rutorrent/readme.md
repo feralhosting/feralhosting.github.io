@@ -18,7 +18,7 @@ This script will:
 It will **NOT** damage your existing installation or overwrite custom instances if the same suffix is used.
 
 ~~~
-wget -qO ~/multirtru.sh http://git.io/m_dugQ && bash ~/multirtru.sh
+wget -qO ~/install.multirtru.sh http://git.io/_zVu0A && bash ~/install.multirtru.sh
 ~~~
 
 Important: Read this first
