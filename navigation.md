@@ -33,7 +33,6 @@
   * [Transmission and Transmission Remote GUI](Installable%20software/Transmission%20and%20Transmission%20Remote%20GUI/readme.md)
   * [Deluge Daemon - Remote control with the local Thin client ](Installable%20software/Deluge%20Daemon%20-%20Remote%20control%20with%20the%20local%20Thin%20client/readme.md)
   * [rTorrent - troubleshooting common errors](Installable%20software/rTorrent%20-%20troubleshooting%20common%20errors/readme.md)
-  * [wTorrent - Usage and Troubleshooting](Installable%20software/wTorrent%20-%20Usage%20and%20Troubleshooting/readme.md)
   * [OpenVPN - How to connect to your vpn](Installable%20software/OpenVPN%20-%20How%20to%20connect%20to%20your%20vpn/readme.md)
   * [OpenVPN - start and connect everytime I log onto a Windows 7 system](Installable%20software/OpenVPN%20-%20start%20and%20connect%20everytime%20I%20log%20onto%20a%20Windows%207%20system/readme.md)
   * [Backing up rutorrent RSS feeds and filters](Installable%20software/Backing%20up%20rutorrent%20RSS%20feeds%20and%20filters/readme.md)
