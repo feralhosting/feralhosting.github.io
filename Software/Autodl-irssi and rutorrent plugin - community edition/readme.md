@@ -58,18 +58,27 @@ cd && rm -rf .irssi/scripts/AutodlIrssi .irssi/scripts/autorun/autodl-irssi.pl
 cd && rm -rf www/$(whoami).$(hostname)/public_html/rutorrent/plugins/autodl-irssi
 ~~~
 
-Automated installation
+Automated installation using the bash script
 ---
 
-After SSH'ing into your slot run the following commands
-
-**Important note:**  If you have IRSSI configured already, this may screw with your server configurations.
+After SSH'ing into your slot run the following command:
 
 ~~~
-wget -qO ~/installautodl.sh http://git.io/Ch0LqA && bash ~/installautodl.sh
+wget -qO ~/install.autodl.sh http://git.io/oTUCMg && bash ~/install.autodl.sh
 ~~~
 
-Now follow the prompts, if you don't like your password entering 'n' at the confirmation step will prompt you for a new password.  In some cases, this script will fail to properly setup your autodl, it does not check if the port it randomly generates is open.  If your autodl does not connect, please change the ports in the two configuration files mentioned in the manual section
+**Important note:** The script does not delete the `autodl.cfg`. It will only edit the `port` and `password` of any existing `autodl.cfg` and will back it up first just in case.
+
+What the script does?
+
+Backs up any existing `~/.autodl.autodl.cfg` files by renaming it to `autodl.cfg.bak`
+Downloads the latest Autodl  and Autodl rutorrent plugin.
+Applies the latest updates for trackers.
+Generates a port and password (random 20 mixed case alphanumerical) for the user and updates or creates the `autodl.cfg` and corresponding rutorrent plugin
+Applies the Autodl and rutorrent plugin fixes.
+Starts irssi in a background screen process
+Updates Autodl to make sure the app is aware it is current for first use by the user.
+Prints helpful info in SSH.
 
 Manual installation
 ---

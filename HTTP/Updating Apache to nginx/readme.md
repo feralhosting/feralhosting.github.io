@@ -20,8 +20,8 @@ After **waiting 5 minutes** Apache will shut down and `nginx` will have been aut
 - Configure PHP
 - Serve domains from `~/www/*/public_html`
 - Password protect rutorrent
-- Set up an rtorrent SCGI rpc mount point at `/$username/RPC` (necessary for wtorrent and Transdroid)
-- Deny access to areas of rutorrent / wtorrent which do not need web access
+- Set up an rtorrent SCGI rpc mount point at `/$username/RPC` (necessary for Transdroid)
+- Deny access to areas of rutorrent which do not need web access
 - Deny access to all files beginning with `.ht`
 - Deny access to any folder with a `.htaccess` file at the time of auto-configuration
 
@@ -97,3 +97,6 @@ In regards to this particular action:
 - Deny access to any folder with a `.htaccess` file at the time of auto-configuration
 
 What will happen is that a numbered `deny.conf` will be created in the the `~/.nginx/conf.d/000-default-server.d` directory. This can break certain apps and will happen during the upgrade from Apache to nginx. An example of this is `_h5ai` if ti was present during before upgrading to nginx.
+
+
+

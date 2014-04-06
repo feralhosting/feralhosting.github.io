@@ -66,7 +66,7 @@ Please substitute things with your corresponding file and folder names. If the f
 The command will run and display a summary on in putty when it's done. The .torrent file will be in the same folder where you created it, in this case the data folder:
 `~/private/rtorrent/data` or `~/private/transmission/data`
 
-You can now download the .torrent file with filezilla to your PC, and then upload it to the tracker website. When the tracker generates a new .torrent file, download it to your PC, and load it via the wtorrent web gui. Or you can upload it to the server with filezilla, and drop it in the watch folder:
+You can now download the .torrent file with filezilla to your PC, and then upload it to the tracker website. When the tracker generates a new .torrent file, download it to your PC, and load it via the Rutorrent web gui. Or you can upload it to the server with filezilla, and drop it in the watch folder:
 `~/private/rtorrent/watch` or `~/private/tranmission/watch`
 
 It will automatically load in rtorrent or Transmission, do a hash check, and start seeding to the new tracker.

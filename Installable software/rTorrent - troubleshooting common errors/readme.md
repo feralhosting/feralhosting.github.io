@@ -287,7 +287,7 @@ rm -f ~/private/rtorrent/work/rtorrent.dht_cache
 screen rtorrent
 ~~~
 
-It should now launch without an error. Log into your wTorrent or ruTorrent session to verify.
+It should now launch without an error. Log into your ruTorrent session to verify.
 
 
 

@@ -67,24 +67,6 @@ Then press and hold `CTRL` and then press `x` to save. Press `y` to confirm.
 
 **Important note:** Transmission cannot manually restarted by the user. After killing the process allow up to 5 minutes for it to automatically to restart.
 
-### wTorrent Password
-
-If you simply want to reset your wTorrent password, you can request a reinstall from the [**Install Software** link in your Manager](https://www.feralhosting.com/manager/) to get a new system-generated password for your wTorrent web interface. 
-
-If you want to set a custom password, you can change the wTorrent password by selecting **Admin** at the top then creating a new user with a new password with administrator privileges, you can then delete the old user.
-
-![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/General/Changing%20passwords/wtorrent.png) 
-
-If you have forgotten any changed passwords you will need to delete this folder:
-
-~~~
-~/www/$(whoami).$(hostname)/public_html/wtorrent/
-~~~
-
-Then reinstall it from the [**Install Software** link in your Manager](https://www.feralhosting.com/manager/), you will then get a new username and password.
-
-This should not affect rTorrent unless you have modified it yourself.
-
 ### Rutorrent Web Gui Password
 
 **Important Note:** Please also see this FAQ to manage your rutorrent password and users: [Password protect your WWW folder](https://www.feralhosting.com/faq/view?question=22)

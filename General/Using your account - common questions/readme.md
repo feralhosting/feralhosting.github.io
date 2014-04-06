@@ -11,7 +11,6 @@ Available to install via the `Install Software` link in your [Account Manager](h
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/0%20Generic/install_software_link.png)
 
 rutorrent/rTorrent - [Selecting an rtorrent version](https://www.feralhosting.com/faq/view?question=202)
-wTorrent/rTorrent - [wTorrent - Usage and Troubleshooting](https://www.feralhosting.com/faq/view?question=3)
 Deluge / Deluge Web Ui + Deluge Thin Client - [Deluge Daemon - Remote control with the local Thin client](https://www.feralhosting.com/faq/view?question=76)
 Transmission / Transmission Web Ui + Transmission remote GUI - [Transmission and Transmission Remote GUI](https://www.feralhosting.com/faq/view?question=4)
 MYSQL - [Using Mysql](https://www.feralhosting.com/faq/view?question=9)
@@ -42,32 +41,15 @@ A: Email has been blocked due to abuse from people attempting to spam. If you ne
 
 A: You server has a dedicated IP that is shared by all the users on your server. So while you slot does have a dedicated IP, this IP is not unique to you.
 
-**Q:** Is my server a dedicated server?
+**Q:** Is my slot a dedicated server?
 ---
 
-A: No, Feral does not provide any dedicated servers. You slot will on a server that is shared by other users.
+A: No, Feral does not provide any dedicated servers. You slot will be on a server that is shared by other users.
 
 **Q:** Where is my slot located? Where are the the servers hosted.
 ---
 
 A: The servers are hosted at the [Interxion](http://www.interxion.com) carrier-neutral data centre in the [Netherlands](http://en.wikipedia.org/wiki/Netherlands).
-
-**Q:** What software is installed on my slot?
----
-
-A: You can check this yourself by using these command in [SSH](https://www.feralhosting.com/faq/view?question=12)
-
-To see if a specific programs is installed you can do this, where `program-name` is the name of the program you want information about:
-
-~~~
-aptitude show program-name | grep State
-~~~
-
-To see every installed program use this commands to create a new file in your server root called `software.txt` that will list all installed programs:
-
-~~~
-dpkg --get-selections > ~/software.txt
-~~~
 
 **Q:** Can I install Deluge,rTorrent/rutorrent, rtorrent/wuTorrent and transmission or can I only use one?
 ---
@@ -82,7 +64,7 @@ A: If you can provide sufficient evidence to show that you justifiably need this
 **Q:** What OS is running on my slot / What version of Linux us running on my slot?
 ---
 
-A: Your slot is running on Debian 7 Stable (wheezy)
+A: Your slot is running on Debian 7 Stable
 
 This SSH command will show you your current Debian version
 
@@ -118,7 +100,7 @@ A: Feral do not support external or third party applications that they do not pr
 
 A: Feral only supports one user account. This means they will only provide and support one set of user credentials (your account username and password). If you wish to share these credentials you can, but you do so at your own risk. Anyone you share you SSH/SFTP/FTP pass with will have as much control/access to and over the slot as you do.
 
-**1:** Recommended - Create limited and jailed users using this FAQ - [Installing an FTP daemon for extra accounts](https://www.feralhosting.com/faq/view?question=193) then share these credentials. This way they will never have total access to your slot.
+**1:** Recommended - Create limited and jailed users using this FAQ - [Installing a Proftpd daemon for extra accounts](https://www.feralhosting.com/faq/view?question=193) then share these credentials. This way they will never have total access to your slot.
 
 **2:** Create them a public/private key pair that you can easily revoke so you do not have to share you main password - [Public Key Authentication for password-less login](https://www.feralhosting.com/faq/view?question=13). This still give them the same level of access that you have, but keys are simple to revoke.
 
@@ -126,7 +108,7 @@ A: Feral only supports one user account. This means they will only provide and s
 
 A: Feral do not provide FTPS access as part of their set-up, only SFTP. You can however use this FAQ - [Installing an FTP daemon for extra accounts](https://www.feralhosting.com/faq/view?question=193) to set-up FTPS with limited users inside jailed directories.
 
-**Q:** Is there test file for Feral?
+**Q:** Is there a test file for Feral?
 ---
 
 A: Yes, here are some links:
@@ -196,7 +178,7 @@ A: Your upload will be throttled to 1Mbits for Cogent and 10Mbits for OVH for th
 
 A: Anything that is leaving(OUT) your server is upload. So anything your server has to send to you, such as an FTP/SFTP download, is something that is leaving the server. Anything Incoming(IN) is not counted to this usage.
 
-**Q: ** Using SFTP
+**Q:** Using SFTP
 ---
 
 SFTP is the ideal and supported way to securely transfer data between the server and your home computer. SFTP is FTP over SSH. All Feral users have SSH access to their slots. Feral does not use or support FTPS for file transfer.
