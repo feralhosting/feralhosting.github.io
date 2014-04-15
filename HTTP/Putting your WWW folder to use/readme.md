@@ -100,7 +100,7 @@ the same time.
 To download _h5ai 0.24 (custom with dual url format fix) use these commands in SSH.
 
 ~~~
-wget -qO ~/h5ai.zip http://git.io/RG-BpQ
+wget -qO ~/h5ai.zip http://git.io/dEazsw
 unzip -qo ~/h5ai.zip -d ~/www/$(whoami).$(hostname)/public_html/
 ~~~
 

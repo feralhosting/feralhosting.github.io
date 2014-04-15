@@ -6,7 +6,7 @@ After OpenVPN has been set up on your server you will need to install an OpenVPN
 Windows
 ---
 
-Using the [OpenVPN 2.3.2 Stable/Current](http://openvpn.net/index.php/open-source/downloads.html) is relatively easy on a Windows machine.
+Using the [OpenVPN 2.3.3 Stable/Current](http://openvpn.net/index.php/open-source/downloads.html) is relatively easy on a Windows machine.
  
 After installing, you should connect to your server via SFTP (use an FTP/SFTP client such as Filezilla) and download the contents of 
 

@@ -9,7 +9,7 @@ There are some options you can offer to those who wish to test the speed of our/
 
 Here are some FAQs on how to go about sharing your files:
 
-Create sftp/ftps jails using this FAQ: [Installing an FTP daemon for extra accounts](https://www.feralhosting.com/faq/view?question=193)
+Create sftp/ftps jails using this FAQ: [Installing Proftpd for extra FTP/SFTP/FTPS accounts](https://www.feralhosting.com/faq/view?question=193)
 
 Create WWW/http shareable links and files: [Putting your WWW folder to use](https://www.feralhosting.com/faq/view?question=20)
 
@@ -40,7 +40,7 @@ http://test.fiberring.net/100mb.bin
 Feral Cogent test file:
 
 ~~~
-http://aphrodite.feralhosting.com/test.bin
+http://iapetus.feralhosting.com/test.bin
 ~~~
 
 This will only show your the potential upload speed if they have a large download capacity as well as the file being hosted on another server (**scarlet**). Provide them with a link to a file on your server using your *WWW/Http* directory. Then they can *ftp/http/wget* a file of your choosing from **your** server.
@@ -49,7 +49,7 @@ This will only show your the potential upload speed if they have a large downloa
 
 ~~~
 wget -O /dev/null http://mirror.nl.leaseweb.net/speedtest/100mb.bin
-wget -O /dev/null http://aphrodite.feralhosting.com/test.bin
+wget -O /dev/null http://iapetus.feralhosting.com/test.bin
 wget -O /dev/null http://test.fiberring.net/100mb.bin
 wget -O /dev/null ftp://scarlet.feralhosting.com/8.0-RELEASE-amd64-disc1.iso
 ~~~

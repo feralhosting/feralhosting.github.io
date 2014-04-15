@@ -113,7 +113,7 @@ A: Feral do not provide FTPS access as part of their set-up, only SFTP. You can 
 
 A: Yes, here are some links:
 
-[http://aphrodite.feralhosting.com/test.bin](http://aphrodite.feralhosting.com/test.bin)
+[http://iapetus.feralhosting.com/test.bin](http://iapetus.feralhosting.com/test.bin)
 
 [http://mirror.nl.leaseweb.net/speedtest/100mb.bin](http://mirror.nl.leaseweb.net/speedtest/100mb.bin)
 

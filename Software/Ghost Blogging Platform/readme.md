@@ -8,7 +8,7 @@ Installation:
 ---
 
 ~~~
-wget -qO ~/ghost.zip https://ghost.org/zip/ghost-0.4.1.zip
+wget -qO ~/ghost.zip https://ghost.org/zip/ghost-0.4.2.zip
 unzip -qo ~/ghost.zip -d ~/ghost
 cd ~/ghost
 npm install --production
