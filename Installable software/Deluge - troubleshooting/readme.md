@@ -5,8 +5,6 @@
 eros.feralhosting.com
 ~~~
 
-Deluge is our favoured client because for the time being, it is the most stable.
-
 If you do have problems it can be restarted by following these instructions: [Restarting - rtorrent - Deluge - Transmission - MySQL](https://www.feralhosting.com/faq/view?question=158)
 
 The thin client allows you to control it remotely from your desktop as if you were running it locally: [Deluge Daemon - Remote control with the local Thin client](https://www.feralhosting.com/faq/view?question=76)
