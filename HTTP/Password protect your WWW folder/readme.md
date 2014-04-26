@@ -1,7 +1,8 @@
 
 **Please see the end of the FAQ for nginx.**
 
-### Htpasswd toolkit Bash script
+Htpasswd toolkit Bash script
+---
 
 This bash script provides some easy options to perform some common tasks.
 
@@ -18,7 +19,8 @@ So after you have run it for the first time you can simply do:
 htpasswdtk
 ~~~
 
-### These are the basic steps to password protect a directory in SSH:
+These are the basic steps to password protect a directory in SSH:
+---
 
 Please use a good password where the at least the first 8 characters are not easily guessable.
 
@@ -34,7 +36,8 @@ If you do not like using complex pass phrases please consider the use of a passw
 **Section 3:** Password Protecting a Directory for Multiple Users
 **Section 4:** Rutorrent Specific Info
 
-### Password Protecting a Directory for a Single User or multiple users
+Password Protecting a Directory for a Single User or multiple users
+---
 
 It will be good to take a quick look at the fundamentals of this process to make it easier to break down and understand :
 
@@ -60,7 +63,8 @@ If you have installed rutorrent via the Software manager it created a `.htaccess
 
 **Important note:** See Section 4 for rutorrent specific information regarding `.htaccess` and `.htpasswd` as this guide can be used to edit these files directly.
 
-### Section 1: Creating our .htaccess
+Section 1: Creating our .htaccess
+---
 
 **Step 1:** [SSH to your Feral server](https://www.feralhosting.com/faq/view?question=165). First we need to navigate to the directory we want to protect. The file that will be protecting our default www directory is called `.htaccess` (please note the initial dot). It works in partnership with a file called `.htpasswd` in which the actual encrypted password is stored. Let's create the `.htaccess` first.
 
@@ -153,7 +157,8 @@ I recommend you place the `.htaccess` file only INSIDE the folders you wish to p
 
 To change our own password or other users inside an existing `.htpasswd` see Section 2.1
 
-### Section 2: Creating our .htpasswd file
+Section 2: Creating our .htpasswd file
+---
 
 **Step 2:** Let's now create our `.htpasswd` file. First we navigate to the Directory where we want to store it (we configured it earlier in our `.htaccess` file):
 
@@ -319,7 +324,8 @@ You can change the rutorrent `.htaccess` to link to another `.htpasswd` of your 
 
 In this case the `.htpasswd` is stored within the WWW realm and not outside it (like the `.htpasswd` from Section 2 is). Moving this to somewhere outside the WWW is a good idea.
 
-### nginx
+nginx
+---
 
 nginx does not use `.htaccess` files. All settings are done in the configuration files.
 
@@ -386,6 +392,42 @@ Then save the edits to the `links.conf` and reload your nginx configuration for 
 ~~~
 
 **Important note:** Please note you may need to clear your browser cache for changes to reflected in your current browser session.
+
+Notes:
+---
+
+If you have an application, like Ampache, that has its own authentication you can disable basic auth for these location, if you have protected  your entire WWW for example.
+
+**Apache:**
+
+Add these two lines to a `.htaccess` inside the folder you wish to disable basic auth on. If the `.htaccess` does not exist in the desired location then create it.
+
+~~~
+Satisfy Any
+Allow from all
+~~~
+
+**nginx:**
+
+Create a location based rule in any existing conf file located at: `~/.nginx/conf.d/000-default-server.d/` or create a new one there just for this, for example:
+
+~~~
+~/.nginx/conf.d/000-default-server.d/ampache.conf
+~~~
+
+Then add this to the file then save.
+
+~~~
+location /ampache {
+    auth_basic  off;
+}
+~~~
+
+Then reload nginx using this command:
+
+~~~
+/usr/sbin/nginx -s reload -c ~/.nginx/nginx.conf
+~~~
 
 
 
