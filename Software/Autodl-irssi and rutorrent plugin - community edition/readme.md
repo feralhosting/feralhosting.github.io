@@ -86,7 +86,7 @@ Manual installation
 ~~~
 mkdir -p ~/.irssi/scripts/autorun ~/.autodl
 echo -e "[options]\ngui-server-port = 0\ngui-server-password = PASS" > ~/.autodl/autodl.cfg
-wget -qO ~/autodl-irssi.zip https://bitbucket.org/autodl-community/autodl-irssi/downloads/autodl-irssi-community.zip
+wget -qO ~/autodl-irssi.zip http://update.autodl-community.com/autodl-irssi-community.zip
 unzip -qo ~/autodl-irssi.zip -d ~/.irssi/scripts/
 cp -f ~/.irssi/scripts/autodl-irssi.pl ~/.irssi/scripts/autorun/
 cd && rm -f autodl-irssi.zip .irssi/scripts/{README*,autodl-irssi.pl,CONTRIBUTING.md}

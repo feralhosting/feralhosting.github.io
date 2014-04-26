@@ -76,7 +76,7 @@ Run the following commands in [SSH](https://www.feralhosting.com/faq/view?questi
 killall -9 -u $(whoami) transmission-daemon
 ~~~
 
-**Important note:**  Transmission cannot manually restarted by the user. After killing the process allow up to 5 minutes for it to automatically to restart.
+**Important note:**  Transmission cannot be started by the user and will be started by the system instead. After killing the process allow up to 5 minutes for it to automatically to restart.
 
 You can do this to see if the process has restarted:
 

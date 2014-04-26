@@ -108,4 +108,45 @@ When you visit your domain's URL in a browser you will be seeing any files that 
 Now visit your website URL in a browser. You may need to clear your browser cache in some case to see the change.
 
 
+nginx
+---
+
+If you have followed this FAQ - [Updating Apache to nginx](https://www.feralhosting.com/faq/view?question=231) then you will need to add your virtual hosts to ngixn manually. Make sure you have pointed the DNS of your domain to the Feral server you want to host the domain on. Then follow this template:
+
+Change example.com to your domain name in these examples:
+
+~~~
+mkdir -p ~/www/example.com/public_html
+echo 'www root' > ~/www/example.com/public_html/index.html
+~~~
+
+Show full path to the root:
+
+~~~
+ls -d ~/www/example.com/public_html
+~~~
+
+Add this to the end of the  `~/.nginx/conf.d/000-default-server.conf `
+
+**1:** example.com to your custom domain 
+**2:** root to the result of the ls command above
+
+~~~
+server {
+    listen      8080;
+    server_name example.com
+    root        /media/DiskID/home/username/www/example.com/public_html;
+    index       index.html index.php;
+}
+~~~
+
+Reload your nginx:
+
+~~~
+/usr/sbin/nginx -s reload -c ~/.nginx/nginx.conf
+~~~
+
+You should now be able to visit your domain in the browser and see the changes.
+
+
 

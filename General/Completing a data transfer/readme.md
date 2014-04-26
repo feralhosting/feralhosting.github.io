@@ -95,7 +95,7 @@ cp -rf ~/data-from-server/private/deluge/data/. ~/private/deluge/data
 
 Substitute `server` in `data-from-server` with the name of your old server.
 
-**Move the the rTorrent .torrents**
+**Move the the Deluge .torrents**
 
 The move command:
 
