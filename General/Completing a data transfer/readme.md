@@ -71,6 +71,14 @@ cp -rf ~/data-from-server/private/rtorrent/work/*.torrent ~/private/rtorrent/wat
 
 Substitute `server` in `data-from-server` with the name of your old server.
 
+Warning: Make certain that your default download directory is set to the default location `~/private/rtorrent/data/`. Otherwise you will need to move all of the torrent data to the location you have it set to. If not, the client will be unable to locate the data, and begin downloading new data.
+
+**Important Note:** What to expect during the process.
+
+When you first issue the command to move or copy the *.torrent files into the watch directory, you will begin to see the torrents appear in the ruTorrent Web GUI, in the Download section (select from top left-hand side of GUI). At this point the rTorrent client is processing your torrents and checking for its data. Once it has processed a torrent and identified its data, it will show as 100% complete and seeding, and will move the torrent out of the Downloading section of the GUI. 
+
+It is important to keep in mind, when you move many torrents into the rtorrent watch directory, the processing and checking of each torrent and its associated data will take a fair amount of time. Be patient while this is happening. Adding 200 torrents, for example, will take approximately 10 minutes for everything to be processed and for the GUI to reflect this.
+
 ### Deluge
 
 Deluge: throttle your download.

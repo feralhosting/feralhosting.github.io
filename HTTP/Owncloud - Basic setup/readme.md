@@ -1,22 +1,26 @@
 
-**Important note:** Owncloud does not work with nginx.
+**Important note:** For using Owncloud With nginx please see the nginx section of this guide.
 
 Owncloud Manual installation
+---
 
 In [SSH](https://www.feralhosting.com/faq/view?question=12) run this command. It will download the `setup.php` to the root of your `WWW`
 
 ~~~
-wget -qP ~/www/$(whoami).$(hostname)/public_html/ https://download.owncloud.com/download/community/setup-owncloud.php
+wget -P ~/www/$(whoami).$(hostname)/public_html/ https://download.owncloud.com/download/community/setup-owncloud.php
 ~~~
 
-Now visit the URL in your browser, it will look something like this:
+Now visit the URL in this format, in your browser, it will look something like this:
+
+**Important note:** If you use or force https you may need to unblock the remote content of the installer in Firefox.
+
+![](https://raw.githubusercontent.com/feralhosting/feralfilehosting/master/Feral%20Wiki/HTTP/Owncloud%20-%20Basic%20setup/https.png)
 
 ~~~
-http://server.feralhosting.com/username/setup-owncloud.php
 http://username.server.feralhosting.com/setup-owncloud.php
 ~~~
 
-You should be able to just click on this file from your apache/h5ai index.
+You should be able to just click on this file from your apache/nginx/h5ai index.
 
 **1:** Just click next
 
@@ -32,7 +36,7 @@ You should be able to just click on this file from your apache/h5ai index.
 
 The easiest way to install Owncloud is to use the sqlite database option (default). Using MySQL can be done but requires a lot of extra steps that we are not going to cover in this basic set-up.
 
-Once you have visited the URl in a browser you will see this:
+Once you have visited the URL in a browser you will see this:
 
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/HTTP/Owncloud%20-%20Basic%20setup/1.png)
 
@@ -47,6 +51,12 @@ So the relative path to to this file from your server root will be:
 
 ~~~
 owncloud/config/config.php
+~~~
+
+To edit this file using nano:
+
+~~~
+nano -w ~/www/$(whoami).$(hostname)/public_html/owncloud/config/config.php
 ~~~
 
 Open this file with a text editor and add these new options:
@@ -65,6 +75,95 @@ Once you have done this is will look something like this:
 Now Owncloud will work with the valid SSL URL format and not the other. All 3rd party apps will also work, so this is the best approach to dealing with the issue.
 
 These options are taken from the `config.sample.php` located in the same directory.
+
+nginx
+---
+
+You will need to make edits to the default setup in order to make owncloud work with nginx. You do this at your own risk.
+
+**Important note:** This configuration depends on the user installing owncloud to the WWW subdirectory `/owncloud`
+
+Find and edit this file:
+
+~~~
+~/.nginx/conf.d/000-default-server.conf
+~~~
+
+Find this section:
+
+~~~
+    # Pass files that end in .php to PHP
+    location ~ \.php$ {
+        fastcgi_read_timeout 1h;
+        fastcgi_send_timeout 10m;
+
+        include      /etc/nginx/fastcgi_params;
+        fastcgi_pass unix:/media/DiskID/home/username/.nginx/php/socket;
+    }
+~~~
+
+Replace the entire section with this:
+
+~~~
+    # Pass files that end in .php to PHP
+    location ~ ^(.+?\.php)(/.*)?$ {
+        try_files $1 = 404;
+        fastcgi_read_timeout 1h;
+        fastcgi_send_timeout 10m;
+
+        include      /etc/nginx/fastcgi_params;
+        # EDIT THIS LINE TO MATCH YOUR SOCKET PATH
+        fastcgi_pass unix:/media/DiskID/home/username/.nginx/php/socket;
+        #
+        fastcgi_param SCRIPT_FILENAME $document_root$1;
+        fastcgi_param PATH_INFO $2;
+        fastcgi_param HTTPS on;
+    }
+~~~
+
+**Important note:** You must edit this line:
+
+~~~
+fastcgi_pass unix:/media/DiskID/home/username/.nginx/php/socket;
+~~~
+
+**Using Sed:**
+
+Run this command in SSH to change it:
+
+~~~
+sed -ri "s|fastcgi_pass unix:(.*);|fastcgi_pass unix:$HOME/.nginx/php/socket;|g" ~/.nginx/conf.d/000-default-server.conf
+~~~
+
+**Manual method:**
+
+Use this command in SSH to find the full path to the socket:
+
+~~~
+ls ~/.nginx/php/socket
+~~~
+
+The replace the `/media/DiskID/home/username/.nginx/php/socket` with the result of the command.
+
+**Owncloud custom conf:**
+
+Now download a preconfigured conf file to use in conjunction with this edit:
+
+~~~
+wget -qO ~/.nginx/conf.d/000-default-server.d/owncloud.conf http://git.io/nVy4Cg
+~~~
+
+No edits are required to this file, but you must have installed Owncloud into the WWW subdirectory `/owncloud` for it to have any effect.
+
+Now reload nginx:
+
+~~~
+/usr/sbin/nginx -s reload -c ~/.nginx/nginx.conf
+~~~
+
+Owncloud should now work as intended with nginx.
+
+**Important note:** These modifications should not interfere with the working of other php based applications.
 
 
 

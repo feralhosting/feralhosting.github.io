@@ -34,19 +34,19 @@ Use these first two commands to create to do some pre requisite tasks:
 First we need a pretty important, but optional, ruby dependency.  This lets us have a "history" in our ruby shell.
 
 ~~~
-wget -qO ~/readline.tar.gz ftp://ftp.cwru.edu/pub/bash/readline-6.2.tar.gz
-tar xf ~/readline.tar.gz && cd readline-6.2
+wget -qO ~/readline.tar.gz ftp://ftp.cwru.edu/pub/bash/readline-6.3.tar.gz
+tar xf ~/readline.tar.gz && cd readline-6.3
 ./configure --prefix=$HOME && make && make install
-cd && rm -rf readline{.tar.gz,-6.2}
+cd && rm -rf readline{.tar.gz,-6.3}
 ~~~
 
 Install the program using these commands:
 
 ~~~
-wget -qO ~/ruby.tar.gz http://cache.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p353.tar.gz
-tar xf ~/ruby.tar.gz && cd ~/ruby-2.0.0-p353
+wget -qO ~/ruby.tar.gz http://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.1.tar.gz
+tar xf ~/ruby.tar.gz && cd ~/ruby-2.1.1
 ./configure --prefix=$HOME && make && make install
-cd && rm -rf ruby{-2.0.0-p353,.tar.gz}
+cd && rm -rf ruby{-ruby-2.1.1,.tar.gz}
 ~~~
 
 Now these to check your versions:
