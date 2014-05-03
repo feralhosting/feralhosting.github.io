@@ -2,7 +2,7 @@
 Ghost Blogging Platform
 ---
 
-**Important note:** You will need to have installed `node.js` to use Ghost. See this FAQ - [node.js - How to install](http://https://www.feralhosting.com/faq/view?question=199)
+**Important note:** You will need to have installed `node.js` to use Ghost. See this FAQ - [node.js - How to install](https://www.feralhosting.com/faq/view?question=199)
 
 Installation:
 ---

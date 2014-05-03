@@ -11,19 +11,15 @@ Drop your custom `.conf` files in to this folder:
 
 Then restart Apache.
 
-**Restart Apache 2**
-
-~~~
-/usr/sbin/apache2ctl restart
-~~~
-
-**Alternatively: Reload Apache configurations**
+**Reload Apache configurations:**
 
 This command will reload your `conf` files instead of restarting.
 
 ~~~
 /usr/sbin/apache2ctl -k graceful
 ~~~
+
+**Important note:** You cannot restart or start Apache, only the system can do that. If you kill the process or it dies you will need to wait up to 5 minutes or it to restart. You can reload the configuration using the above command.
 
 **List loaded modules:**
 
