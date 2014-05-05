@@ -116,27 +116,48 @@ If you have followed this FAQ - [Updating Apache to nginx](https://www.feralhost
 Change example.com to your domain name in these examples:
 
 ~~~
-mkdir -p ~/www/example.com/public_html
-echo 'www root' > ~/www/example.com/public_html/index.html
+mkdir -p ~/www/example.co.uk/public_html
+mkdir -p ~/.nginx/proxy
+echo 'www root' > ~/www/example.co.uk/public_html/index.html
 ~~~
 
 Show full path to the root:
 
 ~~~
-ls -d ~/www/example.com/public_html
+ls -d ~/www/example.co.uk/public_html
 ~~~
 
-Add this to the end of the  `~/.nginx/conf.d/000-default-server.conf `
+Add this to a new file on the  `~/.nginx/conf.d/` directory. For example: `example.conf`
 
-**1:** example.com to your custom domain 
-**2:** root to the result of the ls command above
+**1:** `example.co.uk` to your custom domain 
+**2:** `root` to the result of the ls command above
+**3:** `proxy_temp_path` with your path info
+**4:** `fastcgi_pass` with your path info
 
 ~~~
 server {
     listen      8080;
-    server_name example.com
-    root        /media/DiskID/home/username/www/example.com/public_html;
+    server_name example.co.uk;
+    root        /media/DiskID/home/username/www/example.co.uk/public_html;
     index       index.html index.php;
+
+    proxy_temp_path  /media/DiskID/home/username/.nginx/proxy;
+
+    autoindex            on;
+    autoindex_exact_size off;
+    autoindex_localtime  on;
+
+    # Pass files that end in .php to PHP
+    location ~ \.php$ {
+        fastcgi_read_timeout 1h;
+        fastcgi_send_timeout 10m;
+
+        include      /etc/nginx/fastcgi_params;
+        fastcgi_pass unix:/media/DiskID/home/username/.nginx/php/socket;
+    }
+
+    location / {
+    }
 }
 ~~~
 
