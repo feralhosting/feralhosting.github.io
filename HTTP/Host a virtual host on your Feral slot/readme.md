@@ -173,6 +173,10 @@ You should now be able to visit your domain in the browser and see the changes.
 proxy_pass on a  custom domain:
 ---
 
+Here is an example of a proxypass on your custom domain using nginx in the top level of your www.
+
+**Important note:** Your app will be rquired to use the host `10.0.0.1` and not `localhost` or `127.0.0.1`
+
 ~~~
     location / {    
     proxy_set_header X-Real-IP $remote_addr;
