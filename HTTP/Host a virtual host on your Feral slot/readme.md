@@ -141,6 +141,7 @@ server {
     root        /media/DiskID/home/username/www/example.co.uk/public_html;
     index       index.html index.php;
 
+    port_in_redirect off;
     proxy_temp_path  /media/DiskID/home/username/.nginx/proxy;
 
     autoindex            on;
@@ -168,6 +169,22 @@ Reload your nginx:
 ~~~
 
 You should now be able to visit your domain in the browser and see the changes.
+
+proxy_pass on a  custom domain:
+---
+
+~~~
+    location / {    
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Host $http_host;
+    proxy_set_header X-NginX-Proxy true;
+
+    rewrite /(.*) /$1 break;
+    proxy_pass http://10.0.0.1:PORT/;
+    proxy_redirect off;
+    }
+~~~
 
 
 
