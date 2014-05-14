@@ -111,7 +111,7 @@ Now visit your website URL in a browser. You may need to clear your browser cach
 nginx
 ---
 
-If you have followed this FAQ - [Updating Apache to nginx](https://www.feralhosting.com/faq/view?question=231) then you will need to add your virtual hosts to ngixn manually. Make sure you have pointed the DNS of your domain to the Feral server you want to host the domain on. Then follow this template:
+If you have followed this FAQ - [Updating Apache to nginx](https://www.feralhosting.com/faq/view?question=231) then you will need to add your virtual hosts to nginx manually. Make sure you have pointed the DNS of your domain to the Feral server you want to host the domain on. Then follow this template:
 
 Change example.com to your domain name in these examples:
 
@@ -175,7 +175,7 @@ proxy_pass on a  custom domain:
 
 Here is an example of a proxypass on your custom domain using nginx in the top level of your www.
 
-**Important note:** Your app will be rquired to use the host `10.0.0.1` and not `localhost` or `127.0.0.1`
+**Important note:** Your app will be required to use the host `10.0.0.1` and not `localhost` or `127.0.0.1`.
 
 ~~~
     location / {    

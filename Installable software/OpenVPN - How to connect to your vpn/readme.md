@@ -6,7 +6,7 @@ After OpenVPN has been set up on your server you will need to install an OpenVPN
 Windows
 ---
 
-Using the [OpenVPN 2.3.3 Stable/Current](http://openvpn.net/index.php/open-source/downloads.html) is relatively easy on a Windows machine.
+Using the [OpenVPN Stable/Current](http://openvpn.net/index.php/open-source/downloads.html) is relatively easy on a Windows machine.
  
 After installing, you should connect to your server via SFTP (use an FTP/SFTP client such as Filezilla) and download the contents of 
 
@@ -101,7 +101,7 @@ Ubuntu 10.04
 
 First, make sure you have the keys folder and the client.ovpn file somewhere on your hard drive. They should have been downloaded from the /private/vpn/ folder of your server via SFTP (winscp works fine in wine).
 
-Open up the Ubuntu Software center from the applications menu. Search for "network-manager-openvpn".
+Open up the Ubuntu Software centre from the applications menu. Search for "network-manager-openvpn".
 
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/Installable%20software/OpenVPN%20-%20How%20to%20connect%20to%20your%20vpn/ubuntu1.png)
 
@@ -135,7 +135,7 @@ ubuntu 11.10 OpenVPN connection instruction (likely to work on 10.04, 10.10, 11.
 and wait a few minutes
 
 **2:** connect to account via scp or sftp and navigate to the private directory. Look for the file called client.ovpn and download it.
-Also in the vpn directory, there is another directory called keys that needs te be downloaded. Upon downloading locally, be certian all 6 files are in the same directory on your computer.  
+Also in the vpn directory, there is another directory called keys that needs te be downloaded. Upon downloading locally, be certain all 6 files are in the same directory on your computer.  
 Example path to files on feralhosting: /media/sdb1/home/YOURUSERNAME/private/vpn
 
 **3:** From here you will configure the vpn connection using the network manager in ubuntu. Click on configure VPN followed by import.
@@ -152,7 +152,7 @@ Example path to files on feralhosting: /media/sdb1/home/YOURUSERNAME/private/vpn
 
 **9:** Check the box "Use additional TLS authentication".
 
-**10:** Chosse the key file from the same directory as all the other files you have used, it will be called tls-auth.key.
+**10:** Choose the key file from the same directory as all the other files you have used, it will be called tls-auth.key.
 
 **11:** Save & connect.
 

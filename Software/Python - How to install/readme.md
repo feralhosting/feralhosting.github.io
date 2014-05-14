@@ -47,29 +47,23 @@ pip install --user requests
 pip install --user HTMLParser
 ~~~
 
-**3:** Now you can use VirtualENV with programs, for example, installing [flexget](http://flexget.com):
-
-~~~
-virtualenv ~/flexget/
-~/flexget/bin/pip install flexget
-~~~
-
-**Related FAQ:** [Flexget - Basic installation](https://www.feralhosting.com/faq/view?question=234)
+Now you can use VirtualENV with programs.
 
 Installing Python locally:
+---
 
 You **do not** need to follow this FAQ to use python or python scripts. If you have a missing module you can open a ticket and ask staff to install it or use the above section to install it locally.
 
 This is a basic guide to installing Python to your home directory . You will also be able to use `easy_install` to install mods.
 
-### Python Active State 2.7.5.6:
+### Python Active State:
 
 Includes lots of things such as VirtualENV, distribute, PIP and more. Super simple to install.
 
 ~~~
-wget -qO ~/ActivePython.tar.gz http://downloads.activestate.com/ActivePython/releases/2.7.5.6/ActivePython-2.7.5.6-linux-x86_64.tar.gz
+wget -qO ~/ActivePython.tar.gz http://downloads.activestate.com/ActivePython/releases/2.7.6.9/ActivePython-2.7.6.9-linux-x86_64.tar.gz
 tar xf ActivePython.tar.gz
-bash ~/ActivePython-2.7.5.6-linux-x86_64/install.sh
+bash ~/ActivePython-2.7.6.9-linux-x86_64/install.sh
 ~~~
 
 Select a path to install to. This will create the path if it does not exist.
@@ -87,7 +81,7 @@ Read the information displayed, it will tell you what `PATH` to add and where.
 Optional: To remove the installation files.
 
 ~~~
-cd && rm -f ActivePython{-2.7.5.6-linux-x86_64.tar.gz,-2.7.5.6-linux-x86_64}
+cd && rm -f ActivePython{-2.7.6.9-linux-x86_64.tar.gz,-2.7.6.9-linux-x86_64}
 ~~~
 
 Type this command to reload the shell:

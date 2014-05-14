@@ -18,9 +18,9 @@ This command will show you your installed Git version
 git --version
 ~~~
 
-If you specifically need a higher version you can used the FAQ to install 1.8.5.1
+If you specifically need a higher version you can used this FAQ to install a newer version.
 
-Git 1.9.0
+Git 1.9.3
 ---
 
 You need to SSH into your slot to complete this guide. If you don't know how to do this [here is a basic guide](https://www.feralhosting.com/faq/view?question=12)
@@ -32,11 +32,11 @@ mkdir -p ~/bin && bash
 Now install git using these commands:
 
 ~~~
-wget -qO ~/git-1.9.0.tar.gz http://git-core.googlecode.com/files/git-1.9.0.tar.gz
-tar xf ~/git-1.9.0.tar.gz && cd ~/git-1.9.0
+wget -qO ~/git-1.9.3.tar.gz https://www.kernel.org/pub/software/scm/git/git-1.9.3.tar.xz
+tar xf ~/git-1.9.3.tar.gz && cd ~/git-1.9.3
 ./configure --prefix=$HOME --with-curl=/opt/curl/current
 make && make install
-cd && rm -rf git{-1.9.0,-1.9.0.tar.gz}
+cd && rm -rf git{-1.9.3,-1.9.3.tar.gz}
 ~~~
 
 Then do this to check the version.
@@ -52,6 +52,22 @@ You can now do things like clone. Here is an example command:
 ~~~
 git clone git://github.com/username/repo.git ~/where/you/want/this/repo
 git clone https://github.com/username/repo.git ~/where/you/want/this/repo
+~~~
+
+Install from github source.
+---
+
+For the latest git you can do this.
+
+**Important note:** Only use this method if you require the very latest code. Otherwise user the officially released tar ball in the previous section.
+
+~~~
+wget -qO ~/git.zip https://github.com/git/git/archive/master.zip
+unzip -qo ~/git.zip && cd git-master
+make configure
+./configure --prefix=$HOME --with-curl=/opt/curl/current
+make && make install
+cd && rm -rf git{.zip,-master}
 ~~~
 
 
