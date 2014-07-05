@@ -24,7 +24,9 @@ cd && rm -rf cmake{-2.8.12.2-Linux-i386,.tar.gz}
 
 Please use this script.
 
-**Important note:** You need to have completed Step 1 before running this script.
+**Important note 1:** You need to have completed Step 1 before running this script.
+
+**Important note 2:** If you get an error about gcrypt you will need to open a ticket and ask for `libgcrypt11-dev` to be installed.
 
 ~~~
 wget -qO ~/install.weechat.sh http://git.io/L6oalA && bash ~/install.weechat.sh

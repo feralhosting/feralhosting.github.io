@@ -16,8 +16,8 @@ How to install and use the murmur Mumble server for use with Mumble clients.
 The murmur server is the server for the mumble VoIP client.
 
 ~~~
-wget -qO ~/server.tar.bz2 http://downloads.sourceforge.net/project/mumble/Mumble/1.2.5/murmur-static_x86-1.2.5.tar.bz2
-tar xf server.tar.bz2 && cp -rf ~/murmur-static_x86-1.2.5/. ~/private/murmur && cd && rm -rf {murmur-static_x86-1.2.5,server.tar.bz2}
+wget -qO ~/server.tar.bz2 http://downloads.sourceforge.net/project/mumble/Mumble/1.2.7/murmur-static_x86-1.2.7.tar.bz2
+tar xf server.tar.bz2 && cp -rf ~/murmur-static_x86-1.2.7/. ~/private/murmur && cd && rm -rf {murmur-static_x86-1.2.7,server.tar.bz2}
 ~~~
 
 That is basically it for the download and extraction of the server. There are a couple of things we need to do before we start it.
@@ -57,6 +57,26 @@ Once this is done you can run the program using this command:
 ~~~
 ~/private/murmur/./murmur.x86 -ini ~/private/murmur/murmur.ini
 ~~~
+
+Superuser password:
+---
+
+Please Look in this file `~/private/murmur/murmur.log` for your super user password.
+
+The result should look something like:
+
+~~~
+<W>2014-05-19 08:56:47.423 1 => Password for 'SuperUser' set to '*i]>~ZIQ]eL*-K#'
+~~~
+
+This command should work to show it in SSH when used against a default log:
+
+~~~
+sed -n 7p ~/private/murmur/murmur.log
+~~~
+
+Mumble Client:
+---
 
 Now you need to install the [Mumble client](http://mumble.sourceforge.net/) for your platform.
 

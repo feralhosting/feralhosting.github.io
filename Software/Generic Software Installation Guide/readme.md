@@ -20,7 +20,7 @@ For this guide we will look at the methods available to you to install software 
 
 - ffmpeg
 - java
-- Python programs like flexget
+- Python programs
 
 **2:** Source-code to compile the binary on your slot. Examples of this include:
 
@@ -240,7 +240,7 @@ mkdir -p ~/bin && bash
 Now download the required files:
 
 ~~~
-wget -qO ~/node.js.tar.gz http://nodejs.org/dist/v0.10.23/node-v0.10.23-linux-x64.tar.gz
+wget -qO ~/node.js.tar.gz http://nodejs.org/dist/v0.10.27/node-v0.10.27-linux-x64.tar.gz
 ~~~
 
 Now we have downloaded the archive to our `HOME` folder we can unpack it. In this case the archive is a tar archive to we will use `tar` to extract it.
@@ -249,7 +249,7 @@ Now we have downloaded the archive to our `HOME` folder we can unpack it. In thi
 tar xf ~/node.js.tar.gz
 ~~~
 
-**Important note:** Effectively, once you have extracted the the contents of the archive, the program is ready to use by directly calling it via a full path in you terminal using `~/node-v0.10.23-linux-x64/bin/node` . For the purposes of this FAQ will continue to move the files to a desired location and add that location to our `PATH` for easy use and so you become more familiar with the overall process.
+**Important note:** Effectively, once you have extracted the the contents of the archive, the program is ready to use by directly calling it via a full path in you terminal using `~/node-v0.10.27-linux-x64/bin/node` . For the purposes of this FAQ will continue to move the files to a desired location and add that location to our `PATH`, if required, for easy use and so you become more familiar with the overall process.
 
 Now the contents of the archive has just been extracted to the `HOME` folder of our slot. It will generally be safe to assume the new folder name is the same as the archive's minus the extension, but to make sure, we can type this command in our terminal:
 
@@ -257,7 +257,7 @@ Now the contents of the archive has just been extracted to the `HOME` folder of 
 ls
 ~~~
 
-As we can see the folder name is `node-v0.10.23-linux-x64`
+As we can see the folder name is `node-v0.10.27-linux-x64`
 
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral Wiki/Software/Generic Software Installation Guide/lsnode.png)
 
@@ -268,7 +268,7 @@ The directory structure of the pre-compiled programs will commonly resemble the 
 So what we need to do is copy the contents of the folder to our desired location, being our server root (using the shorthand `~/`)  in this example:
 
 ~~~
-cp -rf ~/node-v0.10.23-linux-x64/. ~/
+cp -rf ~/node-v0.10.27-linux-x64/. ~/
 ~~~
 
 Now installed `node` and it is ready for use by simple called `node` in the terminal.
@@ -288,7 +288,7 @@ cd
 Now you can delete the files and folders we no longer require.
 
 ~~~
-rm -rf node{-v0.10.23-linux-x64,.js.tar.gz}
+rm -rf node{-v0.10.27-linux-x64,.js.tar.gz}
 ~~~
 
 We are using [bash brace expansion](https://www.gnu.org/software/bash/manual/html_node/Brace-Expansion.html) to remove the files.
@@ -304,12 +304,10 @@ The first thing to do is to create the `~/bin` directory and reload the relevant
 mkdir -p ~/bin && bash
 ~~~
 
-When compiling from source you will need to follow this outline, we will use `curl` as the installation example:
-
-First, we download the software to a file named `curl.tar.gz` in our `HOME` directory using this command:
+When compiling from source you will need to follow this outline, we will use `curl` as the installation example. First, we download the software to a file named `curl.tar.gz` in our `HOME` directory using this command:
 
 ~~~
-wget -qO ~/curl.tar.gz http://curl.haxx.se/download/curl-7.33.0.tar.gz
+wget -qO ~/curl.tar.gz http://curl.haxx.se/download/curl-7.36.0.tar.gz
 ~~~
 
 Now we need to extract the archive
@@ -326,10 +324,10 @@ ls
 
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral Wiki/Software/Generic Software Installation Guide/lscurl.png)
 
-As we can see the folder name is `curl-7.33.0`. So now we move into this folder using the `cd` command:
+As we can see the folder name is `curl-7.36.0`. So now we move into this folder using the `cd` command:
 
 ~~~
-cd ~/curl-7.33.0
+cd ~/curl-7.36.0
 ~~~
 
 Now we will configure `curl` to use our desired installation location, which is `$HOME`:
@@ -361,7 +359,7 @@ cd
 You can now remove the downloaded files. As you can see in this command there is one folder `curl-7.33.0` and one archive `curl.tar.gz` being removed. You can chain more than one file or folder to be removed this way.
 
 ~~~
-rm -rf  curl{-7.33.0,.tar.gz}
+rm -rf  curl{-7.36.0,.tar.gz}
 ~~~
 
 We are using [bash brace expansion](https://www.gnu.org/software/bash/manual/html_node/Brace-Expansion.html) to remove the files.
@@ -421,7 +419,6 @@ Examples:
 [BitTorrent Sync btsync - basic setup](https://www.feralhosting.com/faq/view?question=224)
 [Mumble client and murmur server](https://www.feralhosting.com/faq/view?question=227)
 [ffmpeg](https://www.feralhosting.com/faq/view?question=268)
-[Flexget - Basic installation](https://www.feralhosting.com/faq/view?question=234)
 [Plowshare - a download tool for file sharing websites - with auto captcha solving](https://www.feralhosting.com/faq/view?question=157)
 [CouchPotato - An automatic NZB and torrent downloader for Films](https://www.feralhosting.com/faq/view?question=218)
 [Dropbox - How to install](https://www.feralhosting.com/faq/view?question=205)

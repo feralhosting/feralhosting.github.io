@@ -82,7 +82,7 @@ This is what you will need to add:
 PATH=$HOME/bin:$PATH
 ~~~
 
-Or you can use this command. It will check for the line and if it does not already exist, inert is at line 1. This will fix your issue.
+Or you can use this command. It will check for the line and if it does not already exist then insert it at line 1. This will fix your issue.
 
 ~~~
 [ ! "$(grep 'PATH=$HOME/bin:$PATH' ~/.bashrc)" ] && sed -i '1iPATH=$HOME/bin:$PATH' ~/.bashrc
