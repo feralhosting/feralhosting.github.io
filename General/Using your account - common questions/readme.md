@@ -19,7 +19,7 @@ OpenVPN - [Using Openvpn](https://www.feralhosting.com/faq/view?question=5)
 **Q:** What is account credit and how does it work?
 ---
 
-A: Account credit is applied on a case by case basis by Staff. It is not something that is done automatically and we ask for a little patience during the process. When credit has bee applied to your account you will see it in your Account Manager and you may then use it against the cost of your services at renewal time or when purchasing additional services.
+A: Account credit is applied on a case by case basis by Staff. It is not something that is done automatically and we ask for a little patience during the process. When credit has been applied to your account you will see it in your Account Manager and you may then use it against the cost of your services at renewal time or when purchasing additional services.
 
 **Q:** I want more disk space, how do I get it?
 ---

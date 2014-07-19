@@ -5,6 +5,7 @@ You can now select your version for the rtorrent / libtorrent client. We offer a
 
 ~~~
 current
+0.9.4_w0.13.4 *
 0.9.3_w0.13.3 *
 0.9.2_w0.13.2 *
 0.9.1_w0.13.1 *

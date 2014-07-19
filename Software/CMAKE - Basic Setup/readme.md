@@ -23,22 +23,24 @@ Install the program using these commands:
 Using the pre-compiled binary:
 ---
 
+**3.0.0 Latest version**
+
 ~~~
-wget -qO ~/cmake.tar.gz http://www.cmake.org/files/v2.8/cmake-2.8.12.2-Linux-i386.tar.gz
+wget -qO ~/cmake.tar.gz http://www.cmake.org/files/v3.0/cmake-3.0.0-Linux-i386.tar.gz
 tar xf ~/cmake.tar.gz
-cp -rf ~/cmake-2.8.12.2-Linux-i386/. ~/
-cd && rm -rf cmake{-2.8.12.2-Linux-i386,.tar.gz}
+cp -rf ~/cmake-3.0.0-Linux-i386/. ~/
+cd && rm -rf cmake{-3.0.0-Linux-i386,.tar.gz}
 ~~~
 
 Using the source code:
 ---
 
 ~~~
-wget -qO ~/cmake.tar.gz http://www.cmake.org/files/v2.8/cmake-2.8.12.2.tar.gz
-tar xf ~/cmake.tar.gz && cd ~/cmake-2.8.12.2
+wget -qO ~/cmake.tar.gz http://www.cmake.org/files/v3.0/cmake-3.0.0.tar.gz
+tar xf ~/cmake.tar.gz && cd ~/cmake-3.0.0
 ./configure --prefix=$HOME
 make && make install
-cd && rm -rf cmake{-2.8.12.2,.tar.gz}
+cd && rm -rf cmake{-3.0.0,.tar.gz}
 ~~~
 
 Usage:

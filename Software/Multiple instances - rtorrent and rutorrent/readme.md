@@ -22,7 +22,7 @@ wget -qO ~/install.multirtru.sh http://git.io/_zVu0A && bash ~/install.multirtru
 ~~~
 
 Important: Read this first
-----
+---
 
 When creating a new instance of rutorrent there is an important behaviour using the `.htaccess` and `.htpasswd` combo that you need to understand.
 

@@ -28,17 +28,17 @@ Files found via [http://www.java.com/en/download/manual.jsp?locale=en](http://ww
      
 This method will download  and install/update the 64 bit java files for Linux
 
-Download v7 update 55:
+Download v7 update 65:
 
 ~~~
-wget -qO ~/java.tar.gz http://javadl.sun.com/webapps/download/AutoDL?BundleId=87437
+wget -qO ~/java.tar.gz http://javadl.sun.com/webapps/download/AutoDL?BundleId=92496
 ~~~
 
 Unpack the files:
 ---
 
 ~~~
-tar xf ~/java.tar.gz && cp -rf ~/jre1.7.0_55/. ~/ && cd && rm -rf java.tar.gz jre1.7.0_55
+tar xf ~/java.tar.gz && cp -rf ~/jre1.7.0_65/. ~/ && cd && rm -rf java.tar.gz jre1.7.0_65
 ~~~
 
 This command also removes the folders and archives we don't need after we are done with them.
@@ -52,9 +52,9 @@ Manually call `java` it like this:
 You will see this:
 
 ~~~
-java version "1.7.0_55"
-Java(TM) SE Runtime Environment (build 1.7.0_55-b13)
-Java HotSpot(TM) 64-Bit Server VM (build 24.55-b03, mixed mode)
+java version "1.7.0_65"
+Java(TM) SE Runtime Environment (build 1.7.0_65-b17)
+Java HotSpot(TM) 64-Bit Server VM (build 24.65-b04, mixed mode)
 ~~~
 
 Unless you used the `-version` command before installing the update can just do this command below, otherwise log into a new SSH session for the changes to take effect and then check your version again.
