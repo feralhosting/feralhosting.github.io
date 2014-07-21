@@ -30,11 +30,11 @@ mkdir -p ~/bin && bash
 Install the program using these commands:
 
 ~~~
-wget -qO ~/curl.tar.gz http://curl.haxx.se/download/curl-7.36.0.tar.gz
-tar xf ~/curl.tar.gz && cd ~/curl-7.36.0
+wget -qO ~/curl.tar.gz http://curl.haxx.se/download/curl-7.37.1.tar.gz
+tar xf ~/curl.tar.gz && cd ~/curl-7.37.1
 ./configure --prefix=$HOME
 make && make install
-cd && rm -rf curl{-7.36.0,.tar.gz}
+cd && rm -rf curl{-7.37.1,.tar.gz}
 ~~~
 
 Check your version:
