@@ -5,8 +5,16 @@ In SSH do the commands described in this FAQ. If you do not know how to SSH into
 
 Run the below command in SSH, it will output your disk usage.
 
+For less than `1TB` results
+
 ~~~
 du -s --si ~/
+~~~
+
+For more than `1TB` results
+
+~~~
+du -sB GB ~/
 ~~~
 
 For a list, sorted by size, of the files/folders in the current directory use:
@@ -41,6 +49,12 @@ Helium-5
 
 ~~~
 echo -n '500000' > ~/.quotaspace
+~~~
+
+Helium-7
+
+~~~
+echo -n '666000' > ~/.quotaspace
 ~~~
 
 Neon-3
@@ -97,10 +111,16 @@ Xenon-5
 echo -n '1500000' > ~/.quotaspace
 ~~~
 
-Radon
+Radon-4
 
 ~~~
 echo -n '3000000' > ~/.quotaspace
+~~~
+
+Radon-7
+
+~~~
+echo -n '5000000' > ~/.quotaspace
 ~~~
 
 **Step 2:** After SSHing into your slot, run the following the commands
