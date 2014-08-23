@@ -68,7 +68,7 @@
         //
         .replace(/\*\*\*([^\*].*?)\*\*\*/gmi, "[b][i]$1[/i][/b]") // bold + itlaic
         .replace(/\*\*([^\*].*?)\*\*/gmi, "[b]$1[/b]") // bold
-        .replace(/\*((?!\/[0-9]|\s|\*).*?)\*/gmi, "[i]$1[/i]")  // italic
+        .replace(/(\s)\*((?!\/[0-9]|\s|\*).*?)\*(\s)/gmi, "$1[i]$2[/i]$3")  // italic
         //
         right.value = left_value;
         console.log('converted');
