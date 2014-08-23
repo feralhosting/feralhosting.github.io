@@ -8,8 +8,9 @@ Installation:
 ---
 
 ~~~
-wget -qO ~/ghost.zip https://ghost.org/zip/ghost-0.4.2.zip
+wget -qO ~/ghost.zip https://ghost.org/zip/ghost-0.5.0.zip
 unzip -qo ~/ghost.zip -d ~/ghost
+npm install forever -g
 cd ~/ghost
 npm install --production
 ~~~
@@ -145,7 +146,6 @@ Now reload the nginx conf files for the change to take effect using this command
 Running Ghost:
 ---
 
-
 Now we are ready to start Ghost:
 
 ~~~
@@ -159,6 +159,32 @@ Now once it has loaded  you will see something like this:
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/Software/Ghost%20Blogging%20Platform/1.png)
 
 Then press and hold `CTRL` and `a` then press `d` to detach from the screen. This leaves it running in the background.
+
+Ghost and forever
+---
+
+Optionally you can exit the screen session and start Ghost using `forever` since we installed it at the start:
+
+~~~
+cd ~/ghost && 
+~~~
+
+The run this command, Ghost will be forked to the background and monitored by forever.
+
+~~~
+forever start index.js
+~~~
+
+Using Variables:
+
+You can use the `NODE_ENV` to start Ghost with production instead of development. This requires you to have edited the relevant section of the Ghost config.
+
+~~~
+NODE_ENV=production forever start index.js
+~~~
+
+Your Ghost URLs
+---
 
 You should now be able to visit the URL where `username` if your Feral username and `server` if the name of the server that the relevant slot is hosted on.
 
