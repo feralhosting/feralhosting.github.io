@@ -13,10 +13,10 @@ phpmyadmin basic setup
 Download the phpMyAdmin package:
 
 ~~~
-wget -qO ~/phpMyAdmin.zip http://downloads.sourceforge.net/project/phpmyadmin/phpMyAdmin/4.2.7/phpMyAdmin-4.2.7-all-languages.zip
+wget -qO ~/phpMyAdmin.zip http://downloads.sourceforge.net/project/phpmyadmin/phpMyAdmin/4.2.7.1/phpMyAdmin-4.2.7.1-all-languages.zip
 unzip -qo ~/phpMyAdmin.zip
-cp -rf ~/phpMyAdmin-*-all-languages/. ~/www/$(whoami).$(hostname)/public_html/phpmyadmin
-mkdir -p ~/www/$(whoami).$(hostname)/public_html/phpmyadmin/config
+cp -rf ~/phpMyAdmin-*-all-languages/. ~/www/$(whoami).$(hostname -f)/public_html/phpmyadmin
+mkdir -p ~/www/$(whoami).$(hostname -f)/public_html/phpmyadmin/config
 cd && rm -rf phpMyAdmin{-*-languages,.zip}
 ~~~
 
@@ -30,13 +30,13 @@ Please run the command below that matches your Web server. The Default is Apache
 **Default: Apache**
 
 ~~~
-sed -i 's/443)/80)/g' ~/www/$(whoami).$(hostname)/public_html/phpmyadmin/libraries/Config.class.php
+sed -i 's/443)/80)/g' ~/www/$(whoami).$(hostname -f)/public_html/phpmyadmin/libraries/Config.class.php
 ~~~
 
 **nginx**
 
 ~~~
-sed -i 's/ 80)/ 8080)/g;s/443/8080/g' ~/www/$(whoami).$(hostname)/public_html/phpmyadmin/libraries/Config.class.php
+sed -i 's/ 80)/ 8080)/g;s/443/8080/g' ~/www/$(whoami).$(hostname -f)/public_html/phpmyadmin/libraries/Config.class.php
 ~~~
 
 Completing the Setup
@@ -71,9 +71,9 @@ You should see this dialogue once you have saved:
 Once you have saved the configuration you need to run these two command in SSH to finalise the installation:
 
 ~~~
-cd ~/www/$(whoami).$(hostname)/public_html/
-cp -f phpmyadmin/config/config.inc.php ~/www/$(whoami).$(hostname)/public_html/phpmyadmin/config.inc.php
-cd && rm -rf www/$(whoami).$(hostname)/public_html/phpmyadmin/config
+cd ~/www/$(whoami).$(hostname -f)/public_html/
+cp -f phpmyadmin/config/config.inc.php ~/www/$(whoami).$(hostname -f)/public_html/phpmyadmin/config.inc.php
+cd && rm -rf www/$(whoami).$(hostname -f)/public_html/phpmyadmin/config
 ~~~
 
 Now you can return to the main page and login at:
