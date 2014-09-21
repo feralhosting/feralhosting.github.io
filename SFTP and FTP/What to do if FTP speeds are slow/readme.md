@@ -1,13 +1,15 @@
 
 If you are finding that your FTP speeds have become slower than usual, there is a workaround that can be applied by increasing the number of concurrent connections that your FTP client will use when connecting to your Feral box.
 
-### In Filezilla (and similar clients)
+In Filezilla (and similar clients)
+---
 
 Locate your Site Manager and go to your Feral box entry. Click on the **Transfer Settings** tab and increase this number to 7. Experiment with the number and your speeds should increase somewhat.
 
 These are parallel (concurrent) downloads and not multi segmented. Filezilla does not support multiple segments. Please see this FAQ for more info [What is multisegmented downloading - how does it help](https://www.feralhosting.com/faq/view?question=182)
 
-### Bitkinex multi segmented downloads
+Bitkinex multi segmented downloads
+---
 
 [BitKinex 3.2.3 (windows platform)](http://www.bitkinex.com/ftp/client/bitkinex323.exe) you can use up to 50 segments, locate your feral server entry in the Control window. Right-click on the feral server and select:
 
@@ -27,7 +29,12 @@ Increase this number to `50` connections (default is `5` connections, you can ex
 
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/SFTP%20and%20FTP/What%20to%20do%20if%20FTP%20speeds%20are%20slow/bit-5.png)
 
-### In CuteFTP Pro
+Another option that can massively increase the download speed on very high bandwidth connections is increasing the minimum part size for multi part downloads. In the connection properties under Transfer set the minimum part size up to a maximum of `32767` and see if your speeds are increased!
+
+![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/SFTP%20and%20FTP/What%20to%20do%20if%20FTP%20speeds%20are%20slow/bit-6.png)
+
+In CuteFTP Pro
+---
 
 You can use Multi-Part. When using this mode, the file you are downloading is split into several chunks in the background which are then transferred in several threads simultaneously, and then reassembled, once complete, on your local computer. This is the fastest method of transferring large files.
 
@@ -35,7 +42,8 @@ Go to `Tools > Global Options > Transfer > When selecting MAX in multi-part tran
 
 When selecting a file to download, right-click on `File > Download Advanced > Multi-part Download > MAX (7 parts)`
 
-### LFTP 
+LFTP 
+---
 
 The Windows and OSX versions are port from the Unix version. Once you have `lftp` installed for your platform you can use the Unix section below to run `lftp` via a terminal like Putty or terminal in OSX
 
@@ -80,7 +88,8 @@ cd ~/private/rtorrent/data
 
 Will put you inside this folder.
 
-### lftp usage
+lftp usage
+---
 
 You can use the command `pget` to transfer a file with several connections (specify `-n maxcon`). You can also use `mirror` to transfer a folder but specify:
 
@@ -103,11 +112,13 @@ set mirror:parallel-transfer-count 2
 set mirror:parallel-directories true
 ~~~
 
-### [Progressive Downloader for OSX](http://www.macpsd.net/)
+[Progressive Downloader for OSX](http://www.macpsd.net/)
+---
 
 You can max out your connection with progressive downloader as an alternative to FTP by playing around with the thread count in `Progressive downloader -> Preferences -> Maximum thread count`: try 10-15. I was having problems with slow FTP speeds but after some experimenting this solution worked for me and i'm now able to max out my connection with no problems. For this to work you will need to put your public_html folder to use, you can do that by following the guide in the wiki located [here](https://www.feralhosting.com/faq/view?question=20)
 
-### aria2c
+aria2c
+---
 
 1: Follow this FAQ - [Putting your WWW folder to use](https://www.feralhosting.com/faq/view?question=20)
 
@@ -117,7 +128,8 @@ For Mac users to install aria2c - [OSX - Homebrew](https://www.feralhosting.com/
 
 While this FAQ appears Windows only, the commands and set-up of aria2c work exactly the same across platforms.
 
-### Further Problems
+Further Problems
+---
 
 If you continue to have problems then it is likely out of our direct control and down to network issues. We will need to collect data about your connection: 
 

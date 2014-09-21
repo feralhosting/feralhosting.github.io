@@ -1,4 +1,3 @@
-
 ### Using SSH with PuTTy:
 
 **1:** Login to your server via [SSH](https://www.feralhosting.com/faq/view?question=12)
@@ -19,112 +18,111 @@ Should I move or copy? It is up to you and depends what you are aiming to do.
 
 ### rtorrent to transmission
 
-**1:** To move (mv) or copy (cp) `~/private/rtorrent/data` contents:
+**1:** To move (mv) or copy (cp) `~/private/rtorrent/data/` contents:
 
 ~~~
-mv -f ~/private/rtorrent/data/. ~/private/transmission/data
+mv ~/private/rtorrent/data/* ~/private/transmission/data/
 
-cp -rf ~/private/rtorrent/data/. ~/private/transmission/data
+cp -rf ~/private/rtorrent/data/* ~/private/transmission/data/
 ~~~
 
 **2:** To move (mv) or copy (cp) the `~/private/rtorrent/watch` contents:
 
 ~~~
-mv -f ~/private/rtorrent/watch/*.torrent ~/private/transmission/watch
+mv ~/private/rtorrent/watch/*.torrent ~/private/transmission/watch/
 
-cp -rf ~/private/rtorrent/watch/*.torrent ~/private/transmission/watch
+cp -rf ~/private/rtorrent/watch/*.torrent ~/private/transmission/watch/
 ~~~
 
 **3:** To move (mv) or copy (cp) the `~/private/rtorrent/work` contents:
 
 ~~~
-mv -f ~/private/rtorrent/work/*.torrent ~/private/transmission/watch
+mv ~/private/rtorrent/work/*.torrent ~/private/transmission/watch/
 
-cp -rf ~/private/rtorrent/work/*.torrent ~/private/transmission/watch
+cp -rf ~/private/rtorrent/work/*.torrent ~/private/transmission/watch/
 ~~~
 
 ### rtorrent to deluge
 
-**1:** To move (mv) or copy (cp) the `~/private/rtorrent/data` contents:
+**1:** To move (mv) or copy (cp) the `~/private/rtorrent/data/` contents:
 
 ~~~
-mv -f ~/private/rtorrent/data/. ~/private/deluge/data
+mv ~/private/rtorrent/data/* ~/private/deluge/data/
 
-cp -rf ~/private/rtorrent/data/. ~/private/deluge/data
+cp -rf ~/private/rtorrent/data/* ~/private/deluge/data/
 ~~~
 
-**2:** To move (mv) or copy (cp) the `~/private/rtorrent/watch` contents:
+**2:** To move (mv) or copy (cp) the `~/private/rtorrent/watch/` contents:
 
 ~~~
-mv -f ~/private/rtorrent/watch/*.torrent ~/private/deluge/watch
+mv ~/private/rtorrent/watch/*.torrent ~/private/deluge/watch/
 
-cp -rf ~/private/rtorrent/watch/*.torrent ~/private/deluge/watch
+cp -rf ~/private/rtorrent/watch/*.torrent ~/private/deluge/watch/
 ~~~
 
-**3:** To move (mv) or copy (cp) the `~/private/rtorrent/work` contents: 
+**3:** To move (mv) or copy (cp) the `~/private/rtorrent/work/` contents: 
 
 ~~~
-mv -f ~/private/rtorrent/work/*.torrent ~/private/deluge/watch
+mv ~/private/rtorrent/work/*.torrent ~/private/deluge/watch/
 
-cp -rf ~/private/rtorrent/work/*.torrent ~/private/deluge/watch
+cp -rf ~/private/rtorrent/work/*.torrent ~/private/deluge/watch/
 ~~~
 
 ### Transmission throttle
 
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/General/Completing%20a%20data%20transfer/transmission 1.png)
-
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/General/Completing%20a%20data%20transfer/transmission 2.png)
 
 ### transmission to rtorrent
 
-**1:** To move (mv) or copy (cp) the `~/private/transmission/data` contents:
+**1:** To move (mv) or copy (cp) the `~/private/transmission/data/` contents:
 
 ~~~
-mv -f ~/private/transmission/data/. ~/private/rtorrent/data
+mv ~/private/transmission/data/* ~/private/rtorrent/data/
 
-cp -rf ~/private/transmission/data/. ~/private/rtorrent/data
+cp -rf ~/private/transmission/data/* ~/private/rtorrent/data/
 ~~~
 
 **2:** To move (mv) or copy (cp) the `~/.config/transmission-daemon/torrents` contents:
 
 ~~~
-mv -f ~/.config/transmission-daemon/torrents/*.torrent ~/private/rtorrent/watch
+mv ~/.config/transmission-daemon/torrents/*.torrent ~/private/rtorrent/watch/
 
 cp -rf ~/.config/transmission-daemon/torrents/*.torrent ~/private/rtorrent/watch
 ~~~
 
-**3:** To move (mv) or copy (cp) the `~/private/transmission/watch` contents:
+**3:** To move (mv) or copy (cp) the `~/private/transmission/watch/` contents:
 
 ~~~
-mv -f ~/private/transmission/watch/*.torrent ~/private/rtorrent/watch
+mv ~/private/transmission/watch/*.torrent ~/private/rtorrent/watch/
 
-cp -rf ~/private/transmission/watch/*.torrent ~/private/rtorrent/watch
+cp -rf ~/private/transmission/watch/*.torrent ~/private/rtorrent/watch/
 ~~~
 
 ### transmission to deluge
 
-**1:** To move (mv) or copy (cp) the `~/private/transmission/data` contents:
+**1:** To move (mv) or copy (cp) the `~/private/transmission/data/` contents:
 
 ~~~
-mv -f ~/private/transmission/data/. ~/private/deluge/data
+mv ~/private/transmission/data/* ~/private/deluge/data/
 
-cp -rf ~/private/transmission/data/. ~/private/deluge/data
+cp -rf ~/private/transmission/data/* ~/private/deluge/data/
 ~~~
 
-**2:** To move (mv) or copy (cp) the `~/private/transmission/watch` contents:
+**2:** To move (mv) or copy (cp) the `~/private/transmission/watch/` contents:
 
 ~~~
-mv -f ~/private/transmission/watch/*.torrent ~/private/deluge/watch
+mv ~/private/transmission/watch/*.torrent ~/private/deluge/watch/
 
-cp -rf ~/private/transmission/watch/*.torrent ~/private/deluge/watch
+cp -rf ~/private/transmission/watch/*.torrent ~/private/deluge/watch/
 ~~~
 
 **3:** To move (mv) or copy (cp) the `~/.config/transmission-daemon/torrents` contents:
 
 ~~~
-mv -f ~/.config/transmission-daemon/torrents/*.torrent ~/private/deluge/watch
+mv ~/.config/transmission-daemon/torrents/*.torrent ~/private/deluge/watch/
 
-cp -rf ~/.config/transmission-daemon/torrents/*.torrent ~/private/deluge/watch
+cp -rf ~/.config/transmission-daemon/torrents/*.torrent ~/private/deluge/watch/
 ~~~
 
 ### Deluge throttle
@@ -133,54 +131,54 @@ cp -rf ~/.config/transmission-daemon/torrents/*.torrent ~/private/deluge/watch
 
 ### deluge to rtorrent
 
-**1:** To move (mv) or copy (cp) the `~/private/deluge/data` contents:
+**1:** To move (mv) or copy (cp) the `~/private/deluge/data/` contents:
 
 ~~~
-mv -f ~/private/deluge/data/. ~/private/rtorrent/data
+mv ~/private/deluge/data/* ~/private/rtorrent/data/
 
-cp -rf ~/private/deluge/data/. ~/private/rtorrent/data
+cp -rf ~/private/deluge/data/* ~/private/rtorrent/data/
 ~~~
 
-**2:** To move (mv) or copy (cp) the `~/private/deluge/watch` contents:
+**2:** To move (mv) or copy (cp) the `~/private/deluge/watch/` contents:
 
 ~~~
-mv -f ~/private/deluge/watch/*.torrent ~/private/rtorrent/watch
+mv ~/private/deluge/watch/*.torrent ~/private/rtorrent/watch/
 
-cp -rf ~/private/deluge/watch/*.torrent ~/private/rtorrent/watch
+cp -rf ~/private/deluge/watch/*.torrent ~/private/rtorrent/watch/
 ~~~
 
-**3:** To move (mv) or copy (cp) the `~/private/deluge/torrents` contents:
+**3:** To move (mv) or copy (cp) the `~/.config/deluge/state/*.torrent` contents:
 
 ~~~
-mv -f ~/private/deluge/torrents/*.torrent ~/private/rtorrent/watch
+mv ~/.config/deluge/state/*.torrent ~/private/rtorrent/watch/
 
-cp -rf ~/private/deluge/torrents/*.torrent ~/private/rtorrent/watch
+cp -rf ~/.config/deluge/state/*.torrent ~/private/rtorrent/watch/
 ~~~
 
 ### deluge to transmission
 
-**1:** To move (mv) or copy (cp) the `~/private/deluge/data` contents:
+**1:** To move (mv) or copy (cp) the `~/private/deluge/data/` contents:
 
 ~~~
-mv -f ~/private/deluge/data/. ~/private/transmission/data
+mv ~/private/deluge/data/* ~/private/transmission/data/
 
-cp -rf ~/private/deluge/data/. ~/private/transmission/data
+cp -rf ~/private/deluge/data/* ~/private/transmission/data/
 ~~~
 
-**2:** To move (mv) or copy (cp) the `~/private/deluge/watch` contents:
+**2:** To move (mv) or copy (cp) the `~/private/deluge/watch/` contents:
 
 ~~~
-mv -f ~/private/deluge/watch/*.torrent ~/private/transmission/watch
+mv ~/private/deluge/watch/*.torrent ~/private/transmission/watch/
 
-cp -rf ~/private/deluge/watch/*.torrent ~/private/transmission/watch
+cp -rf ~/private/deluge/watch/*.torrent ~/private/transmission/watch/
 ~~~
 
-**3:** To move (mv) or copy (cp) the `~/private/deluge/torrents` contents:
+**3:** To move (mv) or copy (cp) the `~/.config/deluge/state/*.torrent` contents:
 
 ~~~
-mv -f ~/private/deluge/torrents/*.torrent ~/private/transmission/watch
+mv ~/.config/deluge/state/*.torrent ~/private/transmission/watch/
 
-cp -rf ~/private/deluge/torrents/*.torrent ~/private/transmission/watch
+cp -rf ~/.config/deluge/state/*.torrent ~/private/transmission/watch/
 ~~~
 
 ### After you have transferred the files
@@ -192,4 +190,6 @@ Then un-throttle your client/s.
 ### Other:
 
 - If the torrents don't automatically begin checking for the material in the new folder, simply right click the torrent and click Verify local data and it should force it to begin.
+
+
 

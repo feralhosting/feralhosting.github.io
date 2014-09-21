@@ -11,14 +11,9 @@ mkdir -p ~/bin && bash
 
 ### 1 Pre-built: Download and extract pre build cmake-2.8.12-Linux-i386
 
-**Recommended** fast and simple.
+Please see this FAQ. Upon completion of the installation of `cmake` please return to this FAQ and continue.
 
-~~~
-wget -qO ~/cmake.tar.gz http://www.cmake.org/files/v2.8/cmake-2.8.12.2-Linux-i386.tar.gz
-tar xf ~/cmake.tar.gz
-cp -rf ~/cmake-2.8.12.2-Linux-i386/. ~/
-cd && rm -rf cmake{-2.8.12.2-Linux-i386,.tar.gz}
-~~~
+[CMAKE - Basic Setup](https://www.feralhosting.com/faq/view?question=270)
 
 ### 2: Build WeeChat and install it
 
@@ -49,7 +44,7 @@ screen -r weechat
 The full path to execute WeeChat is:
 
 ~~~
-~/programs/bin/./weechat-curses
+~/programs/bin/./weechat
 ~~~
 
 ### 4: Configure WeeChat
@@ -73,7 +68,7 @@ Some final settings:
 ~~~
 /set irc.server.What-Network.ssl on
 /set irc.server.What-Network.ssl_verify off
-/set irc.server.What-Network.ssl_dhkey_size 512
+/set irc.server.What-Network.ssl_dhkey_size 1024
 /save
 ~~~
 

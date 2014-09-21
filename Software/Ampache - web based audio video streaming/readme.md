@@ -12,7 +12,7 @@ You login information for the relevant slot will be shown here:
 Streaming
 ---
 
-Use VLC to stream with Ampache. It can now accept invalid SSL certificates. This script will also modify the `conf` to scan for `mkv` files in catalogues.
+Use VLC to stream with Ampache. It can now accept invalid SSL certificates.
 
 Ampache
 ---
@@ -41,22 +41,17 @@ This bash script uses Ampache master from github and also applies some default c
 
 - Uses the github repo to install so is always up to date
 - Makes a slight template modification to insert your mysql socket path into the installer.
-- fixes ffmpeg path to use new updated static binary (ffmpeg 2.1) built 31.10.2013
+- fixes ffmpeg path to use an updated static binary
 - enables debug, logging and creates folders and modifies required paths.
 - enables transcoding and related settings
 - bumps memory limit to `2048` and creates a supporting `.htaccess` since Ampache cannot override this setting itself.
 - changes minimum bitrate to `192`
 - Allows `mkv` files to be scanned and added to catalogues
+- Changes default transcoding rate to 320
 
 ~~~
 wget -qO ~/install.ampache.sh http://git.io/ED3FAQ && bash ~/install.ampache.sh
 ~~~
-
-**Important note:** You must change this setting once you have access to the web interface for transcoding to work
-
-![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/Software/Ampache%20-%20web%20based%20audio%20video%20streaming/streaming.png)
-
-Don't forget to change it.
 
 Post script installation
 ---
@@ -67,6 +62,10 @@ After you have used the bash script then navigate to this folder in your web bro
 http://username.server.feralhosting.com/ampache/
 ~~~
 
+![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/Software/Ampache%20-%20web%20based%20audio%20video%20streaming/1.png)
+
+![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/Software/Ampache%20-%20web%20based%20audio%20video%20streaming/2.png)
+
 Now you should come to a page where it should check so all your settings are OK, should say OK with a green text on all points there. Then you just press `Start Configuration`.
 
 **Step 1:**
@@ -75,7 +74,7 @@ Now you should come to a page where it should check so all your settings are OK,
 
 Then you come to the page where you need the information from your MySQL installation on the Slot Details page for the relevant slot. You need your mysql root password.
 
-![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/Software/Ampache%20-%20web%20based%20audio%20video%20streaming/stage1.png)
+![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/Software/Ampache%20-%20web%20based%20audio%20video%20streaming/3.png)
 
 **Step 2:**
 

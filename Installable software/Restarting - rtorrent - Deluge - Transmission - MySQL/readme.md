@@ -1,5 +1,5 @@
 
-**Important note:** A quick way to restart software is to install it again from the software page - this will leave data intact, but will reset configuration, passwords, RSS feeds and custom folders.
+**Important note:** An optional way to restart/reset software is to install it again from the software page - this will leave data intact, but will reset configuration, passwords, RSS feeds and custom folders.
 
 Bash script
 ---

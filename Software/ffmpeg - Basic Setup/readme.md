@@ -29,11 +29,11 @@ mkdir -p ~/bin && bash
 **1:** Install the program using these commands:
 
 ~~~
-wget -qO ~/ffmpeg.tar.gz http://johnvansickle.com/ffmpeg/releases/ffmpeg-2.2.4-64bit-static.tar.bz2
-tar xf ~/ffmpeg.tar.gz && cd && rm -rf ffmpeg-2.2.4-64bit-static/{manpages,presets,readme.txt}
-cp ~/ffmpeg-2.2.4-64bit-static/* ~/bin
+wget -qO ~/ffmpeg.tar.gz http://johnvansickle.com/ffmpeg/releases/ffmpeg-2.3.3-64bit-static.tar.bz2
+tar xf ~/ffmpeg.tar.gz && cd && rm -rf ffmpeg-2.3.3-64bit-static/{manpages,presets,readme.txt}
+cp ~/ffmpeg-2.3.3-64bit-static/* ~/bin
 chmod 700 ~/bin/{ffmpeg,ffprobe,ffmpeg-10bit,qt-faststart}
-cd && rm -rf ffmpeg{.tar.gz,-2.2.4-64bit-static}
+cd && rm -rf ffmpeg{.tar.gz,-2.3.3-64bit-static}
 ~~~
 
 **2:** Check your version:

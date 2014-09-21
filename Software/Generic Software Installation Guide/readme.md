@@ -240,7 +240,7 @@ mkdir -p ~/bin && bash
 Now download the required files:
 
 ~~~
-wget -qO ~/node.js.tar.gz http://nodejs.org/dist/v0.10.29/node-v0.10.29-linux-x64.tar.gz
+wget -qO ~/node.js.tar.gz http://nodejs.org/dist/v0.10.31/node-v0.10.31-linux-x64.tar.gz
 ~~~
 
 Now we have downloaded the archive to our `HOME` folder we can unpack it. In this case the archive is a tar archive to we will use `tar` to extract it.
@@ -249,7 +249,7 @@ Now we have downloaded the archive to our `HOME` folder we can unpack it. In thi
 tar xf ~/node.js.tar.gz
 ~~~
 
-**Important note:** Effectively, once you have extracted the the contents of the archive, the program is ready to use by directly calling it via a full path in you terminal using `~/node-v0.10.29-linux-x64/bin/node` . For the purposes of this FAQ will continue to move the files to a desired location and add that location to our `PATH`, if required, for easy use and so you become more familiar with the overall process.
+**Important note:** Effectively, once you have extracted the the contents of the archive, the program is ready to use by directly calling it via a full path in you terminal using `~/node-v0.10.31-linux-x64/bin/node` . For the purposes of this FAQ will continue to move the files to a desired location and add that location to our `PATH`, if required, for easy use and so you become more familiar with the overall process.
 
 Now the contents of the archive has just been extracted to the `HOME` folder of our slot. It will generally be safe to assume the new folder name is the same as the archive's minus the extension, but to make sure, we can type this command in our terminal:
 
@@ -257,7 +257,7 @@ Now the contents of the archive has just been extracted to the `HOME` folder of 
 ls
 ~~~
 
-As we can see the folder name is `node-v0.10.29-linux-x64`
+As we can see the folder name is `node-v0.10.31-linux-x64`
 
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral Wiki/Software/Generic Software Installation Guide/lsnode.png)
 
@@ -268,7 +268,7 @@ The directory structure of the pre-compiled programs will commonly resemble the 
 So what we need to do is copy the contents of the folder to our desired location, being our server root (using the shorthand `~/`)  in this example:
 
 ~~~
-cp -rf ~/node-v0.10.29-linux-x64/. ~/
+cp -rf ~/node-v0.10.31-linux-x64/. ~/
 ~~~
 
 Now installed `node` and it is ready for use by simple called `node` in the terminal.
@@ -288,7 +288,7 @@ cd
 Now you can delete the files and folders we no longer require.
 
 ~~~
-rm -rf node{-v0.10.29-linux-x64,.js.tar.gz}
+rm -rf node{-v0.10.31-linux-x64,.js.tar.gz}
 ~~~
 
 We are using [bash brace expansion](https://www.gnu.org/software/bash/manual/html_node/Brace-Expansion.html) to remove the files.

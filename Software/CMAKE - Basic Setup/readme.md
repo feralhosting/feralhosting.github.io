@@ -18,29 +18,16 @@ Use these first two commands to create to do some pre requisite tasks:
 mkdir -p ~/bin && bash
 ~~~
 
-Install the program using these commands:
+**3.0.1 Latest version**
 
-Using the pre-compiled binary:
----
-
-**3.0.0 Latest version**
+Install the program from source using these commands:
 
 ~~~
-wget -qO ~/cmake.tar.gz http://www.cmake.org/files/v3.0/cmake-3.0.0-Linux-i386.tar.gz
-tar xf ~/cmake.tar.gz
-cp -rf ~/cmake-3.0.0-Linux-i386/. ~/
-cd && rm -rf cmake{-3.0.0-Linux-i386,.tar.gz}
-~~~
-
-Using the source code:
----
-
-~~~
-wget -qO ~/cmake.tar.gz http://www.cmake.org/files/v3.0/cmake-3.0.0.tar.gz
-tar xf ~/cmake.tar.gz && cd ~/cmake-3.0.0
+wget -qO ~/cmake.tar.gz http://www.cmake.org/files/v3.0/cmake-3.0.1.tar.gz
+tar xf ~/cmake.tar.gz && cd ~/cmake-3.0.1
 ./configure --prefix=$HOME
 make && make install
-cd && rm -rf cmake{-3.0.0,.tar.gz}
+cd && rm -rf cmake{-3.0.1,.tar.gz}
 ~~~
 
 Usage:

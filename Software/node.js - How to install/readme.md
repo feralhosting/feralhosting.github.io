@@ -18,10 +18,10 @@ Use this command to create the `~/bin` directory and reload your shell for this 
 mkdir -p ~/bin && bash
 ~~~
 
-This command downloads the `node-v0.10.31-linux-x64.tar.gz` and then saves it as `node.tar.gz` in your servers root directory.
+This command downloads the `node-v0.10.32-linux-x64.tar.gz` and then saves it as `node.tar.gz` in your servers root directory.
 
 ~~~
-wget -qO ~/node.js.tar.gz http://nodejs.org/dist/v0.10.31/node-v0.10.31-linux-x64.tar.gz
+wget -qO ~/node.js.tar.gz http://nodejs.org/dist/v0.10.32/node-v0.10.32-linux-x64.tar.gz
 ~~~
 
 This unpacks the folder archived inside the node.tar.gz.
@@ -33,13 +33,13 @@ tar xf ~/node.js.tar.gz
 This copies the contents of the unpacked archive to your server root using  `~/`:
 
 ~~~
-cp -rf ~/node-v0.10.31-linux-x64/. ~/
+cp -rf ~/node-v0.10.32-linux-x64/. ~/
 ~~~
 
 This deletes the tar archive and unpacked folder we no longer need.
 
 ~~~
-cd && rm -rf node{.js.tar.gz,-v0.10.31-linux-x64}
+cd && rm -rf node{.js.tar.gz,-v0.10.32-linux-x64}
 ~~~
 
 Tries to call `node.js` to check the version:
@@ -51,7 +51,7 @@ node -v
 Which should return:
 
 ~~~
-v0.10.31
+v0.10.32
 ~~~
 
 If you see the version then it is ready to use.

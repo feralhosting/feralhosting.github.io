@@ -1,4 +1,6 @@
 
+**Important note:** This `x86` binary will not run on the Feral servers dues to security restrictions.
+
 In SSH do the commands described in this FAQ. If you do not know how to SSH into your slot use this FAQ: [SSH basics - Putty](https://www.feralhosting.com/faq/view?question=12)
 
 Your FTP / SFTP / SSH login information can be found on the Slot Details page for the relevant slot. Use this link in your Account Manager to access the relevant slot:
@@ -16,8 +18,8 @@ How to install and use the murmur Mumble server for use with Mumble clients.
 The murmur server is the server for the mumble VoIP client.
 
 ~~~
-wget -qO ~/server.tar.bz2 http://downloads.sourceforge.net/project/mumble/Mumble/1.2.7/murmur-static_x86-1.2.7.tar.bz2
-tar xf server.tar.bz2 && cp -rf ~/murmur-static_x86-1.2.7/. ~/private/murmur && cd && rm -rf {murmur-static_x86-1.2.7,server.tar.bz2}
+wget -qO ~/server.tar.bz2 http://downloads.sourceforge.net/project/mumble/Mumble/1.2.8/murmur-static_x86-1.2.8.tar.bz2
+tar xf server.tar.bz2 && cp -rf ~/murmur-static_x86-1.2.8/. ~/private/murmur && cd && rm -rf {murmur-static_x86-1.2.8,server.tar.bz2}
 ~~~
 
 That is basically it for the download and extraction of the server. There are a couple of things we need to do before we start it.

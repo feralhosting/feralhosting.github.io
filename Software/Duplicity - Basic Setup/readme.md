@@ -40,10 +40,10 @@ cd && rm -rf librsync{-0.9.7,.tar.gz}
 3: Install Duplicity
 
 ~~~
-wget -qO ~/duplicity.tar.gz http://code.launchpad.net/duplicity/0.6-series/0.6.22/+download/duplicity-0.6.22.tar.gz
-tar xf ~/duplicity.tar.gz && cd ~/duplicity-0.6.22
+wget -qO ~/duplicity.tar.gz https://launchpad.net/duplicity/0.6-series/0.6.24/+download/duplicity-0.6.24.tar.gz
+tar xf ~/duplicity.tar.gz && cd ~/duplicity-0.6.24
 python setup.py install --prefix=$HOME/.local --librsync-dir=$HOME
-cd && rm -rf duplicity{-0.6.22,.tar.gz}
+cd && rm -rf duplicity{-0.6.24,.tar.gz}
 ~~~
 
 Check it was installed correctly.

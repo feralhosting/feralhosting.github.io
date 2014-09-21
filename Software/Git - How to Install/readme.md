@@ -20,7 +20,7 @@ git --version
 
 If you specifically need a higher version you can used this FAQ to install a newer version.
 
-Git 2.1.0
+Git 2.1.1
 ---
 
 You need to SSH into your slot to complete this guide. If you don't know how to do this [here is a basic guide](https://www.feralhosting.com/faq/view?question=12)
@@ -32,11 +32,11 @@ mkdir -p ~/bin && bash
 Now install git using these commands:
 
 ~~~
-wget -qO ~/git-2.1.0.tar.gz https://www.kernel.org/pub/software/scm/git/git-2.1.0.tar.xz
-tar xf ~/git-2.1.0.tar.gz && cd ~/git-2.1.0
+wget -qO ~/git-2.1.1.tar.gz https://www.kernel.org/pub/software/scm/git/git-2.1.1.tar.xz
+tar xf ~/git-2.1.1.tar.gz && cd ~/git-2.1.1
 ./configure --prefix=$HOME --with-curl=/opt/curl/current
 make && make install
-cd && rm -rf git{-2.1.0,-2.1.0.tar.gz}
+cd && rm -rf git{-2.1.1,-2.1.1.tar.gz}
 ~~~
 
 Then do this to check the version.

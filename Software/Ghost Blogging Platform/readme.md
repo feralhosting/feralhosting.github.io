@@ -8,7 +8,7 @@ Installation:
 ---
 
 ~~~
-wget -qO ~/ghost.zip https://ghost.org/zip/ghost-0.5.0.zip
+wget -qO ~/ghost.zip https://ghost.org/zip/ghost-0.5.1.zip
 unzip -qo ~/ghost.zip -d ~/ghost
 npm install forever -g
 cd ~/ghost

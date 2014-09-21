@@ -35,9 +35,19 @@ Now download and install `mosh`:
 ~~~
 wget -qO ~/mosh-1.2.4.tar.gz http://mosh.mit.edu/mosh-1.2.4.tar.gz
 tar xf ~/mosh-1.2.4.tar.gz && cd ~/mosh-1.2.4
-./configure --prefix=$HOME PKG_CONFIG_PATH=$HOME/lib/pkgconfig LDFLAGS="--static" && make && make install
+./configure --prefix=$HOME PKG_CONFIG_PATH=$HOME/lib/pkgconfig LDFLAGS="--static" 
+make
+make install
 cd && rm -rf  mosh{-1.2.4.tar.gz,-1.2.4}
 ~~~
+
+If you get a `curses.h` error  when using `make` please use open a ticket and ask for this dependency to be installed:
+
+~~~
+libncurses5 libncurses5-dev
+~~~
+
+Then run `make` again and continue from there.
 
 Connect to your slot using this command.
 
