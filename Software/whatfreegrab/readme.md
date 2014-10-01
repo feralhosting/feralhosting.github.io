@@ -36,6 +36,14 @@ Credentials:
 
 Here you will need to enter your What.CD username and password. Once you have done this press enter to continue.
 
+If you get this error:
+
+![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/Software/whatfreegrab/error.png)
+
+This is because the `whatfreegrab` script requires a newer version of `requests` than provided the Debian (if it has been installed system wide on user request). To fix this you need to install `reqeusts` locally. Please see this FAQ for installing modules locally to override system wide modules.
+
+[Python - Usage and Installation](https://www.feralhosting.com/faq/view?question=204)
+
 Torrents Directory
 ---
 
