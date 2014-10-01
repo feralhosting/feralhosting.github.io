@@ -43,10 +43,10 @@ cd && rm -rf readline{.tar.gz,-6.3}
 Install the program using these commands:
 
 ~~~
-wget -qO ~/ruby.tar.gz http://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.2.tar.gz
-tar xf ~/ruby.tar.gz && cd ~/ruby-2.1.2
+wget -qO ~/ruby.tar.gz http://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.3.tar.gz
+tar xf ~/ruby.tar.gz && cd ~/ruby-2.1.3
 ./configure --prefix=$HOME && make && make install
-cd && rm -rf ruby{-ruby-2.1.2,.tar.gz}
+cd && rm -rf ruby{-2.1.3,.tar.gz}
 ~~~
 
 Now these to check your versions:

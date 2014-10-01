@@ -27,13 +27,7 @@ wget -qO ~/node.js.tar.gz http://nodejs.org/dist/v0.10.32/node-v0.10.32-linux-x6
 This unpacks the folder archived inside the node.tar.gz.
 
 ~~~
-tar xf ~/node.js.tar.gz
-~~~
-
-This copies the contents of the unpacked archive to your server root using  `~/`:
-
-~~~
-cp -rf ~/node-v0.10.32-linux-x64/. ~/
+tar xf ~/node-v0.10.32-linux-x64.tar.gz --strip-components=1 -C ~/
 ~~~
 
 This deletes the tar archive and unpacked folder we no longer need.
@@ -72,11 +66,11 @@ mkdir -p ~/bin && bash
 Now run these commands:
 
 ~~~
-wget -qO ~/node.tar.gz http://nodejs.org/dist/v0.10.31/node-v0.10.31.tar.gz
-tar xf ~/node.tar.gz && cd ~/node-v0.10.31
+wget -qO ~/node.tar.gz http://nodejs.org/dist/v0.10.32/node-v0.10.32.tar.gz
+tar xf ~/node.tar.gz && cd ~/node-v0.10.32
 ./configure --prefix=$HOME
 make && make install && cd
-rm -rf ~/node{-v0.10.31,.tar.gz}
+rm -rf ~/node{-v0.10.32,.tar.gz}
 ~~~
 
 
