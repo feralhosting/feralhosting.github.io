@@ -26,7 +26,7 @@ The idea is a simple one. You upload the plugin folder to your `rutorrent/plugin
 ~/www/username.server.feralhosting.com/public_html/rutorrent/plugins
 ~~~
 
-Where username is you Feral username and server is the name of the server that is hosting rutorrent.
+Where username is your Feral username and server is the name of the server that is hosting rutorrent.
 
 ### Troubleshooting
 

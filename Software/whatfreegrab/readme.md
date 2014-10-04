@@ -3,7 +3,7 @@
 
 Approved by what.cd staff. [The Original thread on what.cd](https://what.cd/forums.php?action=viewthread&threadid=183793)
 
-https://github.com/emjaytee404/whatfreegrab
+[https://github.com/emjaytee404/whatfreegrab](https://github.com/emjaytee404/whatfreegrab)
 
 Installation:
 ---

@@ -61,7 +61,7 @@ A: You can install and use all four applications if you want. All software on th
 
 A: If you can provide sufficient evidence to show that you justifiably need this, then you can open a ticket and provide the details of your case there.
 
-**Q:** What OS is running on my slot / What version of Linux us running on my slot?
+**Q:** What OS is running on my slot / What version of Linux is running on my slot?
 ---
 
 A: Your slot is running on Debian 7 Stable
@@ -129,7 +129,7 @@ A: You will need to use the Thin client. Here is a FAQ on how to set up the thin
 **Q:** I have files with another service provider, can I bring them with me to Feral?
 ---
 
-A: Yes, you can do this quite easily if you other provider has provided you with SSH access and rsync.
+A: Yes, you can do this quite easily if your other provider has provided you with SSH access and rsync.
 
 1: [Open a support ticket](https://www.feralhosting.com/manager/tickets/) and provide Staff with your SSH details for you old server and what files you want. They will then start the process of moving your files for you and keep you updated via the ticket.
 
@@ -161,12 +161,12 @@ Related FAQ: [Using rsync to transfer files to a new slot](https://www.feralhost
 Related FAQ: [Slot Upgrades - Additional Disk Space or Speed Requirements](https://www.feralhosting.com/faq/view?question=33)
 Related FAQ: [Late Payments](https://www.feralhosting.com/faq/view?question=8)
 
-**Q:** Can I install my own software software?
+**Q:** Can I install my own software?
 ---
 
-A: Users do not have Root privileges so cannot use apt or packet managers to install software. See this FAQ for a more in depth explanation with many linked examples - [Generic Software Installation Guide](https://www.feralhosting.com/faq/view?question=195)
+A: Users do not have Root privileges so cannot use apt or package managers to install software. See this FAQ for a more in depth explanation with many linked examples - [Generic Software Installation Guide](https://www.feralhosting.com/faq/view?question=195)
 
-If you require and dependencies that are part of the Debian Stable branch, open a ticket and ask staff if they can install them. This is something they will do for users, but they will not support the installation or maintenance of software that they have not provided.
+If you require packages and dependencies that are part of the Debian Stable branch, open a ticket and ask staff if they can install them. This is something they will do for users, but they will not support the installation or maintenance of software that they have not provided.
 
 **Q:** Upload Traffic - What happens if I go over my quota?
 ---
