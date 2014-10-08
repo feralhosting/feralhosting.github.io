@@ -23,7 +23,7 @@ To upgrade or move your slot please:
 
 [rsync - Transferring data from slot to slot](https://www.feralhosting.com/faq/view?question=117)
 
-[Backing up rutorrent RSS feeds and filters](https://www.feralhosting.com/faq/view?question=162)
+[Backing up ruTorrent RSS feeds and filters](https://www.feralhosting.com/faq/view?question=162)
 
 
 

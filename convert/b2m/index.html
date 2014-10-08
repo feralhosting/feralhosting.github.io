@@ -35,6 +35,7 @@
 
     //general BBcode conversion
     left_value = left_value
+        .replace(/^(.*)$/m, "\n$1")
         .replace(/^\[h1\](.*)\[\/h1\]\s*$/gmi, "$1\n===\n") //h4; replace [h1] $1 [/h1] with # $1 adds a new line. Feral specific.
         .replace(/^\[h2\](.*)\[\/h2\]\s*$/gmi, "$1\n---\n") //h2; replace [h2] $1 [/h2] with ## $1 adds a new line. Feral specific.
         .replace(/^\[h3\](.*)\[\/h3\]\s*$/gmi, "### $1\n") //h3; replace [h3] $1 [/h3] with ### $1 adds a new line. Feral specific.

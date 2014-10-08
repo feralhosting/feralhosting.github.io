@@ -48,7 +48,7 @@ This means there is now a folder called `rysnc` within your `~/` or slot root on
 
 Now the process below will describe how to copy all or parts of your old slot's data to the newly created `rsync` folder on your new slot.
 
-Step 2: Using rysnc
+Step 2: Using `rysnc`
 ---
 
 **2.1**
@@ -76,16 +76,22 @@ Once it has opened you will be placed inside the new screen window.
 This is the command we will use to copy files from our old slot to our new slot, while connected to our new slot via SSH.
 
 ~~~
-rsync -avhPS usename@server.feralhosting.com:~/location/of/files ~/destination/of/files/
+rsync -avhPS usename@server.feralhosting.com:'"~/location/of/files"' "~/destination/of/files/"
 ~~~
 
 For example, using the directories we created in **Step 1** we can do this
 
 ~~~
-rsync -avhPS usename@server.feralhosting.com:~/private/rtorrent/data ~/rsync/
+rsync -avhPS usename@server.feralhosting.com:'"~/private/rtorrent/data"' "~/rsync/"
 ~~~
 
 This will copy the folder and the contents of the `~/private/rtorrent/data` directory from the `usename@server.feralhosting.com` used in the command into the `~/rsync` directory of the slot you are currently SSH'd into.
+
+For Feral internal transfers you can also use this command which will be faster than the default method:
+
+~~~
+rsync -avhPSe "ssh -T -c arcfour -o Compression=no" usename@server.feralhosting.com:'"~/location/of/files"' "~/destination/of/files/"
+~~~
 
 **2.3** Understanding trailing slashes `/` in paths.
 
@@ -119,7 +125,7 @@ All files from within the data directory on our old slot will be copied to the `
 ~/rsync/some.film.2013.720p
 ~~~
 
-Be careful with the use of a trailing slash. You could use the general rule of telling rysnc to look `inside this directory` when deciding whether to apply a trailing slash.
+Be careful with the use of a trailing slash. You could use the general rule of telling rsync to look `inside this directory` when deciding whether to apply a trailing slash.
 
 Here is a useful explanation of the use of a trailing slash: [External link](http://devblog.virtage.com/2013/01/to-trailing-slash-or-not-to-trailing-slash-to-rsync-path/)
 
@@ -128,7 +134,7 @@ Step 3: Applying our command:
 
 Once we have the correct command, with the relevant paths to your directories, let's do a quick check:
 
-**3.1:** We have SSH'd to the server we want to copy the files to. This means your NEW slot.
+**3.1:** We have SSH'd to the server we want to copy the files to. This means your **NEW** slot.
 
 **3.2:** We have opened a screen window in SSH and given it a name we can easily recognize ( that is what the -S does), in this example the screen name is **transfer**.
 
@@ -139,7 +145,7 @@ Once we have the correct command, with the relevant paths to your directories, l
 **3.5:** Our command now looks something like this:
 
 ~~~
-rsync -avhPS huzzah378@lemur.feralhosting.com:~/private/rtorrent/data ~/rsync/
+rsync -avhPS huzzah378@lemur.feralhosting.com:'"~/private/rtorrent/data"' "~/rsync/"
 ~~~
 
 Then in your screen window copy or type this command (in putty or Linux a right click will paste the contents of your clip board including a password, even if you don't see it.)
@@ -189,6 +195,14 @@ Here is the command broken down.
 `-h`, `--human-readableoutput` numbers in a human-readable format
 `-P`, same as `--partial --progress`
 `-S`, `--sparse`   handle sparse files efficiently
+
+**SSH specific commands:**
+
+[SSH man pages](http://unixhelp.ed.ac.uk/CGI/man-cgi?ssh+1)
+
+`-T`  Disable pseudo-tty allocation.
+`-c arcfour ` Use the `-c` flag to set a cipher from a list of supported ciphers. Arcfour improves speed.
+`-o Compression=no` Use the `-o` flag to provide an option. Here `Compression=no` is the option set to `no`
 
 **Optional arguments**
 
