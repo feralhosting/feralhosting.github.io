@@ -1,21 +1,23 @@
 
-**Important notice:** This will download ALL freeleech torrents. At `28.10.2013` there was about `1610` torrents totalling `320GB`. This can change quite drastically in either direction so be careful.
-
 Make sure you have the space to spare before running this script. You can cancel the script while it running by pressing and holding `CTRL` then pressing `c`. When you run the script again it will detect torrents it has already downloaded and continue from where it left off. Do this to grab some, check the space, do some more.
 
-### Yoink! The Freeleech Torrent Grabber
+Yoink! The Freeleech Torrent Grabber
+---
 
 [Yoink!](https://github.com/phracker/yoink)
 
 In SSH do this command. Use this FAQ if you do not know how to SSH into your slot: [SSH basics - Putty](https://www.feralhosting.com/faq/view?question=12)
 
-### Download and prepare Yoink!
+Download and prepare Yoink!
+---
 
 ~~~
 wget -qO ~/yoink.py https://raw.github.com/phracker/yoink/master/yoink.py
-easy_install --user requests HTMLParser
+pip install --user requests HTMLParser
 python ~/yoink.py
 ~~~
+
+**Important note:** If you are required to use a new version of a module than is currently installed (requests) you need to refer to this FAQ for local installations of modules: [Python - Usage and Installation](https://www.feralhosting.com/faq/view?question=204)
 
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/Software/Yoink!%20-%20The%20What.CD%20Freeleech%20Torrent%20Grabber/1.png)
 
@@ -107,7 +109,8 @@ All you need to do once the script is running is wait for it to finish Yoinking.
 
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/Software/Yoink!%20-%20The%20What.CD%20Freeleech%20Torrent%20Grabber/2.png)
 
-### crontab
+crontab
+---
 
 ~~~
 crontab -e
@@ -116,7 +119,7 @@ crontab -e
 Add this line for it to run every hour, edit as you see fit:
 
 ~~~
-00 * * * * python ~/yoink.py
+59 * * * * python ~/yoink.py
 ~~~
 
 Press and hold `CTRL` then press `x` to save. Press `y` to confirm and exit.

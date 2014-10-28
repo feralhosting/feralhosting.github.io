@@ -1,47 +1,4 @@
 
-Start up issues:
----
-
-Make sure you really have killed rtorrent:
-
-~~~
-killall -u $(whoami) rtorrent
-~~~
-
-Then do:
-
-~~~
-ps x | grep rtorrent | grep -v grep
-~~~
-
-If that does not work try:
-
-~~~
-killall -9 -u $(whoami) rtorrent
-~~~
-
-If the offending rtorrent process refuses to die, then you will need to open a ticket to have that resolved. After that return to this FAQ.
-
-rTorrent start up errors
----
-
-To see the reason rtorrent won't start you need to just use the main command:
-
-~~~
-rtorrent
-~~~
-
-You will then see the error.
-
-For a custom instance use the custom command, for example:
-
-~~~
- rtorrent -n -o import=~/.rtorrent-1.rc
-~~~
-
-rTorrent
----
-
 rTorrent is a text-mode bittorrent client — you can watch how it works through any ssh client, web browser or even a cellphone. Wikipedia and the official website say that the very optimized code makes rTorrent faster than the official client.
 
 If editing the rTorrent configuration file please note you will need to `Show Hidden Files` or equivalent if using a Windows or Mac based client as files beginning with a period `.` are hidden by default - the file is called `.rtorrent.rc`.

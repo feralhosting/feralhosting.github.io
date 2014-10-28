@@ -34,9 +34,7 @@ If you get any results that means there is another instance running.
 
 Sadly, there is no workaround right now for this issue. Your options are:
 
-**1:** Try to get a non for profit license or purchase an annual license: [http://sales.teamspeakusa.com/licensing.php](http://sales.teamspeakusa.com/licensing.php)
-
-**2:** Consider this alternative Voip Client called Mumble: [Mumble client and murmur server](https://www.feralhosting.com/faq/view?question=227)
+**1:** Try to get a non for profit license or purchase an annual license: [http://sales.teamspeakusa.com/pricing.php?page=aal](http://sales.teamspeakusa.com/pricing.php?page=aal)
 
 Teamspeak 3 on Feral Slots.
 ---

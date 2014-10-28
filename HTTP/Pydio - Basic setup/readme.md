@@ -1,4 +1,6 @@
 
+**Important note:** To fully configure Pydio with the valid https URL please see the last section of this article.
+
 Install Pydio
 ---
 
@@ -7,10 +9,11 @@ Formerly AjaXplorer, file sharing platform for the enterprise
 In SSH do these commands. Use this FAQ if you do not know how to SSH into your slot: [SSH basics - Putty](https://www.feralhosting.com/faq/view?question=12)
 
 ~~~
-wget -qO ~/pydio.zip http://downloads.sourceforge.net/project/ajaxplorer/pydio/stable-channel/5.2.3/pydio-core-5.2.3.zip
+wget -qO ~/pydio.zip http://downloads.sourceforge.net/project/ajaxplorer/pydio/stable-channel/5.2.5/pydio-core-5.2.5.zip
 unzip -qo ~/pydio.zip
-cp -rf ~/pydio-core-5.2.3/. ~/www/$(whoami).$(hostname)/public_html/pydio
+cp -rf ~/pydio-core-5.2.5/. ~/www/$(whoami).$(hostname)/public_html/pydio
 sed -i 's|//define("AJXP_LOCALE", "en_EN.UTF-8");|define("AJXP_LOCALE", "en_GB.UTF-8");|g' ~/www/$(whoami).$(hostname)/public_html/pydio/conf/bootstrap_conf.php
+cd && rm -rf pydio{-core-5.2.5,.zip}
 ~~~
 
 The last command sets the locale to `en.GB.UTF-8`.
@@ -20,7 +23,7 @@ Or you could edit it to be say `en_US.UTF-8` if you wanted.
 Remove the files we don't need:
 
 ~~~
-cd && rm -rf pydio{-core-5.2.3,.zip}
+cd && rm -rf pydio{-core-5.2.4,.zip}
 ~~~
 
 If you are using nginx you may want to do this:
@@ -119,6 +122,39 @@ Now you can configure some basics of your new workspace. In this example I have 
 **File Creation Mask:** 0700 (0666 is the default)
 
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/HTTP/Pydio%20-%20Basic%20setup/workspace3.png)
+
+Valid https for share URLs and plug-ins
+---
+
+To fully configure Pydio to work with the valid https URL you must configure a setting post installation. Start by going to the settings page.
+
+![](https://raw.githubusercontent.com/feralhosting/feralfilehosting/master/Feral%20Wiki/HTTP/Pydio%20-%20Basic%20setup/url1.png)
+
+Choose: `Application Core`
+
+From the side menu:
+
+![](https://raw.githubusercontent.com/feralhosting/feralfilehosting/master/Feral%20Wiki/HTTP/Pydio%20-%20Basic%20setup/url2.png)
+
+or from the main window:
+
+![](https://raw.githubusercontent.com/feralhosting/feralfilehosting/master/Feral%20Wiki/HTTP/Pydio%20-%20Basic%20setup/url3.png)
+
+Choose: `Pydio Main Options`
+
+![](https://raw.githubusercontent.com/feralhosting/feralfilehosting/master/Feral%20Wiki/HTTP/Pydio%20-%20Basic%20setup/url4.png)
+
+Then you will need to change the `Server URL` setting in the `Main Options`
+
+![](https://raw.githubusercontent.com/feralhosting/feralfilehosting/master/Feral%20Wiki/HTTP/Pydio%20-%20Basic%20setup/url5.png)
+
+Using the settings according to this FAQ the URL will be like this:
+
+~~~
+https://server.feralhosting.com/username/pydio
+~~~
+
+This will change the Server URL for all Pydio plug-ins.
 
 
 
