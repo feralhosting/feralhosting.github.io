@@ -8,7 +8,7 @@ Installation:
 ---
 
 ~~~
-wget -qO ~/ghost.zip https://ghost.org/zip/ghost-0.5.2.zip
+wget -qO ~/ghost.zip http://ghost.org/zip/ghost-latest.zip
 unzip -qo ~/ghost.zip -d ~/ghost
 npm install forever -g
 cd ~/ghost
@@ -199,6 +199,11 @@ Visit this URL to configure your admin account.
 ~~~
 https://server.feralhosting.com/username/blog/ghost
 ~~~
+
+Updating:
+---
+
+[http://support.ghost.org/how-to-upgrade](http://support.ghost.org/how-to-upgrade)
 
 
 

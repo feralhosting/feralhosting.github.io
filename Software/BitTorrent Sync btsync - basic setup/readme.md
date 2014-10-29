@@ -19,11 +19,20 @@ Your FTP / SFTP / SSH login information can be found on the Slot Details page fo
 
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/0%20Generic/slot_detail_link.png)
 
-You login information for the relevant slot will be shown here:
+Your login information for the relevant slot will be shown here:
 
 ![](https://raw.github.com/feralhosting/feralfilehosting/master/Feral%20Wiki/0%20Generic/slot_detail_ssh.png)
 
-btsync installation
+btsync automated installation
+---
+
+After SSH'ing into your slot run the following command:
+
+~~~
+wget -qO ~/install.btsync http://git.io/zHDQGA && bash ~/install.btsync
+~~~
+
+btsync manual installation
 ---
 
 Here are some basic set-up steps for btsync.
@@ -33,7 +42,7 @@ Info: Automatically sync files via secure, distributed technology. [btsync homep
 You will need to execute these commands in [SSH](https://www.feralhosting.com/faq/view?question=12)
 
 ~~~
-mkdir -p ~/btsync/sync_test
+mkdir -p ~/btsync
 wget -qO ~/btsync/btsync.tar.gz http://download.getsyncapp.com/endpoint/btsync/os/linux-x64/track/stable
 tar xf ~/btsync/btsync.tar.gz -C ~/btsync && cd && rm -f btsync/btsync.tar.gz
 ~~~

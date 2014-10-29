@@ -18,22 +18,22 @@ Use this command to create the `~/bin` directory and reload your shell for this 
 mkdir -p ~/bin && bash
 ~~~
 
-This command downloads the `node-v0.10.32-linux-x64.tar.gz` and then saves it as `node.tar.gz` in your servers root directory.
+This command downloads the `node-v0.10.33-linux-x64.tar.gz` and then saves it as `node.tar.gz` in your servers root directory.
 
 ~~~
-wget -qO ~/node.js.tar.gz http://nodejs.org/dist/v0.10.32/node-v0.10.32-linux-x64.tar.gz
+wget -qO ~/node.js.tar.gz http://nodejs.org/dist/v0.10.33/node-v0.10.33-linux-x64.tar.gz
 ~~~
 
 This unpacks the folder archived inside the node.tar.gz.
 
 ~~~
-tar xf ~/node-v0.10.32-linux-x64.tar.gz --strip-components=1 -C ~/
+tar xf ~/node-v0.10.33-linux-x64.tar.gz --strip-components=1 -C ~/
 ~~~
 
 This deletes the tar archive and unpacked folder we no longer need.
 
 ~~~
-cd && rm -rf node{.js.tar.gz,-v0.10.32-linux-x64}
+cd && rm -rf node{.js.tar.gz,-v0.10.33-linux-x64}
 ~~~
 
 Tries to call `node.js` to check the version:
@@ -45,7 +45,7 @@ node -v
 Which should return:
 
 ~~~
-v0.10.32
+v0.10.33
 ~~~
 
 If you see the version then it is ready to use.
@@ -66,11 +66,11 @@ mkdir -p ~/bin && bash
 Now run these commands:
 
 ~~~
-wget -qO ~/node.tar.gz http://nodejs.org/dist/v0.10.32/node-v0.10.32.tar.gz
-tar xf ~/node.tar.gz && cd ~/node-v0.10.32
+wget -qO ~/node.tar.gz http://nodejs.org/dist/v0.10.33/node-v0.10.33.tar.gz
+tar xf ~/node.tar.gz && cd ~/node-v0.10.33
 ./configure --prefix=$HOME
 make && make install && cd
-rm -rf ~/node{-v0.10.32,.tar.gz}
+rm -rf ~/node{-v0.10.33,.tar.gz}
 ~~~
 
 
