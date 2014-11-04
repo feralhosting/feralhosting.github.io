@@ -79,71 +79,7 @@ These options are taken from the `config.sample.php` located in the same directo
 nginx
 ---
 
-You will need to make edits to the default setup in order to make owncloud work with nginx. You do this at your own risk.
-
 **Important note:** This configuration depends on the user installing owncloud to the WWW subdirectory `/owncloud`
-
-Find and edit this file:
-
-~~~
-~/.nginx/conf.d/000-default-server.conf
-~~~
-
-Find this section:
-
-~~~
-    # Pass files that end in .php to PHP
-    location ~ \.php$ {
-        fastcgi_read_timeout 1h;
-        fastcgi_send_timeout 10m;
-
-        include      /etc/nginx/fastcgi_params;
-        fastcgi_pass unix:/media/DiskID/home/username/.nginx/php/socket;
-    }
-~~~
-
-Replace the entire section with this:
-
-~~~
-    # Pass files that end in .php to PHP
-    location ~ ^(.+?\.php)(/.*)?$ {
-        try_files $1 = 404;
-        fastcgi_read_timeout 1h;
-        fastcgi_send_timeout 10m;
-
-        include      /etc/nginx/fastcgi_params;
-        # EDIT THIS LINE TO MATCH YOUR SOCKET PATH
-        fastcgi_pass unix:/media/DiskID/home/username/.nginx/php/socket;
-        #
-        fastcgi_param SCRIPT_FILENAME $document_root$1;
-        fastcgi_param PATH_INFO $2;
-        fastcgi_param HTTPS on;
-    }
-~~~
-
-**Important note:** You must edit this line:
-
-~~~
-fastcgi_pass unix:/media/DiskID/home/username/.nginx/php/socket;
-~~~
-
-**Using Sed:**
-
-Run this command in SSH to change it:
-
-~~~
-sed -ri "s|fastcgi_pass unix:(.*);|fastcgi_pass unix:$HOME/.nginx/php/socket;|g" ~/.nginx/conf.d/000-default-server.conf
-~~~
-
-**Manual method:**
-
-Use this command in SSH to find the full path to the socket:
-
-~~~
-ls ~/.nginx/php/socket
-~~~
-
-The replace the `/media/DiskID/home/username/.nginx/php/socket` with the result of the command.
 
 **Owncloud custom conf:**
 
@@ -153,7 +89,13 @@ Now download a preconfigured conf file to use in conjunction with this edit:
 wget -qO ~/.nginx/conf.d/000-default-server.d/owncloud.conf http://git.io/nVy4Cg
 ~~~
 
-No edits are required to this file, but you must have installed Owncloud into the WWW subdirectory `/owncloud` for it to have any effect.
+Now run this command in SSH:
+
+**Important note:** You need to run this command at least once to properly configure the `owncloud.conf`
+
+~~~
+sed -ri "s|fastcgi_pass(.*);|fastcgi_pass    unix:$HOME/.nginx/php/socket;|g" ~/.nginx/conf.d/000-default-server.d/owncloud.conf
+~~~
 
 Now reload nginx:
 
@@ -162,8 +104,6 @@ Now reload nginx:
 ~~~
 
 Owncloud should now work as intended with nginx.
-
-**Important note:** These modifications should not interfere with the working of other php based applications.
 
 
 

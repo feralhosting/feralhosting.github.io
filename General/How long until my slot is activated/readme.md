@@ -2,7 +2,7 @@
 You Feral hosting account
 ---
 
-*Important note:** You may want to white list Feral in case of an aggressive spam filter. Add this to your email spam filter white list to ensure you get all emails from Feral:
+**Important note:** You may want to white list Feral in case of an aggressive spam filter. Add this to your email spam filter white list to ensure you get all emails from Feral:
 
 ~~~
 *.feralhosting.com

@@ -36,13 +36,13 @@ Here are a few [tunnel brokers](https://en.wikipedia.org/wiki/List_of_IPv6_tunne
 * Multiple locations spread out across the world for alternative connectivity.
 * Client is a simple download and run.
 * Website is difficult to navigate.
-    
+
 ### SixXS: https://www.sixxs.net/main/
 
 * Provides a step-by-step guide (with pictures): https://www.sixxs.net/faq/account/?faq=10steps
 * Many locations available for alternative connectivity.
 * Requires a waiting period of at least a week to get activated.
-    
+
 ### Hurricane Electric: https://tunnelbroker.net/
 
 * Tier 1 ISP who are providing us with IPv6 connectivity.
