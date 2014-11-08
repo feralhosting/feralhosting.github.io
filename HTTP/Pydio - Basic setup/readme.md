@@ -1,5 +1,5 @@
 
-**Important note:** To fully configure Pydio with the valid https URL please see the last section of this article.
+> **Important note:** To fully configure Pydio with the valid https URL please see the last section of this article.
 
 Install Pydio
 ---
@@ -20,21 +20,17 @@ The last command sets the locale to `en.GB.UTF-8`.
 
 Or you could edit it to be say `en_US.UTF-8` if you wanted.
 
-Remove the files we don't need:
+If you are using nginx you will need to do this:
+
+**1:** Create a `.conf` file on the `~/.nginx/conf.d/000-default-server.d` directory. We can use `nano` to do this:
+
+We will call it `pydio.conf`.
 
 ~~~
-cd && rm -rf pydio{-core-5.2.4,.zip}
+nano -w ~/.nginx/conf.d/000-default-server.d/pydio.conf
 ~~~
 
-If you are using nginx you may want to do this:
-
-Create a `.conf` file on the folder:
-
-~~~
-~/.nginx/conf.d/000-default-server.d
-~~~
-
-I will call mine `pydio.conf`. Now add these lines to it and save the changes.
+Now add these lines to it and save the changes.
 
 ~~~
 location /pydio/ { }
@@ -47,6 +43,8 @@ location ~ /pydio/\.            { access_log off; log_not_found off; deny all; }
 location ~ /pydio/~$            { access_log off; log_not_found off; deny all; }
 ~~~
 
+Then press and hold `CTRL` and then press `x` to save. Press `y` to confirm.
+
 Now reload the configurations using this command (You can ignore errors about the log file):
 
 ~~~
@@ -56,7 +54,7 @@ Now reload the configurations using this command (You can ignore errors about th
 Now visit the URL (where `server` is name of your Feral Slot's server and your username):
 
 ~~~
-https://server.feralhosting.com/username/ajaxplorer
+https://server.feralhosting.com/username/pydio
 ~~~
 
 Ignore the warnings.
@@ -90,7 +88,7 @@ For mysql:
 The socket path must start with `:` , for example:
 
 ~~~
-:/media/DiskID/home/username/private/mysql/socket
+:/media/DiskID/username/private/mysql/socket
 ~~~
 
 This is a relevant FAQ - [Mysql - Change php settings using htaccess](https://www.feralhosting.com/faq/view?question=213) which will allow you to use `localhost` as the hostname.

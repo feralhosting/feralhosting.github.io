@@ -2,7 +2,7 @@
 You Feral hosting account
 ---
 
-**Important note:** You may want to white list Feral in case of an aggressive spam filter. Add this to your email spam filter white list to ensure you get all emails from Feral:
+> **Important note:** You may want to white list Feral in case of an aggressive spam filter. Add this to your email spam filter white list to ensure you get all emails from Feral:
 
 ~~~
 *.feralhosting.com
@@ -38,7 +38,7 @@ Set up times are quoted as instant, but this is completely dependent on funds ac
 
 If you are **NOT** a UK resident you may have to allow for international payments to be processed with your credit card provider. This is in case it the transaction gets flagged as a potentially fraudulent. Also, if this is your first payment to Feral, your credit provider may have checks in place to protect you against irregular transactions. These are factors which are **outside of Feral's control** and we must wait until the transaction clears and payment is received before the slot can be created. You can phone your bank or credit card provider to find out more.
 
-**Important note:** You will be sent an email to notify you that your slot has been provisioned and is now accessible.
+> **Important note:** You will be sent an email to notify you that your slot has been provisioned and is now accessible.
 
 In the mean time we suggest you take a look at the [FAQs](https://www.feralhosting.com/faq/) to familiarise yourself with the possibilities that await. Here are two very useful articles for new users:
 

@@ -25,10 +25,10 @@ mkdir -p ~/bin && bash
 Install the `znc` using these commands:
 
 ~~~
-wget -qO ~/znc-1.4.tar.gz http://znc.in/releases/znc-latest.tar.gz
-tar xf ~/znc-1.4.tar.gz && cd ~/znc-1.4
+wget -qO ~/znc.tar.gz http://znc.in/releases/znc-latest.tar.gz
+tar xf ~/znc.tar.gz && cd ~/znc-1.4
 ./configure --prefix=$HOME && make && make install
-cd && rm -rf znc{-1.4,-1.4.tar.gz}
+cd && rm -rf znc{-1.4,.tar.gz}
 ~~~
 
 Once it is installed and ready we can start to configure `znc` using this command:
@@ -37,14 +37,61 @@ Once it is installed and ready we can start to configure `znc` using this comman
 znc --makeconf
 ~~~
 
+If you get a `command not found` error:
+
+**Option 1 (recommended):** Start a new SSH session so that `PATH` is correctly set upon login then try again in this new session.
+
+**Option 2:** Alternatively you can use this command to call the binary directly:
+
+~~~
+~/bin/znc --makeconf
+~~~
+
+ZNC Starting or Restarting:
+---
+
+### Start znc
+
+To start `znc` you will need to SSH into your slot and use this command:
+
+~~~
+znc
+~~~
+
+The binary is located in the `~/bin` directory so it should be in the `PATH`. If you need to call it directly use this command:
+
+~~~
+~/bin/znc
+~~~
+
+### Restart or Shutdown znc
+
+To properly restart or stop `znc` you connect to your server using and Admin user and execute one of these commands:
+
+> **Important note:** When configuring `znc` for the first time you should have created this user with administrator privileges:
+
+~~~
+/znc restart
+/znc shutdown
+~~~
+
+See here for more commands: [http://wiki.znc.in/Using_commands](http://wiki.znc.in/Using_commands)
+
+Crontab
+---
+
+To make sure `znc` is restarted after a reboot use cronjob.
+
+~~~
+@reboot ~/bin/znc
+~~~
+
 Notifications:
 ---
 
 Install this module to configure notifications via various platforms.
 
-**Important note:**
-
-In order to use the libcurl transport layer you would need to ask for this dependency to be installed via a ticket.
+> **Important note:** In order to use the `libcurl` transport layer you would need to ask for this dependency to be installed via a ticket if it is not present.
 
 ~~~
 libcurl4-openssl-dev
@@ -59,7 +106,7 @@ znc-buildmod push.cpp
 make install
 ~~~
 
-with curl:
+with curl (recommended):
 
 ~~~
 git clone https://github.com/jreese/znc-push.git
@@ -110,22 +157,6 @@ If you see this error from znc you can ignore it.
 
 ~~~
 *push> Error: service type not selected
-~~~
-
-But if you really want to fix it you can either:
-
-**1:** Try running this command again:
-
-~~~
-/msg *push set service service_name
-~~~
-
-**2:** Or find this file (Path is relevant to the user and network) and make sure it the layout correct or remove it and start over:
-
-**Important note:** By correct layout i mean that the line `service something` is at the top of the file.
-
-~~~
-~/.znc/users/username/networks/network-name/moddata/push/.registry
 ~~~
 
 
